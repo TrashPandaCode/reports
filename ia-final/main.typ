@@ -52,10 +52,20 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 // CA module
 //    Introduction into Computeranimation
 //    Explanaiton of the current structure/learning concept of the CA module
-// Didactic    
-//    Constructivist Learning/ Cognitive Aprenticeship     
+// Didactic 
+//    Constructivist Learning _/ Cognitive Aprenticeship
+//    Constructionist Education
 //    Situated Learning?
 //    Cognitive Load Theory
+//    Exploratory Learning Environments
+//    Intrinsic Motivation
+//    Formative Assessment Paradigm
+
+  #heading(level: 2)[Didactic]
+  #heading(level: 3)[Constructivism]
+  #col[
+    Constructivism is rooted in the theories of Jean Piaget—developed over the course of fifty years until his death in 1980—who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
+  ]
 
 = Project Planning
 // Target Audience
@@ -110,10 +120,10 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 // Cencepts
 //    Constructivist Learning/ Cognitive Aprenticeship [_/]
 //        Learning in Context [_/]
-//    Creating intrinsic motivation through Games, experimentation and a parasocial bond to 
-// the games protagonist [_/]
-//    Situated Learning? (only kind of. We are not really teaching through a conversation of experts, but rather through a game that is supposed to be fun and engaging through the dialog) [_/]
+//    Creating intrinsic motivation through Games, experimentation and a parasocial bond to the games protagonist [_/]
+//    Situated Learning? [_/]
 //        (Is this really applicable to our learning tool? Situated learning focuses on social situations surrounding the learning process. Is using our tool a participation in the social world?)
+//        (only kind of. We are not really teaching through a conversation of experts, but rather through a game that is supposed to be fun and engaging through the dialog) 
 //    Reducing cognitive load while learning through intuitive Game and Level design [_/]
 // Expected Learning Outcomes [_/]
 
