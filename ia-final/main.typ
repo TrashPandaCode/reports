@@ -33,6 +33,16 @@
 #set table(stroke: 0.5pt, inset: 8pt)
 
 = Introduction & Motivation
+//first sketch. couldnt really figure out what else to put here that wouldt become redundant when we write the rest of the report. 
+Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
+
+As students that have gone through the Computer Animation (CA) module at the University of Applied Sciences Cologne, we ourselves have struggled with the complexity of the subject matter in combination with the modules coursework focussing on programming in $"C#"$ using Unity. Both of which are not necessarily beginner friendly. Thinking about ways to teach the core concepts of computer animation in a more engaging and accessible way, we looked into visual scripting and node-based programming. These methods allow learners to construct logic visually, making it easier to grasp complex concepts without getting bogged down in syntax or language-specific details.
+
+// should we add inspirations like scratch or blender node editor here?
+// something like this:
+// We took inspiration from existing educational tools like Scratch, a block-based visual scripting language designed to teach programming concepts to children through a drag-and-drop interface. Other inspirations include Blender's node editor, which allows users to create complex visual effects and animations through a node-based interface. The node-based approach from Blender is what we decided to use for our tool, as it abstracts the underlying code and syntax more than Scratch's code block-based approach, allowing learners to focus on the logic and structure of their programs.
+
+
 // Problem Statement
 //    Why is there a need for a learning tool?
 //    What is the tool supposed to achieve and how?
@@ -65,12 +75,13 @@
 
   // This paragraph is new, please check if it fits the context.
   The Target Audience for Dumpster Diving include students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, aswell as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+  The Target Audience for Dumpster Diving includes students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
   
   The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
   
-  Each level introduces new tools and mechanics progressively, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
+  Each level progressively introduces new tools and mechanics, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
   
-  The use of narrative and playful interaction subtly reflects principles from situated learning theory @laveSituatedLearningLegitimate1991, where knowledge is acquired in context and made meaningful through authentic tasks. Dialogues, humor, and in-world challenges provide framing and motivation, creating an emotional connection that supports intrinsic motivation @deciIntrinsicMotivationSelfDetermination1985.
+  The use of narrative and playful interaction subtly reflects principles from situated learning theory @laveSituatedLearningLegitimate1991, where knowledge is acquired in context and made meaningful through authentic tasks. Dialogues, humor, and in-world challenges provide framing and motivation, creating an emotional connection that creates intrinsic motivation @deciIntrinsicMotivationSelfDetermination1985.
   
   Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons’ behavior.
   
@@ -78,7 +89,7 @@
   
   From a user experience standpoint, Dumpster Diving uses visual metaphors and interaction patterns that are accessible to novice programmers, inspired by prior educational systems like Scratch @resnickScratchProgrammingAll2009 and Blockly @fraserTenThingsWeve2015. The system design also considers cognitive load theory @swellerCognitiveLoadProblem1988, aiming to reduce extraneous complexity while keeping challenges meaningful and engaging.
 
-  To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
+  To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with the concept of exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
   
   In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
 
