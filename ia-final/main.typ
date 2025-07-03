@@ -80,7 +80,7 @@ As students that have gone through the Computer Animation (CA) module at the Uni
   
   Each level progressively introduces new tools and mechanics, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
   
-  The use of narrative and playful interaction subtly reflects principles from situated learning theory @laveSituatedLearningLegitimate1991, where knowledge is acquired in context and made meaningful through authentic tasks. Dialogues, humor, and in-world challenges provide framing and motivation, creating an emotional connection that creates intrinsic motivation @deciIntrinsicMotivationSelfDetermination1985.
+  The use of narrative and playful interaction fosters an emotional connection between the player and the raccoon character, that supports engagement and learning. Through dialogues, humor, and in-world challenges, the game creates a sense of companionship and narrative continuity, which can enhance intrinsic motivation by making tasks feel personally meaningful and emotionally resonant @deciIntrinsicMotivationSelfDetermination1985.
   
   Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons’ behavior.
   
