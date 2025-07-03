@@ -56,17 +56,43 @@
 //    Milestones
 
 = Didactic Concept
+
+  #todo("check definition of situated learning, is it applicable to our tool?")
+
+  #todo("add bibliography")
+
+  The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
+
+  The Target Audience for Dumpster Diving include students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, aswell as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+  
+  The pedagogical design is rooted in constructivist learning theory /*@papertMindstormsChildrenComputers1993*/, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship /*@collinsCognitiveApprenticeshipTeaching1989*/, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
+  
+  Each level introduces new tools and mechanics progressively, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
+  
+  The use of narrative and playful interaction subtly reflects principles from situated learning theory /*@laveSituatedLearningLegitimate1991*/, where knowledge is acquired in context and made meaningful through authentic tasks. Dialogues, humor, and in-world challenges provide framing and motivation, creating an emotional connection that supports intrinsic motivation /*@deciIntrinsicMotivationSelfDetermination1985*/.
+  
+  Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education /*@papertMindstormsChildrenComputers1993*/, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons’ behavior.
+  
+  Assessment is embedded within the gameplay. Rather than quizzes or performance metrics, success is measured by solving puzzles, using tools appropriately, and being able to adapt solutions when conditions change. This approach reflects the formative assessment paradigm /*@blackAssessmentClassroomLearning1998*/, which values feedback and process over outcomes.
+  
+  From a user experience standpoint, Dumpster Diving uses visual metaphors and interaction patterns that are accessible to novice programmers, inspired by prior educational systems like Scratch /*@resnickScratchProgrammingAll2009*/ and Blockly /*@fraserTenThingsWeve2015*/. The system design also considers cognitive load theory /*@swellerCognitiveLoadProblem1988*/, aiming to reduce extraneous complexity while keeping challenges meaningful and engaging.
+
+  To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with exploratory learning environments /*@dejongScientificDiscoveryLearning1998*/, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
+  
+  In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
+
 // Target Audience
-//    What kind of backgrounds/previous knowledge do they have on the topic
+//    What kind of backgrounds/previous knowledge do they have on the topic [_/]
 //    
 // Cencepts
-//    Constructivist Learning/ Cognitive Aprenticeship
-//        Learning in Context
-//    Creating intrinsic motivation through Games and experimentation
-//    Situated Learning?
+//    Constructivist Learning/ Cognitive Aprenticeship [_/]
+//        Learning in Context [_/]
+//    Creating intrinsic motivation through Games, experimentation and a parasocial bond to 
+// the games protagonist [_/]
+//    Situated Learning? (only kind of. We are not really teaching through a conversation of experts, but rather through a game that is supposed to be fun and engaging through the dialog) [_/]
 //        (Is this really applicable to our learning tool? Situated learning focuses on social situations surrounding the learning process. Is using our tool a participation in the social world?)
-//    Reducing cognitive load while learning through intuitive Game and Level design
-// Expected Learning Outcomes
+//    Reducing cognitive load while learning through intuitive Game and Level design [_/]
+// Expected Learning Outcomes [_/]
 
 = Tech Stack
 // React
