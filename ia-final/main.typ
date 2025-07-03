@@ -64,7 +64,7 @@ As students that have gone through the Computer Animation (CA) module at the Uni
   #heading(level: 2)[Didactic]
   #heading(level: 3)[Constructivism]
   #col[
-    Constructivism is rooted in the theories of Jean Piaget—developed over the course of fifty years until his death in 1980—who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
+    Constructivism is rooted in the theories of Jean Piaget—developed over the course of fifty years until his death in 1980—who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
   ]
 
 = Project Planning
