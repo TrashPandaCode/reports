@@ -42,8 +42,8 @@
 // CA module
 //    Introduction into Computeranimation
 //    Explanaiton of the current structure/learning concept of the CA module
-// Didactic 
-//    Constructivist Learning/ Cognitive Aprenticeship
+// Didactic    
+//    Constructivist Learning/ Cognitive Aprenticeship     
 //    Situated Learning?
 //    Cognitive Load Theory
 
@@ -63,6 +63,7 @@
   #col[
   The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
+  // This paragraph is new, please check if it fits the context.
   The Target Audience for Dumpster Diving include students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, aswell as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
   
   The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
