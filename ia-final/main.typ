@@ -29,10 +29,11 @@
 #todo_outline
 #pagebreak()
 
-#set heading(numbering: "I.1.a") // idk können wir auch noch ändern
+#set heading(numbering: "1.1.a") // idk können wir auch noch ändern
 
 #set table(stroke: 0.5pt, inset: 8pt)
 
+#pagebreak()
 = Introduction & Motivation
 //first sketch. couldnt really figure out what else to put here that wouldt become redundant when we write the rest of the report.
 Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
@@ -48,7 +49,7 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 //    Why is there a need for a learning tool?
 //    What is the tool supposed to achieve and how?
 
-
+#pagebreak()
 = Background
 // CA module
 //    Introduction into Computeranimation
@@ -65,7 +66,7 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 == Didactic
 === Constructivism
 Constructivism is rooted in the theories of Jean Piaget—developed over the course of fifty years until his death in 1980—who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
-
+#pagebreak()
 = Project Planning
 // Target Audience
 //    More broad overview -> Who is supposed to use the product?
@@ -73,7 +74,7 @@ Constructivism is rooted in the theories of Jean Piaget—developed over the cou
 // Project and Time Management
 //    Methods and Tools used
 //    Milestones
-
+#pagebreak()
 = Didactic Concept
 
 #todo("check definition of situated learning, is it applicable to our tool?")
@@ -90,7 +91,7 @@ Each level progressively introduces new tools and mechanics, where learners revi
 
 The use of narrative and playful interaction fosters an emotional connection between the player and the raccoon character, that supports engagement and learning. Through dialogues, humor, and in-world challenges, the game creates a sense of companionship and narrative continuity, which can enhance intrinsic motivation by making tasks feel personally meaningful and emotionally resonant @deciIntrinsicMotivationSelfDetermination1985.
 
-Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons’ behavior.
+Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons' behavior.
 
 Assessment is embedded within the gameplay. Rather than quizzes or performance metrics, success is measured by solving puzzles, using tools appropriately, and being able to adapt solutions when conditions change. This approach reflects the formative assessment paradigm @blackAssessmentClassroomLearning1998, which values feedback and process over outcomes.
 
@@ -114,6 +115,7 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 //    Reducing cognitive load while learning through intuitive Game and Level design [_/]
 // Expected Learning Outcomes [_/]
 
+#pagebreak()
 = Tech Stack
 // React
 //    ReactFlow as core of our application
@@ -139,6 +141,7 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 //    MDX
 //      Can contain React Typescript Components
 
+#pagebreak()
 = Technical Implementation
 // Website Strucutre/Navigation
 //  Landing Page also functions as Level select screen
@@ -170,6 +173,7 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 //    Finish Dialog
 // Introduction Dialog
 
+#pagebreak()
 = User Testing
 // User Testing Concept
 //    Thinking out loud
@@ -179,21 +183,56 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 //    Implementation of the Intro Tutorial
 //    Changing what nodes show up on the initialization of the level
 
+#pagebreak()
 = Unit Testing
 // What Elements were tested?
 // How were the different Elements tested?
 // What was the outcome?
 //    Were any issues found and how were they fixed?
 
+#pagebreak()
 = Project Contributions
-// Each member explains their contributions and time spent on the project
 
+To structure the following sections detailing contributions to the `Dumpster Diving`, we present four distinct phases of our project:
 
+/ Planning Phase: This encompasses all contributions related to the initial project planning and its documentation.
+/ Concept and Design Phase: This includes all work on the preliminary design specifications for both the game and its accompanying website.
+/ Development Phase: This refers to all programming-related contributions within the Dumpster Diving code repository.
+/ Documentation Phase: This comprises all effots related to the projects final documentation
 
+== Time Tracking
+
+Since time tracking was only started as of June 2nd, it was necessary to retrospectively estimate and quantify contributions made prior to this date using alternative methods.
+
+=== Planning Phase
+
+During the planning phase, time was allocated to online group meetings, in-person presentations, and the creation and iterative refinement of project planning and presentation-related documents.
+
+Since we utilized the online Typst editor #footnote([https://typst.app/home]), whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
+
+Online meetings were conducted via Discord #footnote([https://discord.com/]), which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
+
+In contrast, in-person meetings can be precisely quantified, as they were scheduled with clearly defined start and end times.
+
+=== Concept and Design Phase
+
+The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma #footnote([https://www.figma.com/]) which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
+
+=== Development and Documentation Phase
+
+Development commenced on April 8th, leaving a total of 55 days of programming activity untracked by our formal time-logging system. However, as the project was version-controlled using Git and hosted on GitHub, all commits to the main branch — as well as those merged from feature branches — are recorded and accessible. This allows for a relatively accurate estimation of the time dedicated to programming activities during that period, although it does not account for time spent on asset creation or research.
+
+It is important to note that each contributor may apply different estimation strategies or computational methods when quantifying their efforts, which may introduce some variation in reported contributions.
+
+Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tailend of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
+
+#include "contributions/jonathan.typ"
+
+#pagebreak()
 = Glossary
 #todo("fill glossary (if needed)")
 
-= References / Bibliography
 #todo("add references (e.g. from user testing, accessibility, teaching concept)")
 
+#pagebreak()
 = Index
