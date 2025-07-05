@@ -77,12 +77,8 @@ Constructivism is rooted in the theories of Jean Piaget—developed over the cou
 #pagebreak()
 = Didactic Concept
 
-#todo("check definition of situated learning, is it applicable to our tool?")
-
-#todo("move bibliography to desired spot")
 The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
-// This paragraph is new, please check if it fits the context.
 The Target Audience for Dumpster Diving include students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, aswell as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
 
 The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
@@ -227,6 +223,8 @@ It is important to note that each contributor may apply different estimation str
 Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tailend of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
 
 #include "contributions/jonathan.typ"
+// might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
+#include "contributions/philipp.typ"
 
 #pagebreak()
 = Glossary
