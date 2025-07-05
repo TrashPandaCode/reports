@@ -194,7 +194,7 @@ To structure the following sections detailing contributions to the `Dumpster Div
 / Planning Phase: This encompasses all contributions related to the initial project planning and its documentation.
 / Concept and Design Phase: This includes all work on the preliminary design specifications for both the game and its accompanying website.
 / Development Phase: This refers to all programming-related contributions within the Dumpster Diving code repository.
-/ Documentation Phase: This comprises all effots related to the projects final documentation
+/ Documentation Phase: This comprises all effots related to the projects final documentation. #footnote([This excludes game-specific documentation, such as docs pages and code comments.])
 
 == Time Tracking
 
