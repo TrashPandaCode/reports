@@ -36,8 +36,18 @@
 #pagebreak()
 = Introduction & Motivation
 //first sketch. couldnt really figure out what else to put here that wouldt become redundant when we write the rest of the report.
+
+// control flow is weird here: computer animation in itself is not really about programming
+// mathematical concepts is very broad, maybe just linear algebra or sth similar
+// we need to structure this to fit our project more
+// also i would like to start with a short introduction to computer animation, what is that?
+//
+// separate introduction (to ca) and motivation (for this project)
 Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
 
+
+// dont mention struggle
+// why should anyone use this project when we didn't understand the course
 As students that have gone through the Computer Animation (CA) module at the University of Applied Sciences Cologne, we ourselves have struggled with the complexity of the subject matter in combination with the modules coursework focussing on programming in $"C#"$ using Unity. Both of which are not necessarily beginner friendly. Thinking about ways to teach the core concepts of computer animation in a more engaging and accessible way, we looked into visual scripting and node-based programming. These methods allow learners to construct logic visually, making it easier to grasp complex concepts without getting bogged down in syntax or language-specific details.
 
 // should we add inspirations like scratch or blender node editor here?
@@ -63,9 +73,17 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 //    Intrinsic Motivation
 //    Formative Assessment Paradigm
 
+== Target Audience
+
+The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+
 == Didactic
+
+// cool aber was macht das hier?
+// ich weiß noch nicht, wie man das jetzt verbinden soll mit dem didactic konzept
 === Constructivism
-Constructivism is rooted in the theories of Jean Piaget—developed over the course of fifty years until his death in 1980—who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
+Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
+
 #pagebreak()
 = Project Planning
 // Target Audience
@@ -79,11 +97,11 @@ Constructivism is rooted in the theories of Jean Piaget—developed over the cou
 
 The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
-The Target Audience for Dumpster Diving include students in the Computer Animation (CA) module at the University of Applied Sciences Cologne, aswell as independet interested learners, who typically have limited prior knowledge of programming and copmputer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+// refer to target audience and how our didactic concept is based on that
 
 The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
 
-Each level progressively introduces new tools and mechanics, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
+Each level introduces new tools and mechanics progressively, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
 
 The use of narrative and playful interaction fosters an emotional connection between the player and the raccoon character, that supports engagement and learning. Through dialogues, humor, and in-world challenges, the game creates a sense of companionship and narrative continuity, which can enhance intrinsic motivation by making tasks feel personally meaningful and emotionally resonant @deciIntrinsicMotivationSelfDetermination1985.
 
