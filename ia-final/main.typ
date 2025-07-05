@@ -189,7 +189,7 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 #pagebreak()
 = Project Contributions
 
-To structure the following sections detailing contributions to the `Dumpster Diving`, we present four distinct phases of our project:
+To structure the following sections detailing contributions to the `Dumpster Diving` project, we present four distinct phases:
 
 / Planning Phase: This encompasses all contributions related to the initial project planning and its documentation.
 / Concept and Design Phase: This includes all work on the preliminary design specifications for both the game and its accompanying website.
@@ -220,7 +220,7 @@ Development commenced on April 8th, leaving a total of 55 days of programming ac
 
 It is important to note that each contributor may apply different estimation strategies or computational methods when quantifying their efforts, which may introduce some variation in reported contributions.
 
-Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tailend of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
+Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tail end of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
 
 #include "contributions/jonathan.typ"
 // might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
