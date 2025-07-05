@@ -43,11 +43,18 @@
 // also i would like to start with a short introduction to computer animation, what is that?
 //
 // separate introduction (to ca) and motivation (for this project)
+// 
+// completely agree with this, would keep it lowkey though as it is not the main focus of the document
 Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
 
 
 // dont mention struggle
 // why should anyone use this project when we didn't understand the course
+// 
+// probably rephrase this but wasnt this the whole point of the project?
+// we noticed its hard to learn computer animation when you have to learn programming at the same time, especially when you are a beginner. i think this is valid to include, but we should make it clear that we do not still struggle with the course, but rather that we struggled with the course when we started it. or at least i did
+
+
 As students that have gone through the Computer Animation (CA) module at the University of Applied Sciences Cologne, we ourselves have struggled with the complexity of the subject matter in combination with the modules coursework focussing on programming in $"C#"$ using Unity. Both of which are not necessarily beginner friendly. Thinking about ways to teach the core concepts of computer animation in a more engaging and accessible way, we looked into visual scripting and node-based programming. These methods allow learners to construct logic visually, making it easier to grasp complex concepts without getting bogged down in syntax or language-specific details.
 
 // should we add inspirations like scratch or blender node editor here?
@@ -98,6 +105,7 @@ Constructivism is rooted in the theories of Jean Piaget — developed over the c
 The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
 // refer to target audience and how our didactic concept is based on that
+// ok, but why delete the whole paragraph? wouldve just expanded on it
 
 The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
 
