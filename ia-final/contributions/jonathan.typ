@@ -1,3 +1,4 @@
+#pagebreak()
 == Contributions of Jonathan Kron
 
 Both I and the other members of the group dedicated significant time and effort to the planning, conceptualization, and documentation phases — this was understood as a shared responsibility. However, I would like to direct the focus specifically on my contributions during the development phase, as the actual workload I undertook — documented in @jonathan_dev_phase — differs substantially from the tasks originally assigned to me.
