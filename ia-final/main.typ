@@ -88,6 +88,7 @@ The target audience for Dumpster Diving includes students in the Computer Animat
 
 // cool aber was macht das hier?
 // ich weiß noch nicht, wie man das jetzt verbinden soll mit dem didactic konzept
+// Sollte man nicht auch die Begriffe, welche in unserem didaktischem Konzept genutzt werden erklären? Könnte man auch in den Didaktik Teil selber packen aber ich dachte das macht Sinn die Konzepte im Background zu erklären
 === Constructivism
 Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
 
