@@ -98,8 +98,7 @@ Constructivism is rooted in the theories of Jean Piaget — developed over the c
 
 The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
-// refer to target audience and how our didactic concept is based on that
-// ok, but why delete the whole paragraph? wouldve just expanded on it
+The Target Audience for Dumpster Diving include students in the Computer Animation module at the University of Applied Sciences Cologne, as well as independent learners with little prior experience in programming or animation. The design responds to their needs through constructivist and constructionist principles @papertMindstormsChildrenComputers1993, emphasizing learning by experimentation. Using node-based logic aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, by externalizing thought processes. Low-stakes, feedback-rich tasks reflect formative assessment strategies @blackAssessmentClassroomLearning1998 and reduce cognitive load @swellerCognitiveLoadProblem1988, supporting motivation and comprehension in novice learners, whilst not overwhelming them with complexity.
 
 The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
 
