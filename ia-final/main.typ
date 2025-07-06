@@ -132,12 +132,16 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 
 #pagebreak()
 = Tech Stack
+== Use of React and ReactFlow
+//has to be checked for correctness and completeness
+React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use *ReactFlow* to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sufisticated node editor needed for our project. Since ReactFlow is written in TypeScript, we adopt TypeScript as our programming language of choice. TypeScript is a superset of JavaScript that adds static typing, which helps catch errors early in the development process and improves code maintainability. This is particularly beneficial for a project like ours, where we are building a complex system with many interconnected components.
+
 // React
-//    ReactFlow as core of our application
-//      Gives us a good starting point since a lot of features are already part of the API
-//      Unrealistic to build a whole Node System on our own during the course of this project
-//    -> ReactFlow means React as library
-//    -> Typescript as language of choice since ReactFlow is written in it
+//    ReactFlow as core of our application [_/]
+//      Gives us a good starting point since a lot of features are already part of the API [_/]
+//      Unrealistic to build a whole Node System on our own during the course of this project [_/]
+//    -> ReactFlow means React as library [_/]
+//    -> Typescript as language of choice since ReactFlow is written in it [_/]
 //
 //    Different GameEngines comparison vs developing in Unity
 //      Kaplay over three.js
