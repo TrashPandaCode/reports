@@ -134,7 +134,7 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 = Tech Stack
 == Use of React and ReactFlow
 //has to be checked for correctness and completeness
-React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use ReactFlow to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sufisticated node editor needed for our project. Since ReactFlow is written in TypeScript, we adopt TypeScript as our programming language of choice. TypeScript is a superset of JavaScript that adds static typing, which helps catch errors early in the development process and improves code maintainability. This is particularly beneficial for a project like ours, where we are building a complex system with many interconnected components.
+React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use ReactFlow to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sufisticated node editor needed for our project. Since ReactFlow is written in TypeScript, we adopt TypeScript as our programming language of choice. TypeScript is a superset of JavaScript that adds static typing, which helps catch errors early in the development process and improves code maintainability. This is particularly beneficial for a project like ours, where we are building a complex system with many interconnected components. To expand on easy development, we uses TypeScript XML (TSX), a TypeScript syntax extension, to write our React components. TSX allows us to write HTML-like syntax within our TypeScript code, making it easier to create and manage the user interface. This is especially useful for building the node editor, where we need to create a variety of custom nodes with different properties and behaviors.
 
 == Evaluation of Game Engines: Kaplay, Three.js and Unity
 // has to be checked for correctness and completeness
@@ -162,9 +162,9 @@ For global state management within our React application, we opted to use Zustan
 //        Game needs to be fully developed inside of Unity and then built as WebGL application [_/]
 //        Would make development tricky as testing communication between Website and Game would require a new Build of the game for each change [_/]
 //    Zustand
-//      Why Zustand over Reacts Context?
-//        Context is not made to handle constant state changes, can lead to performance issues
-//        Our game needs to constantly be in contact with the Node side
+//      Why Zustand over Reacts Context? [_/]
+//        Context is not made to handle constant state changes, can lead to performance issues [_/]
+//        Our game needs to constantly be in contact with the Node side [_/]
 //    MDX
 //      Can contain React Typescript Components
 
