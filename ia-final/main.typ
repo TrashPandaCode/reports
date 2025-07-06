@@ -144,6 +144,11 @@ In regards to our project, choosing the right game engine is crucial. The game e
 // has to be checked for correctness and completeness
 For global state management within our React application, we opted to use Zustand instead of React's built-in Context API. While React Context is a powerful tool for sharing static values throughout a component tree, it is not optized for scenarios involving frequent and fine-grained state updates. Rendering it unfit for our use case, where the game part of our application needs to be in constant communication with the node editor, which imposes a high performance demand on the state management system. Zustand, on the other hand, is a lightweight state management library, specifically designed to handle dynamic and frequently changing states in React applications. It provides a simple but efficiently scalable API for managing global state, allowing us to create stores that can be accessed and updated from anywhere in the application. Avoiding unnecessary component re-renders, it contributes heavily to the overall better performance and maintainability, making it a perfect fit for our project.
 
+== Using MDX for Documentation
+#todo("WARNING: AI SLOP")
+// this is only supposed to be a first draft, as i didnt work on the documentation, i dont know all the intrecacies of mdx and what to mention here. this is just a placeholder created through rough research and ai assistance
+To facilitate the integration of our documentation and interactive examples, we utilize MDX, which allows us to embed React (and by extension, TypeScript) components directly within Markdown files. This capability enhances the expressiveness and interactivity of our documentation, enabling us to illustrate concepts with live, executable components rather than static code snippets or textual descriptions. MDX thereby serves as a powerful medium for both technical explanation and dynamic visualization, bridging the gap between written content and functional interface elements in a seamless and developer-friendly manner.
+
 // React
 //    ReactFlow as core of our application [_/]
 //      Gives us a good starting point since a lot of features are already part of the API [_/]
