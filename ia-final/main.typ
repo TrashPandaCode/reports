@@ -47,14 +47,6 @@
 // completely agree with this, would keep it lowkey though as it is not the main focus of the document
 Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
 
-
-// dont mention struggle
-// why should anyone use this project when we didn't understand the course
-// 
-// probably rephrase this but wasnt this the whole point of the project?
-// we noticed its hard to learn computer animation when you have to learn programming at the same time, especially when you are a beginner. i think this is valid to include, but we should make it clear that we do not still struggle with the course, but rather that we struggled with the course when we started it. or at least i did
-
-
 As students that have gone through the Computer Animation (CA) module at the University of Applied Sciences Cologne, we know about the struggles that students have with the complexity of the subject matter in combination with the modules coursework focussing on scripting in $"C#"$ using Unity. Both of which are not necessarily beginner friendly. Thinking about ways to teach the core concepts of computer animation in a more engaging and accessible way, we looked into visual scripting and node-based programming. These methods allow learners to construct logic visually, making it easier to grasp complex concepts without getting bogged down in syntax or language-specific details.
 
 // should we add inspirations like scratch or blender node editor here?
@@ -89,6 +81,7 @@ The target audience for Dumpster Diving includes students in the Computer Animat
 // cool aber was macht das hier?
 // ich weiß noch nicht, wie man das jetzt verbinden soll mit dem didactic konzept
 // Sollte man nicht auch die Begriffe, welche in unserem didaktischem Konzept genutzt werden erklären? Könnte man auch in den Didaktik Teil selber packen aber ich dachte das macht Sinn die Konzepte im Background zu erklären
+// das passiert doch aber schon im didactic concept, zumindest grob. für die genauen erläuterungen sind ja die referenzen da 
 === Constructivism
 Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
 
