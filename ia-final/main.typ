@@ -136,6 +136,11 @@ In summary, Dumpster Diving frames computer animation and its key principles as 
 //has to be checked for correctness and completeness
 React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use *ReactFlow* to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sufisticated node editor needed for our project. Since ReactFlow is written in TypeScript, we adopt TypeScript as our programming language of choice. TypeScript is a superset of JavaScript that adds static typing, which helps catch errors early in the development process and improves code maintainability. This is particularly beneficial for a project like ours, where we are building a complex system with many interconnected components.
 
+== Evaluation of Game Engines: Kaplay, Three.js and Unity
+
+When exploring our options for a game engine, we considered several alternatives: Kaplay, Three.js and Unity. Each of these has its own strengths and weaknesses. Although Tree.js offers a flexible and powerful 3D rendering engine, it is not primarily designed as a game engine. This means that we would have to implement many features such as collision detection and physics ourselves, thereby increasing both complexity and development time significantly. Unity is a mature and fully-fledged game engine particularly well-suited for 3D developmet and computer animation hence it being used for the majoraty of the Computer Animation modules coursework. However it would require us to develop the game entirely within Unity and then export it as a WebGL application. This would cause a significant loss in performance and responsiveness, as well as complicate the development process. Each change to the game would require a new build, making it difficult to test and iterate quickly. In contrast, Kaplay is a fully-fledged game engine that is specifically designed for 2D web based games. This drastically limits the computer animation concepts we can showcase and teach the user due to the limitations of 2D, but it allows us to create a responsive and performant game that can be easily developed and tested. Kaplay also provides a set of features that are essential for our project, such as a game loop, collision detection, and physics simulation. This allows us to focus on the core concepts of computer animation without having to worry about the underlying mechanics of the game engine.
+
+
 // React
 //    ReactFlow as core of our application [_/]
 //      Gives us a good starting point since a lot of features are already part of the API [_/]
@@ -143,16 +148,16 @@ React is a modern, free and open source JavaScript library for building user int
 //    -> ReactFlow means React as library [_/]
 //    -> Typescript as language of choice since ReactFlow is written in it [_/]
 //
-//    Different GameEngines comparison vs developing in Unity
-//      Kaplay over three.js
-//        three.js not necesarily meant as game engine
-//        would need to implement collisions physics etc. manually
-//        kaplay is a fully fledged game engine
-//        downsides
-//          - 2d limits our ability to showcase CA concepts
+//    Different GameEngines comparison vs developing in Unity [_/]
+//      Kaplay over three.js [_/]
+//        three.js not necesarily meant as game engine [_/]
+//        would need to implement collisions physics etc. manually [_/]
+//        kaplay is a fully fledged game engine [_/]
+//        downsides 
+//          - 2d limits our ability to showcase CA concepts [_/]
 //      Unity
-//        Game needs to be fully developed inside of Unity and then built as WebGL application
-//        Would make development tricky as testing communication between Website and Game would require a new Build of the game for each change
+//        Game needs to be fully developed inside of Unity and then built as WebGL application [_/]
+//        Would make development tricky as testing communication between Website and Game would require a new Build of the game for each change [_/]
 //    Zustand
 //      Why Zustand over Reacts Context?
 //        Context is not made to handle constant state changes, can lead to performance issues
