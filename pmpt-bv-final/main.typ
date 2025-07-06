@@ -45,7 +45,12 @@
 //     Evaluate performance and generalization.
 
 #col[
-  testhiusdsioadsapjdasiojdaskdjaskd
+  RT60 is the time it takes for sound to decay by 60 decibels in a space after the source has stopped. It’s a key measure of reverberation, indicating how "live" or "dead" a room sounds. In acoustics, especially for recording studios, classrooms, or concert halls, RT60 helps assess speech intelligibility and musical clarity. An optimal RT60 varies depending on the room’s purpose—shorter for speech-focused spaces and longer for music. Controlling RT60 improves audio quality, listener comfort, and overall room performance.
+
+  // a little bit much slop maybe
+  But despite its usefulness, measuring RT60 is often more complex and time-consuming than it needs to be, typically requiring specialized equipment and controlled conditions. This creates a barrier for everyday users who could benefit from understanding a room’s acoustics. Since RT60 values are valuable for optimizing audio setups, improving speech clarity, and enhancing overall acoustic design, simplifying the measurement process can make this information more accessible.
+
+
 ]
 
 #pagebreak()
