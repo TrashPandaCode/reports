@@ -13,11 +13,11 @@ As the project progressed, it became necessary for me to independently develop s
 
 To avoid overestimating the actual time I dedicated to the project and its associated tasks, I have intentionally adopted a conservative approach to time estimation. Specifically, I employ pessimistic estimates for all untracked efforts to ensure that my reported contributions do not exceed the time actually spent.
 
-For programming-related work carried out prior to the start of formal time logging, I utilize a proven Git-based time estimation algorithm, as detailed in @jonathan_est_tracked_efforts. To validate the reliability of this method, I compare its output against the formally logged time data recorded from June 2nd onward. This cross-comparison serves as a calibration step to assess the consistency and accuracy of the algorithm.
+For programming-related work carried out prior to the start of formal time logging, I utilize a proven Git-based time estimation algorithm, as detailed in @jonathan_est_tracked_efforts. To validate the reliability of this method, its output is compared against the formally logged time data recorded from June 2nd onward in @jonathan_dev_phase. This cross-comparison serves as a calibration step to assess the consistency and accuracy of the algorithm.
 
 ==== Estimation of Untracked Efforts
 
-To estimate untracked efforts — such as work conducted in Typst, Figma, or via Discord — I will draw comparisons between the resulting output of these tasks and similar activities for which the time expenditure is known. This is possible because most tasks completed in the planning and conceptualization phases have equivalents in later stages. Concept drawings can be compared to assets I created and the creation of planning and presentation-related documents to documents written during the documentation phase.
+To estimate untracked efforts — such as work conducted in Typst, Figma, or via Discord — comparisons between the resulting output of these tasks and similar activities for which the time expenditure is known are drawn in @jonathan_plan_phase and @jonathan_des_phase. This is possible because most tasks completed in the planning and conceptualization phases have equivalents in later stages. Concept drawings can be compared to assets I created and the creation of planning and presentation-related documents to documents written during the documentation phase.
 
 ==== Estimation of Tracked Efforts<jonathan_est_tracked_efforts>
 
@@ -35,9 +35,9 @@ The actual implementation (`jikyuu` #footnote([https://github.com/Nate-Wilkins/j
 
 As explained in @jonathan_time_methodology my goal was to not overestimate my time spend. My approach to the formal time logging represents this mindset, which emphasizes the recording of periods of focused and productive work on specific tasks. Consequently, for example, during a five-hour meeting, only one to two hours of concentrated effort were documented.
 
-=== Project Planning
+=== Project Planning<jonathan_plan_phase>
 
-=== Concept and Design
+=== Concept and Design<jonathan_des_phase>
 
 === Development<jonathan_dev_phase>
 
