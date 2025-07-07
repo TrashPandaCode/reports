@@ -57,36 +57,19 @@ As students that have gone through the Computer Animation (CA) module at the Uni
 // Problem Statement
 //    Why is there a need for a learning tool?
 //    What is the tool supposed to achieve and how?
-
-#pagebreak()
-= Background
-// CA module
+// 
+// // CA module
 //    Introduction into Computeranimation
 //    Explanaiton of the current structure/learning concept of the CA module
-// Didactic
-//    Constructivist Learning _/ Cognitive Aprenticeship
-//    Constructionist Education
-//    Situated Learning?
-//    Cognitive Load Theory
-//    Exploratory Learning Environments
-//    Intrinsic Motivation
-//    Formative Assessment Paradigm
+
+
+#pagebreak()
+= Project Planning
 
 == Target Audience
 
 The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
 
-== Didactic
-
-// cool aber was macht das hier?
-// ich weiß noch nicht, wie man das jetzt verbinden soll mit dem didactic konzept
-// Sollte man nicht auch die Begriffe, welche in unserem didaktischem Konzept genutzt werden erklären? Könnte man auch in den Didaktik Teil selber packen aber ich dachte das macht Sinn die Konzepte im Background zu erklären
-// das passiert doch aber schon im didactic concept, zumindest grob. für die genauen erläuterungen sind ja die referenzen da 
-=== Constructivism
-Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
-
-#pagebreak()
-= Project Planning
 // Target Audience
 //    More broad overview -> Who is supposed to use the product?
 // What requirements is the tool supposed to fullfil?
@@ -275,6 +258,16 @@ Beginning on June 2nd, all time dedicated to the project was formally recorded, 
 #pagebreak()
 = Glossary
 #todo("fill glossary (if needed)")
+
+// Perhaps this could go in the glossary later
+//== Didactic
+
+// cool aber was macht das hier?
+// ich weiß noch nicht, wie man das jetzt verbinden soll mit dem didactic konzept
+// Sollte man nicht auch die Begriffe, welche in unserem didaktischem Konzept genutzt werden erklären? Könnte man auch in den Didaktik Teil selber packen aber ich dachte das macht Sinn die Konzepte im Background zu erklären
+// das passiert doch aber schon im didactic concept, zumindest grob. für die genauen erläuterungen sind ja die referenzen da
+//=== Constructivism
+//Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
 
 #todo("add references (e.g. from user testing, accessibility, teaching concept)")
 
