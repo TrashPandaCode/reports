@@ -252,6 +252,7 @@ Beginning on June 2nd, all time dedicated to the project was formally recorded, 
 #include "contributions/jonathan.typ"
 // might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
 #include "contributions/philipp.typ"
+#include "contributions/leo.typ"
 
 #pagebreak()
 = Glossary
