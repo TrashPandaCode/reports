@@ -69,5 +69,28 @@ I implemented the main loop logic in the node store on May 14th, where loop star
 
 I performed a loop functionality rewrite on May 16th to ensure correct sorting in the node map sorting algorithm. I added functionality for loops to be created and deleted correctly, implemented the ability for nodes to be added into loops, and together with Leo Kling established the functionality that nodes can only be interconnected when in the same loop. On May 17th, I added helper functions to create single nodes and for loops, and I implemented helper functions for loop edges to have custom colors based on their loop ID.
 
-// May 18
+I continued development on May 18th by refactoring the GamePopup component, which I later renamed to LevelDialog, using RadixUI. This involved creating a new CustomDialog component and implementing a dialog system displaying multiple messages in the LevelDialog. The following day, I added functionality to remove all edges connected to export or import nodes when they change.
+
+On May 20th, I created a node-setter store, which I later renamed to flow-store. I designed this store to save all React Flow nodes and added functions for highlighting and resetting node highlighting. I used the node-setter store to highlight nodes with cyclic connections for better user feedback.
+
+I added an initial multiselection dropdown menu to the import node on May 22nd to enable functionality for exporting and importing values to and from multiple gameobjects. I implemented the functionality for the multiselection dropdown menu and wrote a helper function to get an intersection of gameobject handles for multiple selected gameobjects. This intersection is displayed when more than one gameobject is selected in the import or export node.
+
+On May 23rd, I focused on styling the multiselection dropdown menu and refactored it into its own component. I then added the multiselection dropdown to the export node. The next day, I extended the functionality of handle add and delete operations for multiselection in both export and import nodes.
+
+I extended the DocsNodeEditor on May 26th to display for loop nodes and replaced the NodeEditor AddMenu with the right-click AddMenu component. I added the ability for each level to specify available nodes and created dummy export and import nodes for the documentation pages.
+
+On May 27th, I added documentation for multiple node types including Export, ForLoop, Switch, MathFloat, KeyPress, and Import nodes. I created the MousePosition node that exports the mouse position in the game window and added correct viewport behavior so the camera always follows the player. I also created a help menu that displays level hints.
+
+I created the initial gamehelper file on May 28th containing functions for adding gameobjects and backgrounds to a level, and I added documentation for the Group node. The following day, I fixed the level cleanup logic so levels can now properly be quit, rewrote the logic to switch to the next level, and added custom success messages when a level is completed.
+
+On May 30th, I added functionality to load full solutions from JSON files to the help menu, enabling the help menu to add nodes and edges to the node editor. I renamed the node-setter store to flow-store and configured it to also save ReactFlow edges.
+
+I refactored the help menu on May 31st using the RadixUI Popover component at the suggestion of Leo Kling and added a center panel to the node editor allowing users to navigate to neighboring levels and home. I also added the ability to continue levels after completion. On June 1st, I collaborated with Leo Kling to remake the landing page with a level carousel, and I reworked the level reset button functionality.
+
+Formal time logging commenced on June 2. According to the algorithm detailed in @jonathan_est_tracked_efforts, the cumulative time estimated for the aforementioned untracked development work amounts to approximately 100 hours. It is important to note that this estimate does not account for time spent on background activities such as researching or reviewing documentation.
+
+In comparison, the `git-hours` algorithm estimates a total of 61.65 hours for the period from June 2 to July 11, while my formally logged development time during that interval amounts to 37.65 hours. Although this represents a significant overestimation, I consider it reasonable given the substantial amount of time spent reading documentation and conceptualizing solutions to complex problems.
+
+Consequently, I regard the estimated 100 hours for my programming efforts between April 22 and June 2 as a justified and realistic approximation.
+
 === Documentation
