@@ -46,19 +46,19 @@
 
 #col[
   // ich würde hier etwas weiter ausholen und erstmal bei nachhallzeit genrell anfangen (vlt wie bei wiki https://en.wikipedia.org/wiki/Reverberation). wir haben ja echt viel platz und können das ruhig etwas ausfühlicher machen.
-  RT60 is the time it takes for sound to decay by 60 decibels in a space after the source has stopped. It’s a key measure of reverberation, indicating how "live" or "dead" a room sounds. In acoustics, especially for recording studios, classrooms, or concert halls, RT60 helps assess speech intelligibility and musical clarity. An optimal RT60 varies depending on the room’s purpose—shorter for speech-focused spaces and longer for music. Controlling RT60 improves audio quality, listener comfort, and overall room performance.
+  // bessser?
+  Reverberation, or reverb, is the persistence of sound in a space after the original source has stopped, caused by multiple reflections off surfaces like walls, ceilings, and furniture. These reflections overlap and gradually decay as they are absorbed by materials in the room, with their amplitude decreasing until they fade completely. Unlike distinct echoes, which are heard with a delay of 50 to 100 milliseconds, reverberation consists of closely spaced reflections arriving within about 50 milliseconds of each other. Reverberation occurs naturally in enclosed and even outdoor reflective environments and can also be artificially produced using digital or mechanical effects. While it can enhance the sense of space in music or recordings, excessive reverberation—especially in noisy environments—can reduce speech clarity and hinder both human and machine understanding. The duration of reverberation, known as reverberation time, is typically measured using RT60 (or T60), which represents the time it takes for sound to decay by 60 decibels. Because reverberation is frequency-dependent, accurate measurement often involves analyzing multiple frequency bands, making it important to specify the frequency range when reporting RT60 values.
 
-  // unser aufhänger generell war ja auch eher die bedeutung von nachhall für AR/XR/VR anwendungen. ich würde auch nicht sagen das für die messung specialized equipment benötigt wird (mikro und lautsprecher reichen ja), sondern dass es aufwändiger ist und länger dauert
-  // a little bit much slop maybe
-  But despite its usefulness, measuring RT60 is often more complex and time-consuming than it needs to be, typically requiring specialized equipment and controlled conditions. This creates a barrier for everyday users who could benefit from understanding a room’s acoustics. Since RT60 values are valuable for optimizing audio setups, improving speech clarity, and enhancing overall acoustic design, simplifying the measurement process can make this information more accessible.
+  // Übergang verbessern?
+  Measuring RT60 is often too complex, as it typically requires specific equipment and controlled conditions, making the process cumbersome and time-consuming. This complexity limits its usability in applications that rely on real-time or near real-time audio processing, such as AR, XR, or VR. In these contexts, accurate RT60 estimates can greatly improve spatial audio rendering by making virtual environments sound more realistic and immersive, with audio characteristics that match the simulated space.
+  However, with the described limitations of current measurement methods, AR, XR, and VR applications are forced to either determine their RT60 values ahead of time or use simplified models that do not accurately reflect the acoustic properties of the environment. Determining RT60 values in advance means that the applications are forced to have static environments, which limits the dynamic nature of these applications. Using simplified models means that the applications are forced to use approximations that do not accurately reflect the acoustic properties of the environment, which can lead to a less immersive experience for the user.
 
-
-]
+  To address these issues, our goal is to simplify and accelerate the RT60 estimation process by using artificial intelligence to predict reverberation times from single images of environments.
+  ]
 
 #pagebreak()
 
 = Background
-
 // Reverberation Time (RT60)
 //     Definition and frequency dependence.
 //     Measurement methods. (sabine & eyring, manual measurement (capturing of ir, Lundeby's Method), simulation methods (image source ray, raytracing, wave-based))
