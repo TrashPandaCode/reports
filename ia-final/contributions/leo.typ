@@ -111,6 +111,70 @@ I continued improving the documentation section—adding a dedicated page for th
 Lastly, I began work on a basic documentation search feature that at this stage matches only titles. I also made several UX improvements to the sidebar, including automatic opening and collapsing of sections based on navigation state.
 
 //june
+// - cleaning up carousel component on the landing page together with jonathan
+// - added categories and difficulty to the level-cards component on the landing page using icons created by jonathan
+// - made the edges in the node-editor deletable with a button display in the center of the edge
+// - added dialog content to the first and second level
+// - added success message to the second level
+// - renamed the url from a /game path to /level 
+// - refactored the tooltip component to allow custom styling
+// - added a warning to the game when opened in a small window or on a mobile device
+// - made the documentation page responsive
+// - made the landing page responsive
+// - added fulltext search to the documentation page
+// - show a short description of the search item in the search results
+// - added a loading indicator for the fulltext search
+// - added dialog and goals to the third level ("bounce")
+// - make the keytracker clear its state then the window is blurred or unfocused
+// - adjust the nodes avaiable in the bounce level
+// - added an "attributions" page, listing all libraries and resources used in the project
+// - cleaned up the goals dialog implemented by Markus
+// - reworked the level dialog to be more simple and readable
+// - cleaned up the tutorial implemented by Markus to be more readable
+// - collaborated with Jonathan on an Undo-redo implementation using the Zustand middleware "zustand-undo" to allow users to undo and redo their actions in the node editor
+// - reworked all context menus to be positioned correctly. before their position was based on some magic numbers. I used the actual rendered size of the context menus
+// - rewrote the tutorial entirely using react-joyride. no more manual positioning of elements, no more magic numbers, accessible and keyboard navigable
+// - display shortcuts in the tooltips (if available)
+// - rewrote Jonathans MultiSelectDropdown component used in the import and export nodes to be able to change the order of the selected items. this is important for for-loops to change the order of iteration
+// - added unit tests for the documentations pages, covering both contents and functionality
+// - added (empty) level-guide pages
+// - added tests for the level-guide pages
+// - added full typesafety to the data-store. this included a levelDataHelper to ensure that only the data of game objects that are actually available in the game can be modified. the gameobjects avaiable and their properties are loaded dynamically from the LEVELS structure.
+// - due to the creation of levelDataHelper I rewrote all levels at that time to use the new structure, which also allowed me to remove some unused code from the levels
+// - rewrote the entire gameHelper file to provide a more consistent and robust (and typesafe) interface to the game logic. this also included changing all levels to reflect these changes
+// - added a displayName property and functionality to the ModifiableGameObject type, which (if defined) is used as the display name of the game object in the export and import nodes. this allows reusing game objects accross levels for different purposes, while still being able to display a meaningful name in the node editor
+// - cleanup and bug-fixes of both level contents and level metadata for multiple levels
+// - created "reverse" level, which is based on jonathans "linear" level and requires the user to do a time transformation
+// - created "soap" pixel art asset for the inverse kinematics level
+// - created a box asset for the "loop" level
+// - added dialog content for the "inverse" level
+// - added level guides for the linear, calculator, reverse, forward, playground and move levels
+// - removed the google fonts dependency and replaced it with a local font file, to remove cookies
+// - added the collapsible components for the faq page, which allows users to expand and collapse questions
+// - updated the tutorial to include a reference to the level guides
+// - added doc-strings to a large portion of the codebase (items both from me and others)
+// - added a coverage script that checks the amount of doc-strings and generates a report
+// - added more doc-strings to raise our coverage to 90%
+// - added more content to the landing page
 
+As development progressed, I collaborated with Jonathan to clean up the carousel component on the landing page and added difficulty levels and categories to the level cards using iconography he created. In the node editor, I implemented deletable edges by adding a small button to the center of each connection, improving usability when editing node graphs.
+
+I contributed dialog and success messages to the first few levels, including the bounce level. I also renamed the game route from `/game` to `/level` to make the URL structure more meaningful and refactored the tooltip component to support custom styling. To improve the user experience on various devices, I added a warning for small screens or mobile usage and ensured that both the landing and documentation pages were fully responsive.
+
+I expanded the documentation with full-text search functionality, including short content previews in search results and a loading indicator for improved feedback. I also created and added dialogs and adjusted node availability for the bounce level, and introduced an attributions page listing all third-party tools and libraries used in the project.
+
+I cleaned up and simplified the goals dialog and level dialogs originally implemented by Markus to improve readability and consistency. The same was done for the tutorial, which I later rewrote entirely using `react-joyride`. This allowed me to remove all the previously hard-coded positioning and replace it with an accessible, keyboard-navigable onboarding system. Tooltips were updated to optionally show keyboard shortcuts, making controls more transparent to users.
+
+To improve the import/export node functionality, I rewrote Jonathan's `MultiSelectDropdown` to support reordering of items—an important feature when controlling loop iteration order. In collaboration with Jonathan, I also added undo-redo support in the editor using the `zundo` middleware.
+
+On the technical side, I reworked all context menus so their positions are based on rendered dimensions instead of arbitrary offsets. I added unit tests for the documentation and level guide pages to ensure content correctness and UI stability. I also introduced full typesafety to the node editor's data store by creating a levelDataHelper, which dynamically constrains available object data based on the current level definition. This required me to rewrite all existing levels and allowed for the cleanup of deprecated code.
+
+Alongside this, I rewrote the gameHelper file to create a more reliable, consistent, and type-safe interface to the game logic. I also introduced a `displayName` property to the `ModifiableGameObject` type so the same object could be reused across levels with context-appropriate labels in the node editor.
+
+Throughout development, I cleaned up and fixed bugs in level content and metadata, and created the "reverse" level—based on Jonathan's linear level—which required a time transformation to solve. I also designed and created new pixel art assets: a "soap" item for the inverse kinematics level and a box for the loop level. I contributed dialog and level guide content for various levels, including inverse, linear, calculator, reverse, forward, playground, and move.
+
+To improve privacy and performance, I removed our dependency on Google Fonts and replaced it with a self-hosted version of the typefaces. I implemented collapsible FAQ sections, updated the tutorial to reference the level guides, and added doc-strings to large portions of both my own and others' code. To track documentation quality, I added a coverage script that analyzes how much of the codebase is documented, then raised coverage to over 90% by adding additional comments and annotations.
+
+Lastly, I returned to the landing page and enriched its content to better introduce and communicate the purpose of the project.
 
 === Documentation<leo_doc_phase>
