@@ -167,6 +167,9 @@ For global state management within our React application, we opted to use Zustan
 #pagebreak()
 = Technical Implementation
 
+#todo("Feedback Bitte")
+// Wie findet ihr das vom Inhalt her? Sollte ich genauer auf die Abläufe eingehen oder passt das so?
+
 == Game
 The game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
 
