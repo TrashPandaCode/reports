@@ -61,5 +61,56 @@ In parallel, I strongly advocated for adopting Radix UI for all interactive comp
 Toward the end of April, on the 29th, I began work on the documentation page, which I developed entirely on my own. I implemented dynamic loading of Markdown files, built a sidebar for navigation, and added breadcrumbs to aid user orientation. The minimum viable product (MVP) of the documentation page was completed by April 30th.
 
 // may
+// - initially node documentation was intended as a popup in the node editor
+// - this was then changed to a seperate page
+// - initial pages for the node documentation were created by me
+// - search functionality for the AddNode menu was implemented by me
+// - level loading and a framework for creating levels
+// - levels are loaded based on the url
+// - refactor editor ui to different components
+// - play/pause functionality and button for game and editor
+// - styling of node editor/components and icons using radix icons
+// - expanded search functionality to include and display sub options of the math node
+// - added keyboard controls to the AddNode menu
+// - initial draft for the structure of exposing gameObjects to the export and import nodes
+// - added google fonts and a custom font (iosevka) to the project
+// - fixing a bug that occured when navigating between levels that caused kaplay to crash, switched to alpha version of kaplay by forking and building ourselves and cleaning up kaplay when navigating between levels
+// - adding the ability to remove handles from the export node
+// - reworked the visuals of the handle adding in the export node
+// - added a custom tooltip component using radix-ui
+// - added tooltips to all node-editor components
+// - added the ability to display a seperate node-editor in the documentation page for each node
+// - added a custom global key-tracker to replace the react-flow and kaplay key listeners, to ensure that keys are registered even when the node editor is not focused
+// - added a new toast/notification component using "sonner" to replace the previous toast component (which was not accessible and required the use of hooks, which could not be called from library code)
+// - added legal prints contents (imprint, privacy policy, cookie policy)
+// - added empty faq page and getting stated (later filled by jonathan)
+// - added typesafety for the "availableNodes" in each level, to ensure that only nodes that are actually available in the game can be used in the node editor
+// - added more typesafety to the levels framework to ensure that there are no errors during creation of levels (only valid gameobjects can be used)
+// - added the mouse position node documentation page
+// - reworked the documentation framwork to work with mdx files instead of markdown files, to allow for more complex documentation pages
+// - added all 14 chapters of the computer animation script to the documentation page. the contents of these were provided by Jonathan and me and transcribed from german to english and adjusted for markdown by me.
+// - added first basic search to docs (only searches for titles, not content yet)
+// - some behavior changes to the documentation nav-sidebar, opening and closing sections if navigated to the page
+
+Following the initial MVP of the documentation page, I continued expanding its functionality and integrating it deeper into the game experience. Originally, I implemented node documentation as popups within the node editor, but this approach was soon abandoned in favor of a separate documentation section. I created the initial documentation pages for individual nodes and implemented a search function within the "Add Node" menu to make them easier to find. I also developed the framework for loading levels based on the URL, enabling us to structure and preview each level independently.
+
+I gradually refactored the editor UI into smaller components, introducing play/pause controls for the simulation and matching buttons in the interface. I was responsible for styling most of the node editor, including consistent iconography using Radix Icons, and enhanced the search functionality to show nested options for complex nodes like "Math", showing sub-options like "Addition". I also implemented keyboard navigation for the "Add Node" menu to improve accessibility.
+
+Another contribution was my implementation for exposing game objects to the export and import nodes, which laid the groundwork for making these nodes usable. I also added a custom font setup using Google Fonts and Iosevka, further improving the visual identity of the project.
+
+When we encountered a critical bug that crashed Kaplay when navigating between levels, I diagnosed the issue with Jonathan, forked the library, and switched us to a custom-built alpha version. We also added internal cleanup procedures to ensure Kaplay was properly reset between levels. Additional improvements followed, such as enabling removal of handles from the export node, redesigning the visual behavior for adding handles, and creating a custom tooltip component using Radix UI—applied throughout the node editor for consistency and usability.
+
+One of my larger contributions was the implementation of a dedicated node editor within each documentation page, allowing users to interact with example nodes directly while reading about them. To support keyboard interaction across the app (especially outside the focused node editor), I replaced the native React Flow and Kaplay key listen.ers with a global key-tracking solution.
+
+I also modernized our notification system by replacing the inaccessible and hook-dependent toast component with a more robust and accessible solution using the `sonner` library. Beyond game features, I added legal imprint content including the privacy and cookie policies, as well as the initial FAQ and Getting Started pages (which were later filled by Jonathan).
+
+To ensure better type safety and stability, I implemented constraints for the available nodes per level, ensuring only valid nodes can be added to a given level. I further strengthened type safety across my level framework to prevent errors during level definition and gameplay.
+
+I continued improving the documentation section—adding a dedicated page for the mouse position node, switching the entire system from Markdown to MDX for richer content capabilities, and integrating all 14 chapters of the Computer Animation script. The material for this was sourced by Jonathan and me (based on our exam preperations) and I handled the translation from German to English, final formatting and conversion to MDX.
+
+Lastly, I began work on a basic documentation search feature that at this stage matches only titles. I also made several UX improvements to the sidebar, including automatic opening and collapsing of sections based on navigation state.
+
+//june
+
 
 === Documentation<leo_doc_phase>
