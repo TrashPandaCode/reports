@@ -46,13 +46,11 @@
 
 #col[
   // ich würde hier etwas weiter ausholen und erstmal bei nachhallzeit genrell anfangen (vlt wie bei wiki https://en.wikipedia.org/wiki/Reverberation). wir haben ja echt viel platz und können das ruhig etwas ausfühlicher machen.
-  RT60 is the time it takes for sound to decay by 60 decibels in a space after the source has stopped. It’s a key measure of reverberation, indicating how "live" or "dead" a room sounds. In acoustics, especially for recording studios, classrooms, or concert halls, RT60 helps assess speech intelligibility and musical clarity. An optimal RT60 varies depending on the room’s purpose—shorter for speech-focused spaces and longer for music. Controlling RT60 improves audio quality, listener comfort, and overall room performance.
+  Reverberation time refers to how long it takes for sound to fade away in an enclosed space after the sound source has stopped. It reflects how sound waves bounce off surfaces like walls, ceilings, and floors, gradually losing energy. A key metric for reverberation is RT60, which specifically measures the time it takes for sound to decay by 60 decibels. RT60 indicates how “live” or “dead” a room sounds—longer times mean more lingering echoes, while shorter times suggest a more controlled, dry acoustic. In acoustics, especially for recording studios, classrooms, or concert halls, RT60 is essential for assessing speech intelligibility and musical clarity. An ideal RT60 depends on the room’s intended use—shorter for spaces focused on speech and longer for those designed for music. Properly managing RT60 helps improve audio quality, listener comfort, and the overall acoustic performance of a space.
 
   // unser aufhänger generell war ja auch eher die bedeutung von nachhall für AR/XR/VR anwendungen. ich würde auch nicht sagen das für die messung specialized equipment benötigt wird (mikro und lautsprecher reichen ja), sondern dass es aufwändiger ist und länger dauert
   // a little bit much slop maybe
   But despite its usefulness, measuring RT60 is often more complex and time-consuming than it needs to be, typically requiring specialized equipment and controlled conditions. This creates a barrier for everyday users who could benefit from understanding a room’s acoustics. Since RT60 values are valuable for optimizing audio setups, improving speech clarity, and enhancing overall acoustic design, simplifying the measurement process can make this information more accessible.
-
-
 ]
 
 #pagebreak()
