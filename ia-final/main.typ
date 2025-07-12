@@ -150,7 +150,7 @@ In addition to the usability and maintainability benefits of Markdown and MDX, a
 
 This on-demand loading significantly improves the scalability and responsiveness of the site. Users only download the content they actively view, which helps reduce network usage and speeds up the initial loading experience, especially for first-time visitors. It also aligns well with modern web development practices, such as code-splitting and lazy loading, both of which we make use of elsewhere in the project.
 
-This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we’re able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
+This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
 
 // React
 //    ReactFlow as core of our application [_/]
