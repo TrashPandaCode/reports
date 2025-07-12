@@ -93,4 +93,20 @@ In comparison, the `git-hours` algorithm estimates a total of 61.65 hours for th
 
 Consequently, I regard the estimated 100 hours for my programming efforts between April 22 and June 2 as a justified and realistic approximation.
 
+I continued development into June with focused work sessions tracked by hours spent. On June 2nd, I added logical operators to the math node, including AND, OR, and similar operations (0.25h). The following day, I added documentation strings to all node components and the node store, and implemented toast notifications for wrong loop connections (2h).
+
+On June 4th, I implemented auto saving and loading for all Zustand stores, which required significant development time (3.3h). This involved creating data serialization for all stores, implementing saving to localstorage at regular intervals, and loading correct level store data from localstorage on level load. Two days later, I created a new level reset button, implemented saving and loading of level completion state, and added display of level completion state on the homepage (0.5h).
+
+I added functionality for levels to spawn initial nodes on first level load on June 8th (0.5h). On June 9th, I collaborated with Leo Kling on a flow-store undo redo implementation (2.5h), followed by further collaboration on a node deletion rewrite to support the undo redo functionality on June 10th (1.5h).
+
+I continued undo redo development on June 11th while also fixing the mouse position node with correct coordinate transformations and adding inverse trigonometric functions to the math node (3h). On June 12th, I added unit tests for level definitions (0.25h).
+
+I added the ability for gameobjects to run functions on export node compute on June 14th and used this functionality to create an inverse kinematics level (1.5h). The following day, I and Leo Kling further developed the inverse kinematics level by adding a level solution and creating a WorldToLocal node for easier 2D coordinate transformations (1.5h).
+
+On June 17th, I implemented saving functionality for group node edit labels (0.5h). I added functionality to unit tests to use localstorage and reworked the linear time transformation level on June 20th (2h). The next day, I further developed and finished the linear time transformation level, including level solution, hints, and dialog (1.5h).
+
+I created assets for the joints present in the inverse level on June 22nd and added level solutions for multiple levels including bounce, calculator, parenting, sitting, and move (2h). On June 23rd, I created a looping level and added level descriptions (1h).
+
+I added functionality for level solutions to load data-store data to support custom gameobject handles on June 24th, implemented hints for some levels, and created level guides for inverse and looping levels (1.5h). On June 26th, I filled the FAQ page with entries. I added explainer videos to the tutorial dialog and filled the getting started documentation page on June 27th (1.5h). Finally, on June 29th, I added unit tests for flow- and loop-store (1h).
+
 === Documentation
