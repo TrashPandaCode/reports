@@ -146,7 +146,7 @@
   == Stakeholders
   === The Client
 
-  The client for this project is represented by the supervising professor from the Faculty of Information, Media and Electrical Engineering at TH Köln, Prof. Dr. Grünvogel. As the academic supervisor and representative of the institution, the professor acts as both the client and the customer, ensuring the project aligns with curricular goals and learning objectives. The client’s approval is required for project completion and assessment.
+  The client for this project is represented by the supervising professor from the Faculty of Information, Media and Electrical Engineering at TH Köln, Prof. Dr. Grünvogel. As the academic supervisor and representative of the institution, the professor acts as both the client and the customer, ensuring the project aligns with curricular goals and learning objectives. The client's approval is required for project completion and assessment.
 
   As this project is developed for educational and demonstrative purposes within a university setting, the client role is filled by faculty rather than a commercial stakeholder. The project is not intended for external commercial use, but for showcasing interactive learning methods and creative technical development.
   
