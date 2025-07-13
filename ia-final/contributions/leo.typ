@@ -100,7 +100,7 @@ Another contribution was my implementation for exposing game objects to the expo
 
 When we encountered a critical bug that crashed Kaplay when navigating between levels, I diagnosed the issue with Jonathan, forked the library, and switched us to a custom-built alpha version. We also added internal cleanup procedures to ensure Kaplay was properly reset between levels. Additional improvements followed, such as enabling removal of handles from the export node, redesigning the visual behavior for adding handles, and creating a custom tooltip component using Radix UI—applied throughout the node editor for consistency and usability.
 
-One of my larger contributions was the implementation of a dedicated node editor within each documentation page, allowing users to interact with example nodes directly while reading about them. To support keyboard interaction across the app (especially outside the focused node editor), I replaced the native React Flow and Kaplay key listen.ers with a global key-tracking solution.
+One of my larger contributions was the implementation of a dedicated node editor within each documentation page, allowing users to interact with example nodes directly while reading about them. To support keyboard interaction across the app (especially outside the focused node editor), I replaced the native React Flow and Kaplay key listeners with a global key-tracking solution.
 
 I also modernized our notification system by replacing the inaccessible and hook-dependent toast component with a more robust and accessible solution using the `sonner` library. Beyond game features, I added legal imprint content including the privacy and cookie policies, as well as the initial FAQ and Getting Started pages (which were later filled by Jonathan).
 
