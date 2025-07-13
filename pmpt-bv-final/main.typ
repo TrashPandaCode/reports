@@ -29,7 +29,7 @@
 
 // =================================================================
 
-= Introduction & Motivation
+= Introduction
 
 // Problem Statement
 //     What is RT60 and why is it important?
@@ -55,10 +55,10 @@
 
   To address these issues, our goal is to simplify and accelerate the RT60 estimation process by using artificial intelligence to predict reverberation times from single images of environments.
   ]
-
+= Motivation
 #pagebreak()
 
-= Background
+= Fundamental Concepts
 // Reverberation Time (RT60)
 //     Definition and frequency dependence.
 //     Measurement methods. (sabine & eyring, manual measurement (capturing of ir, Lundeby's Method), simulation methods (image source ray, raytracing, wave-based))
@@ -73,6 +73,7 @@
 // Synthetic vs. Real Data
 //     Use of simulation to augment learning.
 //     Domain gap considerations.
+// Evaluation Metrics
 
 #pagebreak()
 
