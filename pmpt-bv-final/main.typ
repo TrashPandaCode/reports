@@ -64,6 +64,40 @@
 //     Definition and frequency dependence.
 //     Measurement methods. (sabine & eyring, manual measurement (capturing of ir, Lundeby's Method), simulation methods (image source ray, raytracing, wave-based))
 //     Typical ranges and what influences them.
+
+== Reverberation Time (RT60)
+Reverbaration Time describes the Time it takes for sound to decay in a given environment. It is a crucial parameter in acoustics, influencing how sound behaves in an environment. The most prolific measurement method is the RT60, which measures the time it takes for sound to decay by 60 decibels. This measurement is frequency-dependent, meaning that RT60 values can vary significantly across different frequency bands. The RT60 can be measured using various methods, including manual measurements, simulation methods, and machine learning approaches.
+
+=== Sabine & Eyring
+The Sabine and Eyring formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces.
+
+#let spacing = -0.1cm
+
+Sabine's formula: \
+$quad "RT60 (seconds)" approx 0.161 dot V / A$ \
+#v(spacing)
+$quad V = "Volume of the room in cubic meters"$ \
+#v(spacing)
+$quad A = "Total absorption area in square meters"$ \
+
+Eyring expanded on Sabine as follows: \
+$quad "RT60 (seconds)" approx 0.161 dot V / (A' + 4"mV") dot s$ \
+#v(spacing)
+$quad "A'" = S_"tot" [-2.30 log_10(1-alpha_"ey")] dot m^2$ \
+#v(spacing)
+$quad alpha_"ey" = (accent(alpha_T, ´) dot S_T + accent(alpha_R, ´) dot S_R + sum accent(alpha_i, ´) dot S_i) / S_"tot"$ \
+
+
+// What is Lundeby's Method? I have read this https://akutek.info/Papers/IW_Uncertainties.pdf and many other websites, but I am still not sure what it is.
+=== Manual Measurement (Lundeby's Method)
+Manual measurement of RT60 typically involves capturing the impulse response (IR) of a room using a microphone and a sound source. The impulse response is then analyzed to determine the decay time of the sound, which is used to calculate RT60.
+
+=== Simulation Methods (Image Source Ray, Raytracing, Wave-based)
+Simulation methods for estimating RT60 include image source, ray tracing and wave-based approaches. These methods use computer simulations to model how sound behaves in a room, taking into account the geometry of the space and the materials present. By simulating the propagation of sound waves, these methods can provide accurate estimates of RT60 without the need for physical measurements.
+
+=== Typical Ranges and Influences
+Typical RT60 values can vary widely depending on the type of environment. For example, small rooms may have RT60 values as low as 0.1 seconds, while large auditoriums can have values exceeding 2 seconds. Factors influencing RT60 include room size, shape, surface materials, and furnishings. Hard surfaces like concrete or glass tend to increase RT60, while soft materials like carpets and curtains reduce it.
+
 // Room Acoustics and Image-based Prediction
 //     Why predicting RT60 from images is plausible (visual cues: size, materials, layout).
 //     Prior work (if any): vision-based acoustics inference.
