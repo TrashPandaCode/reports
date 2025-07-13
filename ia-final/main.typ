@@ -33,50 +33,75 @@
 
 #set table(stroke: 0.5pt, inset: 8pt)
 
-= Introduction & Motivation
-//first sketch. couldnt really figure out what else to put here that wouldt become redundant when we write the rest of the report.
-
-// control flow is weird here: computer animation in itself is not really about programming
-// mathematical concepts is very broad, maybe just linear algebra or sth similar
-// we need to structure this to fit our project more
-// also i would like to start with a short introduction to computer animation, what is that?
-//
-// separate introduction (to ca) and motivation (for this project)
-//
-// completely agree with this, would keep it lowkey though as it is not the main focus of the document
-Learning computer animation is not trivial. It requires a solid understanding of mathematical concepts, object relations, and control flow. However, traditional learning methods often fail to engage students effectively, leading to frustration and disengagement. This is where our learning tool, "Dumpster Diving," comes into play.
-
-As students that have gone through the Computer Animation (CA) module at the University of Applied Sciences Cologne, we know about the struggles that students have with the complexity of the subject matter in combination with the modules coursework focussing on scripting in $"C#"$ using Unity. Both of which are not necessarily beginner friendly. Thinking about ways to teach the core concepts of computer animation in a more engaging and accessible way, we looked into visual scripting and node-based programming. These methods allow learners to construct logic visually, making it easier to grasp complex concepts without getting bogged down in syntax or language-specific details.
-
-// should we add inspirations like scratch or blender node editor here?
-// something like this:
-// We took inspiration from existing educational tools like Scratch, a block-based visual scripting language designed to teach programming concepts to children through a drag-and-drop interface. Other inspirations include Blender's node editor, which allows users to create complex visual effects and animations through a node-based interface. The node-based approach from Blender is what we decided to use for our tool, as it abstracts the underlying code and syntax more than Scratch's code block-based approach, allowing learners to focus on the logic and structure of their programs.
-
-
+= Introduction
+// // CA
+//    Introduction into Computeranimation
+//    Computeranimation at TH Köln, why is it taught?
+//    Explanaiton of the current structure/learning concept of the CA module
+// //   Computer Animation is a fundamental skill in many fields, including game development,   film production, and interactive media.
+// 
 // Problem Statement
 //    Why is there a need for a learning tool?
 //    What is the tool supposed to achieve and how?
-//
-// // CA module
-//    Introduction into Computeranimation
-//    Explanaiton of the current structure/learning concept of the CA module
-
-
+= Motivation
+// Why is learning Computer Animation important?
+// Why is there a steep learning curve?
+// Challenges of TH Köln CA course
+// How can we help students overcome these challenges?
+// Why we chose visual scripting?
+= Related Works
+// Visual Scripting
+// Visual Programming:
+//    Scratch
+//    Unreal Engine Blueprints
+// Related Tools: 
+//    State Machine Graphs (Unity, UE, Godot)
+//    Shader Graphs (Unity, UE, Godot)
+//    Blender Geometry Nodes
+//    More...
+// Edutainment Games:
+//    While True Learn (Visual Scripting)
+//    Exercism (Learning Programming)
+//    Duolingo (Bite Sized Learning)
+//    Kara (Beginner Programming through Gamified Lectures)
+//    CSS Battles (puzzles to learn Css and compete)
+// 
+// Conclusion + Relation to our Tool
 #pagebreak()
 = Project Planning
+// Distribution of Tasks
+// Einteilung Gruppenmitglieder
+// Project Management (Discord, GitHub, Typst, Figma)
 
+= Background
+== 2D vs. 3D
+// Computer Animation is dimensionless
+// TH Köln CA course is mostly 3D
+// CA script examples are 2D
+// 2D and 3D in Games
+//    2D games are still relevant
+// Arguments for 3D
+//    Closely related to the CA coursework
+//    Quaternions have use
+// Arguments for 2D
+//    Easier coordinate system
+//    Easier to navigate
+//    Rendering performance
+//    Sprites not 3D Models
+//    Implementation is easier
+//    Asset creation is easier
+// Arguments for 2.5D/Isometric
+//    Unique perspective
+//    rendering performance
+//    confusing coordinate system
+//    steep learning curve
+// Explaining our decision
+== Web vs. Native
+== Design of Visual Scripting System
 == Target Audience
-
+// evaluate learning needs and prior knowledge of the target audience
 The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
-
-// Target Audience
-//    More broad overview -> Who is supposed to use the product?
-// What requirements is the tool supposed to fullfil?
-// Project and Time Management
-//    Methods and Tools used
-//    Milestones
-#pagebreak()
-= Didactic Concept
+== Didactic Concept
 
 The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
 
@@ -97,23 +122,12 @@ From a user experience standpoint, Dumpster Diving uses visual metaphors and int
 To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with the concept of exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
 
 In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
-
-
-// Target Audience
-//    What kind of backgrounds/previous knowledge do they have on the topic [_/]
-//
-// Cencepts
-//    Constructivist Learning/ Cognitive Aprenticeship [_/]
-//        Learning in Context [_/]
-//    Creating intrinsic motivation through Games, experimentation and a parasocial bond to the games protagonist [_/]
-//    Situated Learning? [_/]
-//        (Is this really applicable to our learning tool? Situated learning focuses on social situations surrounding the learning process. Is using our tool a participation in the social world?)
-//        (only kind of. We are not really teaching through a conversation of experts, but rather through a game that is supposed to be fun and engaging through the dialog)
-//    Reducing cognitive load while learning through intuitive Game and Level design [_/]
-// Expected Learning Outcomes [_/]
-
+== Learning Outcomes
+// Abstract Learning Goals
+// Familiarity with node systems (secondary)
+// logical thinking
 #pagebreak()
-= Tech Stack
+= Technical Challenges & Solutions
 == Use of React and React Flow <techstack_react_reactflow>
 //has to be checked for correctness and completeness
 React #footnote([https://react.dev/]) is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use React Flow #footnote([https://reactflow.dev/]) to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sophisticated node editor needed for our project. As our programming language of choice, we decided to use TypeScript — a statically typed superset of JavaScript. TypeScript allows us to catch type-related errors early in the development process and contributes to clearer, more maintainable code. These benefits are particularly important in a project like ours, which involves a complex system with many interconnected components and evolving interfaces. Since we're working with React and TypeScript, we naturally use TSX — the standard syntax extension for TypeScript that allows us to write HTML-like markup within TypeScript code. This makes building and maintaining the user interface more intuitive, especially in areas like the node editor, where we create various custom components with specific properties and behaviors.
@@ -140,7 +154,7 @@ For global state management within our React application, we opted to use Zustan
 
 When designing the foundation for our documentation system, one of the first and most important architectural decisions we had to make was choosing the format in which the documentation content would be written and maintained. One option was to use plain HTML or JSX components. This approach would have offered the most flexibility in terms of layout and structure, as we would have been able to build custom pages using the full featureset of React. However, this flexibility would have come at a significant cost: increased complexity, a large amount of repetitive boilerplate code, and a higher barrier of entry for contributors, especially for those with limited technical experience.
 
-Instead, we opted for a more structured and user-friendly solution by using Markdown, and eventually transitioning to MDX. Markdown is a lightweight markup language that allows authors to format text using a simple and intuitive syntax. It is widely used in technical and non-technical communities alike due to its readability and ease of use. By choosing Markdown, we enabled a workflow where contributors can focus on the content itself without needing to understand complex HTML structures or React component logic. This significantly lowers the barrier to entry for writing and maintaining documentation, which is especially beneficial in educational or collaborative projects where content authors may not have a background in software development.
+Instead, we opted for a more structured and maintainable solution by using Markdown, and eventually transitioning to MDX. Markdown is a lightweight markup language that allows authors to format text using a simple and intuitive syntax. It is widely used in technical and non-technical communities alike due to its readability and ease of use. By choosing Markdown, we enabled a workflow where contributors can focus on the content itself without needing to understand complex HTML structures or React component logic. This significantly lowers the barrier to entry for writing and maintaining documentation, which is especially beneficial in educational or collaborative projects where content authors may not have a background in software development.
 
 Later in the development process, we transitioned from pure Markdown to MDX, a powerful extension of Markdown that supports embedding React components directly within the document. This allows us to combine the simplicity of Markdown with the interactivity of modern web applications. Using MDX, we were able to build dynamic and interactive documentation pages—for example, by embedding live previews of the nodes and their configurations directly within the documentation for each node type. This makes the documentation not only more informative but also more engaging and effective.
 
@@ -151,33 +165,7 @@ In addition to the usability and maintainability benefits of Markdown and MDX, a
 This on-demand loading significantly improves the scalability and responsiveness of the site. Users only download the content they actively view, which helps reduce network usage and speeds up the initial loading experience, especially for first-time visitors. It also aligns well with modern web development practices, such as code-splitting and lazy loading, both of which we make use of elsewhere in the project.
 
 This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
-
-// React
-//    ReactFlow as core of our application [_/]
-//      Gives us a good starting point since a lot of features are already part of the API [_/]
-//      Unrealistic to build a whole Node System on our own during the course of this project [_/]
-//    -> ReactFlow means React as library [_/]
-//    -> Typescript as language of choice since ReactFlow is written in it [_/]
-//
-//    Different GameEngines comparison vs developing in Unity [_/]
-//      Kaplay over three.js [_/]
-//        three.js not necesarily meant as game engine [_/]
-//        would need to implement collisions physics etc. manually [_/]
-//        kaplay is a fully fledged game engine [_/]
-//        downsides
-//          - 2d limits our ability to showcase CA concepts [_/]
-//      Unity
-//        Game needs to be fully developed inside of Unity and then built as WebGL application [_/]
-//        Would make development tricky as testing communication between Website and Game would require a new Build of the game for each change [_/]
-//    Zustand
-//      Why Zustand over Reacts Context? [_/]
-//        Context is not made to handle constant state changes, can lead to performance issues [_/]
-//        Our game needs to constantly be in contact with the Node side [_/]
-//    MDX
-//      Can contain React Typescript Components
-
 #pagebreak()
-= Technical Implementation
 
 #todo("Feedback Bitte")
 // Wie findet ihr das vom Inhalt her? Sollte ich genauer auf die Abläufe eingehen oder passt das so?
@@ -237,7 +225,7 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 // Introduction Dialog
 
 #pagebreak()
-= User Testing
+== User Testing
 // User Testing Concept
 //    Thinking out loud
 //    Questionnaire Structure/Goals
@@ -247,11 +235,13 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 //    Changing what nodes show up on the initialization of the level
 
 #pagebreak()
-= Unit Testing
+== Unit Testing
 // What Elements were tested?
 // How were the different Elements tested?
 // What was the outcome?
 //    Were any issues found and how were they fixed?
+
+= Results & Conclusion
 
 #pagebreak()
 = Project Contributions
@@ -293,6 +283,7 @@ Beginning on June 2nd, all time dedicated to the project was formally recorded, 
 // might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
 #include "contributions/philipp.typ"
 #include "contributions/leo.typ"
+
 
 #pagebreak()
 = Glossary
