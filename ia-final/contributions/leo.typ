@@ -1,4 +1,5 @@
 #import "../lib.typ": col
+#import "@preview/big-todo:0.2.0": *
 
 #pagebreak()
 #col[
@@ -32,6 +33,8 @@
   In addition to my contributions to the site and documentation design, I was also responsible for designing the visual style and layout of the nodes and the node editor. These designs were critical to the usability of the game interface and had to strike a balance between usability, functionality, and aesthetics. Alongside this, I also established the overall style and color scheme of the website, ensuring visual consistency across the node and web components.
 
   Overall, while design was not my designated responsibility, I contributed meaningfully throughout the phase, especially in shaping the layout and structure of core parts of the user experience.
+
+  #todo("assets")
 
   === Development<leo_dev_phase>
 
