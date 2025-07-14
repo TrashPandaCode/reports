@@ -37,7 +37,19 @@ As explained in @jonathan_time_methodology my goal was to not overestimate my ti
 
 === Project Planning<jonathan_plan_phase>
 
+During the project planning phase, I contributed significantly to the preparation of all required documentation and presentations. In addition, I consistently participated in both virtual meetings via Discord and in-person meetings.
+
 === Concept and Design<jonathan_des_phase>
+
+During the concept and design phase, I actively extended my contributions beyond my initially assigned responsibilities. My original task was limited to the development of the first prototype, specifically the creation of wireframes for the game interface and the node editor user interface.
+
+Within this scope, I collaborated on the conceptual design of both the node editor and the game window. I independently created two wireframes representing the game's homepage and developed three additional wireframes addressing level selection in collaboration with Leo Kling. Furthermore, I produced wireframes for a settings menu and a help menu, augmenting these with explanatory diagrams to clarify user interactions.
+
+At an early stage, I critically engaged with Leo Kling's proposal to introduce a landing page, as I initially preferred a structure that aligned more closely with conventional game interfaces. I expressed concerns regarding the integration of level selection within a landing page typically associated with more business-oriented websites. However, after evaluating Leo Kling's initial landing page wireframe, I was convinced of its merits. I subsequently produced my own landing page wireframe and collaborated with Leo Kling on refining both the landing page and the documentation page designs.
+
+In a later phase, I also contributed to the project by creating graphical assets for a difficulty scale, intended for use on the homepage.
+
+// TODO: add time estimation
 
 === Development<jonathan_dev_phase>
 
