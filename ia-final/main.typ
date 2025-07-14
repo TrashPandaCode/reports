@@ -33,28 +33,36 @@
 
 #set table(stroke: 0.5pt, inset: 8pt)
 
-= Introduction
-// // CA
-//    Introduction into Computeranimation
-//    Computeranimation at TH Köln, why is it taught?
-//    Explanaiton of the current structure/learning concept of the CA module
-// //   Computer Animation is a fundamental skill in many fields, including game development,   film production, and interactive media.
-// 
-// Problem Statement
-//    Why is there a need for a learning tool?
-//    What is the tool supposed to achieve and how?
-= Motivation
-// Why is learning Computer Animation important?
-// Why is there a steep learning curve?
-// Challenges of TH Köln CA course
-// How can we help students overcome these challenges?
-// Why we chose visual scripting?
+#col([
+  = Introduction
+
+  In the modern world, computers are no longer limited to performing purely numerical computations. Over the past century, methods have been developed that enable computers to simulate a wide range of real-world phenomena and translate these simulations into rendered images or animations.
+
+  The discipline concerned with the digital generation of moving images is referred to as *computer animation*. It constitutes a fundamental skill in various domains, including game development, film production, and interactive media.
+
+  Computer animation encompasses a wide range of topics, some of which have been well-established for decades, while others remain active areas of ongoing research. As the field continues to advance, the complexity and breadth of knowledge required make it increasingly challenging for non-experts to keep pace with current developments. For this reason, computer animation has become an integral part of academic education at universities today.
+
+  At Technische Hochschule Köln, computer animation is taught as part of the Bachelor's program in Media Technology. Since 2005, this subject has been an integral component of the curriculum, aiming to provide students with both a theoretical and practical foundation in this interdisciplinary field.
+
+  The computer animation course taught at TH Köln is structured into four main areas: animation systems, object animation, character animation, and procedural animation. Throughout the course, students engage with practical programming exercises designed to reinforce the theoretical concepts covered. These exercises involve, for example, the programmatic implementation of Bézier curves within the Unity engine. To support the learning process, these assignments are supplemented by a comprehensive textbook covering all relevant topics, as well as concise instructional materials that provide guidance on the specific tasks.
+
+  It was observed that, despite the availability of extensive supporting materials, students experienced difficulties with the programming tasks. as well as the fact that the programming assignments frequently integrated multiple topics simultaneously. This integration made it difficult for students to isolate and focus on individual problems, thereby hindering their ability to develop a clear understanding of specific concepts.. Furthermore, students frequently struggled to transfer theoretical knowledge — acquired primarily through textbooks and 2D illustrations — into practical implementations within a virtual 3D environment.
+
+  These issues illustrate the need for a intermediate tool easing the transition from text book to the virtual world. To address this, we propose the development of a learning game featuring node-based programming. This approach eliminates the prerequisite of mastering a new programming language, thereby allowing students to focus directly on implementing core concepts of computer animation. Moreover, by designing each level in a controlled manner, we can strategically select the instructional content and constrain the complexity of individual tasks. This targeted approach enables students to concentrate their efforts on specific learning objectives without the distraction of extraneous challenges.
+  = Motivation
+  // Why is learning Computer Animation important?
+  // Why is there a steep learning curve?
+  // Challenges of TH Köln CA course
+  // How can we help students overcome these challenges?
+  // Why we chose visual scripting?
+  //
+])
 = Related Works
 // Visual Scripting
 // Visual Programming:
 //    Scratch
 //    Unreal Engine Blueprints
-// Related Tools: 
+// Related Tools:
 //    State Machine Graphs (Unity, UE, Godot)
 //    Shader Graphs (Unity, UE, Godot)
 //    Blender Geometry Nodes
@@ -65,7 +73,7 @@
 //    Duolingo (Bite Sized Learning)
 //    Kara (Beginner Programming through Gamified Lectures)
 //    CSS Battles (puzzles to learn Css and compete)
-// 
+//
 // Conclusion + Relation to our Tool
 #pagebreak()
 = Project Planning
@@ -174,13 +182,13 @@ This dynamic content loading was made easier by the structured nature of Markdow
 The game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
 
 === First call of the Component
-When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should shown, based on what the user has previously selected. If the Tutorial gets skipped, the Level Dialog will be displayed and wait for the current level to be set. 
+When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should shown, based on what the user has previously selected. If the Tutorial gets skipped, the Level Dialog will be displayed and wait for the current level to be set.
 
 Once there is a valid level ID multiple functions get called:
 - The global key tracker is started to listen for keyboard inputs
 - All Zustand stores, for game state, node flows, loops, and data are initialized
 - The Kaplay game engine is initialized using our `initGame`. function, which receives a reference to the canvas canvas element created when the component is called. This tells the game engine where to render the game
-After everything is initialized the `loadLevel` function is called. This function sets the current level and then calls the initialize-function for that level. 
+After everything is initialized the `loadLevel` function is called. This function sets the current level and then calls the initialize-function for that level.
 
 To prevent users from losing their progress due to accidental reloads or crashes, the component also sets up an auto-save system. A function is called every 10 seconds using JavaScripts `setInterval` function. This function calls the `save` function for all of our aforementioned Zustand stores.
 

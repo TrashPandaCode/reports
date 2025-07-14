@@ -103,8 +103,9 @@
     h
   }
   show heading.where(level: 1): h => {
-    stack(dir: ltr, place(left, dx: -0.5in, rect(height: 13pt, width: 0.4in, fill: primary)), text(size: 18pt, h))
-    v(0.2in)
+    // stack(dir: ltr, place(left, dx: -0.5in, rect(height: 13pt, width: 0.4in, fill: primary)), text(size: 18pt, h))
+    // v(0.2in)
+    text(size: 18pt, h)
   }
   show par: set par(spacing: 1.4em)
   show cite: set text(fill: primary)
