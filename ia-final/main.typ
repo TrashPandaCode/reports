@@ -269,15 +269,15 @@ Since time tracking was only started as of June 2nd, it was necessary to retrosp
 
 During the planning phase, time was allocated to online group meetings, in-person presentations, and the creation and iterative refinement of project planning and presentation-related documents.
 
-Since we utilized the online Typst editor #footnote([https://typst.app/home]), whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
+Since we utilized the online Typst editor @noauthor_typst_nodate, whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
 
-Online meetings were conducted via Discord #footnote([https://discord.com/]), which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
+Online meetings were conducted via Discord @noauthor_discord_nodate, which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
 
 In contrast, in-person meetings can be precisely quantified, as they were scheduled with clearly defined start and end times.
 
 === Concept and Design Phase
 
-The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma #footnote([https://www.figma.com/]) which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
+The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma @noauthor_figma_nodate which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
 
 === Development and Documentation Phase
 
