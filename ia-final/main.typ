@@ -252,40 +252,42 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 = Results & Conclusion
 
 #pagebreak()
-= Project Contributions
+#col([
+  = Project Contributions
 
-To structure the following sections detailing contributions to the `Dumpster Diving` project, we present four distinct phases:
+  To structure the following sections detailing contributions to the `Dumpster Diving` project, we present four distinct phases:
 
-/ Planning Phase: This encompasses all contributions related to the initial project planning and its documentation.
-/ Concept and Design Phase: This includes all work on the preliminary design specifications for both the game and its accompanying website.
-/ Development Phase: This refers to all programming-related contributions within the Dumpster Diving code repository.
-/ Documentation Phase: This comprises all effots related to the projects final documentation. #footnote([This excludes game-specific documentation, such as docs pages and code comments.])
+  / Planning Phase: This encompasses all contributions related to the initial project planning and its documentation.
+  / Concept and Design Phase: This includes all work on the preliminary design specifications for both the game and its accompanying website.
+  / Development Phase: This refers to all programming-related contributions within the Dumpster Diving code repository.
+  / Documentation Phase: This comprises all effots related to the projects final documentation. #footnote([This excludes game-specific documentation, such as docs pages and code comments.])
 
-== Time Tracking
+  == Time Tracking
 
-Since time tracking was only started as of June 2nd, it was necessary to retrospectively estimate and quantify contributions made prior to this date using alternative methods.
+  Since time tracking was only started as of June 2nd, it was necessary to retrospectively estimate and quantify contributions made prior to this date using alternative methods.
 
-=== Planning Phase
+  === Planning Phase
 
-During the planning phase, time was allocated to online group meetings, in-person presentations, and the creation and iterative refinement of project planning and presentation-related documents.
+  During the planning phase, time was allocated to online group meetings, in-person presentations, and the creation and iterative refinement of project planning and presentation-related documents.
 
-Since we utilized the online Typst editor @noauthor_typst_nodate, whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
+  Since we utilized the online Typst editor @noauthor_typst_nodate, whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
 
-Online meetings were conducted via Discord @noauthor_discord_nodate, which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
+  Online meetings were conducted via Discord @noauthor_discord_nodate, which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
 
-In contrast, in-person meetings can be precisely quantified, as they were scheduled with clearly defined start and end times.
+  In contrast, in-person meetings can be precisely quantified, as they were scheduled with clearly defined start and end times.
 
-=== Concept and Design Phase
+  === Concept and Design Phase
 
-The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma @noauthor_figma_nodate which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
+  The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma @noauthor_figma_nodate which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
 
-=== Development and Documentation Phase
+  === Development and Documentation Phase
 
-Development commenced on April 8th, leaving a total of 55 days of programming activity untracked by our formal time-logging system. However, as the project was version-controlled using Git and hosted on GitHub, all commits to the main branch — as well as those merged from feature branches — are recorded and accessible. This allows for a relatively accurate estimation of the time dedicated to programming activities during that period, although it does not account for time spent on asset creation or research.
+  Development commenced on April 8th, leaving a total of 55 days of programming activity untracked by our formal time-logging system. However, as the project was version-controlled using Git and hosted on GitHub, all commits to the main branch — as well as those merged from feature branches — are recorded and accessible. This allows for a relatively accurate estimation of the time dedicated to programming activities during that period, although it does not account for time spent on asset creation or research.
 
-It is important to note that each contributor may apply different estimation strategies or computational methods when quantifying their efforts, which may introduce some variation in reported contributions.
+  It is important to note that each contributor may apply different estimation strategies or computational methods when quantifying their efforts, which may introduce some variation in reported contributions.
 
-Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tail end of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
+  Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tail end of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
+])
 
 #include "contributions/jonathan.typ"
 // might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
