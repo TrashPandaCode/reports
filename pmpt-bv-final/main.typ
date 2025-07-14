@@ -3,7 +3,7 @@
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
 
-#import "@preview/glossarium:0.5.4": make-glossary, register-glossary, print-glossary, gls, glspl
+#import "@preview/glossarium:0.5.4": gls, glspl, make-glossary, print-glossary, register-glossary
 
 #show: island.with(
   lang: "en",
@@ -22,7 +22,7 @@
   show-title-page: true,
   img: none,
   show-outline: true,
-  bibliography: bibliography("reverbaration_estimation.bib")
+  bibliography: bibliography("reverbaration_estimation.bib"),
 )
 
 #set heading(numbering: "1.")
@@ -47,6 +47,7 @@
 #col[
   // ich würde hier etwas weiter ausholen und erstmal bei nachhallzeit genrell anfangen (vlt wie bei wiki https://en.wikipedia.org/wiki/Reverberation). wir haben ja echt viel platz und können das ruhig etwas ausfühlicher machen.
   // bessser?
+  // würde noch bisschen mehr auf unser problem hinten, vlt bisschen weniger technisch hier und mehr beschreiben wie wichtig reverberation time für den raumklang/eindruck ist damit man dann später sagen kann das ist der grund warum wir nur RT estimaten
   Reverberation, or reverb, is the persistence of sound in a space after the original source has stopped, caused by multiple reflections off surfaces like walls, ceilings, and furniture. These reflections overlap and gradually decay as they are absorbed by materials in the room, with their amplitude decreasing until they fade completely. Unlike distinct echoes, which are heard with a delay of 50 to 100 milliseconds, reverberation consists of closely spaced reflections arriving within about 50 milliseconds of each other. Reverberation occurs naturally in enclosed and even outdoor reflective environments and can also be artificially produced using digital or mechanical effects. While it can enhance the sense of space in music or recordings, excessive reverberation—especially in noisy environments—can reduce speech clarity and hinder both human and machine understanding. The duration of reverberation, known as reverberation time, is typically measured using RT60 (or T60), which represents the time it takes for sound to decay by 60 decibels. Because reverberation is frequency-dependent, accurate measurement often involves analyzing multiple frequency bands, making it important to specify the frequency range when reporting RT60 values.
 
   // Übergang verbessern?
@@ -54,7 +55,7 @@
   However, with the described limitations of current measurement methods, AR and XR applications are forced to either determine their RT60 values ahead of time or use simplified models that do not accurately reflect the acoustic properties of the environment. Determining RT60 values in advance means that the applications are forced to have static environments, which limits the dynamic nature of these applications. Using simplified models means that the applications are forced to use approximations that do not accurately reflect the acoustic properties of the environment, which can lead to a less immersive experience for the user.
 
   To address these issues, our goal is to simplify and accelerate the RT60 estimation process by using artificial intelligence to predict reverberation times from single images of environments.
-  ]
+]
 
 = Motivation
 #pagebreak()
