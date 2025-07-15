@@ -290,7 +290,6 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 ])
 
 #include "contributions/jonathan.typ"
-// might not fit here perfectly as i dont go into detail about time tracking that much, but rather about my contributions during the project. Will add a section about time tracking later on.
 #include "contributions/philipp.typ"
 #include "contributions/leo.typ"
 
