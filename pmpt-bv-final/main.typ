@@ -108,6 +108,16 @@ Typical RT60 values can vary widely depending on the type of environment. For ex
 // Room Acoustics and Image-based Prediction
 //     Why predicting RT60 from images is plausible (visual cues: size, materials, layout).
 //     Prior work (if any): vision-based acoustics inference.
+//
+
+== Room Acoustics and Image-based Prediction
+
+=== Plausibility of Predicting RT60 from Images
+Predicting RT60 from images is plausible because visual cues in a room’s appearance often correlate strongly with its acoustic characteristics. Key visual indicators such as room size, shape, surface materials, and furnishing density provide valuable information for estimating reverberation time. For instance, large rooms with hard, reflective surfaces like bare concrete or glass typically have longer RT60s, while smaller, carpeted spaces with soft furnishings tend to have shorter RT60s. The presence of diffusive elements, ceiling height, and spatial openness also contribute to acoustic behavior and are often clearly visible in images. With the increasing power of computer vision and deep learning, models can learn to associate such visual patterns with measured RT60 values, making image-based prediction a promising and intuitive approach to room acoustics analysis.
+
+=== Prior Work in this Field
+
+//
 // Machine Learning & CNNs
 //     Brief overview of CNNs.
 //     Transfer learning and augmentation.
