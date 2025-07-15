@@ -49,6 +49,7 @@
   It was observed that, despite the availability of extensive supporting materials, students experienced difficulties with the programming tasks. These challenges were not solely attributable to the complexity of the tasks themselves but were often related to additional factors, such as the need to learn a new programming language (C\#), which is required for development within the Unity game engine as well as the fact that the programming assignments frequently integrated multiple topics simultaneously. This integration made it difficult for students to isolate and focus on individual problems, thereby hindering their ability to develop a clear understanding of specific concepts. Furthermore, students frequently struggled to transfer theoretical knowledge — acquired primarily through textbooks and 2D illustrations — into practical implementations within a virtual 3D environment.
 
   These issues illustrate the need for a intermediate tool easing the transition from textbook to the virtual world. To address this, we propose the development of a learning game featuring node-based programming. This approach eliminates the prerequisite of mastering a new programming language, thereby allowing students to focus directly on implementing core concepts of computer animation. Moreover, by designing each level in a controlled manner, we can strategically select the instructional content and constrain the complexity of individual tasks. This targeted approach enables students to concentrate their efforts on specific learning objectives without the distraction of extraneous challenges.
+
   = Motivation
   // Why is learning Computer Animation important?
   // Why is there a steep learning curve?
@@ -56,8 +57,13 @@
   // How can we help students overcome these challenges?
   // Why we chose visual scripting?
   //
+  The motivation behind this project arises from the observed gap between theoretical knowledge and practical application in the computer animation course at TH Köln. While the existing course work provides a solid theoretical foundation, students often face difficulties when attempting to apply the theoretical concepts within the aforementioned practical programming tasks. These difficulties are compounded by the necessity to learn new programming languages and the integration of multiple challenging topics within a single assignment. To address these issues, this project aims to develop an educational tool that lowers the entry barrier to practical experimentation.
+
+  In the field of computer animation visual scripting as well as node-based interfaces in general have found widespread adaptation in hobbiest as well as professional software as shown in @related_works.
+
+  By offering a node-based programming environment within a carefully structured learning game, the tool allows students to focus on core animation principles without the added cognitive load of mastering a programming language and become familiar with node-based interfaces. Through a targeted, modular approach, the project seeks to facilitate a more intuitive and gradual transition from theoretical learning to practical implementation, thereby enhancing both comprehension and motivation in the study of computer animation.
 ])
-= Related Works
+= Related Works<related_works>
 // Visual Scripting
 // Visual Programming:
 //    Scratch
