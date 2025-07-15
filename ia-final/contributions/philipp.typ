@@ -50,12 +50,8 @@ Building upon what I learned from the key rewrite, I also implemented a demanded
 // this is also a stretch for now, but im confident this will be true by the end of the project
 === Time Tracking Methodology <philipp_time_methodology>
 
-Similar to Jonathan's approach, I tried to not overestimate my time spent on tasks and kept a rather conservative approach to time tracking. I would look at the time I started working on a task and the time I finished it, then subtracting the time I spent on breaks or other distractions. If I was not sure about the time I spent on a task, I would always round down about half an hour, ensuring that I did not overestimate my time spent on tasks. This approach allowed me to keep track of my time spent on tasks without overestimating it, ensuring that I had a realistic view of my contributions to the project.
-
-// Like Jonathan and Leo I also used the same Git-based time tracking tool, to estimate my time spent on programming tasks even before formal time tracking was introduced. This is further detailed in @jonathan_time_methodology.
-//^
-//|
-// not done yet, i have issues with the time tracking tool, will get some help and hopefully fix it soon
+Similar to Jonathan's approach, I tried to not overestimate my time spent on tasks and kept a rather conservative approach to time tracking. I would look at the time I started working on a task and the time I finished it, then subtracting the time I spent on breaks or other distractions. If I was not sure about the time I spent on a task, I would always round down about half an hour, ensuring that I did not overestimate my time spent on tasks. This approach allowed me to keep track of my time spent on tasks without overestimating it, ensuring that I had a realistic view of my contributions to the project. 
+Like Jonathan and Leo I also used the same Git-based time tracking tool, to estimate my time spent on programming tasks even before formal time tracking was introduced. This is further detailed in @jonathan_time_methodology.
 
 === Time Spent
 ]
