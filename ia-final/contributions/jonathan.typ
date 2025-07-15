@@ -70,7 +70,7 @@
 
   On May 1st, I added functionality for the MathFloat node to have an initial compute type and began preparing the Export Node for level-based exports. I adjusted the NumberInput component to parse both floats and integers, and I added custom labels for each compute type to provide context-specific information such as displaying "base" for logarithmic operations.
 
-  On May 2nd, I implemented the first iteration for passing values to the next frame through Export and Import nodes using a Zustand store. I created the NodeContextMenu component with initial functionality allowing for simple node duplication and deletion. The following day, I created the SelectionContextMenu with functionality to duplicate and delete multiple nodes simultaneously.
+  On May 2nd, I implemented the first iteration for passing values to the next frame through Export and Import nodes using a Zustand store. I created the NodeContextMenu component with initial functionality allowing for simple node duplication and deletion. The following day, I collaborated with Philipp Wendt on the SelectionContextMenu with functionality to duplicate and delete multiple nodes simultaneously.
 
   I enhanced the KeyPress functionality on May 4th by adding key press types for key down and released events to the key store and KeyPress node. I added highlighting to the KeyPress node when a key is pressed down, and I configured the MathFloat node to default to a specific compute type. On May 5th, I changed the time store behavior to use callback time functions instead of set values for improved performance.
 

@@ -63,24 +63,26 @@
 
   By offering a node-based programming environment within a carefully structured learning game, the tool allows students to focus on core animation principles without the added cognitive load of mastering a programming language and become familiar with node-based interfaces. Through a targeted, modular approach, the project seeks to facilitate a more intuitive and gradual transition from theoretical learning to practical implementation, thereby enhancing both comprehension and motivation in the study of computer animation.
 ])
-= Related Works<related_works>
-// Visual Scripting
-// Visual Programming:
-//    Scratch
-//    Unreal Engine Blueprints
-// Related Tools:
-//    State Machine Graphs (Unity, UE, Godot)
-//    Shader Graphs (Unity, UE, Godot)
-//    Blender Geometry Nodes
-//    More...
-// Edutainment Games:
-//    While True Learn (Visual Scripting)
-//    Exercism (Learning Programming)
-//    Duolingo (Bite Sized Learning)
-//    Kara (Beginner Programming through Gamified Lectures)
-//    CSS Battles (puzzles to learn Css and compete)
-//
-// Conclusion + Relation to our Tool
+#col([
+  = Related Works<related_works>
+  // Visual Scripting
+  // Visual Programming:
+  //    Scratch
+  //    Unreal Engine Blueprints
+  // Related Tools:
+  //    State Machine Graphs (Unity, UE, Godot)
+  //    Shader Graphs (Unity, UE, Godot)
+  //    Blender Geometry Nodes
+  //    More...
+  // Edutainment Games:
+  //    While True Learn (Visual Scripting)
+  //    Exercism (Learning Programming)
+  //    Duolingo (Bite Sized Learning)
+  //    Kara (Beginner Programming through Gamified Lectures)
+  //    CSS Battles (puzzles to learn Css and compete)
+  //
+  // Conclusion + Relation to our Tool
+])
 #pagebreak()
 = Project Planning
 // Distribution of Tasks
