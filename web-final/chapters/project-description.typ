@@ -160,16 +160,42 @@
 === Work Partitioning
 #table(
   columns: (1fr, 1fr, 1fr),
-  [*Event Name*],[*Input and Output*],[*Summary*],
-  [1. User starts the game],[User Input (in)],[Initialize game state and load the tutorial or main menu for the user.],
-  [2. User completes a tutorial level],[Tutorial Completion (out)],[Record completion, unlock next level or feature, and provide feedback to the user.],
-  [3. User creates or modifies nodes],[Node Data (in/out)],[Update the node graph with user inputs; validate connections and provide real-time feedback.],
-  [4. User requests help or hints],[Help Request (in)],[Provide contextual help or tooltips based on the current node or task.],
-  [5. Game evaluates node setup],[Node Graph Evaluation (internal)],[Process the node configuration to determine animation results and progress game state.],
-  [6. User completes a task],[Task Completion (out)],[Save progress, update user progress, and display success or error messages.],
-  [7. System logs telemetry data],[Telemetry Data (out)],[Collect data on node usage, errors, and time spent for analysis and future improvements.],
-  [8. User completes post-test surveys],[Survey Data (in)],[Store responses to usability and engagement questionnaires for analysis.],
-  [9. Game provides feedback],[Feedback Data (out)],[Deliver feedback based on performance, usability, and learning outcomes.],
+  [*Event Name*], [*Input and Output*], [*Summary*],
+  [1. User starts the game],
+  [User Input (in)],
+  [Initialize game state and load the tutorial or main menu for the user.],
+
+  [2. User completes a tutorial level],
+  [Tutorial Completion (out)],
+  [Record completion, unlock next level or feature, and provide feedback to the user.],
+
+  [3. User creates or modifies nodes],
+  [Node Data (in/out)],
+  [Update the node graph with user inputs; validate connections and provide real-time feedback.],
+
+  [4. User requests help or hints],
+  [Help Request (in)],
+  [Provide contextual help or tooltips based on the current node or task.],
+
+  [5. Game evaluates node setup],
+  [Node Graph Evaluation (internal)],
+  [Process the node configuration to determine animation results and progress game state.],
+
+  [6. User completes a task],
+  [Task Completion (out)],
+  [Save progress, update user progress, and display success or error messages.],
+
+  [7. System logs telemetry data],
+  [Telemetry Data (out)],
+  [Collect data on node usage, errors, and time spent for analysis and future improvements.],
+
+  [8. User completes post-test surveys],
+  [Survey Data (in)],
+  [Store responses to usability and engagement questionnaires for analysis.],
+
+  [9. Game provides feedback],
+  [Feedback Data (out)],
+  [Deliver feedback based on performance, usability, and learning outcomes.],
 )
 
 // === Competing Products
@@ -177,9 +203,9 @@
 #col[
 
   == Product Scenarios
-  
+
   This section presents a series of realistic narratives that illustrate how end users are expected to interact with the finished product. Each scenario describes specific tasks and goals from the user's perspective, providing a clear understanding of the product's functionality in practical use. These stories help align development efforts with user needs and guide testing to ensure the product meets its intended purpose
-  
+
   === Product Scenario  List
   + Introduction to Math Nodes:
     The user is introduced to the basic concept of math nodes and how to use them to solve simple equations.
@@ -202,10 +228,10 @@
   === Individual Product Scenarios
   + *Solving the Math Puzzle:*
     They start the application and see a raccoon standing in front of a wall with an equation. They need to use math nodes to build the equation and calculate the solution. They drag and connect math nodes to perform operations like addition, subtraction, multiplication, and division. Once the equation is complete, they feed the result into the export node's solution handle to verify the answer.
-    
+
   + *Moving the Raccoon:*
     They face a level where the raccoon wants to sit in a trash can. They use movement nodes to control the raccoon's position and guide it to the trash can. Once the raccoon reaches the trash can, the level is completed, demonstrating how to use nodes to move characters within the scene.
-    
+
   + *Creating a Time Transformation:*
     In this level, they are tasked with implementing a time transformation. They use time nodes to modify the speed or timing of animations or events. They adjust parameters and connect nodes to transform the flow of time, creating effects like slowing down or speeding up objects.
 
@@ -217,7 +243,7 @@
 
   + *Debugging Node Graphs*:
     If something doesn't work as expected, they review the node setup. They check connections and parameters to find errors or missing links. Through this process, they learn how to debug the node graph to ensure everything functions correctly.
-    
+
   === User Stories
 
   + *Introduction to Math Nodes*
@@ -258,10 +284,10 @@
 
   - *Subject Matter Experience:*
     Journeyman - Students typically have foundational knowledge of programming and computer science concepts, gained through coursework or self-study.
-  
+
   - *Technological Experience:*
     Journeyman - Comfortable with using software tools and interfaces, though experience with node-based logic editors may vary.
-  
+
   - *Other User Characteristics:*
     - *Physical abilities:* Generally able-bodied; accessibility support (e.g., keyboard navigation) still beneficial.
     - *Intellectual abilities:* Varies, but generally capable of logical reasoning and abstract thinking.
@@ -281,11 +307,11 @@
 
   - *Subject Matter Experience:*
     Master - Deep understanding of computer science, logic, and pedagogy.
-  
-  -  *Technological Experience:*
+
+  - *Technological Experience:*
     Journeyman to Master - Familiar with a variety of teaching tools and digital learning platforms.
-  
-  -  *Other User Characteristics:*
+
+  - *Other User Characteristics:*
     - *Attitude toward job:* Professionally invested in student success.
     - *Attitude toward technology:* Generally open, with practical expectations regarding usability and reliability.
     - *Education:* Advanced degrees in relevant fields.
@@ -319,10 +345,10 @@
   The key users—students within the course and faculty members overseeing the project—are expected to provide input primarily during the initial requirements gathering, prototype evaluations, and final presentation. Their contributions include domain expertise in educational goals, feedback on usability, and alignment with didactic objectives.
 
   Expected participation includes:
-  
-    - Faculty: Offering initial project framing, periodic feedback during development milestones, and final evaluation (Estimated time: \~4-6 hours total).
-    - Student Test Users: Engaging with the prototype in test runs to provide usability and comprehension feedback (Estimated time: \~1 hour per participant).
-  
+
+  - Faculty: Offering initial project framing, periodic feedback during development milestones, and final evaluation (Estimated time: \~4-6 hours total).
+  - Student Test Users: Engaging with the prototype in test runs to provide usability and comprehension feedback (Estimated time: \~1 hour per participant).
+
   This level of involvement is considered sufficient to determine and validate the necessary functional and non-functional requirements. Participation is organized around academic scheduling to minimize conflicts with routine responsibilities.
 
   === Maintenance Users and Service Technicians
