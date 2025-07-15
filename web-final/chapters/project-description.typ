@@ -68,7 +68,7 @@
   [3. User creates or modifies nodes],[Node Data (in/out)],[Update the node graph with user inputs; validate connections and provide real-time feedback.],
   [4. User requests help or hints],[Help Request (in)],[Provide contextual help or tooltips based on the current node or task.],
   [5. Game evaluates node setup],[Node Graph Evaluation (internal)],[Process the node configuration to determine animation results and progress game state.],
-  [6. User completes an task],[Task Completion (out)],[Save progress, update user stats, and display success or error messages.],
+  [6. User completes a task],[Task Completion (out)],[Save progress, update user progress, and display success or error messages.],
   [7. System logs telemetry data],[Telemetry Data (out)],[Collect data on node usage, errors, and time spent for analysis and future improvements.],
   [8. User completes post-test surveys],[Survey Data (in)],[Store responses to usability and engagement questionnaires for analysis.],
   [9. Game provides feedback],[Feedback Data (out)],[Deliver feedback based on performance, usability, and learning outcomes.],
@@ -80,7 +80,7 @@
   
   == Product Scenarios
   
-  This section presents a series of realistic narratives that illustrate how end users are expected to interact with the finished product. Each scenario describes specific tasks and goals from the user’s perspective, providing a clear understanding of the product’s functionality in practical use. These stories help align development efforts with user needs and guide testing to ensure the product meets its intended purpose
+  This section presents a series of realistic narratives that illustrate how end users are expected to interact with the finished product. Each scenario describes specific tasks and goals from the user's perspective, providing a clear understanding of the product's functionality in practical use. These stories help align development efforts with user needs and guide testing to ensure the product meets its intended purpose
   
   === Product Scenario  List
   + Introduction to Math Nodes:
@@ -103,10 +103,10 @@
   
   === Individual Product Scenarios
   + *Solving the Math Puzzle:*
-    They start the application and see a raccoon standing in front of a wall with an equation. They need to use math nodes to build the equation and calculate the solution. They drag and connect math nodes to perform operations like addition, subtraction, multiplication, and division. Once the equation is complete, they feed the result into the export node’s solution handle to verify the answer.
+    They start the application and see a raccoon standing in front of a wall with an equation. They need to use math nodes to build the equation and calculate the solution. They drag and connect math nodes to perform operations like addition, subtraction, multiplication, and division. Once the equation is complete, they feed the result into the export node's solution handle to verify the answer.
     
   + *Moving the Raccoon:*
-    They face a level where the raccoon wants to sit in a trash can. They use movement nodes to control the raccoon’s position and guide it to the trash can. Once the raccoon reaches the trash can, the level is completed, demonstrating how to use nodes to move characters within the scene.
+    They face a level where the raccoon wants to sit in a trash can. They use movement nodes to control the raccoon's position and guide it to the trash can. Once the raccoon reaches the trash can, the level is completed, demonstrating how to use nodes to move characters within the scene.
     
   + *Creating a Time Transformation:*
     In this level, they are tasked with implementing a time transformation. They use time nodes to modify the speed or timing of animations or events. They adjust parameters and connect nodes to transform the flow of time, creating effects like slowing down or speeding up objects.
@@ -118,29 +118,24 @@
     Building on earlier tasks, they combine math, movement, time, and export nodes to create more complex behaviors. They experiment with node connections to achieve the desired outcome, learning how different node types can work together to solve problems.
     
   + *Debugging Node Graphs*:
-    If something doesn’t work as expected, they review the node setup. They check connections and parameters to find errors or missing links. Through this process, they learn how to debug the node graph to ensure everything functions correctly.
-  
-    #todo("wahrscheinlich will der nazari mehr scenarios und idk ob die perspektive der narrative so funktioniert. das beispiel aus dem report macht das mit einer 'kunstfigur' mary und aus ihrer perspektive")
-
-    // P: Hab mal bisschen gepromptet und Spaß gehabt, gerne überarbeiten oder einfach so übernehmen ^^
-    // L: find ich sehr gut, denke man könnte das alter so +10 rechnen, (dann passt das auch zu der age group 20-30) und die nodes die bei lisa genannt werden gibts nicht :)
+    If something doesn't work as expected, they review the node setup. They check connections and parameters to find errors or missing links. Through this process, they learn how to debug the node graph to ensure everything functions correctly.
     
-  // === User Stories
+  === User Stories
 
-  // + *Introduction to Math Nodes*
-  //   _Sebastian learns the basics:_ Sebastian is a 16-year-old student who is working with the application for the first time. He starts the program and sees a raccoon standing in front of a wall with a simple equation like "5 + 3 = ?". Initially, he is somewhat confused by the node-based interface, but the tutorial guides him through the first steps. He learns how to add number nodes from the menu and connect them with an addition node. After a few attempts, he understands the concept of connection lines between nodes. He connects the two number nodes (5 and 3) to the inputs of the addition node and watches as the result (8) is automatically calculated. Finally, he connects the output of the addition node to the export node to confirm the solution. The raccoon jumps with joy, and Sebastian feels encouraged to continue.
+  + *Introduction to Math Nodes*
+    _Sebastian learns the basics:_ Sebastian is a 26-year-old student who is working with the application for the first time. He starts the program and sees a raccoon standing in front of a wall with a simple equation like "5 + 3 = ?". Initially, he is somewhat confused by the node-based interface, but the tutorial guides him through the first steps. He learns how to add number nodes from the menu and connect them with an addition node. After a few attempts, he understands the concept of connection lines between nodes. He connects the two number nodes (5 and 3) to the inputs of the addition node and watches as the result (8) is automatically calculated. Finally, he connects the output of the addition node to the export node to confirm the solution. The raccoon congratulates him, and Sebastian feels encouraged to continue.
 
-  // + *Moving the Raccoon*
-  //   _Leon navigates the raccoon:_ Leon, a 14-year-old gamer, faces a level where a raccoon stands in the middle of a room and a trash can waits in the corner. He must figure out how to move the raccoon there. First, he searches the node palette for movement nodes and finds value and export nodes. He experiments with entering different X and Y coordinates. After a bit of trial and error,  gets the position right. He is proud of his ability to understand the concepts of a coordinate system and adapt them to solve the level.
+  + *Moving the Raccoon*
+    _Leon navigates the raccoon:_ Leon, a 24-year-old gamer and computer animation beginner, faces a level where a raccoon stands in the middle of a room and a trashcan waits in the corner. He must figure out how to move the raccoon there. First, he searches the node palette for movement nodes, which do not exist, he then finds value and export nodes. He experiments with entering different X and Y coordinates. After a bit of trial and error,  gets the position right. He is proud of his ability to understand the concepts of a coordinate system and adapt them to solve the level.
 
-  // + *Creating a Time Transformation*
-  //   _Lisa experiments with time:_ Lisa, an art student with an interest in interactive media, is working on a level where an object rotates too quickly. She wants to slow down time to make the effect more dramatic. She researches online and finds various options like TimeScale, Delay, and Clock. Looking back into the Game, she is surprised to see none of the above provided as nodes. Studying the documentation, she notices, that she could just use a multiplication Node to apply a slowing factor. When she activates the export node by connecting it to her calculation, she sees the object's rotation unfold in beautiful slow motion.
+  + *Creating a Time Transformation*
+    _Lisa experiments with time:_ Lisa, an art student with an interest in interactive media, is working on a level where an object rotates too quickly. She wants to slow down time to make the effect more dramatic. She researches online and finds various keywords like TimeScale, Delay, and Clock. Looking back into the Game, she is surprised to see none of the above provided as nodes. Studying the documentation, she notices, that she could just use a multiplication Node to apply a slowing factor to the objects rotation. When she activates the export node by connecting it to her calculation, she sees the object's rotation unfold in beautiful slow motion.
 
-  // + *Exporting Complex Results*
-  //   _Marcus solves a complex problem:_ Marcus, a computer science student, has just finished building a node network that calculates the correct angle and speed needed to launch a projectile. His mathematical nodes have determined that the raccoon needs to jump at a 45-degree angle with a velocity of 12 units to reach the target platform. Now he needs to make this calculation actually trigger the raccoon's jump. He connects the final output of his calculation - the combined angle and velocity result - into the export node. At first, he's not sure if he's connected it correctly, so he double-checks that the connection line is properly attached to the export node's input handle. When he activates the export node, it sends the calculated values to the game system, which immediately causes the raccoon to perform the precise jump he calculated. The raccoon lands perfectly on the target platform, and a door unlocks, allowing progression to the next level. Marcus has successfully learned how to feed his computational results into an export node to trigger the intended game action.
+  + *Exporting Complex Results*
+    _Marcus solves a complex problem:_ Marcus, a computer science student, has just finished building a node tree that calculates the correct angle and speed needed to launch a projectile. His mathematical nodes have determined that the raccoon needs to jump at a 45-degree angle with a velocity of 12 units to reach the target platform. Now he needs to make this calculation actually trigger the raccoon's jump. He connects the final output of his calculation - the combined angle and velocity result - into the export node. At first, he's not sure if he's connected it correctly, so he double-checks that the connection line is properly attached to the export node's input handle. When he activates the export node, it sends the calculated values to the game system, which immediately causes the raccoon to perform the precise jump he calculated. The raccoon lands perfectly on the target platform, and a door unlocks, allowing progression to the next level. Marcus has successfully learned how to feed his computational results into an export node to trigger the intended game action.
 
-  // + *Debugging Node Connections*
-  //   _Anna finds the bug:_ Anna, a methodical programmer, has built a complex node network, but it doesn't work as expected. The raccoon should move while changing color, but instead it just stays still and blinks. She begins to debug systematically by checking each node individually. First, she tests the movement node systems in isolation and finds that they function correctly. Then she checks the color nodes and discovers that they also work properly. The problem lies in the connection between both systems - she accidentally connected the output of the color node to the position input of the export node, instead of the correct color handle. She corrects the connection. After the correction, the raccoon moves as planned while changing color. Anna has learned an important lesson about the importance of correct node connections.
+  + *Debugging Node Connections*
+    _Anna finds the bug:_ Anna, a methodical programmer, has built a complex node tree, but it doesn't work as expected. The raccoon should move while changing color, but instead it just stays still and blinks. She begins to debug systematically by checking each node individually. First, she tests the movement node systems in isolation and finds that they function correctly. Then she checks the color nodes and discovers that they also work properly. The problem lies in the connection between both systems - she accidentally connected the output of the color node to the position input of the export node, instead of the correct color handle. She corrects the connection. After the correction, the raccoon moves as planned while changing color. Anna has learned an important lesson about the importance of correct node connections.
 
 
   == Stakeholders
@@ -164,10 +159,10 @@
     Learners engaging with the interactive system to solve logic and programming tasks as part of an educational experience.
     
   - *Subject Matter Experience:*
-    Journeyman – Students typically have foundational knowledge of programming and computer science concepts, gained through coursework or self-study.
+    Journeyman - Students typically have foundational knowledge of programming and computer science concepts, gained through coursework or self-study.
   
   - *Technological Experience:*
-    Journeyman – Comfortable with using software tools and interfaces, though experience with node-based logic editors may vary.
+    Journeyman - Comfortable with using software tools and interfaces, though experience with node-based logic editors may vary.
   
   - *Other User Characteristics:*
     - *Physical abilities:* Generally able-bodied; accessibility support (e.g., keyboard navigation) still beneficial.
@@ -176,7 +171,7 @@
     - *Attitude toward technology:* Positive, though expectations of intuitive UI are high.
     - *Education:* Enrolled in higher education programs (e.g., Computer Science, Media Technology).
     - *Linguistic skills:* Proficient in English or German (UI is in english, as is most computer animation software).
-    - *Age group:* Typically 20–30 years old.
+    - *Age group:* Typically 20-30 years old.
     - *Gender:* Mixed (primarly male)
     - *Motivation:* To learn and understand programming through interactive, hands-on activities in a gamified environment.
   
@@ -187,10 +182,10 @@
     Facilitators who may use the tool to demonstrate concepts or assign exercises to students.
   
   - *Subject Matter Experience:*
-    Master – Deep understanding of computer science, logic, and pedagogy.
+    Master - Deep understanding of computer science, logic, and pedagogy.
   
   -  *Technological Experience:*
-    Journeyman to Master – Familiar with a variety of teaching tools and digital learning platforms.
+    Journeyman to Master - Familiar with a variety of teaching tools and digital learning platforms.
   
   -  *Other User Characteristics:*
     - *Attitude toward job:* Professionally invested in student success.
@@ -215,7 +210,7 @@
 
   Expected participation includes:
   
-    - Faculty: Offering initial project framing, periodic feedback during development milestones, and final evaluation (Estimated time: \~4–6 hours total).
+    - Faculty: Offering initial project framing, periodic feedback during development milestones, and final evaluation (Estimated time: \~4-6 hours total).
     - Student Test Users: Engaging with the prototype in test runs to provide usability and comprehension feedback (Estimated time: \~1 hour per participant).
   
   This level of involvement is considered sufficient to determine and validate the necessary functional and non-functional requirements. Participation is organized around academic scheduling to minimize conflicts with routine responsibilities.
