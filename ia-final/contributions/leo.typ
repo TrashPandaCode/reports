@@ -34,10 +34,8 @@
 
   Overall, while design was not my designated responsibility, I contributed meaningfully throughout the phase, especially in shaping the layout and structure of core parts of the user experience.
 
-  #todo("assets")
-
   === Development<leo_dev_phase>
-
+  ==== Initial Setup and Architecture (April 8-16)
   // - initialized project on april 8th using bun, vite, typescript and react
   // - also added react flow and tailwind
   // - on april 14th I also added react-router in framework mode, which enabled us to do bundle splitting and thus load the node editor only when the user navigates to the game route.
@@ -59,6 +57,8 @@
 
   I initialized the project on April 8th, setting up the foundation with Bun, Vite, TypeScript, and React. Early on, I also integrated React Flow and Tailwind CSS to support the visual programming interface and styling. On April 14th, I added React Router in framework mode, a key architectural decision that enabled route-based code splitting—allowing us to load the node editor only when the user navigates to the game route. These early tech stack decisions were crucial and, although made largely independently, were never challenged by the team. The tech stack work package was scheduled to run until April 16th, leaving ample time for discussion and feedback, which unfortunately never occurred.
 
+
+  ==== Landing Page and Core Features (April 20-30)
   As described in my design contributions (@leo_des_phase), I began implementing the landing page on April 20th after a period of project inactivity (from the 14th to the 20th). I also refactored Jonathan's `getKaplayContext` method, converting it into a singleton to fix a bug that occured with the Kaplay version we used at that point. I continued iterating on the landing page, adding a header, footer, and structured content sections.
 
   During this time, I also styled the node editor interface, including custom styling for nodes and number input fields, with added constraints to allow only numerical values. To manage state cleanly across the node editor, I introduced Zustand into the project and created the initial `timeStore`, which shared game time and delta time from Kaplay with the node editor.
@@ -67,6 +67,7 @@
 
   Toward the end of April, on the 29th, I began work on the documentation page, which I developed entirely on my own. I implemented dynamic loading of Markdown files, built a sidebar for navigation, and added breadcrumbs to aid user orientation. The minimum viable product (MVP) of the documentation page was completed by April 30th.
 
+  ==== Documentation and Editor Enhancements (May)
   // may
   // - initially node documentation was intended as a popup in the node editor
   // - this was then changed to a seperate page
@@ -117,6 +118,7 @@
 
   Lastly, I began work on a basic documentation search feature that at this stage matches only titles. I also made several UX improvements to the sidebar, including automatic opening and collapsing of sections based on navigation state.
 
+  ==== Advanced Features and Responsive Design (June)
   //june
   // - cleaning up carousel component on the landing page together with jonathan
   // - added categories and difficulty to the level-cards component on the landing page using icons created by jonathan
@@ -178,11 +180,17 @@
 
   Alongside this, I rewrote the gameHelper file to create a more reliable, consistent, and type-safe interface to the game logic. I also introduced a `displayName` property to the `ModifiableGameObject` type so the same object could be reused across levels with context-appropriate labels in the node editor.
 
-  Throughout development, I cleaned up and fixed bugs in level content and metadata, and created the "reverse" level—based on Jonathan's linear level—which required a time transformation to solve. I also designed and created new pixel art assets: a "soap" item for the inverse kinematics level and a box for the loop level. I contributed dialog and level guide content for various levels, including inverse, linear, calculator, reverse, forward, playground, and move.
+  Throughout development, I cleaned up and fixed bugs in level content and metadata, and created the "reverse" level—based on Jonathan's linear level—which required a time transformation to solve. I also designed and created two new pixel art assets: a "soap" item for the inverse kinematics level and a "box" for the loop level. I contributed dialog and level guide content for various levels, including inverse, linear, calculator, reverse, forward, playground, and move.
 
   To improve privacy and performance, I removed our dependency on Google Fonts and replaced it with a self-hosted version of the typefaces. I implemented collapsible FAQ sections, updated the tutorial to reference the level guides, and added doc-strings to large portions of both my own and others' code. To track documentation quality, I added a coverage script that analyzes how much of the codebase is documented, then raised coverage to over 90% by adding additional comments and annotations.
 
   Lastly, I returned to the landing page and enriched its content to better introduce and communicate the purpose of the project.
+
+  ==== Maintenance and Code Quality
+
+  Throughout the development process, I took on significant responsibilities for maintaining code quality and project organization. I regularly reviewed and edited pull requests from team members, ensuring code consistency and catching potential issues before they were merged into the main branch. I also organized and cleaned up the project's issue tracker, categorizing bugs, feature requests, and tasks to keep the development process structured and manageable.
+
+  When broken or incomplete commits made it to the main branch, I too took the initiative to fix them promptly to maintain project stability. Additionally, I frequently cleaned up code left by other team members, refactoring unclear implementations, removing dead code, and improving overall code organization and maintainability. This ongoing maintenance work ensured that the codebase remained clean and comprehensible as the project evolved.
 
   === Documentation<leo_doc_phase>
 ]

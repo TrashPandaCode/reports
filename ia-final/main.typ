@@ -36,15 +36,15 @@
 #col([
   = Introduction
 
-  In the modern world, computers are no longer limited to performing purely numerical computations. Over the past century, methods have been developed that enable computers to simulate a wide range of real-world phenomena and translate these simulations into rendered images or animations @noauthor_history_2025.
+  In the modern world, computers are no longer limited to performing purely numerical computations. Over the past century, methods have been developed that enable computers to simulate a wide range of real-world phenomena and translate these simulations into rendered images or animations @HistoryComputerAnimation2025.
 
   The discipline concerned with the digital generation of moving images is referred to as *computer animation*. It constitutes a fundamental skill in various domains, including game development, film production, and interactive media.
 
   Computer animation encompasses a wide range of topics, some of which have been well-established for decades, while others remain active areas of ongoing research. As the field continues to advance, the complexity and breadth of knowledge required make it increasingly challenging for non-experts to keep pace with current developments. For this reason, computer animation has become an integral part of academic education at universities today.
 
-  At the Cologne University of Applied Sciences (TH Köln), computer animation is taught as part of the Bachelor's program in Media Technology. Since 2005, this subject has been an integral component of the curriculum, aiming to provide students with both a theoretical and practical foundation in this interdisciplinary field @grunvogel_einfuhrung_2024.
+  At the Cologne University of Applied Sciences (TH Köln), computer animation is taught as part of the Bachelor's program in Media Technology. Since 2005, this subject has been an integral component of the curriculum, aiming to provide students with both a theoretical and practical foundation in this interdisciplinary field @gruenvogelEinfuehrungComputeranimationMethoden2024.
 
-  The computer animation course taught at TH Köln is structured into four main areas: animation systems, object animation, character animation, and procedural animation @grunvogel_einfuhrung_2024. Throughout the course, students engage with practical programming exercises designed to reinforce the theoretical concepts covered. These exercises involve, for example, the programmatic implementation of Bézier curves within the Unity engine. To support the learning process, these assignments are supplemented by a comprehensive textbook covering all relevant topics, as well as concise instructional materials that provide guidance on the specific tasks.
+  The computer animation course taught at TH Köln is structured into four main areas: animation systems, object animation, character animation, and procedural animation @gruenvogelEinfuehrungComputeranimationMethoden2024. Throughout the course, students engage with practical programming exercises designed to reinforce the theoretical concepts covered. These exercises involve, for example, the programmatic implementation of Bézier curves within the Unity engine. To support the learning process, these assignments are supplemented by a comprehensive textbook covering all relevant topics, as well as concise instructional materials that provide guidance on the specific tasks.
 
   It was observed that, despite the availability of extensive supporting materials, students experienced difficulties with the programming tasks. These challenges were not solely attributable to the complexity of the tasks themselves but were often related to additional factors, such as the need to learn a new programming language (C\#), which is required for development within the Unity game engine as well as the fact that the programming assignments frequently integrated multiple topics simultaneously. This integration made it difficult for students to isolate and focus on individual problems, thereby hindering their ability to develop a clear understanding of specific concepts. Furthermore, students frequently struggled to transfer theoretical knowledge — acquired primarily through textbooks and 2D illustrations — into practical implementations within a virtual 3D environment.
 
@@ -89,59 +89,89 @@
 // Einteilung Gruppenmitglieder
 // Project Management (Discord, GitHub, Typst, Figma)
 
-= Background
-== 2D vs. 3D
-// Computer Animation is dimensionless
-// TH Köln CA course is mostly 3D
-// CA script examples are 2D
-// 2D and 3D in Games
-//    2D games are still relevant
-// Arguments for 3D
-//    Closely related to the CA coursework
-//    Quaternions have use
-// Arguments for 2D
-//    Easier coordinate system
-//    Easier to navigate
-//    Rendering performance
-//    Sprites not 3D Models
-//    Implementation is easier
-//    Asset creation is easier
-// Arguments for 2.5D/Isometric
-//    Unique perspective
-//    rendering performance
-//    confusing coordinate system
-//    steep learning curve
-// Explaining our decision
-== Web vs. Native
-== Design of Visual Scripting System
-== Target Audience
-// evaluate learning needs and prior knowledge of the target audience
-The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
-== Didactic Concept
+#col[
+  = Background
+  == 2D vs. 3D
+  // Computer Animation is dimensionless
+  // TH Köln CA course is mostly 3D
+  // CA script examples are 2D
+  // 2D and 3D in Games
+  //    2D games are still relevant
+  // Arguments for 3D
+  //    Closely related to the CA coursework
+  //    Quaternions have use
+  // Arguments for 2D
+  //    Easier coordinate system
+  //    Easier to navigate
+  //    Rendering performance
+  //    Sprites not 3D Models
+  //    Implementation is easier
+  //    Asset creation is easier
+  // Arguments for 2.5D/Isometric
+  //    Unique perspective
+  //    rendering performance
+  //    confusing coordinate system
+  //    steep learning curve
+  // Explaining our decision
 
-The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
+  One of the fundamental decisions we hade to make during the early design phase was choosing the dimensionality of our game, whether it should be 2D, 2.5D (isometric), or full 3D. This choice had broad implications, affecting not only how the game would look and feel, but also the complexity of implementation, the learning curve for users, and how well it would align with the educational goals of the project.
 
-The didactic concept of Dumpster Diving was developed specifically with our target audience in mind. It supports their learning needs through accessible, playful, and low-pressure design choices, which are detailed in the following section.
+  At first glance, a 3D implementation might seem like the most natural choice, especially given that the Computer Animation course at TH Köln primarily focuses on 3D concepts. Particularly transformations, quaternions, and rotation matrices are covered in 3D space @gruenvogelEinfuehrungComputeranimationMethoden2024. However, while the course content is rooted in 3D theory, many of the examples in the official course script are presented in 2D. This contradiction created a conceptual ambiguity that we had to resolve: should our game align with the theoretical 3D emphasis of the course, or follow the practical 2D approach taken in its teaching materials?
 
-The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
+  We also explored the idea of a 2.5D or isometric design, which could have provided a more stylized and visually engaging interface while avoiding the full overhead of a true 3D system. However, we quickly realized that this approach would introduce a host of challenges. Isometric projections come with a non-intuitive coordinate system that can confuse users, especially in an educational context. Additionally, while 2.5D may offer better aesthetics, it still brings complexity in terms of rendering, navigation, and interaction that felt unnecessary for our learning goals.
 
-Each level introduces new tools and mechanics progressively, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
+  Ultimately, we chose to implement the game in 2D. This decision was driven by several factors supported by research in educational game design. First, 2D provides a clear and accessible visual space in which users can focus on the logic and structure of their node-based programs without being distracted or overwhelmed by spatial navigation @mayerCambridgeHandbookMultimedia2022. Second, 2D drastically simplifies development. We could use sprites instead of 3D models, reduce performance demands, and avoid dealing with camera systems or perspective corrections. Most importantly, 2D allowed us to prioritize educational clarity. Concepts such as translation, scaling, and interpolation are easier to visualize and understand in a flat, two-dimensional space due to it simply having fewer dimensions to consider. This aligns with the principles of cognitive load theory @swellerCognitiveLoadProblem1988, which suggests that reducing extraneous complexity can enhance learning outcomes.
 
-The use of narrative and playful interaction fosters an emotional connection between the player and the raccoon character, that supports engagement and learning. Through dialogues, humor, and in-world challenges, the game creates a sense of companionship and narrative continuity, which can enhance intrinsic motivation by making tasks feel personally meaningful and emotionally resonant @deciIntrinsicMotivationSelfDetermination1985.
+  Despite its simplicity, 2D remains relevant and effective in modern game design, particularly for browser-based educational tools like ours. The decision to go with 2D allowed us to make quicker progress, ensure higher usability, and remain focused on the game's core purpose: to help students understand animation principles through interaction and experimentation, not to navigate a complex virtual world. In this sense, the choice of 2D was not a limitation, but a strategic and pedagogically motivated simplification.
 
-Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons' behavior.
+  == Web vs. Native
+  Another key decision we faced was choosing between a web-based or native desktop application. This choice had significant implications for accessibility, distribution, development complexity, and long-term maintainability of the educational tool.
 
-Assessment is embedded within the gameplay. Rather than quizzes or performance metrics, success is measured by solving puzzles, using tools appropriately, and being able to adapt solutions when conditions change. This approach reflects the formative assessment paradigm @blackAssessmentClassroomLearning1998, which values feedback and process over outcomes.
+  Native desktop applications offer certain advantages, particularly in terms of performance and system integration. They can leverage the full capabilities of the operating system, provide faster execution speeds, and offer more sophisticated file system access. For a computer animation learning tool, native applications could theoretically provide better rendering performance and more seamless integration with existing development environments that students might already be familiar with.
 
-From a user experience standpoint, Dumpster Diving uses visual metaphors and interaction patterns that are accessible to novice programmers, inspired by prior educational systems like Scratch @resnickScratchProgrammingAll2009 and Blockly @fraserTenThingsWeve2015. The system design also considers cognitive load theory @swellerCognitiveLoadProblem1988, aiming to reduce extraneous complexity while keeping challenges meaningful and engaging.
+  However, we ultimately chose to develop Dumpster Diving as a web-based application for several compelling reasons that aligned with our educational objectives and target audience needs. The most significant advantage of a web-based approach is its inherent accessibility. Students can access the tool from any device with a modern web browser, without requiring installation permissions, administrative rights, or specific operating system compatibility. This is particularly important in educational environments where students may use various devices - from personal laptops to university computers with restricted installation policies. The web-based approach eliminates potential barriers to entry that could prevent students from engaging with the learning material.
 
-To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with the concept of exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
+  Additionally, web applications allow for immediate deployment of updates, bug fixes, and new content without requiring users to download and install updates manually. This is particularly valuable for an educational tool where improvements and corrections need to be rapidly distributed to all users. Instructors can ensure that all students are always working with the most current version of the learning materials.
 
-In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
-== Learning Outcomes
-// Abstract Learning Goals
-// Familiarity with node systems (secondary)
-// logical thinking
+  By choosing web technologies, we could leverage the extensive ecosystem of web development tools, libraries, and frameworks. This decision aligned well with our choice to use React and React Flow for the node-based programming interface, as these technologies are specifically designed for web environments and provide robust, well-documented solutions for our use case. Web applications can be easily integrated into existing educational management systems, embedded in course websites, or shared through simple URLs. This seamless integration supports the pedagogical goal of making the tool a natural extension of the existing course materials rather than a separate application that students must learn to navigate independently.
+
+  Web development also allowed our team to focus on a single codebase rather than maintaining separate versions for different operating systems. This efficiency was crucial given our project timeline and team size constraints. The web platform also provides excellent debugging tools and development workflows that accelerated our development process. Contemporary web browsers offer sophisticated capabilities that were previously exclusive to native applications. Features like WebGL for graphics rendering, Web Workers for background processing, and advanced JavaScript APIs provide sufficient performance for our educational use case while maintaining the accessibility benefits of web deployment.
+
+  We also considered hybrid approaches such as Electron @ElectronElectron2025 or Tauri @TauriappsTauri2025, which allow developers to package web applications as native desktop applications. These frameworks offer a middle ground by combining web technologies with native distribution, potentially providing benefits like offline functionality, file system access, and familiar desktop integration while maintaining a single codebase. However, these solutions would have introduced unnecessary complexity for our specific use case. Electron applications, in particular, are known for their significant memory overhead and larger file sizes, which could create installation barriers similar to those we sought to avoid with traditional native applications. More importantly, our educational tool does not require the advanced system integration features that would justify the additional complexity of a hybrid approach. The core functionality of Dumpster Diving—node-based programming, visual feedback, and educational content delivery—is well-suited to modern web browsers and does not benefit meaningfully from native packaging. By staying with a pure web approach, we maintained the simplicity of direct browser access while avoiding the distribution overhead that hybrid solutions would have introduced.
+
+  The decision to develop for the web rather than as a native application ultimately supported our primary objective of creating an accessible, easy-to-use educational tool that could reach the broadest possible audience of students. While native applications might offer marginal performance advantages, the accessibility, distribution, and maintenance benefits of web deployment far outweighed these considerations for our specific use case and educational context.
+
+  == Design of Visual Scripting System
+  == Target Audience
+  // evaluate learning needs and prior knowledge of the target audience
+  The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+  == Didactic Concept
+
+  The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
+
+  The didactic concept of Dumpster Diving was developed specifically with our target audience in mind. It supports their learning needs through accessible, playful, and low-pressure design choices, which are detailed in the following section.
+
+  The pedagogical design is rooted in constructivist learning theory @papertMindstormsChildrenComputers1993, which holds that learners build new knowledge through active experimentation and interaction with their environment. In Dumpster Diving, players construct logic visually using node-based programming, a method that aligns with cognitive apprenticeship @collinsCognitiveApprenticeshipTeaching1989, as it externalizes thought processes and encourages scaffolding of increasingly complex concepts.
+
+  Each level introduces new tools and mechanics progressively, where learners revisit familiar ideas with increasing sophistication. Initial levels are simpler and focus on basic computer animation principles, while later challenges require creative synthesis of learned skills - often without explicit instruction - encouraging learners to test, iterate, and debug their solutions.
+
+  The use of narrative and playful interaction fosters an emotional connection between the player and the raccoon character, that supports engagement and learning. Through dialogues, humor, and in-world challenges, the game creates a sense of companionship and narrative continuity, which can enhance intrinsic motivation by making tasks feel personally meaningful and emotionally resonant @deciIntrinsicMotivationSelfDetermination1985.
+
+  Crucially, Dumpster Diving is designed to foster low-stakes exploration. Players are encouraged to experiment without penalty, and feedback is immediate and visual. This aligns with research in constructionist education @papertMindstormsChildrenComputers1993, emphasizing that deep understanding comes from designing and building tangible outputs — in this case, animated logic systems that visibly affect the raccoons' behavior.
+
+  Assessment is embedded within the gameplay. Rather than quizzes or performance metrics, success is measured by solving puzzles, using tools appropriately, and being able to adapt solutions when conditions change. This approach reflects the formative assessment paradigm @blackAssessmentClassroomLearning1998, which values feedback and process over outcomes.
+
+  From a user experience standpoint, Dumpster Diving uses visual metaphors and interaction patterns that are accessible to novice programmers, inspired by prior educational systems like Scratch @resnickScratchProgrammingAll2009 and Blockly @fraserTenThingsWeve2015. The system design also considers cognitive load theory @swellerCognitiveLoadProblem1988, aiming to reduce extraneous complexity while keeping challenges meaningful and engaging.
+
+  To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with the concept of exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
+
+  In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
+  == Learning Outcomes
+  // Abstract Learning Goals
+  // Familiarity with node systems (secondary)
+  // logical thinking
+]
+
 #pagebreak()
 = Technical Challenges & Solutions
 == Use of React and React Flow <techstack_react_reactflow>
@@ -278,15 +308,15 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 
   During the planning phase, time was allocated to online group meetings, in-person presentations, and the creation and iterative refinement of project planning and presentation-related documents.
 
-  Since we utilized the online Typst editor @noauthor_typst_nodate, whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
+  Since we utilized the online Typst editor @TypstComposePapers, whose free version does not support version control, individual contributions to project planning and presentation-related documents were not recorded. Consequently, it is not possible to provide an accurate estimation of the time spent on these tasks, necessitating the use of rough estimates.
 
-  Online meetings were conducted via Discord @noauthor_discord_nodate, which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
+  Online meetings were conducted via Discord @DiscordGroupChat, which displays call durations in private chats but not within servers. As the majority of meetings took place on Discord servers, only rough estimations — similar to those used for document-related work — can be applied here.
 
   In contrast, in-person meetings can be precisely quantified, as they were scheduled with clearly defined start and end times.
 
   === Concept and Design Phase
 
-  The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma @noauthor_figma_nodate which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
+  The concept and design phase falls victim to the same issues as the planning phase. Our work was either done in Typst or Figma @FigmaCollaborativeInterface which also does not include version control nor does it track time spend on documents and our meetings where held in Discord servers. Meaning, rough estimates will be used to quantify the time spend on our efforts in this phase.
 
   === Development and Documentation Phase
 
