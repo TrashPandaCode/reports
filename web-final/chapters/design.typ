@@ -9,7 +9,7 @@
   == System Design
   === Design goals
 
-  The primary design goals for the system focus on user engagement, educational clarity, and performance responsiveness, in line with the product’s role as an interactive, browser-based learning tool. The following goals are prioritized:
+  The primary design goals for the system focus on user engagement, educational clarity, and performance responsiveness, in line with the product's role as an interactive, browser-based learning tool. The following goals are prioritized:
 
   - Responsiveness and smooth interaction:
     - The system should provide immediate feedback to user actions (e.g., node placement, simulation control), with minimal lag, to maintain immersion and reduce frustration.
