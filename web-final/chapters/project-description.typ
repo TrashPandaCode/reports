@@ -157,6 +157,10 @@
 #figure(caption: "Context-Diagram", image("../images/context.svg"))
 
 #pagebreak()
+=== Development Model
+To structure our development process, we initially oriented ourselves towards the waterfall model, as it provided a clear framework for organizing the project into distinct phases: requirement analysis, system design, implementation, testing, and evaluation. This sequential approach helped us to define responsibilities, set priorities, and maintain a shared understanding of the overall direction within the team. In the early stages, this clarity was particularly valuable when specifying the learning objectives, designing the game mechanics, and planning the user interface architecture.
+
+However, given the exploratory character of the project and the inherent unpredictability of user-centered design // hier kanban rein
 === Work Partitioning
 
 Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
