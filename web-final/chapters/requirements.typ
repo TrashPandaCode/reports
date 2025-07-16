@@ -7,7 +7,6 @@
 #col[
   == Product Use Cases
   === Use Case Diagrams
-  === Product Use Case List
   === Individual Product Use Cases
   == Functional Requirements
   
