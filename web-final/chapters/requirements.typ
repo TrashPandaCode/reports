@@ -10,8 +10,9 @@
   
   #figure(caption: [Use Case Diagram], image("../images/use-case-diagram.png"))
   === Individual Product Use Cases
-  
+
   == Functional Requirements
+  #todo("we are really unsure what to put here")
 
   // == Data Requirements
 
