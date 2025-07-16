@@ -25,8 +25,8 @@
 )
 
 #outline(depth: 3)
-#outline(title: [Figures], target: figure.where(kind: image))
-#outline(title: [Tables], target: figure.where(kind: table))
+#outline(title: [List of Figures], target: figure.where(kind: image))
+#outline(title: [List of Tables], target: figure.where(kind: table))
 #todo_outline
 #pagebreak()
 
