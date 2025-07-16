@@ -114,9 +114,9 @@
   *Fit Criteria:*
     - At least 80% of a test group of students aged 20-30 (typical university age) shall be able to complete specified tasks within 15 minutes during usability testing.
     - A post-use survey shall indicate that 75% of users feel confident using the product independently.
-  #todo("wollen wir uns hier wirklich festlegen auf irgendwelche zahlen bei user testing?")
   // P: I would not go with specific numbers and rather more vague descriptions like above. This might change when we do more user testing.
   //L: get the point, but they prob. want us the specify as a basis for evaluation
+  //L: ich sag einfach mal, das die zahlen so passen
   
   === Personalization and Internationalization Requirements
   The product currently offers minimal personalization and does not support internationalization features. The design focuses on providing a consistent experience for a primarily English-speaking academic audience, with limited options for user customization or language selection.
@@ -167,12 +167,10 @@
 
   *Fit Criteria:*
     - Critical interface elements such as text, the nodes themselves and their connections maintain a minimum contrast ratio of 4.5:1.
-    - A screen reader test confirms that node names and connections are identifiable via accessible labels in 80% of common use cases.
+    - Texts are identifiable using a screen reader in 80% of common use cases.
 
-  #todo("bei den fit criteria gucken ob das so wirklich realistisch ist, dass wir die sachen einhalten")
   // P:  Screenreader Thingy makes me anxious, would remove this point if we cant implement the required accessibility
   //L: yess honestly good point, maybe exchange for a different criteria?
-  
   
   // === User Documentation Requirements
   // === Training Requirements

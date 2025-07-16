@@ -154,11 +154,14 @@
 
   The application is built upon a modern, modular React-based front-end ecosystem. It integrates visual programming interfaces, simulation frameworks, and state management tailored for interactive, node-based workflows. Development is supported by comprehensive tooling for code quality, consistency, and performance. All systems together provide the foundation for a highly interactive and educational web-based platform. Understanding these adjacent systems helps clarify how our game will be used, how it complements existing resources, and what interfaces or data exchanges are necessary. Defining this context ensures the product aligns with user workflows, educational goals, and technical ecosystems, preventing isolated development and enhancing overall usability and adoption.
 ]
-#figure(caption: "The technologies we rely on", image("../images/context.svg"))
+#figure(caption: "Context-Diagram", image("../images/context.svg"))
 
 #pagebreak()
 === Work Partitioning
-#table(
+
+Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
+
+#figure(caption: [Event List], table(
   columns: (1fr, 1fr, 1fr),
   [*Event Name*], [*Input and Output*], [*Summary*],
   [1. User starts the game],
@@ -196,7 +199,7 @@
   [9. Game provides feedback],
   [Feedback Data (out)],
   [Deliver feedback based on performance, usability, and learning outcomes.],
-)
+))
 
 // === Competing Products
 
@@ -320,24 +323,30 @@
 ]
 
 === Priorities Assigned to Users
-#table(
-  columns: (1fr, 1fr, 1fr, 3fr),
-  table-header("User Category", "Priority", "Percentage of Total Users", "Justification"),
-  [*University Students*],
-  [Key Users],
-  [\~85%],
 
-  [Students are the primary audience and main users. The product’s success is defined by its ability to engage them and support their learning. Their feedback and experience are essential to shaping usability and feature development.],
-  [*Instructors / Teaching Staff*],
-  [Secondary Users],
-  [\~10%],
+The following table summarizes the user categories, their priorities, and justifications for these priorities. This helps clarify which users are most critical to the project's success and how their needs shape development decisions.
 
-  [While not the main users, instructors influence adoption in academic settings. Their approval is important for integration into courses, but they use the product less frequently. Their requirements are important but take second place to student needs in case of conflict.],
-  [*Casual Viewers / Passers-by*],
-  [Unimportant Users],
-  [\~5%],
+#figure(
+  caption: [Users by Priority],
+  table(
+    columns: (1fr, 1fr, 1fr, 3fr),
+    table-header("User Category", "Priority", "Percentage of Total Users", "Justification"),
+    [*University Students*],
+    [Key Users],
+    [\~85%],
 
-  [These users may briefly interact with the system during demonstrations or events but are not part of the intended user base. Their input does not guide product development or requirements.],
+    [Students are the primary audience and main users. The product's success is defined by its ability to engage them and support their learning. Their feedback and experience are essential to shaping usability and feature development.],
+    [*Instructors / Teaching Staff*],
+    [Secondary Users],
+    [\~10%],
+
+    [While not the main users, instructors influence adoption in academic settings. Their approval is important for integration into courses, but they use the product less frequently. Their requirements are important but take second place to student needs in case of conflict.],
+    [*Casual Viewers / Passers-by*],
+    [Unimportant Users],
+    [\~5%],
+
+    [These users may briefly interact with the system during demonstrations or events but are not part of the intended user base. Their input does not guide product development or requirements.],
+  ),
 )
 
 #col[
