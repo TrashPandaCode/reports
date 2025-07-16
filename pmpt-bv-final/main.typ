@@ -28,7 +28,10 @@
 #set heading(numbering: "1.")
 
 // =================================================================
+= Abstract
+This project explores the prediction of reverberation time (RT60) from single images of office rooms at Technische Hochschule Köln. RT60 is a key parameter in room acoustics, influencing sound clarity and spatial audio rendering in applications like AR and XR. Traditional measurement methods are complex and time-consuming, limiting their use in real-time scenarios. By leveraging computer vision and deep learning, we aim to predict RT60 values using visual cues from room images, enhancing the realism of virtual environments. Our approach combines synthetic data augmentation with real-world validation to address challenges in acoustic property estimation.
 
+#v(1cm)
 = Introduction
 
 // Problem Statement
@@ -68,6 +71,8 @@
 #col[
 == Reverberation Time (RT60)
 Reverbaration Time describes the Time it takes for sound to decay in a given environment. It is a crucial parameter in acoustics, influencing how sound behaves in an environment. The most prolific measurement method is the RT60, which measures the time it takes for sound to decay by 60 decibels. This measurement is frequency-dependent, meaning that RT60 values can vary significantly across different frequency bands. The RT60 can be measured using various methods, including manual measurements, simulation methods, and machine learning approaches.
+
+The 60 decibel threshold is chosen because it represents a significant reduction in sound energy, making it a practical point for measuring decay. A Falloff of 60 dB also corresponds a to a thousandth of the inital sound pressure level or a millionth of the initial sound intensity.
 
 === Sabine & Eyring
 The Sabine and Eyring formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces. It should be noted that these formulas only approximate the RT60, as they do not account for all factors that influence sound decay in a room. The Sabine formula is often used for rooms with high absorption coefficients, while the Eyring formula is more suitable for rooms with lower absorption coefficients.
