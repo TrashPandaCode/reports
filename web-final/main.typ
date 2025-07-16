@@ -3,7 +3,7 @@
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
 
-#import "@preview/glossarium:0.5.4": make-glossary, register-glossary, print-glossary, gls, glspl
+#import "@preview/glossarium:0.5.4": gls, glspl, make-glossary, print-glossary, register-glossary
 
 #show: island.with(
   lang: "en",
@@ -25,6 +25,8 @@
 )
 
 #outline(depth: 3)
+#outline(title: [Figures], target: figure.where(kind: image))
+#outline(title: [Tables], target: figure.where(kind: table))
 #todo_outline
 #pagebreak()
 
@@ -43,10 +45,10 @@
 // #include "chapters/project-issues.typ"
 // #pagebreak()
 
-= Glossary
-#todo("fill glossary (if needed)")
+// = Glossary
+// #todo("fill glossary (if needed)")
 
 = References / Bibliography
 #todo("add references (e.g. from user testing, accessibility)")
 
-= Index
+// = Index
