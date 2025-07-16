@@ -24,7 +24,7 @@
     - *Initial Load Time:* Application should load and be usable within a short timeframe on a typical broadband connection.
     - *Undo/Redo Latency:* Actions such as undoing a node move should feel instantaneous.
 
-  To maintain a fluid and interactive experience that encourages exploration, especially in an educational or demo-based environment. Any lag or delay may disrupt the user’s focus or create confusion about the system state
+  To maintain a fluid and interactive experience that encourages exploration, especially in an educational or demo-based environment. Any lag or delay may disrupt the user's focus or create confusion about the system state
 
   *Examples:*
     - The editor canvas shall respond to node drag interactions within 16 milliseconds, to assure usage with 60 frames per second
