@@ -157,13 +157,20 @@
 #figure(caption: "Context-Diagram", image("../images/context.svg"))
 
 #pagebreak()
-=== Development Model
-To structure our development process, we initially oriented ourselves towards the waterfall model, as it provided a clear framework for organizing the project into distinct phases: requirement analysis, system design, implementation, testing, and evaluation. This sequential approach helped us to define responsibilities, set priorities, and maintain a shared understanding of the overall direction within the team. In the early stages, this clarity was particularly valuable when specifying the learning objectives, designing the game mechanics, and planning the user interface architecture.
+#col([
+  === Development Model
+  To structure our development process, we initially oriented ourselves towards the waterfall model, as it provided a clear framework for organizing the project into distinct phases: requirement analysis, system design, implementation, testing, and evaluation. This sequential approach helped us to define responsibilities, set priorities, and maintain a shared understanding of the overall direction within the team. In the early stages, this clarity was particularly valuable when specifying the learning objectives, designing the game mechanics, and planning the user interface architecture.
 
-However, given the exploratory character of the project and the inherent unpredictability of user-centered design // hier kanban rein
-=== Work Partitioning
+  To structure our development process efficiently and remain flexible in response to evolving requirements, we decided to use the Kanban methodology. Kanban allowed us to visualize ongoing tasks, manage priorities dynamically, and react to user feedback from playtesting sessions in a structured yet flexible manner. By maintaining a transparent board,
+  #colbreak()
+  we ensured that the entire team had a shared understanding of the current status of tasks, their dependencies, and any emerging bottlenecks.
+  This helped us continuously improve our workflows, stay focused on our educational objectives, and maintain progress even when project requirements shifted based on user experience findings or technical challenges. Additionally, we tracked all issues, tasks, and milestones on GitHub using assignees and due dates. This helped us maintain accountability within the team, clarify responsibilities, and ensure timely progress throughout the project. This combination of Kanban principles with GitHub's project management features supported continuous improvement and kept the project aligned with our educational objectives.
 
-Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
+  === Work Partitioning
+
+  Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
+])
+
 
 #figure(caption: [Event List], table(
   columns: (1fr, 1fr, 1fr),
