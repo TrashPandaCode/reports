@@ -221,6 +221,7 @@
   - Final fixes, demo preparation, documentation finalization.
   - Wrap-up, presentation material, delivery to stakeholders.
 
+  #colbreak()
   === Detailed Task Breakdown per Iteration
 
   ==== Iteration 1 (May 2025)
