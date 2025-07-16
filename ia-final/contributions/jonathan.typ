@@ -24,7 +24,7 @@
 
   ==== Estimation of Tracked Efforts<jonathan_est_tracked_efforts>
 
-  The algorithm used to estimate version controlled efforts was first implemented by Kimmo Brunfeldt under the name `git-hours`. As taken from the official repository the algorithm works as follows @brunfeldt_kimmobrunfeldtgit-hours_2025:
+  The algorithm used to estimate version controlled efforts was first implemented by Kimmo Brunfeldt under the name `git-hours`. As taken from the official repository the algorithm works as follows @brunfeldtKimmobrunfeldtGithours2025:
 
   + Go through all commits and compare the difference between them in time.
   + If the difference is smaller or equal then a given threshold, group the commits to a same coding session.
@@ -32,7 +32,7 @@
   + To compensate the first commit whose work is unknown, we add extra hours to the coding session.
   + Continue until we have determined all coding sessions and sum the hours made by individual authors.
 
-  The actual implementation, called `jikyuu` @nate-wilkins_nate-wilkinsjikyuu_2025, used to analyze the `dumpster` repository was a reimplementation of the original `git-hours` algorithm in Rust by Ruin0x11 @noauthor_ruin0x11_nodate with modifications by Nate-Wilkins.
+  The actual implementation, called `jikyuu` @nate-wilkinsNateWilkinsJikyuu2025, used to analyze the `dumpster` repository was a reimplementation of the original `git-hours` algorithm in Rust by Ruin0x11 @Ruin0x11Overview with modifications by Nate-Wilkins.
 
   ==== Formal Time Logging
 
