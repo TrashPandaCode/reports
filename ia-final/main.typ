@@ -142,9 +142,31 @@
   The decision to develop for the web rather than as a native application ultimately supported our primary objective of creating an accessible, easy-to-use educational tool that could reach the broadest possible audience of students. While native applications might offer marginal performance advantages, the accessibility, distribution, and maintenance benefits of web deployment far outweighed these considerations for our specific use case and educational context.
 
   == Design of Visual Scripting System
+  The visual scripting system represents the core educational interface of Dumpster Diving, serving as the primary means through which students interact with computer animation concepts. The design of this system required careful consideration of both pedagogical effectiveness and technical implementation, balancing the need for educational clarity with the complexity inherent in programming concepts.
+
+  Our visual scripting approach is fundamentally node-based, where each node represents a discrete operation, value, or control structure. This design paradigm draws inspiration from established tools in the computer graphics and animation industry, such as Blender's Geometry Nodes, Unity's Shader Graph, and Unreal Engine's Blueprint system. By adopting a familiar visual metaphor, we aimed to reduce the cognitive burden associated with learning a new interface while introducing students to interaction patterns they might encounter in professional animation software.
+
+  The node system architecture follows a clear hierarchical structure where data flows directionally from input nodes through processing nodes to output nodes that affect the game world. This left-to-right flow convention mirrors traditional programming execution patterns while providing immediate visual feedback about the logical sequence of operations.
+
+  To reduce cognitive complexity for beginning programmers, our visual scripting system employs a simplified type system where all data is internally represented as numbers. This unified approach encompasses integers, floating-point values, and boolean values (represented as 0 and 1), eliminating the need for students to understand complex type hierarchies or casting operations. While this simplification may seem limiting from a traditional programming perspective, it aligns with our educational objectives by allowing students to focus on algorithmic thinking and animation concepts rather than type system intricacies. This design decision also prevents common programming errors related to type mismatches, which can be particularly frustrating for novice programmers and detract from the core learning objectives of computer animation.
+
+  Central to our design philosophy was the principle of progressive disclosure. Rather than overwhelming students with the full complexity of programming from the outset, the visual scripting system introduces concepts gradually across levels. Early levels present only basic nodes for simple operations like movement and basic arithmetic, while later levels introduce more sophisticated concepts such as loops, conditionals, and complex data transformations. This scaffolded approach allows students to build confidence and understanding incrementally, ensuring that each new concept builds upon previously mastered skills.
+
+  Error handling and feedback mechanisms were integrated directly into the visual design. Invalid connections and warnings about unknown behavior are highlighted in real-time. This immediate visual feedback loop supports the constructivist learning approach by allowing students to see the direct consequences of their programming decisions without delays or unclear error messages.
+
+  The execution model of our visual scripting system operates on a frame-by-frame basis, with the entire node graph being evaluated each game tick. This approach ensures that changes in the node configuration are immediately reflected in the game world, providing the rapid feedback essential for effective learning. While this execution model may be less efficient than event-driven alternatives, it offers the predictable and transparent behavior necessary for educational purposes.
+
+  The design also incorporates accessibility considerations, ensuring that the visual scripting interface remains usable for students with different abilities and technical backgrounds. High contrast color schemes, clear typography, and logical keyboard navigation patterns make the system accessible to students with visual impairments or motor disabilities. Additionally, the node-based approach itself serves as an accessibility feature by reducing the need for precise typing and syntax memorization that can be barriers in traditional text-based programming environments.
+
   == Target Audience
-  // evaluate learning needs and prior knowledge of the target audience
-  The target audience for Dumpster Diving includes students in the Computer Animation (CA) course at the University of Applied Sciences Cologne, as well as independet interested learners, who typically have limited prior knowledge of programming and computer animation. The tool is designed to be accessible to beginners, while also providing depth for those with some experience in computer animation concepts.
+  The primary target audience for Dumpster Diving consists of students enrolled in the Computer Animation (CA) course at the University of Applied Sciences Cologne. These students often come from diverse academic backgrounds and usually possess a basic to intermediate level of programming knowledge but typically have little to no prior experience in technical animation tools. The course introduces foundational concepts in computer animation, and Dumpster Diving was created to complement this curriculum by offering an interactive, low-barrier entry point into core principles such as coordinate systems, timing, logic structures, and animation behaviors.
+
+  In addition to CA students, Dumpster Diving is intended to serve independent learners and hobbyists interested in visual programming or animation. These users may be exploring animation for the first time or looking for a lightweight environment in which to experiment with logic-driven animation systems. The project is particularly suitable for use in self-directed learning contexts, informal education, and outreach initiatives.
+
+  This diverse target audience shares a common need: a tool that demystifies animation concepts through accessible, engaging, and forgiving interfaces. To meet that need, Dumpster Diving avoids technical complexity in favor of visual feedback, step-by-step progression, and a game-like environment that encourages experimentation. By blending elements of gameplay with structured learning, the project supports a low-pressure educational experience that reduces the fear of failure and emphasizes discovery over correctness.
+
+  The didactic concept of Dumpster Diving was therefore developed specifically with this audience in mind. It aims to foster curiosity and confidence by providing intuitive mechanics, immediate visual results, and a gradual introduction of concepts that align with the learners' needs and prior knowledge. The following section explains how these principles are realized through specific design choices.
+
   == Didactic Concept
 
   The didactic concept behind Dumpster Diving is built on the principle of learning through playful problem solving. The project aims to teach fundamental computer animation concepts—such as object relations, loops, and control flow—by embedding them in a visual, interactive environment that uses a narrative-driven puzzle game featuring raccoons and trash cans as central characters.
@@ -166,10 +188,20 @@
   To deepen understanding and support self-directed learning, Dumpster Diving features in-world documentation and an open-ended Playground mode. The documentation explains core mechanics with interactive examples, while the Playground allows free experimentation beyond level constraints. This aligns with the concept of exploratory learning environments @dejongScientificDiscoveryLearning1998, where open-ended tasks promote reflection, transfer, and creative application of knowledge.
 
   In summary, Dumpster Diving frames computer animation and its key principles as an expressive, solvable puzzle. It combines constructivist, playful learning methods with an intuitive interface, narrative motivation, and progressive challenge. The result is a learning environment that aims not only to teach computer animation but to foster confidence, curiosity, and joy in problem solving.
+
+
   == Learning Outcomes
   // Abstract Learning Goals
   // Familiarity with node systems (secondary)
   // logical thinking
+
+  Dumpster Diving is designed to promote abstract and transferable learning outcomes relevant to both computer animation and general computational thinking. While the tool does not aim to teach a specific programming language or animation software, it fosters conceptual understanding and cognitive skills that are foundational to both fields.
+
+  One of the primary learning goals is to strengthen logical thinking and problem-solving abilities. Players are encouraged to break down complex animation tasks into manageable steps, build structured solutions using a visual programming interface, and reason about time, movement, and interactivity. This approach helps learners develop an intuition for cause and effect, sequencing, and dependency, skills that are essential in both animation and software development.
+
+  A secondary, but valuable, learning outcome is familiarity with node-based systems, which are widely used in animation, visual effects, game engines, and creative coding environments. By working with nodes to define relationships and control flow, learners gain experience with this paradigm in a low-stakes, game-like setting. This prepares them for more advanced tools such as Blender's Animation Nodes, Unreal Engine's Blueprints, or node-based shader editors, which operate on similar principles.
+
+  In addition to these technical and cognitive outcomes, Dumpster Diving supports creative experimentation, iterative thinking, and a deeper understanding of abstract concepts such as transformation, time manipulation, and object behavior, making it a useful foundation for further exploration in computer animation and related domains.
 ]
 
 #pagebreak()
