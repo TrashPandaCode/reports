@@ -36,6 +36,22 @@
   langid = {english}
 }
 
+@online{RoomImpulseResponse,
+  title = {Room Impulse Response Simulation with Stochastic Ray Tracing - MATLAB \&amp; Simulink},
+  url = {https://www.mathworks.com/help/audio/ug/room-impulse-response-simulation-with-stochastic-ray-tracing.html},
+  urldate = {2025-07-16},
+  abstract = {Use stochastic ray tracing to simulate the impulse response of a simple room.},
+  langid = {ngerman}
+}
+
+@online{RoomImpulseResponsea,
+  title = {Room Impulse Response Simulation with the Image-Source Method and HRTF Interpolation - MATLAB \&amp; Simulink},
+  url = {https://www.mathworks.com/help/audio/ug/room-impulse-response-simulation-with-image-source-method-and-hrtf-interpolation.html},
+  urldate = {2025-07-16},
+  abstract = {Simulate the impulse response of a "shoebox" (cuboid) empty room.},
+  langid = {ngerman}
+}
+
 @book{sabineCollectedPapersAcoustics1922,
   title = {Collected Papers on Acoustics},
   author = {Sabine, Wallace Clement},
@@ -75,4 +91,20 @@
   url = {https://arxiv.org/abs/1610.02391},
   urldate = {2025-05-23},
   abstract = {We propose a technique for producing "visual explanations" for decisions from a large class of CNN-based models, making them more transparent. Our approach - Gradient-weighted Class Activation Mapping (Grad-CAM), uses the gradients of any target concept, flowing into the final convolutional layer to produce a coarse localization map highlighting important regions in the image for predicting the concept. Grad-CAM is applicable to a wide variety of CNN model-families: (1) CNNs with fully-connected layers, (2) CNNs used for structured outputs, (3) CNNs used in tasks with multimodal inputs or reinforcement learning, without any architectural changes or re-training. We combine Grad-CAM with fine-grained visualizations to create a high-resolution class-discriminative visualization and apply it to off-the-shelf image classification, captioning, and visual question answering (VQA) models, including ResNet-based architectures. In the context of image classification models, our visualizations (a) lend insights into their failure modes, (b) are robust to adversarial images, (c) outperform previous methods on localization, (d) are more faithful to the underlying model and (e) help achieve generalization by identifying dataset bias. For captioning and VQA, we show that even non-attention based models can localize inputs. We devise a way to identify important neurons through Grad-CAM and combine it with neuron names to provide textual explanations for model decisions. Finally, we design and conduct human studies to measure if Grad-CAM helps users establish appropriate trust in predictions from models and show that Grad-CAM helps untrained users successfully discern a 'stronger' nodel from a 'weaker' one even when both make identical predictions. Our code is available at https://github.com/ramprs/grad-cam/, along with a demo at http://gradcam.cloudcv.org, and a video at youtu.be/COjUB9Izk6E.}
+}
+
+@article{wittebolHybridRoomAcoustic2024,
+  title = {A Hybrid Room Acoustic Modeling Approach Combining Image Source, Acoustic Diffusion Equation, and Time-Domain Discontinuous {{Galerkin}} Methods},
+  author = {Wittebol, Wouter and Wang, Huiqing and Hornikx, Maarten and Calamia, Paul},
+  date = {2024-07-05},
+  journaltitle = {Applied Acoustics},
+  shortjournal = {Applied Acoustics},
+  volume = {223},
+  pages = {110068},
+  issn = {0003-682X},
+  doi = {10.1016/j.apacoust.2024.110068},
+  url = {https://www.sciencedirect.com/science/article/pii/S0003682X24002196},
+  urldate = {2025-07-16},
+  abstract = {In this paper a hybrid model is introduced that constructs a broadband room impulse response using a geometrical (image source method) and a statistical method (acoustic diffusion equation) for the high-frequency range, supported by a wave-based method (time-domain discontinuous Galerkin method) for the low-frequency range. A crucial element concerns the construction of the high-frequency impulse response where a transition from a predominantly specular (image source) to a predominantly diffuse sound-field (diffusion equation) is required. To achieve this transition an analytical envelope is introduced. A key factor is the room-averaged scattering coefficient which accounts for all scattering behavior of the room and determines the speed of transition from a specular to a non-specular sound-field. To evaluate its performance, the model is compared to a broadband wave-based solver for two reference scenarios. The hybrid model shows promising results in terms of reverberation time (T20), center time (Ts) and bass-ratio (BR). Aspects such as the used geometrical complexity, the ‘room-averaged’ scattering coefficients, and other model simplifications and assumptions are discussed.},
+  keywords = {Acoustic diffusion equation method,Hybrid,Image source method,Room acoustics,Time-domain discontinuous Galerkin method}
 }

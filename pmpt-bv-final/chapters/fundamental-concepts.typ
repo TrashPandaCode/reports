@@ -17,14 +17,14 @@ The 60 decibel threshold is chosen because it represents a significant reduction
 === Sabine & Eyring
 The Sabine @sabineReverberation1922 and Eyring @eyringREVERBERATIONTIMEDEAD1930 formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces. It should be noted that these formulas only approximate the RT60, as they do not account for all factors that influence sound decay in a room. The Sabine formula is often used for rooms with high absorption coefficients, while the Eyring formula is more suitable for rooms with lower absorption coefficients.
 
-Sabine's formula: \
+Sabine's formula @sabineReverberation1922: \
 $
 "RT60 (seconds)" approx 0.161 dot V / A \
 V = "Volume of the room in cubic meters" \
 A = "Total absorption area in square meters"
 $
 
-Eyring expanded on Sabine as follows: \
+Eyring expanded on Sabine as follows @eyringREVERBERATIONTIMEDEAD1930: \
 $
 "RT60 (seconds)" approx 0.161 dot V / (A' + 4"mV") dot s \
 "A'" = S_"tot" [-2.30 log_10(1-alpha_"ey")] dot m^2 \
@@ -36,8 +36,34 @@ $
 === Manual Measurement (Lundeby's Method)
 Manual measurement of RT60 typically involves capturing the impulse response (IR) of a room using a microphone and a sound source. The impulse response is then analyzed to determine the decay time of the sound, which is used to calculate RT60.
 
+#figure(
+  image("../images/audio-installation-to-evaluate-reverberation-properties.png"),
+  caption: "A Sketch of a setup for measuring RT60 using Lundeby's Method. Source: https://vocal.com/dereverberation/methods-of-rt60-estimation/"
+)
+
 === Simulation Methods (Image Source Ray, Raytracing, Wave-based)
 Simulation methods for estimating RT60 include image source, ray tracing and wave-based approaches. These methods use computer simulations to model how sound behaves in a room, taking into account the geometry of the space and the materials present. By simulating the propagation of sound waves, these methods can provide accurate estimates of RT60 without the need for physical measurements.
+
+==== Image Source Method @RoomImpulseResponsea
+This geometric approach models each reflection as if it were emitted by a virtual “image” of the sound source, mirrored across room boundaries. It effectively captures early reflections by tracing straight-line paths from these image sources to the listener. Although computationally efficient for early-arrivals in shoebox or simple rectangular geometries, its complexity grows exponentially with reflection order.
+
+*Extensions & optimizations:* Modern implementations leverage GPU acceleration (e.g., gpuRIR), making large-scale batch simulation feasible—especially useful for ML dataset generation or real-time VR/AR acoustics . Hybrid variants incorporate directivity models (via spherical harmonics) and anchor-point image sources to simulate asymmetric or directional sound sources.
+
+*Use cases:* Ideal for predicting RT60 and early reflection patterns in moderate-sized rooms, design iterations during architectural planning, and audio rendering in VR avatars or AR headsets.
+
+==== Ray Tracing @RoomImpulseResponse
+This method emits numerous rays from the source, tracing their bounces off surfaces with absorption and scattering taken into account. It excels at modeling late, dense reflections, and is well-suited for complex geometries where clean mirror paths are insufficient.
+
+*Advantages & limitations:* While flexible and able to integrate statistical models for diffusion, ray tracing typically neglects diffraction and wave effects. Hybrid approaches combine early reflection models (via image-source) with stochastic ray tracing for diffuse tails to enhance realism.
+
+*Use cases:* Best for large, irregular spaces—think concert halls, industrial complexes, game engines with procedural acoustics, and commercial acoustic simulation tools.
+
+==== Wave-based Methods @wittebolHybridRoomAcoustic2024
+Unlike geometric models, wave-based simulations solve the full physical wave equation, capturing diffraction, interference, and low-frequency modal behaviors. Common techniques include Finite Difference Time Domain (FDTD), Boundary Element Methods (BEM), and Discontinuous Galerkin (DG) solvers.
+
+*Advantages & limitations:* These methods achieve high accuracy across frequencies, especially at bass and transitional ranges, but are compute- and memory-intensive—limited to small volumes or coarse meshes. Recent hybrid methods integrate wave solvers for low frequencies with geometric simulations for high frequencies to balance accuracy and efficiency.
+
+*Use cases:* Critical for performance spaces where low-frequency clarity matters (e.g., studios, auditoria), acoustic research, or validation benchmarks for faster models.
 
 === Typical Ranges and Influences
 Typical RT60 values can vary widely depending on the type of environment. For example, small rooms may have RT60 values as low as 0.1 seconds, while large auditoriums can have values exceeding 2 seconds. Factors influencing RT60 include room size, shape, surface materials, and furnishings. Hard surfaces like concrete or glass tend to increase RT60, while soft materials like carpets and curtains reduce it.
