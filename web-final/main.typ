@@ -40,13 +40,15 @@
 #pagebreak()
 #include "chapters/design.typ"
 #pagebreak()
-// #include "chapters/test-plans.typ"
+#include "chapters/test-plans.typ"
 // #pagebreak()
 // #include "chapters/project-issues.typ"
 // #pagebreak()
 
 // = Glossary
 // #todo("fill glossary (if needed)")
+
+
 
 = References / Bibliography
 #todo("add references (e.g. from user testing, accessibility)")
