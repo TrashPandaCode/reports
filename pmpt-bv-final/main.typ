@@ -28,7 +28,10 @@
 #set heading(numbering: "1.")
 
 // =================================================================
+= Abstract
+This project explores the prediction of reverberation time (RT60) from single images of office rooms at Technische Hochschule Köln. RT60 is a key parameter in room acoustics, influencing sound clarity and spatial audio rendering in applications like AR and XR. Traditional measurement methods are complex and time-consuming, limiting their use in real-time scenarios. By leveraging computer vision and deep learning, we aim to predict RT60 values using visual cues from room images, enhancing the realism of virtual environments. Our approach combines synthetic data augmentation with real-world validation to address challenges in acoustic property estimation.
 
+#v(1cm)
 = Introduction
 
 // Problem Statement
