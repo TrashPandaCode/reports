@@ -161,14 +161,70 @@
   === Development Model
   To structure our development process, we initially oriented ourselves towards the waterfall model, as it provided a clear framework for organizing the project into distinct phases: requirement analysis, system design, implementation, testing, and evaluation. This sequential approach helped us to define responsibilities, set priorities, and maintain a shared understanding of the overall direction within the team. In the early stages, this clarity was particularly valuable when specifying the learning objectives, designing the game mechanics, and planning the user interface architecture.
 
-  To structure our development process efficiently and remain flexible in response to evolving requirements, we decided to use the Kanban methodology. Kanban allowed us to visualize ongoing tasks, manage priorities dynamically, and react to user feedback from playtesting sessions in a structured yet flexible manner. By maintaining a transparent board,
-  #colbreak()
-  we ensured that the entire team had a shared understanding of the current status of tasks, their dependencies, and any emerging bottlenecks.
+  To structure our development process efficiently and remain flexible in response to evolving requirements, we decided to use the Kanban methodology. Kanban allowed us to visualize ongoing tasks, manage priorities dynamically, and react to user feedback from playtesting sessions in a structured yet flexible manner. By maintaining a transparent board, we ensured that the entire team had a shared understanding of the current status of tasks, their dependencies, and any emerging bottlenecks.
   This helped us continuously improve our workflows, stay focused on our educational objectives, and maintain progress even when project requirements shifted based on user experience findings or technical challenges. Additionally, we tracked all issues, tasks, and milestones on GitHub using assignees and due dates. This helped us maintain accountability within the team, clarify responsibilities, and ensure timely progress throughout the project. This combination of Kanban principles with GitHub's project management features supported continuous improvement and kept the project aligned with our educational objectives.
 
-  === Work Partitioning
+  === Iterative Development Plan (May - July 2025)
 
-  Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
+  ==== Iteration 1 (May 2025)
+
+  *01.05. - 07.05.:* *Requirements Gathering & Early Prototyping*
+  - Setup base project structure, navigation, game objects restructure, menus.
+  - Initial iterations of parenting, physics nodes, documentation layout.
+
+  *08.05. - 18.05.:* *Core Architecture & Base Features*
+  - Keyboard shortcuts, node connections, add/remove functionality.
+  - First levels implemented, tutorial dialog prototypes.
+  - Animation system setup, camera controls, viewport handling.
+
+  *19.05. - 25.05.:* *Feature Expansion & Testing*
+  - Undo/redo, looping nodes, context menus, tooltips.
+  - Error handling, usability polish, hover/focus updates.
+
+  *26.05. - 31.05.:* *Review, Polish, Next Iteration Planning*
+  - New landing page concept, responsive adjustments.
+  - Carousel, goals dialog, hints system.
+  - Initial feedback collection, planning adjustments.
+
+
+  ==== Iteration 2 (June 2025)
+
+  *01.06. - 07.06.:* *UI/UX Refinement, Documentation*
+  - Improved navigation, animations, guides integration.
+  - Reworked tutorials, FAQs, visual polish, cleanup.
+
+  *08.06. - 18.06.:* *Level Design & Gameplay Logic*
+  - Level difficulties, gravity nodes, solution systems.
+  - Tests for loops, parenting, data stores.
+  - Level transitions, victory conditions, hints.
+
+  *19.06. - 26.06.:* *Systems Integration & Testing*
+  - Test coverage, ESLint cleanup, refactors.
+  - Additional level guides, tooltips, FAQs.
+
+  *27.06. - 30.06.:* *Review, Feedback Integration*
+  - Initial solution disclaimers, guide revisions.
+  - Preparing next iteration scope based on feedback.
+
+
+  ==== Iteration 3 (July 2025)
+
+  *01.07. - 07.07.:* *Final Features, Refinement*
+  - FAQ extensions, UI polish, minor bug fixes.
+  - Documentation updates, accessibility tweaks.
+
+  *08.07. - 15.07.:* *Final Testing & Bug Fixing*
+  - Prettier, tutorials finalized, last-minute adjustments.
+  - Final review of tests, code hygiene.
+
+  *16.07. - 25.07.:* *Presentation & Delivery*
+  - Final fixes, demo preparation, documentation finalization.
+  - Wrap-up, presentation material, delivery to stakeholders.
+
+
+    === Work Partitioning
+
+    Following is a list of Business Events that the system will handle, along with a brief description of each. Each response to these events is effectively is a user-case diagram and a descriptive list of the associated use-cases.
 ])
 
 
