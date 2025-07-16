@@ -54,7 +54,7 @@
   Measuring RT60 is often too complex, as it typically requires specific equipment and controlled conditions, making the process cumbersome and time-consuming. This complexity limits its usability in applications that rely on real-time or near real-time audio processing, such as AR or XR. In these contexts, accurate RT60 estimates can greatly improve spatial audio rendering by making virtual environments sound more realistic and immersive, with audio characteristics that match the simulated space.
   However, with the described limitations of current measurement methods, AR and XR applications are forced to either determine their RT60 values ahead of time or use simplified models that do not accurately reflect the acoustic properties of the environment. Determining RT60 values in advance means that the applications are forced to have static environments, which limits the dynamic nature of these applications. Using simplified models means that the applications are forced to use approximations that do not accurately reflect the acoustic properties of the environment, which can lead to a less immersive experience for the user.
 
-  To address these issues, our goal is to simplify and accelerate the RT60 estimation process by using artificial intelligence to predict reverberation times from single images of environments.
+  To address these issues, our goal is to simplify and accelerate the RT60 estimation process by using artificial intelligence to predict reverberation times from single images of environments. For complexity and time reasons, we focus on predicting RT60 values of office rooms at Technische Hochschule Köln.
 ]
 
 = Motivation
