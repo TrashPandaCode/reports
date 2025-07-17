@@ -47,43 +47,47 @@
 
 
 #table(
-  columns: 5,
-  table-header("Test Nr.", "Description", "Expected Result", "Pass/Fail Criteria", "Fit Criterion"),
+  columns: 4,
+  table-header("Test Nr.", "Description", "Expected Result", "Pass/Fail Criteria"),
   [1],
   [Does the application run without errors?],
   [Application runs without crashing.],
-  [*Pass*: Yes / *Fail*: No],
 
-  [],
+  [*Pass*: Yes / *Fail*: No],
 
   [2],
   [Are all required and selected game mechanics implemented?],
   [All required and selected mechanics are implemented and usable.],
 
   [*Pass*: Yes / *Fail*: No],
-  [],
   [3],
   [Can nodes be used for game control?],
   [All required nodes to solve the puzzles are implemented. Changes in nodes affect the game in the intended way.],
 
   [*Pass*: Yes / *Fail*: No],
-  [],
   [4],
   [Is there documentation available?],
   [Documentation for all node types is available and understandable. At least 50% of the covered topics is documented.],
 
-  [*Pass*: Yes / *Fail*: No], [], [5], [Do the automated tests pass?], [At least 80% of unit tests pass.],
-  [*Pass*: Yes / *Fail*: No], [],
+  [*Pass*: Yes / *Fail*: No], [5], [Do the automated tests pass?], [At least 80% of unit tests pass.],
+  [*Pass*: Yes / *Fail*: No],
 )
 
 #col[
   === Acceptance Process
-  - Initial acceptance is carried out by group members, findings are documented
+  - Initial acceptance is carried out by group members, findings are documented.
   - Final acceptance is carried out by the supervisor after a live demo of the project.
   - If a test fails, there is a 7-day period for corrections.
   - After successful acceptance, grading is based on predefined criteria.
   === Findings
+  - 100% of unit tests pass.
+  - All node types are documented.
+  - All CA topics are documented.
+  - All required nodes are implemented.
+  - No crashes were observed during testing.
+  - All required mechanics are implemented.
   === Remarks
+  - No game breaking bugs were found.
   === Responsible Parties:
   - *Project Lead:* Milan Jezovsek
   - *Project Team:* Markus Heming, David Klein, Jonathan Kron, Milan Jezovsek, Philipp Wendt, Leo Kling
