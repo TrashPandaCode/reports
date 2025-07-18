@@ -27,11 +27,6 @@
 
 #set heading(numbering: "1.")
 
-
-
-
-#v(1cm)
-
 // Problem Statement
 //     What is RT60 and why is it important?
 //     Motivation for predicting RT60 from images.
