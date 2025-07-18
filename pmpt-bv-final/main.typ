@@ -27,13 +27,10 @@
 
 #set heading(numbering: "1.")
 
-// =================================================================
-= Abstract
-// this is subject to change
-This project explores the prediction of reverberation time (RT60) from single images of office rooms at Technische Hochschule Köln. RT60 is a key parameter in room acoustics, influencing sound clarity and spatial audio rendering in applications like AR and XR. Traditional measurement methods are complex and time-consuming, limiting their use in real-time scenarios. By leveraging computer vision and deep learning, we aim to predict RT60 values using visual cues from room images, enhancing the realism of virtual environments. Our approach combines synthetic data augmentation with real-world validation to address challenges in acoustic property estimation.
+
+
 
 #v(1cm)
-= Introduction
 
 // Problem Statement
 //     What is RT60 and why is it important?
@@ -49,9 +46,17 @@ This project explores the prediction of reverberation time (RT60) from single im
 //     Evaluate performance and generalization.
 
 #col[
+  = Abstract
+  _This project investigates the prediction of reverberation time (RT60) from single images of office rooms at Technische Hochschule Köln. Two AI models based on Microsoft's ResNet50 architecture are introduced._
+
+  _The large model was trained on a dataset combining real-world measured data and synthetically generated data labled with simulated RT60 values. The synthetic RT60 values were computed using the Treble simulation software. The combined dataset, consisting of approximately 3500 samples, was found to be insufficient for achieving accurate RT60 estimation across all considered frequency bands._
+
+  _The small model was trained exclusively on synthetic data representing empty, rectangular "shoebox" rooms with frequency-independent RT60 values. This model demonstrated accurate predictions and strong generalization capabilities across several orders of magnitude of room volume. While these results do not constitute formal proof of the approach, they provide a promising foundation for further research and do not contradict the initial hypothesis._
+
   // ich würde hier etwas weiter ausholen und erstmal bei nachhallzeit genrell anfangen (vlt wie bei wiki https://en.wikipedia.org/wiki/Reverberation). wir haben ja echt viel platz und können das ruhig etwas ausfühlicher machen.
   // bessser?
   // würde noch bisschen mehr auf unser problem hinten, vlt bisschen weniger technisch hier und mehr beschreiben wie wichtig reverberation time für den raumklang/eindruck ist damit man dann später sagen kann das ist der grund warum wir nur RT estimaten
+  = Introduction
   Reverberation, or reverb, is the persistence of sound in a space after the original source has stopped, caused by multiple reflections off surfaces like walls, ceilings, and furniture. These reflections overlap and gradually decay as they are absorbed by materials in the room, with their amplitude decreasing until they fade completely. Unlike distinct echoes, which are heard with a delay of 50 to 100 milliseconds, reverberation consists of closely spaced reflections arriving within about 50 milliseconds of each other. Reverberation occurs naturally in enclosed and even outdoor reflective environments and can also be artificially produced using digital or mechanical effects. While it can enhance the sense of space in music or recordings, excessive reverberation—especially in noisy environments—can reduce speech clarity and hinder both human and machine understanding. The duration of reverberation, known as reverberation time, is typically measured using RT60 (or T60), which represents the time it takes for sound to decay by 60 decibels. Because reverberation is frequency-dependent, accurate measurement often involves analyzing multiple frequency bands, making it important to specify the frequency range when reporting RT60 values.
 
   // Übergang verbessern?
