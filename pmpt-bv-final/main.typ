@@ -79,13 +79,27 @@
   In the second stage, we generated impulse responses based on the room parameters extracted from Blender. These parameters encompassed the vertices defining the room's ground plane, the quantity of furniture elements such as chairs and desks, and the material properties of walls, ceilings, and floors. All rooms maintained a consistent height of 3 meters. These extracted parameters were subsequently processed through Treble @Treble, an acoustic simulation platform, which computed the corresponding impulse responses for each virtual room.
 
   The final stage involved deriving RT60 values from the generated impulse responses. This process utilized the pyfar @PyfarPyfar2025 and pyrato @PyfarPyrato2025 libraries, maintaining consistency with our methodology for processing the real-world acoustic data.
+
+  == Data Structure
+
+  The dataset is divided into two primary directories: one containing real-world measurements and another housing synthetically generated data.
+
+  Both the real and synthetic datasets follow an identical organizational structure, facilitating seamless integration and processing within the same computational pipeline. The dataset is divided into two primary directories: one containing real-world measurements from TH Köln and another housing synthetically generated data.
+
+  Each room, whether real or synthetic, is assigned its own dedicated folder with a consistent naming convention. Every room folder contains two essential components:
+
+  - An `images` subfolder containing multiple images of the room (photographs for real rooms, rendered images for synthetic rooms)
+  - A CSV file storing the corresponding RT60 values across different frequency bands for that specific room
+
+  == Preprocessing
+
 ]
 
 // Data Sources
 //     Description of real and synthetic datasets.
 //     Image and CSV file structure.
-//     Frequency bands considered (after cutoff <100 Hz).
 // Preprocessing
+//     Frequency bands considered (after cutoff <100 Hz).
 //     Filtering out low frequencies.
 //     Capping long RT60s (>4s) with local interpolation.
 //     Splitting strategy: room-wise, train/val/test.
