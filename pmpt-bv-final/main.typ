@@ -45,6 +45,21 @@
 
 #pagebreak()
 = Dataset
+
+#col[
+  Creating the dataset represented one of the most substantial undertakings of this project, which led us to dedicate approximately 50% of our time to this  task.
+
+  Before describing our dataset, it is important to discuss the existing datasets available in the literature. While the audio research community has access to numerous large-scale datasets, such as the VCTK Corpus @veauxVoiceBankCorpus2013 and EARS @richterEARSAnechoicFullband2024, none specifically address our particular requirements for reverb (or impulse response) and image pairs.
+
+  The OpenAIR dataset @shelleyOpenAIR129thAudio2010 does contain an extensive collection of impulse responses alongside images; however, these images prove unsuitable for our purposes as they primarily feature outdoor scenes or cathedral-type environments rather than typical room interiors.
+
+  This data scarcity represents a well-documented challenge in the field, as highlighted by #cite(<singhImage2ReverbCrossModalReverb2021>, form: "author"). Their approach involved aggregating data from multiple sources, including the OpenAIR dataset @shelleyOpenAIR129thAudio2010, various online libraries, and web scraping techniques. Due to limited availability of properly labeled data, they relied heavily on weak supervision, supplementing gaps with plausible data as determined by their research team.
+
+  We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
+
+  == Data Sources
+]
+
 // Data Sources
 //     Description of real and synthetic datasets.
 //     Image and CSV file structure.
