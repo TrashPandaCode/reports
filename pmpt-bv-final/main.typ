@@ -48,6 +48,16 @@
 
 = Experimental Methodology
 
+== Evaluation Metrics
+
+=== Mean Squared Error & Mean Absolute Error
+
+=== R#super[2]
+
+=== Grad-CAM
+
+=== t-SNE
+
 // Evaluation Metrics
 //     MSE / RMSE per frequency band.
 //     Overall MAE / correlation.

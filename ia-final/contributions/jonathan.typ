@@ -1,4 +1,6 @@
 #import "../lib.typ": col
+#import "../utils.typ": commit_graph
+
 
 #pagebreak()
 #col([
@@ -124,9 +126,13 @@
 
   I added functionality for level solutions to load data-store data to support custom gameobject handles on June 24th, implemented hints for some levels, and created level guides for inverse and looping levels (1.5h). On June 26th, I filled the FAQ page with entries. I added explainer videos to the tutorial dialog and filled the getting started documentation page on June 27th (1.5h). Finally, on June 29th, I added unit tests for flow- and loop-store (1h).
 
+  I also collaborated with Leo Kling on a Google form regarding user tests.
+
   During development on GitHub, new features were integrated through pull requests originating from dedicated feature branches. These pull requests required thorough review; however, as not all team members considered this task to be within their area of responsibility, I devoted a significant amount of time to this process. My contributions included providing meaningful suggestions for code improvements or refactoring, verifying the functionality of new features, and identifying implementation errors.
 
-  It is also worth mentioning the additional effort I invested in maintaining the overall quality and consistency of the project. This included tasks such as removing temporary files that had been inadvertently committed to the main branch, restoring accidentally deleted but necessary code, as well as addressing minor issues related to logging statements or styling.
+  It is also worth mentioning the additional effort I invested in maintaining the overall quality and consistency of the project. This included tasks such as removing temporary files that had been inadvertently committed to the main branch, restoring accidentally deleted but necessary code, fixing broken or deleting unused code, as well as addressing minor issues related to logging statements or styling.
+
+  #commit_graph("contributions/data/jonathan.csv", "Jonathan Kron")
 
   === Documentation
 ])
