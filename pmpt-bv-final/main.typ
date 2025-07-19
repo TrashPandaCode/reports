@@ -58,6 +58,27 @@
   We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
 
   == Data Sources
+
+  To address the absence of suitable existing datasets, we undertook our own data collection efforts. Recognizing that capturing sufficient real-world data for effective model training would be impractical, we adopted a hybrid approach that combines authentic measurements with synthetically generated images and impulse responses to supplement our real-world dataset.
+
+  The real-world portion contains room images paired with RT60 values across multiple frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
+
+  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, Samsung Galaxy S10, and iPad Mini. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
+
+  #todo("check devices")
+  #todo("go more in depth about analyzing recordings")
+
+  To ensure comprehensive coverage, multiple measurements and images were recorded in each room, with the objective of capturing diverse acoustic and visual conditions. Throughout the data collection process, we took care to avoid capturing room modes or other acoustic artifacts that could introduce bias into our results.
+
+  #todo("add amounts of data collected, some stats")
+
+  The synthetic component of our dataset was developed through a three-stage pipeline. Initially, room environments were generated using the Blender software @foundationBlenderorgHomeBlender, which enabled us to create diverse room geometries and material properties while simultaneously rendering corresponding images of these virtual spaces.
+
+  #todo("add more details about blender process")
+
+  In the second stage, we generated impulse responses based on the room parameters extracted from Blender. These parameters encompassed the vertices defining the room's ground plane, the quantity of furniture elements such as chairs and desks, and the material properties of walls, ceilings, and floors. All rooms maintained a consistent height of 3 meters. These extracted parameters were subsequently processed through Treble @Treble, an acoustic simulation platform, which computed the corresponding impulse responses for each virtual room.
+
+  The final stage involved deriving RT60 values from the generated impulse responses. This process utilized the pyfar @PyfarPyfar2025 and pyrato @PyfarPyrato2025 libraries, maintaining consistency with our methodology for processing the real-world acoustic data.
 ]
 
 // Data Sources
