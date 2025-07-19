@@ -120,6 +120,8 @@
 
   Regarding user testing, we wanted to start user testing as early as possible, but no one felt responsible again. I took initiative to create a document, outlining different user testing methods, tests, GEQ, SUS, a procedure for how we could conduct user tests and a section about the usability of node systems, as well as some literature to read—8 pages in total. This document would then be left untouched by the team, with no one giving feedback (I don't know if anyone even read it). I then created a Google form for the user tests together with Jonathan based on this document. User tests could have started at this point, but only started way later.
 
+  #todo("add that I designed 7 levels, all of which are implemented")
+
   ==== Advanced Features and Responsive Design (June)
   //june
   // - cleaning up carousel component on the landing page together with jonathan
