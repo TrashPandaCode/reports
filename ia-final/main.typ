@@ -370,6 +370,7 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 #include "contributions/jonathan.typ"
 #include "contributions/philipp.typ"
 #include "contributions/leo.typ"
+#include "contributions/markus.typ"
 
 
 #pagebreak()
