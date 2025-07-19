@@ -42,20 +42,7 @@
 
 #include "chapters/abstract-introduction.typ"
 #include "chapters/fundamental-concepts.typ"
-
-#pagebreak()
-= Dataset
-// Data Sources
-//     Description of real and synthetic datasets.
-//     Image and CSV file structure.
-//     Frequency bands considered (after cutoff <100 Hz).
-// Preprocessing
-//     Filtering out low frequencies.
-//     Capping long RT60s (>4s) with local interpolation.
-//     Splitting strategy: room-wise, train/val/test.
-// Data Augmentation
-//     Applied transformations (flip, jitter, rotation, blur, etc.).
-//     Justification.
+#include "chapters/dataset.typ"
 
 #pagebreak()
 

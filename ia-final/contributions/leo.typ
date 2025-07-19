@@ -118,6 +118,10 @@
 
   Lastly, I began work on a basic documentation search feature that at this stage matches only titles. I also made several UX improvements to the sidebar, including automatic opening and collapsing of sections based on navigation state.
 
+  Regarding user testing, we wanted to start user testing as early as possible, but no one felt responsible again. I took initiative to create a document, outlining different user testing methods, tests, GEQ, SUS, a procedure for how we could conduct user tests and a section about the usability of node systems, as well as some literature to read—8 pages in total. This document would then be left untouched by the team, with no one giving feedback (I don't know if anyone even read it). I then created a Google form for the user tests together with Jonathan based on this document. User tests could have started at this point, but only started way later.
+
+  #todo("add that I designed 7 levels, all of which are implemented")
+
   ==== Advanced Features and Responsive Design (June)
   //june
   // - cleaning up carousel component on the landing page together with jonathan
@@ -185,6 +189,8 @@
   To improve privacy and performance, I removed our dependency on Google Fonts and replaced it with a self-hosted version of the typefaces. I implemented collapsible FAQ sections, updated the tutorial to reference the level guides, and added doc-strings to large portions of both my own and others' code. To track documentation quality, I added a coverage script that analyzes how much of the codebase is documented, then raised coverage to over 90% by adding additional comments and annotations.
 
   Lastly, I returned to the landing page and enriched its content to better introduce and communicate the purpose of the project.
+
+  Additionally, Prof. Grünvogel made a suggestion to create a didactic concept, but this recommendation was not followed by the team for quite some time. After multiple requests on my side, Philipp eventually created a didactic concept that consisted of multiple bullet points and contained many content-related flaws (for example, it talked about a 3D game when we were making a 2D game, and included no sources). I then created a new didactic concept including proper sources. This document should have been created at the beginning of the project, but was only completed towards the end, making it somewhat pointless, as most of the content was already implemented by then.
 
   ==== Maintenance and Code Quality
 
