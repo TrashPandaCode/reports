@@ -33,7 +33,7 @@
 
 #set table(stroke: 0.5pt, inset: 8pt)
 
-#col([
+#col[
   = Introduction
 
   In the modern world, computers are no longer limited to performing purely numerical computations. Over the past century, methods have been developed that enable computers to simulate a wide range of real-world phenomena and translate these simulations into rendered images or animations @HistoryComputerAnimation2025.
@@ -62,17 +62,16 @@
   In the field of computer animation visual scripting as well as node-based interfaces in general have found widespread adaptation in hobbyist as well as professional software as shown in @related_works. No comparable learning game currently exists that teaches the fundamentals of computer animation through a structured, level-based node-based programming environment specifically designed for educational purposes. This project seeks to close this gap.
 
   By offering a node-based programming environment within a carefully structured learning game, the tool allows students to focus on core animation principles without the added cognitive load of mastering a programming language and become familiar with node-based interfaces. Through a targeted, modular approach, the project seeks to facilitate a more intuitive and gradual transition from theoretical learning to practical implementation, thereby enhancing both comprehension and motivation in the study of computer animation.
-])
-#col([
+
   = Related Works<related_works>
 
   The use of visual scripting and node-based programming systems has become increasingly prevalent in both professional and educational contexts. These systems allow users to create complex logic and behaviors through intuitive visual interfaces, making programming more accessible to non-experts. Prominent examples include Scratch @resnickScratchProgrammingAll2009, a visual programming environment developed by the MIT Media Lab, which enables learners - especially children - to explore programming concepts through drag-and-drop block interfaces. While Scratch focuses on general computational thinking and algorithmic logic, it lacks specific features for teaching domain-specific concepts like computer animation.
 
-In contrast, professional tools such as Unreal Engine's Blueprints @UnrealEngineBlueprints and Blender's Geometry Nodes @GeometryNodesBlender provide advanced visual scripting capabilities tailored to game development and real-time graphics programming. These systems allow developers to create complex behaviors and shaders without writing code, making them powerful tools for professionals. However, their complexity and open-ended nature make them less accessible for beginners or educational scenarios with tightly scoped learning objectives. On top of that, none of these tools are specifically designed to teach the principles of computer animation in a structured and pedagogically guided manner.
+  In contrast, professional tools such as Unreal Engine's Blueprints @UnrealEngineBlueprints and Blender's Geometry Nodes @GeometryNodesBlender provide advanced visual scripting capabilities tailored to game development and real-time graphics programming. These systems allow developers to create complex behaviors and shaders without writing code, making them powerful tools for professionals. However, their complexity and open-ended nature make them less accessible for beginners or educational scenarios with tightly scoped learning objectives. On top of that, none of these tools are specifically designed to teach the principles of computer animation in a structured and pedagogically guided manner.
 
-Edutainment games - those that combine educational goals with playful interaction - have shown great potential in improving motivation and engagement, especially when learners are introduced to abstract or unfamiliar topics. We took inspiration from successful examples like While True: Learn @Whiletruelearn, which uses visual programming to teach machine learning concepts, and Exercism @Exercism, which gamifies coding challenges to help learners practice programming skills. These games demonstrate the effectiveness of combining playful elements with structured learning paths to enhance understanding and retention. We looked at even more gamified approaches like Duolingo @Duolingo, which uses bite-sized lessons and feedback to teach languages, and Kara @SwissEducInformatikKara, which lets users modify a game world directly through simple programming commands and gamified learning experiences. These examples highlight the potential of using game mechanics to lower the barrier to entry for complex topics.
+  Edutainment games - those that combine educational goals with playful interaction - have shown great potential in improving motivation and engagement, especially when learners are introduced to abstract or unfamiliar topics. We took inspiration from successful examples like While True: Learn @Whiletruelearn, which uses visual programming to teach machine learning concepts, and Exercism @Exercism, which gamifies coding challenges to help learners practice programming skills. These games demonstrate the effectiveness of combining playful elements with structured learning paths to enhance understanding and retention. We looked at even more gamified approaches like Duolingo @Duolingo, which uses bite-sized lessons and feedback to teach languages, and Kara @SwissEducInformatikKara, which lets users modify a game world directly through simple programming commands and gamified learning experiences. These examples highlight the potential of using game mechanics to lower the barrier to entry for complex topics.
 
-In conclusion, while existing tools offer valuable insights into either visual programming or educational design, none fully address the specific challenges faced by beginners in computer animation. Our tool bridges this gap by combining the accessibility of visual scripting with a focused, curriculum-aligned learning path. By embedding animation concepts into a playful and interactive game environment, we aim to provide a guided and engaging introduction to computer animation that is both accessible and pedagogically sound. This positions our project as a unique contribution at the intersection of educational technology, visual programming, and animation education.
+  In conclusion, while existing tools offer valuable insights into either visual programming or educational design, none fully address the specific challenges faced by beginners in computer animation. Our tool bridges this gap by combining the accessibility of visual scripting with a focused, curriculum-aligned learning path. By embedding animation concepts into a playful and interactive game environment, we aim to provide a guided and engaging introduction to computer animation that is both accessible and pedagogically sound. This positions our project as a unique contribution at the intersection of educational technology, visual programming, and animation education.
 
   // Visual Scripting
   // Visual Programming:
@@ -91,7 +90,7 @@ In conclusion, while existing tools offer valuable insights into either visual p
   //    CSS Battles (puzzles to learn Css and compete)
   //
   // Conclusion + Relation to our Tool
-])
+]
 #pagebreak()
 = Project Planning
 // Distribution of Tasks
@@ -114,7 +113,7 @@ In conclusion, while existing tools offer valuable insights into either visual p
   //    Easier to navigate
   //    Rendering performance
   //    Sprites not 3D Models
- //    Implementation is easier
+  //    Implementation is easier
   //    Asset creation is easier
   // Arguments for 2.5D/Isometric
   //    Unique perspective
