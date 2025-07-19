@@ -1,14 +1,16 @@
 #import "../lib.typ": *
 #import "../utils.typ": *
 
-#col[
-  = Abstract
+= Abstract
+#blurb[
   _This project investigates the prediction of reverberation time (RT60) from single images of office rooms at Cologne University of Applied Sciences (TH Köln). Two AI models based on Microsoft's ResNet50 architecture are introduced._
 
   _The large model was trained on a dataset combining real-world measured data and synthetically generated data labled with simulated RT60 values. The synthetic RT60 values were computed using the Treble simulation software. The combined dataset, consisting of approximately 3500 samples, was found to be insufficient for achieving accurate RT60 estimation across all considered frequency bands._
 
   _The small model was trained exclusively on synthetic data representing empty, rectangular "shoebox" rooms with frequency-independent RT60 values. This model demonstrated accurate predictions and strong generalization capabilities across several orders of magnitude of room volume. While these results do not constitute formal proof of the approach, they provide a promising foundation for further research and do not contradict the initial hypothesis._
+]
 
+#col[
   = Introduction & Motivation
   Reverberation refers to the persistence of sound in an environment after the sound source has ceased, caused by numerous reflections from surfaces such as walls, ceilings, and furniture. These reflections overlap and decay gradually as energy is absorbed by the environment. In contrast to discrete echoes reverberation forms a dense, continuous sound field. It is a natural phenomenon occurring in both enclosed spaces and reflective outdoor environments @garcia-lazaroSensoryPerceptualDecisional2024.
 
