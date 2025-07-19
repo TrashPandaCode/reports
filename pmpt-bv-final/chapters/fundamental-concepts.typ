@@ -15,7 +15,7 @@
   The 60 decibel threshold is chosen because it represents a significant reduction in sound energy, making it a practical point for measuring decay. A Falloff of 60 dB also corresponds a to a thousandth of the inital sound pressure level or a millionth of the initial sound intensity.
 
   === Sabine & Eyring
-  The Sabine @sabineReverberation1922 and Eyring @eyringREVERBERATIONTIMEDEAD1930 formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces. It should be noted that these formulas only approximate the RT60, as they do not account for all factors that influence sound decay in a room. The Sabine formula is often used for rooms with high absorption coefficients, while the Eyring formula is more suitable for rooms with lower absorption coefficients.
+  The Sabine @sabineReverberation1922 and Eyring @eyringReverberationTimeDead1930 formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces. It should be noted that these formulas only approximate the RT60, as they do not account for all factors that influence sound decay in a room. The Sabine formula is often used for rooms with high absorption coefficients, while the Eyring formula is more suitable for rooms with lower absorption coefficients.
 
   Sabine's formula @sabineReverberation1922: \
   $
@@ -24,7 +24,7 @@
     A = "Total absorption area in square meters"
   $
 
-  Eyring expanded on Sabine as follows @eyringREVERBERATIONTIMEDEAD1930: \
+  Eyring expanded on Sabine as follows @eyringReverberationTimeDead1930: \
   $
     "RT60 (seconds)" approx 0.161 dot V / (A' + 4"mV") dot s \
     "A'" = S_"tot" [-2.30 log_10(1-alpha_"ey")] dot m^2 \
