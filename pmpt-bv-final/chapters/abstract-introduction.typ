@@ -3,7 +3,7 @@
 
 #col[
   = Abstract
-  _This project investigates the prediction of reverberation time (RT60) from single images of office rooms at Technische Hochschule Köln. Two AI models based on Microsoft's ResNet50 architecture are introduced._
+  _This project investigates the prediction of reverberation time (RT60) from single images of office rooms at Cologne University of Applied Sciences (TH Köln). Two AI models based on Microsoft's ResNet50 architecture are introduced._
 
   _The large model was trained on a dataset combining real-world measured data and synthetically generated data labled with simulated RT60 values. The synthetic RT60 values were computed using the Treble simulation software. The combined dataset, consisting of approximately 3500 samples, was found to be insufficient for achieving accurate RT60 estimation across all considered frequency bands._
 
@@ -18,5 +18,5 @@
 
   Reverberation times are traditionally measured by exciting a room with a loud sound signal and recording its acoustic response for subsequent analysis, as described in @rev_man_meas. This procedure is time-consuming, which limits its applicability in scenarios requiring real-time or near real-time acoustic processing, such as _augmented reality_ (AR), _mixed reality_ (MR), or _extended reality_ (XR) applications @jambrosicReverberationTimeMeasuring2008.
 
-  Current approaches address this issue by pre-recording a room's reverberation time. However, this limits their flexibility and adaptability, as such measurements are tied to specific locations and static room configurations @zotterAmbisonicsPractical3D2019. Modern _head-mounted displays_ (HMDs) are typically equipped with front-facing cameras capable of capturing images of the environment. Leveraging this capability, we propose to use artificial intelligence to predict reverberation times directly from single images of a given space. The objective is to simplify and accelerate the estimation process for reverberation times. For reasons of complexity and feasibility, this work focuses specifically on predicting frequency-dependent reverberation times for office rooms at Cologne University of Applied Sciences.
+  Current approaches address this issue by pre-recording a room's reverberation time. However, this limits their flexibility and adaptability, as such measurements are tied to specific locations and static room configurations @zotterAmbisonicsPractical3D2019. Modern _head-mounted displays_ (HMDs) are typically equipped with front-facing cameras capable of capturing images of the environment. Leveraging this capability, we propose to use artificial intelligence to predict reverberation times directly from single images of a given space. The objective is to simplify and accelerate the estimation process for reverberation times. For reasons of complexity and feasibility, this work focuses specifically on predicting frequency-dependent reverberation times for office rooms at TH Köln.
 ]
