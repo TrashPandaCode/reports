@@ -7,7 +7,7 @@
 = Dataset
 
 #col[
-  Creating the dataset represented one of the most substantial undertakings of this project, which led us to dedicate approximately 50% of our time to this  task.
+  Creating the dataset represented one of the most substantial undertakings of this project, which led us to dedicate approximately 50% of our time to this task.
 
   Before describing our dataset, it is important to discuss the existing datasets available in the literature. While the audio research community has access to numerous large-scale datasets, such as the VCTK Corpus @veauxVoiceBankCorpus2013 and EARS @richterEARSAnechoicFullband2024, none specifically address our particular requirements for reverb (or impulse response) and image pairs.
 
@@ -56,6 +56,19 @@
   - A CSV file storing the corresponding RT60 values across different frequency bands for that specific room
 
   == Preprocessing
+
+  When calculating RT60 values, we initially considered 11 bands ranging from 50 Hz to 8 kHz. However, we ultimately decided to exclude the lower frequency bands (up to 250 Hz) due to the susceptibility to interference from low-frequency noise and other artifacts. Consequently, our final dataset comprises five frequency bands: 250 Hz, 500 Hz, 1 kHz, 2 kHz, 4 kHz and 8 kHz.
+
+  Due to some outliers in the dataset, we capped RT60 values exceeding 4 seconds by applying local linear interpolation. This adjustment was necessary to ensure that the model could effectively learn from the data without being skewed by extreme values.
+
+  #figure(caption: [], image("../images/rt60_outlier_curves.png"))
+
+  #figure(caption: [], image("../images/rt60_outlier_boxplot.png"))
+
+  The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with 10% for validation, 20% for testing, and the remaining 70% for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
+
+  // == Data Augmentation
+  // move augmentation to experiments
 
 ]
 
