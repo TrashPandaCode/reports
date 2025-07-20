@@ -368,19 +368,19 @@ The `save` function converts this nested map of game objects into a format that 
 
 #pagebreak()
 == User Testing
-
 The structured user testing began significantly later than originally planned, as this aspect was not given the intended priority during the development phase. We originally intended the user testing to run parallel to the development of the game and the node editor, thereby guiding respective implementation decisions. As a result, we primarily conducted application testing ourselves throughout the development phase, and only occasionally consulted fellow students regarding minor design and usability aspects.
+
 === User Testing Concept
-The original concept for user testing and related research was conducted by Leo Kling and compiled into a `Typst` document. This then was approved by some members of the team but disregarded by others which led to a noticable delay in a decision on how to proceed with user testing and set up a survey. 
+The original concept for user testing and related research was conducted by Leo Kling and compiled into a `Typst` document. This was then approved by some members of the team but disregarded by others, which led to a noticeable delay in making a decision on how to proceed with user testing and setting up a survey.
 
-The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
+The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionnaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
 
-For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demograpghic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and pased the Computer Animation module. THe questionaire followed the established System Usability Scale (SUS), adopting its proven 10-item structure with a few additional questions tailored to our specific context.
+For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS), adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
 === Results
-The user testing results where overwhelmingly positive. Our predefined goal of achievingg an average SUS score above 70 was not only met but exceeded. /* this might be bullshit, still have to evaluate the data, looks like we would achieve this tho */ This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
+The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. /* this might be bullshit, still have to evaluate the data, looks like we would achieve this tho */ This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
 
-The qualitative insights from the thing-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
+The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
 
 === Implementation of findings
 Based on the user testing results, we implemented these essential improvements:
