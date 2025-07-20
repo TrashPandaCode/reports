@@ -253,11 +253,8 @@ This on-demand loading significantly improves the scalability and responsiveness
 This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
 #pagebreak()
 
-#todo("Feedback Bitte")
-// Wie findet ihr das vom Inhalt her? Sollte ich genauer auf die Abläufe eingehen oder passt das so?
-
 == Game
-The game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
+The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
 
 === First call of the Component
 When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should shown, based on what the user has previously selected. If the Tutorial gets skipped, the Level Dialog will be displayed and wait for the current level to be set.
@@ -278,6 +275,65 @@ If the level ID in the route paramters changes or the user navigates back to the
 
 Once the clean up is completed, the Level Dialog will be displayed again and the same initialization steps from the previous section will start again.
 
+== Game Utils
+As already described in the last chapter, the Game componenet calls an `initGame` function, before it loads the selected level. This simplifies what needs to be done inside of each level initialization function itself. The main thing that needs to happen within each level initialization function is, placing game objects, connecting them using the Data Store and creating the logic that determines the win condition and the flow of the level. However loading game objects can be quite tedious, especially when we're loading sprite sheets for animations and multiple images at once for backgrounds. To further simplify level building we built a `gameHelper` component which has multiple functions to simplify some common game logic and loading assets.
+
+=== Loading game objects
+Game objects are loaded using the `addGameobjects` function. The function has a list of game objects, each with their own function to load and place the assets.
+
+The raccoon is the most commonly used game object and also one of the most complex ones. It is loaded from a 4x4 spritesheet that contains all of its animations. Kaplay has the option to cut the spritesheet into multiple animations, which you can then play on the game object. All of the animations are of course only saved on the sprite sheet with the raccoon facing in one direction, to make the file as small as possible. This means we cannot just call the play function for each movement as the orientation of the raccoon would be wrong whenever the raccoon moves to the left. To fix this issue the raccoon has multiple states that all correspond to a movement or activity. When a state is triggered it will play the corresponding animation in the correct orientation.
+
+Another issue we discovered was, that the user doesn't know where the flag is, at the start of the level, if it is out of frame. To fix this issue we implemented a game object specific update hook inside of the function flags loading function. This hook checks wether the flag is in frame or not for every frame. When the flag can't bee seen, it displays a small icon at the edge of the screen signaling the position of the flag.
+
+=== Loading Backgrounds
+Since the backgrounds need to be loaded for every level, abstraction makes sense here too. The `addBackgrounds` function takes two values as input:
+- *`Background ID`* to select which background should be displayed
+- *`Light Offset`* to offset the light's X-axis position if wanted
+As alluded, the backgrounds usually consist of two components, the background itself and the light. The background gets loaded in and positioned at Z-index 0, then the light gets loaded and positioned with the desired X-axis offset at Z-index 100. All other game objects are placed inbetween when building levels. We added the light offset, because different levels take place on different parts of the background. We wanted the light to always be somewhat centered at the start of each level, to bring the users attention towards the important aspects of each level.
+
+=== Movement and camera positioning
+We wanted to be able to switch between different types of inputs for the movement. For example in some of the early levels the raccoon was not supposed to move at all and in other levels the raccoon was only supposed to move through node inputs. To achieve this we created the `animPlayer` function, which takes three different values as input: 
+- *`Node`* lets the user control the raccoon through the nodes
+- *`Keyboard`* lets the user control the raccoon using `WASD` inputs
+- *`Loop`* lets the raccoon walk back and forth between two predetermined positions
+The `animPlayer` function also tracks the direction in which the raccoon is headed by substracting its last position from the current one. It then triggers the corresponding state for the raccoon to play the right animation.
+
+The `animPlayer` function also enables us to set a boundary for both the camera and the raccoon. This lets us set a clear focus for each level, telling the user when he should explore and when he doesn't need to go any further.
+
+// Need to mention that we implemented another function to make sure the camera stays centered when the window gets resized
+
+=== Handling level reset
+One issue that came up was that our raccoon character wouldn't be oriented correctly when the user pressed the reset button. This was because the before mentioned `animPlayer` function would recognize the movement of the raccoon back to it's starting position as walking and make him face in the direction that he moved. To get around this issue we created a small `handleReset` function that only triggers on resets. It places the raccoon back at the origin of the level and then orients the raccoon in the correct position.
+
+== State Management
+Some of the challenges we had were of course related to the communication between the node editor and the game engine. We needed to find a way to connect the node editor with the game objects in our game, but we also had to communicate other things between the node editor and the game engine, like if the user paused the game or if the user clicked the reset button. We also had to make sure that the current state of the game is preserved. We wanted users to be able to move around the site freely without losing progress or having to go through the level carousel to get back to where they left off.
+
+=== Game Store
+The Game Store tracks and saves the user's progress and session status, to allow for a more seamless experience while navigating the website. To achieve that the Game Store has four main responsibilities:
+
+- The store holds the level ID of the current level. This value is also saved to the local storage of the browser every time a level is opened.
+- The store tracks wether the current level has been completed or not. This value also gets saved in the local storage of the browser. When a level is completed it also sets the `levelCompleteDialogOpen` variable to true, to trigger UI feedback.
+- The `isPaused` variable tracks wether the game is currently paused or not and can be set using the `play` or `pause` functions.
+- Finally the store has an `init` function, which pulls the saved information for the provided level ID from the local storage to make sure the level opens in the correct state. 
+
+=== Data Store
+The Data Store is a per-level state manager, meaning it manages internal connections between the node editor and the game engine. The per-level aspect of this Zustand store is important, because different levels require different game objects to be accessible. We solved this issue by having a seperate `levels` file, which is used by the Data Store. It includes all the dialog, hints and solutions for the levels, but also information on all of the game objects that need to be accessible through the nodes.
+
+During initialization of a level the Data Store creates a map of all of the game objects that are required for the level, by going through the `levels` file. The map contains the IDs of these game objects and attachs another map to each ID containing the connections for the specific game object. Each connection a game object has is represented by an instance of the `DataHelper` class, which tracks the current value for that connection and the access type. The access type determines wether the value can be read, changed or both using the nodes. The `DataHelper` class has a `get` and a `set` function which is then used during level creation and also embedded in the nodes. The store also has functions to add custom handles to each game object.
+
+#figure(
+  block(```
+  -- gameObject
+    |--gobID, handleMap
+    |   |-- handle, handleData
+    |   |-- handle, handleData
+    |--gobID, handleMap
+    |   |-- handle, handleData
+```),
+  caption: [The structure of the nested map]
+)
+
+The `save` function converts this nested map of game objects into a format that can be JSON stringified and saves it into the local storage of the browser. The `reset` function clears the map and reinitializes it. The saving of the all of the nodes and edges in the node editor is handled seperately in multiple Zustand stores that control the node editor.
 
 
 // Website Strucutre/Navigation
@@ -291,20 +347,20 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 //    Undo/Redo
 //
 // Game
-//    Level initialization / switching between Levels
-//    GameUtils
-//      loading GameObjects
-//      loading Backgrounds
-//      Character Animations using Spritesheets
-//      handling of Level reset
+//    Level initialization / switching between Levels ---
+//    GameUtils ---
+//      loading GameObjects ---
+//      loading Backgrounds ---
+//      Character Animations using Spritesheets ---
+//      handling of Level reset ---
 //  building Levels using Kaplay
 //    gameLoop
 //    Communication between Game and Nodes
 //    Handling Win Conditions
-// State Management
-//    GameStore
-//    DataStore
-//    Time
+// State Management ---
+//    GameStore ---
+//    DataStore ---
+//    Time ---
 // Custom Game Dialog
 //    Start Dialog
 //    Finish Dialog
