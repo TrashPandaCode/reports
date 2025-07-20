@@ -22,6 +22,7 @@ After this I spend the remaining days of April touching up styling where needed 
 As with my work on routing which has been improved by Leo Kling, most of this work is not present in the current version of the code base anymore, as it was reworked by different members of the team. Noteably the addition note has been scrapped and replaced with a math node, written by Jonathan Kron. The other mentioned nodes have either been adjusted or were scrapped all together. The node layout has been reworked and is now only one component called NodeContent.
 
 ==== May<milan_dev_may>
+I started of
 
 ==== June<milan_dev_june>
 
