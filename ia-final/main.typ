@@ -362,10 +362,29 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 
   Development commenced on April 8th, leaving a total of 55 days of programming activity untracked by our formal time-logging system. However, as the project was version-controlled using Git and hosted on GitHub, all commits to the main branch — as well as those merged from feature branches — are recorded and accessible. This allows for a relatively accurate estimation of the time dedicated to programming activities during that period, although it does not account for time spent on asset creation or research.
 
+  The graphs below (@commit_graph_j, @commit_graph_l, @commit_graph_ma, @commit_graph_mi, @commit_graph_p, @commit_graph_d) show contributions of team members per week during the development time. It is important to note that not all commits are equal, but weeks showing very few commits correspond to very little work done on the project. The axis scaling of all graphs is equal allowing for a fair comparison.
+
+  These graphs can be used in addition to the individual development reports to assess their descriptions of efforts.
+
   It is important to note that each contributor may apply different estimation strategies or computational methods when quantifying their efforts, which may introduce some variation in reported contributions.
 
   Beginning on June 2nd, all time dedicated to the project was formally recorded, thereby eliminating the need for estimation. This period encompasses the tail end of the development phase as well as the entire documentation phase. While contributors were encouraged to log their efforts consistently, individual differences in logging strategies may still introduce some variability. These logging methodologies, along with the estimation techniques applied for earlier phases, will be thoroughly described and justified in the following sections.
+
 ])
+=== Contributions per Week of Development
+#v(0.5cm)
+#grid(
+  columns: 2,
+  gutter: 0.5cm,
+  [#commit_graph("contributions/data/jonathan.csv", "Jonathan Kron")<commit_graph_j>],
+  [#commit_graph("contributions/data/leo.csv", "Leo Kling")<commit_graph_l>],
+
+  [#commit_graph("contributions/data/markus.csv", "Markus Heming")<commit_graph_ma>],
+  [#commit_graph("contributions/data/milan.csv", "Milan Jezovsek")<commit_graph_mi>],
+
+  [#commit_graph("contributions/data/philipp.csv", "Philipp Wendt")<commit_graph_p>],
+  [#commit_graph("contributions/data/david.csv", "David Klein")<commit_graph_d>],
+)
 
 #include "contributions/jonathan.typ"
 #include "contributions/philipp.typ"

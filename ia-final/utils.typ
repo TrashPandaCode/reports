@@ -58,15 +58,18 @@
 #let commit_graph = (csv_path, name) => {
   let commit_data = csv(csv_path).slice(1).map(e => (e.at(0), int(e.at(1))))
 
-  figure(caption: [Commits during development per week by #name], canvas({
-    draw.set-style(
-      legend: (fill: white),
-      axes: (
-        bottom: (
-          tick: (label: (angle: 90deg, anchor: "east")),
+  figure(
+    caption: [Commits during development \ per week by #name totaling #{ commit_data.map(e => e.at(1)).sum() } commits],
+    canvas({
+      draw.set-style(
+        legend: (fill: white),
+        axes: (
+          bottom: (
+            tick: (label: (angle: 90deg, anchor: "east")),
+          ),
         ),
-      ),
-    )
-    chart.columnchart(commit_data, mode: "basic", y-max: 50, size: (8, 3), y-tick-step: 20, bar-style: (fill: blue))
-  }))
+      )
+      chart.columnchart(commit_data, mode: "basic", y-max: 50, size: (8, 3), y-tick-step: 20, bar-style: (fill: blue))
+    }),
+  )
 }
