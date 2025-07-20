@@ -132,7 +132,5 @@
 
   It is also worth mentioning the additional effort I invested in maintaining the overall quality and consistency of the project. This included tasks such as removing temporary files that had been inadvertently committed to the main branch, restoring accidentally deleted but necessary code, fixing broken or deleting unused code, as well as addressing minor issues related to logging statements or styling.
 
-  #commit_graph("contributions/data/jonathan.csv", "Jonathan Kron")
-
   === Documentation
 ])
