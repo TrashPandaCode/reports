@@ -372,9 +372,10 @@ Once the clean up is completed, the Level Dialog will be displayed again and the
 
 ])
 === Contributions per Week of Development
+#v(0.5cm)
 #grid(
   columns: 2,
-  row-gutter: 0.5cm,
+  gutter: 0.5cm,
   [#commit_graph("contributions/data/jonathan.csv", "Jonathan Kron")<commit_graph_j>],
   [#commit_graph("contributions/data/leo.csv", "Leo Kling")<commit_graph_l>],
 
