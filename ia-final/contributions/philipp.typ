@@ -51,7 +51,9 @@ Building upon what I learned from the key rewrite, I also implemented a demanded
 === Time Tracking Methodology <philipp_time_methodology>
 
 Similar to Jonathan's approach, I tried to not overestimate my time spent on tasks and kept a rather conservative approach to time tracking. I would look at the time I started working on a task and the time I finished it, then subtracting the time I spent on breaks or other distractions. If I was not sure about the time I spent on a task, I would always round down about half an hour, ensuring that I did not overestimate my time spent on tasks. This approach allowed me to keep track of my time spent on tasks without overestimating it, ensuring that I had a realistic view of my contributions to the project. 
-Like Jonathan and Leo I also used the same Git-based time tracking tool, to estimate my time spent on programming tasks even before formal time tracking was introduced. This is further detailed in @jonathan_time_methodology.
+Like Jonathan and Leo I also used the same Git-based time tracking tool, to estimate my time spent on programming tasks even before formal time tracking was introduced. This is further detailed in @jonathan_time_methodology. 
+
+This tool however does not accurately reflect the time I spent on my tasks, as it only tracks the time between two commits that lie within a time span of 2.5 hours. For an accurate way of estimating time spent, my way of handling commits was not optimal. I would often begin work on a task and then only commit once I was completely finished, rather than commiting more frequently for each step I would progress. This would lead to a lot of hours not being tracked through the tool. I tried to improve this by committing more frequently, but I was not able to consequently adapt to this way of working.
 
 === Time Spent
 ]
