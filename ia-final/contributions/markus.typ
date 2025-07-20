@@ -115,7 +115,7 @@
 
   In the @markus_documentation section I will describe my work on the documentation part of the project after I returned.
 
-  === Organization<@markus_organization>
+  === Organization<markus_organization>
 
   During the development phase (@markus_dev_phase), I always tried to keep everyone updated about my current progress and what I was working on. This was mainly done via the `GitHub issues` and separate `Github branches` for bigger tasks I was working on.
   It made the work flow a lot easier to instantly create a new issue once you find a bug or have an idea for a new feature or task that needs to be done.
