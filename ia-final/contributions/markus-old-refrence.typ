@@ -1,4 +1,8 @@
-== Contributions of Markus Heming
+#import "../lib.typ": col
+#import "@preview/big-todo:0.2.0": *
+#pagebreak()
+#col[
+  == Contributions of Markus Heming
 
   I was the one who came up with the initial idea for this project eventhough I declined to take the project lead. As we decided to mainly devide the project into two main parts, the node team and the game development team, I decided to put my main effort into the game development part as I I found it more suiting to my skills and interests.
 
@@ -71,3 +75,4 @@
   This led to me having to manage my time differently to the other team members which you can read in the @markus_time_management section.
 
   As I spend more time on the project before the summer school, I also wanted to catch up on the documentation part after I came back. Therefore I tried to spend as much time as possible during the last weeks of the project as we as a team agreed on finishing the project including the poster and the final reports by the end of July. This was a very tight schedule, but we wanted to make it work.
+]
