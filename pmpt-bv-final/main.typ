@@ -65,6 +65,8 @@
 ]
 
 #include "chapters/dataset.typ"
+// move this to its desired location whenever
+#include "chapters/synth-vs-real-data.typ"
 
 #pagebreak()
 
