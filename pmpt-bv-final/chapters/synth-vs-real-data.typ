@@ -2,7 +2,7 @@
 #import "../utils.typ": *
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
-
+#col[
 = Real vs. Synthetic Data 
 Our project employed a hybrid dataset approach, combining synthetic and real-world images to train our model. The dataset comprised two distinct components: 3773 synthetic datapoints generated through complex computer simulation and 300 real-world datapoints collected from measured office spaces at Cologne University of Applied Sciences, equaling approximately 70 measured rooms. The primary motivation for incorporating synthetic data was to address the fundamental challenge of data scarcity in the real-world domain; thus, synthetic augmentation represented a necessary compromise to achieve sufficient training data volume.
 
@@ -24,3 +24,4 @@ This domain gap likely created confusion within the neural network during traini
 
 == Implications for Model Performance
 The integration of synthetic and real data created a complex training environment where the model needed to generalize between two distinct visual domains while learning consistent acoustic prediction principles. Despite our synthetic data augmentation efforts, the total of approximately 4073 datapoints remained insufficient /*Is this in place? I feel like this would be addressed elsewhere in more detail*/ for robust CNN training on complex acoustic-visual relationships. This data insufficiency likely contributed to training instability and limited generalization capabilities, suggesting that significantly larger datasets would be necessary for optimal model performance.
+]
