@@ -365,6 +365,29 @@ The level specific game loop is also where we use some of our functions from the
 === Communication between game and nodes
 While setting up a level we call the `createLevelDataHelpers` function which returns a `DataHelper`object with multiple functions that let us interact with the Data Store from the game side. We can then use the `getData`and `setData` functions from the `DataHelper` in the `onUpdate` function in each level to connect the game objects with the nodes.
 
+Here is an example of what this could look like inside of our level specific game loop:
+
+```
+game.onUpdate(() => {
+  if (useGameStore.getState().isPaused)
+                                      return;
+
+  // Get value from exportToGameObject node
+  const value = 
+    dataHelper.getData("raccoon", "solution");
+
+  if (value == 16) {
+    useGameStore.getState()
+                    .setLevelCompleted(true);
+  }
+
+  if (dataHelper.initData()) {
+    handleReset(raccoon, -1);
+  }
+});
+```
+
+
 ]
 // Website Strucutre/Navigation
 //  Landing Page also functions as Level select screen
@@ -384,8 +407,8 @@ While setting up a level we call the `createLevelDataHelpers` function which ret
 //      Character Animations using Spritesheets ---
 //      handling of Level reset ---
 //  building Levels using Kaplay
-//    gameLoop
-//    Communication between Game and Nodes
+//    gameLoop --- 
+//    Communication between Game and Nodes ---
 //    Handling Win Conditions
 // State Management ---
 //    GameStore ---
