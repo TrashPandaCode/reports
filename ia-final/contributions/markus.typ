@@ -10,8 +10,6 @@
 
   Eventhough those two work packages would take a lot of time, I and the rest of the game development team were not able to start with this part right away as it was reliant on other parts of the project to be done first. This led to me trying to fill the time with other tasks but also caused me being a little lost in the beginning. This and also the overall communication in the team made me struggle from time to time.
 
-  //missing support in the game development team at the beginning of that work package
-
   In the following sections especially the @markus_dev_phase I'll focus more on the progress and the work I put into the project. This includes challenges I faced and also learnings I made during the project.
 
   === Time Tracking Methodology <markus_time_methodology>
@@ -53,9 +51,8 @@
 
   === Concept and Design<markus_concept_design>
 
-  At the beginning of the concept and design phase I started creating a first `wireframe` showing an example of the landing page and the level selection screen. This was mainly to get a first idea of how the game preview could look like and to have a starting point for further discussions with the team. This was then developed further by Leo Kling and Jonathan Kron, who created more detailed wireframes and mockups for the home and the level selection screen.
-  After that I was involved in the discussion where we chose the design of our website and whether the game should be in 2D or 3D.
-  // I tried to give feedback as I was responsible for the game design part and had to think about the level structure. Therefore I was also deeply involved in the discussion about whether to make a 2D or 3D game.
+  At the beginning of the concept and design phase I started creating a first `wireframe` showing a very simple example of a home screen for the game and a level selection screen. This was mainly to get a first idea of how the game preview could look like and to have a starting point for further discussions with the team. This was then developed further by Leo Kling and Jonathan Kron, who created more detailed wireframes and mockups for the home and the level selection screen.
+  After that I was involved in the discussion where we chose the design of our website and whether the game should be in 2D or 3D. As me being responsible for the game design part this was an important decision that would highly influence the workflow of the game and the graphical design.
 
   Later in this phase I was mainly contributing regarding the `level content` itself, the `story` of the game and how to connect those two aspects of the game. After setting up initial levels I was also responsible on working out and designing `tutorial levels` to introduce the player to the game mechanics and also help him navigate within the system. This was a very important part of the game design, as it was crucial to make the game `user-friendly` and easy to understand for the player.
 
@@ -63,7 +60,7 @@
 
   For the assets I was mainly involved in the discussion about which assets to use and how to integrate them into the game but less involved in the actual creation of the assets.
 
-  Other than that I was somewhat involved in the `styling` of the landing page and the game window when necessary.
+  Other than that I was somewhat involved in minor `styling` of the landing page and the game window when necessary.
 
   === Development<markus_dev_phase>
 
@@ -140,5 +137,7 @@
   As I spend more time on the project before the summer school, I also wanted to catch up on the documentation part after I came back. Therefore I tried to spend as much time as possible during the last weeks of the project as we as a team agreed on finishing the project including the poster and the final reports by the end of July. This was a very tight schedule, but we wanted to make it work.
 
   === Personal Conclusion<markus_personal_conclusion>
+
+  //missing support in the game development team at the beginning of that work package
   #todo("markus_personal_conclusion")
 ]
