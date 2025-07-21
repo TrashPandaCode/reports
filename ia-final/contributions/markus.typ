@@ -25,7 +25,8 @@
 
   My plan was to spend a few hours almost each day a week instead of only working like one day a week but the whole day.
 
-  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But I was able to catch up on that time schedule at the beginning of May but therefore had to make a couple more hours in order to make up for the time I missed beforehand.
+  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But I was able to catch up on that time schedule at the beginning of May.
+  //  but therefore had to make a couple more hours in order to make up for the time I missed beforehand.
   At that point I already started with the game development part so It was always easy to have something to do and not have to search for tasks. This was especially due to the fact that we used Github issues to track our tasks and their importantness. This made it easier to prioritize tasks and to see what needs to be done next and who is currently assigned to which task.
 
   Later in the project while having meetings with Mr. Grünvogel about the project progress we also discussed our time tracking methods and came to the conclusion that actual more precise time tracking by using a google sheet for example could help us a lot in order to keep track of how much time we spent in general and on which tasks.
@@ -66,11 +67,11 @@
 
   ==== Landing Page, Level Selection and Kaplay
 
-  As mentioned at the beginning of my contribution section, the development phase started a little bit rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to the lack of communication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. Additionally I wasn't able to start with the game development part right away and also due to time management issues my start tended to be a little bit slow.
+  As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I wasn't able to start with the game development part right away which in addition to time management issues caused my start to be very slow.
 
   However, I started using some time to work my self into the `kaplay game engine` to get a better understanding of how to use it and how to make it interact with the nodes. This also gave me a perspective on what levels are actually possible and how to implement them. Furthermore I also started setting up a level document with the game development team to have a first `overview of the levels` we wanted to create, how they should be structured and what nodes would be needed. This also helped us figuring out which `tutorial levels` we should implement in order to explain certain, more complex, nodes.
 
-  In the first weeks of development I also tried to give feedback and work on the `landing page` including the `level selection` part. I for example worked on the level navigation and made sure that the levels are displayed correctly. Simultaneously I was working on smaller parts of the landing page such as the visual feedback when hovering over certain elements such as buttons. This was at the end of April.
+  In the first weeks of development I also tried to give feedback and work on the `landing page` including the `level selection` part. I worked on the level navigation and made sure that the levels are displayed correctly. Simultaneously I was working on smaller parts of the landing page like the visual feedback when hovering over certain elements such as buttons. This was at the end of April.
 
   ==== Introduction and Navigation of the Game
 
@@ -99,7 +100,7 @@
 
   With this being done and adjusting it for each already excisting level I started with a `movement level` and a `time-transformation level` those were the first two non tutorial levels.
 
-  During that time (beginning of June) I was a little bit involved in the `documentation` part even though I was not assigned to it. I checked for content and typos and put in a little bit of content myself, the most part was done by Leo Kling though.
+  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the overview section even though I was not assigned to it, the rest of the documentation was done by Leo Kling though. I also checked for content and typos.
   Aditionally I filled the landing page with some text content so it'd be easier to understand for the first user tests coming up.
   Therefore I also added player and camera clamping so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.
   I tried making the game experience more fun in giving the player more options than just moving sideways by adding ladders the player could interact with by climbing up and down.
