@@ -302,8 +302,6 @@ The `animPlayer` function also tracks the direction in which the raccoon is head
 
 The `animPlayer` function also enables us to set a boundary for both the camera and the raccoon. This lets us set a clear focus for each level, telling the user when he should explore and when he doesn't need to go any further.
 
-// Need to mention that we implemented another function to make sure the camera stays centered when the window gets resized
-
 === Handling level reset
 One issue that came up was that our raccoon character wouldn't be oriented correctly when the user pressed the reset button. This was because the before mentioned `animPlayer` function would recognize the movement of the raccoon back to it's starting position as walking and make him face in the direction that he moved. To get around this issue we created a small `handleReset` function that only triggers on resets. It places the raccoon back at the origin of the level and then orients the raccoon in the correct position.
 
@@ -311,7 +309,7 @@ One issue that came up was that our raccoon character wouldn't be oriented corre
 Some of the challenges we had were of course related to the communication between the node editor and the game engine. We needed to find a way to connect the node editor with the game objects in our game, but we also had to communicate other things between the node editor and the game engine, like if the user paused the game or if the user clicked the reset button. We also had to make sure that the current state of the game is preserved. We wanted users to be able to move around the site freely without losing progress or having to go through the level carousel to get back to where they left off.
 
 === Game Store
-The Game Store tracks and saves the user's progress and session status, to allow for a more seamless experience while navigating the website. To achieve that the Game Store has four main responsibilities:
+The `GameStore` tracks and saves the user's progress and session status, to allow for a more seamless experience while navigating the website. To achieve that the `GameStore` has four main responsibilities:
 
 - The store holds the level ID of the current level. This value is also saved to the local storage of the browser every time a level is opened.
 - The store tracks wether the current level has been completed or not. This value also gets saved in the local storage of the browser. When a level is completed it also sets the `levelCompleteDialogOpen` variable to true, to trigger UI feedback.
@@ -340,6 +338,7 @@ The `save` function converts this nested map of game objects into a format that 
 == Building levels using Kaplay
 As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Building levels mostly consits of importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and complete the level. Every level is built as an initialize function, which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
 
+// Keep code snippets? yay nay?
 ```
 export const initializeLEVEL = () => {
   const { k, game } = getKaplayCtx();
@@ -355,10 +354,10 @@ export const initializeLEVEL = () => {
   ]);
   ...
 ```
-// maybe small paragraph on kaplay context
+The `getKaplayCtx` function imports kaplays internal context object, which gives us access to all of Kaplays functions. It also creates a game object with the `TimerComp` which is our overall game instance.
 
 === Game Loop
-We are using Kaplays inbuilt game loop function `onUpdate`. This function runs once for every frame, at a fixed frame rate of 60 frames per second. One big upside of this function is, that it can be used as many times as needed. This enables us to divide our game loop into multiple components, meaning overarching issues like pausing don't need to be implemented in each level seperately. This is also what enabled us to implement the flag icon seperately, as described in @loading_gob.
+We are using Kaplays inbuilt game loop function `onUpdate`. This function runs once for every frame, at a fixed frame rate of 60 frames per second. One big upside of this function is, that it can be used as many times as needed and can also be run on any game object with the `TimerComp` component. This enables us to divide our game loop into multiple components, meaning overarching issues like pausing or the global key tracker don't need to be implemented in each level seperately and can be handled by the Kaplay context itself, while level specific logic is handled by the game instance. This is also what enabled us to implement the flag icon seperately, as described in @loading_gob.
 
 The level specific game loop is also where we use some of our functions from the `GameHelper` component, mentioned in @game_utils. For example both the `animPlayer` function and the `handleReset` function run here.
 
@@ -387,6 +386,14 @@ game.onUpdate(() => {
 });
 ```
 
+=== Handling win conditions
+Handling win conditions is an important part of the game for the user to get a feedback to their actions and also feel some sort of progression. Win conditions are also defined in the `onUpdate` function within each level. Win conditions can be very different for each level, some of our levels include the following win conditions: 
+- Finding a specific value
+- Collecting multiple items
+- Doing an action for a set amount of time
+- Walking to a designated area
+Once the win condition is met we call the `setLevelCompleted` function from the `GameStore`.
+
 
 ]
 // Website Strucutre/Navigation
@@ -406,10 +413,10 @@ game.onUpdate(() => {
 //      loading Backgrounds ---
 //      Character Animations using Spritesheets ---
 //      handling of Level reset ---
-//  building Levels using Kaplay
+//  building Levels using Kaplay ---
 //    gameLoop --- 
 //    Communication between Game and Nodes ---
-//    Handling Win Conditions
+//    Handling Win Conditions ---
 // State Management ---
 //    GameStore ---
 //    DataStore ---
