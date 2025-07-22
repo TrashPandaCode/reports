@@ -25,7 +25,7 @@
 
   My plan was to spend a few hours almost each day a week instead of only working like one day a week but the whole day.
 
-  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But I was able to catch up on that time schedule at the beginning of May. I tried making more hours here and there in order to at least compensate a little bit for the time I lost in the beginning.
+  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But at the beginning of May I was able to provide proper weekly working hours and also tried making more hours here and there in order to at least compensate a little bit for the time I lost in the beginning.
 
   At that point I already started with the game development part so it was always easy to have something to do and not have to search for tasks. This was especially due to the fact that we used Github issues to track our tasks and their importantness. This made it easier to prioritize tasks and to see what needs to be done next and who is currently assigned to which task. I started using that tool more frequently to give updates on my current state and report bugs I found or features I wanted to implement.
 
@@ -37,7 +37,7 @@
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
-  One thing I couldn't make up for was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but unfortunately wasn't able to attend it.
+  One thing I was not part of at all was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
   When coming back at the middle of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
 
@@ -100,7 +100,7 @@
 
   With this being done and adjusting it for each already existing level I started with a `movement level` and a `time-transformation level` those were the first two non tutorial levels.
 
-  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the overview section even though I was not assigned to it, the rest of the documentation was done by Leo Kling. I also checked for content and typos.
+  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the `overview section` even though I was not assigned to it, the rest of the documentation was done by Leo Kling. I also checked for content and typos.
 
   Additionally I filled the landing page with some text content so it'd be easier to understand for the first user tests coming up.
   Therefore I also added player and camera clamping so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.

@@ -59,11 +59,11 @@
   This was especially helpful for me to have actual numbers on the time spent.
   It might sound silly but it also kind of motivated me to work more on the project so I can type in more hours into the sheet, also because I had the comparison to the other team members.
 
-  Especially at the end of June I decided to work a lot more hours than inteded per week in order to pre-work for my missing time during the summer school. This way I spend over 30 hours on a single week regarding the google docs sheet which of course was kind of tight respecting the other project and also my personal schedule. But this was important to me as I knew Im going to miss a couple weeks of the project and my team would have to be fine without me for that time.
+  Especially at the end of May I decided to work a lot more hours than inteded per week in order to pre-work for my missing time during the summer school. This way I spend over 30 hours on a single week regarding the google docs sheet which of course was kind of tight respecting the other project and also my personal schedule. But this was important to me as I knew Im going to miss a couple weeks of the project and my team would have to be fine without me for that time.
 
   The one thing I couldn't make up for was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but unfortunately wasn't able to attend it.
 
-  When coming back at the middle of July I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
+  When coming back at the 10th of July I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
   So I wanted to make sure that I can contribute a significant amount of time to the project in order to catch up on the documentation part as well as this was meant to be done by the whole team until the end of July.
 
   At that time the project was already declared as finished so I was able to spend all my working time left on the documentation part.
