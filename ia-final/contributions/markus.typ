@@ -8,7 +8,10 @@
 
   Besides the work packages that were assigned to the whole group I was mainly responsible for the `Game Design` and also part of the `Game Creation` work package. So this was about the concept and design of the game, the development of the game itself and filling it with story. Later during the process I was also working on making the game as user-friendly as possible.
 
-  Eventhough those two work packages would take a lot of time, I and the rest of the game development team were not able to start with this part right away as it was reliant on other parts of the project to be done first. This led to me trying to fill the time with other tasks but also caused me being a little lost in the beginning. This and also the overall communication in the team made me struggle from time to time.
+  In the beginning of the development phase I didn't manage to find a good start right away as I found it difficult to work myself into my two main work packages.
+  I tried filling some time with reading kaplay documentation and testing in the kaplay sandbox.
+
+  // Eventhough those two work packages would take a lot of time, I and the rest of the game development team were not able to start with this part right away as it was reliant on other parts of the project to be done first. This led to me trying to fill the time with other tasks but also caused me being a little lost in the beginning. This and also the overall communication in the team made me struggle from time to time.
 
   In the following sections especially the @markus_dev_phase I'll focus more on the progress and the work I put into the project. This includes challenges I faced and also learnings I made during the project.
 
