@@ -97,6 +97,7 @@
 // Einteilung Gruppenmitglieder
 // Project Management (Discord, GitHub, Typst, Figma)
 
+#pagebreak()
 #col[
   = Background
   == 2D vs. 3D
@@ -126,11 +127,11 @@
 
   At first glance, a 3D implementation might seem like the most natural choice, especially given that the Computer Animation course at TH Köln primarily focuses on 3D concepts. Particularly transformations, quaternions, and rotation matrices are covered in 3D space @gruenvogelEinfuehrungComputeranimationMethoden2024. However, while the course content is rooted in 3D theory, many of the examples in the official course script are presented in 2D. This contradiction created a conceptual ambiguity that we had to resolve: should our game align with the theoretical 3D emphasis of the course, or follow the practical 2D approach taken in its teaching materials?
 
-  We also explored the idea of a 2.5D or isometric design, which could have provided a more stylized and visually engaging interface while avoiding the full overhead of a true 3D system. However, we quickly realized that this approach would introduce a host of challenges. Isometric projections come with a non-intuitive coordinate system that can confuse users, especially in an educational context. Additionally, while 2.5D may offer better aesthetics, it still brings complexity in terms of rendering, navigation, and interaction that felt unnecessary for our learning goals.
+  We also explored the idea of a 2.5D or isometric design, which could have provided a more stylized and visually engaging interface while avoiding the full overhead of a true 3D system. However, we quickly realized that this approach would introduce a host of challenges. Isometric projections come with a non-intuitive coordinate system @IsometricCoordinatesIsometric that can confuse users, especially in an educational context. Additionally, while 2.5D may offer better aesthetics, it still brings complexity in terms of rendering, navigation, and interaction that felt unnecessary for our learning goals.
 
-  Ultimately, we chose to implement the game in 2D. This decision was driven by several factors supported by research in educational game design. First, 2D provides a clear and accessible visual space in which users can focus on the logic and structure of their node-based programs without being distracted or overwhelmed by spatial navigation @mayerCambridgeHandbookMultimedia2022. Second, 2D drastically simplifies development. We could use sprites instead of 3D models, reduce performance demands, and avoid dealing with camera systems or perspective corrections. Most importantly, 2D allowed us to prioritize educational clarity. Concepts such as translation, scaling, and interpolation are easier to visualize and understand in a flat, two-dimensional space due to it simply having fewer dimensions to consider. This aligns with the principles of cognitive load theory @swellerCognitiveLoadProblem1988, which suggests that reducing extraneous complexity can enhance learning outcomes.
+  Ultimately, we chose to implement the game in 2D. This decision was driven by several factors supported by research in educational game design. First, 2D provides a clear and accessible visual space in which users can focus on the logic and structure of their node-based programs without being distracted or overwhelmed by spatial navigation @mayerCambridgeHandbookMultimedia2022. Second, 2D drastically simplifies development. We could use sprites instead of 3D models, reduce performance demands, and avoid dealing with camera systems or perspective corrections. Most importantly, 2D allowed us to prioritize educational clarity @ortizWhatConsiderWhen2016. Concepts such as translation, scaling, and interpolation are easier to visualize and understand in a flat, two-dimensional space due to it simply having fewer dimensions to consider. This aligns with the principles of cognitive load theory @swellerCognitiveLoadProblem1988, which suggests that reducing extraneous complexity can enhance learning outcomes.
 
-  Despite its simplicity, 2D remains relevant and effective in modern game design, particularly for browser-based educational tools like ours. The decision to go with 2D allowed us to make quicker progress, ensure higher usability, and remain focused on the game's core purpose: to help students understand animation principles through interaction and experimentation, not to navigate a complex virtual world. In this sense, the choice of 2D was not a limitation, but a strategic and pedagogically motivated simplification.
+  Despite its simplicity, 2D remains relevant and effective in modern game design @DemographicsPlayersPlatformer, particularly for browser-based educational tools like ours. The decision to go with 2D allowed us to make quicker progress, ensure higher usability, and remain focused on the game's core purpose: to help students understand animation principles through interaction and experimentation, not to navigate a complex virtual world. In this sense, the choice of 2D was not a limitation, but a strategic and pedagogically motivated simplification.
 
   == Web vs. Native
   Another key decision we faced was choosing between a web-based or native desktop application. This choice had significant implications for accessibility, distribution, development complexity, and long-term maintainability of the educational tool.
@@ -143,20 +144,20 @@
 
   By choosing web technologies, we could leverage the extensive ecosystem of web development tools, libraries, and frameworks. This decision aligned well with our choice to use React and React Flow for the node-based programming interface, as these technologies are specifically designed for web environments and provide robust, well-documented solutions for our use case. Web applications can be easily integrated into existing educational management systems, embedded in course websites, or shared through simple URLs. This seamless integration supports the pedagogical goal of making the tool a natural extension of the existing course materials rather than a separate application that students must learn to navigate independently.
 
-  Web development also allowed our team to focus on a single codebase rather than maintaining separate versions for different operating systems. This efficiency was crucial given our project timeline and team size constraints. The web platform also provides excellent debugging tools and development workflows that accelerated our development process. Contemporary web browsers offer sophisticated capabilities that were previously exclusive to native applications. Features like WebGL for graphics rendering, Web Workers for background processing, and advanced JavaScript APIs provide sufficient performance for our educational use case while maintaining the accessibility benefits of web deployment.
+  Web development also allowed our team to focus on a single codebase rather than maintaining separate versions for different operating systems. This efficiency was crucial given our project timeline and team size constraints. The web platform also provides excellent debugging tools and development workflows that accelerated our development process. Contemporary web browsers offer sophisticated capabilities that were previously exclusive to native applications. Features like WebGL for graphics rendering, Web Workers for background processing, and advanced JavaScript APIs provide sufficient performance for our educational use case while maintaining the accessibility benefits of web deployment @WebGL2D3D2025.
 
-  We also considered hybrid approaches such as Electron @ElectronElectron2025 or Tauri @TauriappsTauri2025, which allow developers to package web applications as native desktop applications. These frameworks offer a middle ground by combining web technologies with native distribution, potentially providing benefits like offline functionality, file system access, and familiar desktop integration while maintaining a single codebase. However, these solutions would have introduced unnecessary complexity for our specific use case. Electron applications, in particular, are known for their significant memory overhead and larger file sizes, which could create installation barriers similar to those we sought to avoid with traditional native applications. More importantly, our educational tool does not require the advanced system integration features that would justify the additional complexity of a hybrid approach. The core functionality of Dumpster Diving—node-based programming, visual feedback, and educational content delivery—is well-suited to modern web browsers and does not benefit meaningfully from native packaging. By staying with a pure web approach, we maintained the simplicity of direct browser access while avoiding the distribution overhead that hybrid solutions would have introduced.
+  We also considered hybrid approaches such as Electron @ElectronElectron2025 or Tauri @TauriappsTauri2025, which allow developers to package web applications as native desktop applications. These frameworks offer a middle ground by combining web technologies with native distribution, potentially providing benefits like offline functionality, file system access, and familiar desktop integration while maintaining a single codebase. However, these solutions would have introduced unnecessary complexity for our specific use case. Electron applications, in particular, are known for their significant memory overhead and larger file sizes, which could create installation barriers similar to those we sought to avoid with traditional native applications. More importantly, our educational tool does not require the advanced system integration features that would justify the additional complexity of a hybrid approach. The core functionality of Dumpster Diving — node-based programming, visual feedback, and educational content delivery — is well-suited to modern web browsers and does not benefit meaningfully from native packaging. By staying with a pure web approach, we maintained the simplicity of direct browser access while avoiding the distribution overhead that hybrid solutions would have introduced.
 
   The decision to develop for the web rather than as a native application ultimately supported our primary objective of creating an accessible, easy-to-use educational tool that could reach the broadest possible audience of students. While native applications might offer marginal performance advantages, the accessibility, distribution, and maintenance benefits of web deployment far outweighed these considerations for our specific use case and educational context.
 
   == Design of Visual Scripting System
   The visual scripting system represents the core educational interface of Dumpster Diving, serving as the primary means through which students interact with computer animation concepts. The design of this system required careful consideration of both pedagogical effectiveness and technical implementation, balancing the need for educational clarity with the complexity inherent in programming concepts.
 
-  Our visual scripting approach is fundamentally node-based, where each node represents a discrete operation, value, or control structure. This design paradigm draws inspiration from established tools in the computer graphics and animation industry, such as Blender's Geometry Nodes, Unity's Shader Graph, and Unreal Engine's Blueprint system. By adopting a familiar visual metaphor, we aimed to reduce the cognitive burden associated with learning a new interface while introducing students to interaction patterns they might encounter in professional animation software.
+  Our visual scripting approach is fundamentally node-based, where each node represents a discrete operation, value, or control structure. This design paradigm draws inspiration from established tools in the computer graphics and animation industry, such as Blender's Geometry Nodes @GeometryNodesBlender, Unity's Shader Graph @technologiesUnityManualCreating, and Unreal Engine's Blueprint system @BlueprintsVisualScripting. By adopting a familiar visual metaphor, we aimed to reduce the cognitive burden associated with learning a new interface while introducing students to interaction patterns they might encounter in professional animation software.
 
   The node system architecture follows a clear hierarchical structure where data flows directionally from input nodes through processing nodes to output nodes that affect the game world. This left-to-right flow convention mirrors traditional programming execution patterns while providing immediate visual feedback about the logical sequence of operations.
 
-  To reduce cognitive complexity for beginning programmers, our visual scripting system employs a simplified type system where all data is internally represented as numbers. This unified approach encompasses integers, floating-point values, and boolean values (represented as 0 and 1), eliminating the need for students to understand complex type hierarchies or casting operations. While this simplification may seem limiting from a traditional programming perspective, it aligns with our educational objectives by allowing students to focus on algorithmic thinking and animation concepts rather than type system intricacies. This design decision also prevents common programming errors related to type mismatches, which can be particularly frustrating for novice programmers and detract from the core learning objectives of computer animation.
+  To reduce cognitive complexity for beginning programmers, our visual scripting system employs a simplified type system where all data is internally represented as numbers. This unified approach encompasses integers, floating-point values, and boolean values (represented as 0 and 1, although all number unequals 0 are considered truthy), eliminating the need for students to understand complex type hierarchies or casting operations. While this simplification may seem limiting from a traditional programming perspective, it aligns with our educational objectives by allowing students to focus on algorithmic thinking and animation concepts rather than type system intricacies. This design decision also prevents common programming errors related to type mismatches, which can be particularly frustrating for novice programmers and detract from the core learning objectives of computer animation.
 
   Central to our design philosophy was the principle of progressive disclosure. Rather than overwhelming students with the full complexity of programming from the outset, the visual scripting system introduces concepts gradually across levels. Early levels present only basic nodes for simple operations like movement and basic arithmetic, while later levels introduce more sophisticated concepts such as loops, conditionals, and complex data transformations. This scaffolded approach allows students to build confidence and understanding incrementally, ensuring that each new concept builds upon previously mastered skills.
 
@@ -167,7 +168,7 @@
   The design also incorporates accessibility considerations, ensuring that the visual scripting interface remains usable for students with different abilities and technical backgrounds. High contrast color schemes, clear typography, and logical keyboard navigation patterns make the system accessible to students with visual impairments or motor disabilities. Additionally, the node-based approach itself serves as an accessibility feature by reducing the need for precise typing and syntax memorization that can be barriers in traditional text-based programming environments.
 
   == Target Audience
-  The primary target audience for Dumpster Diving consists of students enrolled in the Computer Animation (CA) course at the University of Applied Sciences Cologne. These students often come from diverse academic backgrounds and usually possess a basic to intermediate level of programming knowledge but typically have little to no prior experience in technical animation tools. The course introduces foundational concepts in computer animation, and Dumpster Diving was created to complement this curriculum by offering an interactive, low-barrier entry point into core principles such as coordinate systems, timing, logic structures, and animation behaviors.
+  The primary target audience for Dumpster Diving consists of students enrolled in the Computer Animation (CA) course at the University of Applied Sciences Cologne, which according to the standard period of study is taken in the 5th semester. These students often come from diverse academic backgrounds and usually possess a basic to intermediate level of programming knowledge but typically have little to no prior experience in technical animation tools. The course introduces foundational concepts in computer animation, and Dumpster Diving was created to complement this curriculum by offering an interactive, low-barrier entry point into core principles such as coordinate systems, timing, logic structures, and animation behaviors.
 
   In addition to CA students, Dumpster Diving is intended to serve independent learners and hobbyists interested in visual programming or animation. These users may be exploring animation for the first time or looking for a lightweight environment in which to experiment with logic-driven animation systems. The project is particularly suitable for use in self-directed learning contexts, informal education, and outreach initiatives.
 
@@ -213,189 +214,197 @@
 ]
 
 #pagebreak()
-#col[ //provisorischer col unfug 
-= Technical Challenges & Solutions
-== Use of React and React Flow <techstack_react_reactflow>
-//has to be checked for correctness and completeness
-React #footnote([https://react.dev/]) is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use React Flow #footnote([https://reactflow.dev/]) to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sophisticated node editor needed for our project. As our programming language of choice, we decided to use TypeScript — a statically typed superset of JavaScript. TypeScript allows us to catch type-related errors early in the development process and contributes to clearer, more maintainable code. These benefits are particularly important in a project like ours, which involves a complex system with many interconnected components and evolving interfaces. Since we're working with React and TypeScript, we naturally use TSX — the standard syntax extension for TypeScript that allows us to write HTML-like markup within TypeScript code. This makes building and maintaining the user interface more intuitive, especially in areas like the node editor, where we create various custom components with specific properties and behaviors.
+#col[
+  //provisorischer col unfug
+  = Technical Challenges & Solutions
+  == Use of React and React Flow <techstack_react_reactflow>
+  //has to be checked for correctness and completeness
+  React #footnote([https://react.dev/]) is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use React Flow #footnote([https://reactflow.dev/]) to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sophisticated node editor needed for our project. As our programming language of choice, we decided to use TypeScript — a statically typed superset of JavaScript. TypeScript allows us to catch type-related errors early in the development process and contributes to clearer, more maintainable code. These benefits are particularly important in a project like ours, which involves a complex system with many interconnected components and evolving interfaces. Since we're working with React and TypeScript, we naturally use TSX — the standard syntax extension for TypeScript that allows us to write HTML-like markup within TypeScript code. This makes building and maintaining the user interface more intuitive, especially in areas like the node editor, where we create various custom components with specific properties and behaviors.
 
 
-== Evaluation of Game Engines: Kaplay, Three.js and Unity
-// has to be checked for correctness and completeness
-//Leo: puh hier passiert einiges. also 3d ist halt wieder falsch, das argument gegen unity war ja nicht "loss in performance and responsiveness" sondern, dass wir das node-system dann auch in unity machen müssten was sehr unangenehm wäre (und das spiel in unity zu bauen und den node editor als website wäre schwierig gewesen zu verknüpfen). das wir für three alles selber implementieren müssten ist ja auch nicht richtig, wir hätten ja auch auf existierende bibliotheken zurückgreifen können.
-//
-// den unity punkt und die sachen zu den einzelnen korrekturen hab ich umgesetzt. Das mit 3D ist eher ein missverständnis, ich gehe ja mit dem satz darauf ein, dass wir ursprünglich eine 3D Webanwendung machen wollten, wir uns aber mit unserer entscheidung für Kaplay dagegen entschieden haben und auf 2D umgestiegen sind. Dass das noch recht schlecht aus dem text hervorgeht seh ich ein. wie wärs mit einem kleinen absatz der unsere diskussion über 2D vs 3D zusammenfasst? Oder sollte das ein insgesamt auch führendes thema dieses absatzes sein? Den ThreeJS absatz hab ich auch nochmal umformuliert, da hast du recht, dass wir nicht alles selbst implementieren müssten und man da libraries nutzen könnte, dass es dann overall aber trotzedm einfacher ist eine wirklich dafür gemachte Game Engine zu nutzen. Falls dazu noch additions einfallen, gerne einfach reinschreiben
+  == Evaluation of Game Engines: Kaplay, Three.js and Unity
+  // has to be checked for correctness and completeness
+  //Leo: puh hier passiert einiges. also 3d ist halt wieder falsch, das argument gegen unity war ja nicht "loss in performance and responsiveness" sondern, dass wir das node-system dann auch in unity machen müssten was sehr unangenehm wäre (und das spiel in unity zu bauen und den node editor als website wäre schwierig gewesen zu verknüpfen). das wir für three alles selber implementieren müssten ist ja auch nicht richtig, wir hätten ja auch auf existierende bibliotheken zurückgreifen können.
+  //
+  // den unity punkt und die sachen zu den einzelnen korrekturen hab ich umgesetzt. Das mit 3D ist eher ein missverständnis, ich gehe ja mit dem satz darauf ein, dass wir ursprünglich eine 3D Webanwendung machen wollten, wir uns aber mit unserer entscheidung für Kaplay dagegen entschieden haben und auf 2D umgestiegen sind. Dass das noch recht schlecht aus dem text hervorgeht seh ich ein. wie wärs mit einem kleinen absatz der unsere diskussion über 2D vs 3D zusammenfasst? Oder sollte das ein insgesamt auch führendes thema dieses absatzes sein? Den ThreeJS absatz hab ich auch nochmal umformuliert, da hast du recht, dass wir nicht alles selbst implementieren müssten und man da libraries nutzen könnte, dass es dann overall aber trotzedm einfacher ist eine wirklich dafür gemachte Game Engine zu nutzen. Falls dazu noch additions einfallen, gerne einfach reinschreiben
 
-In regards to our project, choosing the right game engine is crucial. The game engine serves as the foundation for the game, providing the necessary tools and features to create a responsive and performant game side of our learning tool. In our case, we wanted a game engine that would allow us to create a 3D web-based game that could be easily developed, tested and in the end used to learn computer animation. When exploring our options for a game engine, we considered several alternatives: Kaplay #footnote([https://kaplayjs.com/]), Three.js #footnote([https://threejs.org/]) and Unity #footnote([https://unity.com/de]). Each of these has its own strengths and weaknesses. Although Three.js provides a flexible and powerful 3D rendering engine, it is not designed to be a game engine. As such, core features like physics, entity and scene management, or object interactions are not built-in and would require either significant custom implementation or the integration of third-party libraries. This can increase both complexity and development time compared to using a purpose-built game engine. Unity is a mature and widely established game engine particularly well-suited for 3D game development, as well as it being the Software used for most of the Computer Animation modules coursework hence being familiar to all group members. However it would require us to also develop the nodesystem completely within unity, which would have been a strenious task as mentioned in @techstack_react_reactflow and possibly even more complicated than implementing it from scratch in a web application. Other possible solutions like developing the game in Unity and the node editor as a separate web application would have made it difficult to realise instantanious feedback between the game and the node editor. In contrast, Kaplay is a fully-fledged game engine that is specifically designed for 2D web based games. As a result, certain computer animation concepts — like using quaternions for rotation — are not applicable here, since 2D space only requires a single angle to represent rotation. Kaplay allows us to create a responsive and performant game that can be easily developed and tested. Kaplay also provides a set of features that are essential for our project, such as collision detection, physics simulations and scene management. This allows us to focus on building an educational game to teach the core principles of computer animation.
- //provisional pagebreak, might not be needed in the end
-== State Management with Zustand
-// has to be checked for correctness and completeness
+  In regards to our project, choosing the right game engine is crucial. The game engine serves as the foundation for the game, providing the necessary tools and features to create a responsive and performant game side of our learning tool. In our case, we wanted a game engine that would allow us to create a 3D web-based game that could be easily developed, tested and in the end used to learn computer animation. When exploring our options for a game engine, we considered several alternatives: Kaplay #footnote([https://kaplayjs.com/]), Three.js #footnote([https://threejs.org/]) and Unity #footnote([https://unity.com/de]). Each of these has its own strengths and weaknesses. Although Three.js provides a flexible and powerful 3D rendering engine, it is not designed to be a game engine. As such, core features like physics, entity and scene management, or object interactions are not built-in and would require either significant custom implementation or the integration of third-party libraries. This can increase both complexity and development time compared to using a purpose-built game engine. Unity is a mature and widely established game engine particularly well-suited for 3D game development, as well as it being the Software used for most of the Computer Animation modules coursework hence being familiar to all group members. However it would require us to also develop the nodesystem completely within unity, which would have been a strenious task as mentioned in @techstack_react_reactflow and possibly even more complicated than implementing it from scratch in a web application. Other possible solutions like developing the game in Unity and the node editor as a separate web application would have made it difficult to realise instantanious feedback between the game and the node editor. In contrast, Kaplay is a fully-fledged game engine that is specifically designed for 2D web based games. As a result, certain computer animation concepts — like using quaternions for rotation — are not applicable here, since 2D space only requires a single angle to represent rotation. Kaplay allows us to create a responsive and performant game that can be easily developed and tested. Kaplay also provides a set of features that are essential for our project, such as collision detection, physics simulations and scene management. This allows us to focus on building an educational game to teach the core principles of computer animation.
+  //provisional pagebreak, might not be needed in the end
+  == State Management with Zustand
+  // has to be checked for correctness and completeness
 
-// ich würde hier nicht ins detail darauf eingehen, ob zustand oder context performanter ist ohne das mit quellen belegen zu können. ich persönlich wäre mir da gar nicht mal so sicher. ich würde eher sagen, dass zustand einfach besser zu unseren anforderungen passt.
-// For global state management within our React application, we opted to use Zustand #footnote([https://github.com/pmndrs/zustand]) instead of React's built-in Context API. While React Context is a powerful tool for sharing static values throughout a component tree, it is not optized for scenarios involving frequent and fine-grained state updates. Rendering it unfit for our use case, where the game part of our application needs to be in constant communication with the node editor, which imposes a high performance demand on the state management system. Zustand, on the other hand, is a lightweight state management library, specifically designed to handle dynamic and frequently changing states in React applications. It provides a simple but efficiently scalable API for managing global state, allowing us to create stores that can be accessed and updated from anywhere in the application. Avoiding unnecessary component re-renders, it contributes heavily to the overall better performance and maintainability, making it a perfect fit for our project.
+  // ich würde hier nicht ins detail darauf eingehen, ob zustand oder context performanter ist ohne das mit quellen belegen zu können. ich persönlich wäre mir da gar nicht mal so sicher. ich würde eher sagen, dass zustand einfach besser zu unseren anforderungen passt.
+  // For global state management within our React application, we opted to use Zustand #footnote([https://github.com/pmndrs/zustand]) instead of React's built-in Context API. While React Context is a powerful tool for sharing static values throughout a component tree, it is not optized for scenarios involving frequent and fine-grained state updates. Rendering it unfit for our use case, where the game part of our application needs to be in constant communication with the node editor, which imposes a high performance demand on the state management system. Zustand, on the other hand, is a lightweight state management library, specifically designed to handle dynamic and frequently changing states in React applications. It provides a simple but efficiently scalable API for managing global state, allowing us to create stores that can be accessed and updated from anywhere in the application. Avoiding unnecessary component re-renders, it contributes heavily to the overall better performance and maintainability, making it a perfect fit for our project.
 
-//Ist das so besser? ich hab versucht das ganze etwas kürzer zu fassen und nicht so sehr auf die performance einzugehen. Alternativ könnte ich auch ein paar quellen raussuchen, die belegen, dass zustand performanter ist als context. Aber ich denke dass das vermutlich eher den ramen sprengen würde da jetzt großartig drauf einzugehen.
-For global state management within our React application, we opted to use Zustand #footnote([https://github.com/pmndrs/zustand]) instead of React's built-in Context API. While React Context is a valuable tool for sharing static values across a component tree, it is not well-suited for managing dynamic or rapidly changing state. Our application requires continuous synchronization between the game logic and the node-based editor, which places significant demands on responsiveness and update granularity. Zustand, as a lightweight and flexible state management library, offers a more appropriate solution for such use cases. Its minimal API supports the creation of centralized stores that can be accessed and modified from any part of the application, without enforcing a rigid structure or causing unnecessary re-renders. This design aligns well with our architectural needs and helps ensure both performance and maintainability throughout the project.
+  //Ist das so besser? ich hab versucht das ganze etwas kürzer zu fassen und nicht so sehr auf die performance einzugehen. Alternativ könnte ich auch ein paar quellen raussuchen, die belegen, dass zustand performanter ist als context. Aber ich denke dass das vermutlich eher den ramen sprengen würde da jetzt großartig drauf einzugehen.
+  For global state management within our React application, we opted to use Zustand #footnote([https://github.com/pmndrs/zustand]) instead of React's built-in Context API. While React Context is a valuable tool for sharing static values across a component tree, it is not well-suited for managing dynamic or rapidly changing state. Our application requires continuous synchronization between the game logic and the node-based editor, which places significant demands on responsiveness and update granularity. Zustand, as a lightweight and flexible state management library, offers a more appropriate solution for such use cases. Its minimal API supports the creation of centralized stores that can be accessed and modified from any part of the application, without enforcing a rigid structure or causing unnecessary re-renders. This design aligns well with our architectural needs and helps ensure both performance and maintainability throughout the project.
 
-== Using Markdown for Documentation<markdown_documentation>
+  == Using Markdown for Documentation<markdown_documentation>
 
-When designing the foundation for our documentation system, one of the first and most important architectural decisions we had to make was choosing the format in which the documentation content would be written and maintained. One option was to use plain HTML or JSX components. This approach would have offered the most flexibility in terms of layout and structure, as we would have been able to build custom pages using the full featureset of React. However, this flexibility would have come at a significant cost: increased complexity, a large amount of repetitive boilerplate code, and a higher barrier of entry for contributors, especially for those with limited technical experience.
+  When designing the foundation for our documentation system, one of the first and most important architectural decisions we had to make was choosing the format in which the documentation content would be written and maintained. One option was to use plain HTML or JSX components. This approach would have offered the most flexibility in terms of layout and structure, as we would have been able to build custom pages using the full featureset of React. However, this flexibility would have come at a significant cost: increased complexity, a large amount of repetitive boilerplate code, and a higher barrier of entry for contributors, especially for those with limited technical experience.
 
-Instead, we opted for a more structured and maintainable solution by using Markdown, and eventually transitioning to MDX. Markdown is a lightweight markup language that allows authors to format text using a simple and intuitive syntax. It is widely used in technical and non-technical communities alike due to its readability and ease of use. By choosing Markdown, we enabled a workflow where contributors can focus on the content itself without needing to understand complex HTML structures or React component logic. This significantly lowers the barrier to entry for writing and maintaining documentation, which is especially beneficial in educational or collaborative projects where content authors may not have a background in software development.
+  Instead, we opted for a more structured and maintainable solution by using Markdown, and eventually transitioning to MDX. Markdown is a lightweight markup language that allows authors to format text using a simple and intuitive syntax. It is widely used in technical and non-technical communities alike due to its readability and ease of use. By choosing Markdown, we enabled a workflow where contributors can focus on the content itself without needing to understand complex HTML structures or React component logic. This significantly lowers the barrier to entry for writing and maintaining documentation, which is especially beneficial in educational or collaborative projects where content authors may not have a background in software development.
 
-Later in the development process, we transitioned from pure Markdown to MDX, a powerful extension of Markdown that supports embedding React components directly within the document. This allows us to combine the simplicity of Markdown with the interactivity of modern web applications. Using MDX, we were able to build dynamic and interactive documentation pages—for example, by embedding live previews of the nodes and their configurations directly within the documentation for each node type. This makes the documentation not only more informative but also more engaging and effective.
+  Later in the development process, we transitioned from pure Markdown to MDX, a powerful extension of Markdown that supports embedding React components directly within the document. This allows us to combine the simplicity of Markdown with the interactivity of modern web applications. Using MDX, we were able to build dynamic and interactive documentation pages—for example, by embedding live previews of the nodes and their configurations directly within the documentation for each node type. This makes the documentation not only more informative but also more engaging and effective.
 
-Another key advantage of using Markdown and MDX is the ease of content processing. Markdown files are inherently easier to parse and search than raw JSX or HTML components. This simplifies the implementation of features such as search functionality, indexing, and content previews. It also supports better performance and scalability, as parsing plain text is less resource-intensive than interpreting compiled React components.
+  Another key advantage of using Markdown and MDX is the ease of content processing. Markdown files are inherently easier to parse and search than raw JSX or HTML components. This simplifies the implementation of features such as search functionality, indexing, and content previews. It also supports better performance and scalability, as parsing plain text is less resource-intensive than interpreting compiled React components.
 
-In addition to the usability and maintainability benefits of Markdown and MDX, another important advantage of our approach is the ability to load documentation content on demand. Rather than bundling all documentation pages into the main application bundle—which would increase initial load time and negatively affect performance—we dynamically load each Markdown or MDX file only when the user navigates to its corresponding documentation page.
+  In addition to the usability and maintainability benefits of Markdown and MDX, another important advantage of our approach is the ability to load documentation content on demand. Rather than bundling all documentation pages into the main application bundle—which would increase initial load time and negatively affect performance—we dynamically load each Markdown or MDX file only when the user navigates to its corresponding documentation page.
 
-This on-demand loading significantly improves the scalability and responsiveness of the site. Users only download the content they actively view, which helps reduce network usage and speeds up the initial loading experience, especially for first-time visitors. It also aligns well with modern web development practices, such as code-splitting and lazy loading, both of which we make use of elsewhere in the project.
+  This on-demand loading significantly improves the scalability and responsiveness of the site. Users only download the content they actively view, which helps reduce network usage and speeds up the initial loading experience, especially for first-time visitors. It also aligns well with modern web development practices, such as code-splitting and lazy loading, both of which we make use of elsewhere in the project.
 
-This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
+  This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
 ]
 #pagebreak()
-#col[ //provisorischer col unfug
-== Game <game>
-The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
+#col[
+  //provisorischer col unfug
+  == Game <game>
+  The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
 
-=== First call of the Component //P: corrected some minor sentence structure stuff
-When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should be shown, based on whether the user had previously read the tutorial. If the Tutorial gets skipped, the Level Dialog will be displayed and wait for the current level to be set.
+  // in general i would combine all these implementation details with a specific issue we faced
 
-//P: not to sure about the validity of all of this, looks good but would be good to have a second pair of eyes on it
-Once there is a valid level ID multiple functions get called:
-- The global key tracker is started to listen for keyboard inputs
-- All Zustand stores, for game state, node flows, loops, and data are initialized
-- The Kaplay game engine is initialized using our `initGame`. function, which receives a reference to the canvas canvas element created when the component is called. This tells the game engine where to render the game
-After everything is initialized the `loadLevel` function is called. This function sets the current level and then calls the initialize-function for that level.
+  // i would change the heading, it's too ambiguous, imo
+  === First call of the Component //P: corrected some minor sentence structure stuff
+  When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should be shown, based on whether the user had previously read the tutorial. If the Tutorial is skipped, the Level Dialog will be displayed and wait for the current level to be set.
 
-To prevent users from losing their progress due to accidental reloads or crashes, the component also sets up an auto-save system. A function is called every 10 seconds using JavaScripts `setInterval` function. This function calls the `save` function for all of our aforementioned Zustand stores.
+  //P: not to sure about the validity of all of this, looks good but would be good to have a second pair of eyes on it
+  Once there is a valid level ID multiple functions get called:
+  - The global key tracker is started to listen for keyboard inputs
+  - All Zustand stores, for game state, node flows, loops, and data are initialized
+  - The Kaplay game engine is initialized using our `initGame`. function, which receives a reference to the canvas canvas element created when the component is called. This tells the game engine where to render the game
+  After everything is initialized the `loadLevel` function is called. This function sets the current level and then calls the initialize-function for that level.
 
-=== Calling the Component again //P: again not really my area of expertise, but looks good
-If the level ID in the route paramters changes or the user navigates back to the same level, the componenet is re-rendered. Before any initialization starts again severeal clean up functions are called:
-- Kaplays own clean up function is called to erase everything that was already loaded from the previous level
-- The auto-save Interval is cleared
-- The global key tracker also has his clean up function called
+  To prevent users from losing their progress due to accidental reloads or crashes, the component also sets up an auto-save system. A function is called every 10 seconds using JavaScripts `setInterval` function. This function calls the `save` function for all of our aforementioned Zustand stores.
 
-Once the clean up is completed, the Level Dialog will be displayed again and the same initialization steps from the previous section will start again.
+  // i would change the heading, it's too ambiguous, imo
+  === Calling the Component again //P: again not really my area of expertise, but looks good
+  If the level ID in the route paramters changes or the user navigates back to the same level, the componenet is re-rendered. Before any initialization starts again severeal clean up functions are called:
+  - Kaplays own clean up function is called to erase everything that was already loaded from the previous level // we wrote this cleanup function, also the desc isn't really accurate
+  - The auto-save interval is cleared
+  - The global key tracker also has his clean up function called
 
-== Game Utils <game_utils> //P: again not really my area of expertise, but looks good
-As already described in the last chapter, the Game componenet calls an `initGame` function, before it loads the selected level. This simplifies what needs to be done inside of each level initialization function itself. The main thing that needs to happen within each level initialization function is, placing game objects, connecting them using the Data Store and creating the logic that determines the win condition and the flow of the level. However loading game objects can be quite tedious, especially when we're loading sprite sheets for animations and multiple images at once for backgrounds. To further simplify level building we built a `gameHelper` component which has multiple functions to simplify some common game logic and loading assets.
+  Once the clean up is completed, the Level Dialog will be displayed again and the same initialization steps from the previous section will start again.
 
-=== Loading game objects <loading_gob> //P: again not really my area of expertise, but looks good
-Game objects are loaded using the `addGameobjects` function. The function has a list of game objects, each with their own function to load and place the assets.
+  == Game Utils <game_utils> //P: again not really my area of expertise, but looks good
+  As already described in the last chapter, the Game componenet calls an `initGame` function, before it loads the selected level. This simplifies what needs to be done inside of each level initialization function itself. The main thing that needs to happen within each level initialization function is, placing game objects, connecting them using the Data Store and creating the logic that determines the win condition and the flow of the level. However loading game objects can be quite tedious, especially when we're loading sprite sheets for animations and multiple images at once for backgrounds. To further simplify level building we built a `gameHelper` component which has multiple functions to simplify some common game logic and loading assets.
 
-The raccoon is the most commonly used game object and also one of the most complex ones. It is loaded from a 4x4 spritesheet that contains all of its animations. Kaplay has the option to cut the spritesheet into multiple animations, which you can then play on the game object. All of the animations are of course only saved on the sprite sheet with the raccoon facing in one direction, to make the file as small as possible. This means we cannot just call the play function for each movement as the orientation of the raccoon would be wrong whenever the raccoon moves to the left. To fix this issue the raccoon has multiple states that all correspond to a movement or activity. When a state is triggered it will play the corresponding animation in the correct orientation.
+  === Loading game objects <loading_gob> //P: again not really my area of expertise, but looks good
+  Game objects are loaded using the `addGameobjects` function. The function has a list of game objects, each with their own function to load and place the assets.
 
-Another issue we discovered was, that the user doesn't know where the flag is, at the start of the level, if it is out of frame. To fix this issue we implemented a game object specific update hook inside of the function flags loading function. This hook checks wether the flag is in frame or not for every frame. When the flag can't bee seen, it displays a small icon at the edge of the screen signaling the position of the flag.
+  The raccoon is the most commonly used game object and also one of the most complex ones. It is loaded from a 4x4 spritesheet that contains all of its animations. Kaplay has the option to cut the spritesheet into multiple animations, which you can then play on the game object. All of the animations are of course only saved on the sprite sheet with the raccoon facing in one direction, to make the file as small as possible. This means we cannot just call the play function for each movement as the orientation of the raccoon would be wrong whenever the raccoon moves to the left. To fix this issue the raccoon has multiple states that all correspond to a movement or activity. When a state is triggered it will play the corresponding animation in the correct orientation.
 
-=== Loading Backgrounds //P: just one minor correction
-Since the backgrounds need to be loaded for every level, abstraction makes sense here too. The `addBackgrounds` function takes two values as input:
-- *`Background ID`* to select which background should be displayed
-- *`Light Offset`* to offset the light's X-axis position if wanted
-As alluded, the backgrounds usually consist of two components, the background itself and a light. The background gets loaded in and positioned at Z-index 0, then the light gets loaded and positioned with the desired X-axis offset at Z-index 100. All other game objects are placed inbetween when building levels. We added the light offset, because different levels take place on different parts of the background. We wanted the light to always be somewhat centered at the start of each level, to bring the users attention towards the important aspects of each level.
+  Another issue we discovered was, that the user doesn't know where the flag is, at the start of the level, if it is out of frame. To fix this issue we implemented a game object specific update hook inside of the function flags loading function. This hook checks wether the flag is in frame or not for every frame. When the flag can't bee seen, it displays a small icon at the edge of the screen signaling the position of the flag.
 
-=== Movement and camera positioning //P: again not really my area of expertise, but looks good
-We wanted to be able to switch between different types of inputs for the movement. For example in some of the early levels the raccoon was not supposed to move at all and in other levels the raccoon was only supposed to move through node inputs. To achieve this we created the `animPlayer` function, which takes three different values as input: 
-- *`Node`* lets the user control the raccoon through the nodes
-- *`Keyboard`* lets the user control the raccoon using `WASD` inputs
-- *`Loop`* lets the raccoon walk back and forth between two predetermined positions
-The `animPlayer` function also tracks the direction in which the raccoon is headed by substracting its last position from the current one. It then triggers the corresponding state for the raccoon to play the right animation.
+  === Loading Backgrounds //P: just one minor correction
+  Since the backgrounds need to be loaded for every level, abstraction makes sense here too. The `addBackgrounds` function takes two values as input:
+  - *`Background ID`* to select which background should be displayed
+  - *`Light Offset`* to offset the light's X-axis position if wanted
+  As alluded, the backgrounds usually consist of two components, the background itself and a light. The background gets loaded in and positioned at Z-index 0, then the light gets loaded and positioned with the desired X-axis offset at Z-index 100. All other game objects are placed inbetween when building levels. We added the light offset, because different levels take place on different parts of the background. We wanted the light to always be somewhat centered at the start of each level, to bring the users attention towards the important aspects of each level.
 
-The `animPlayer` function also enables us to set a boundary for both the camera and the raccoon. This lets us set a clear focus for each level, telling the user when he should explore and when he doesn't need to go any further.
+  === Movement and camera positioning //P: again not really my area of expertise, but looks good
+  We wanted to be able to switch between different types of inputs for the movement. For example in some of the early levels the raccoon was not supposed to move at all and in other levels the raccoon was only supposed to move through node inputs. To achieve this we created the `animPlayer` function, which takes three different values as input:
+  - *`Node`* lets the user control the raccoon through the nodes
+  - *`Keyboard`* lets the user control the raccoon using `WASD` inputs
+  - *`Loop`* lets the raccoon walk back and forth between two predetermined positions
+  The `animPlayer` function also tracks the direction in which the raccoon is headed by substracting its last position from the current one. It then triggers the corresponding state for the raccoon to play the right animation.
 
-=== Handling level reset //P: again minor change in wording
-One issue that came up was that our raccoon character wouldn't be oriented correctly when the user pressed the reset button. This was because the before mentioned `animPlayer` function would recognize the movement of the raccoon back to it's starting position as walking and make him face in the direction that he moved. To get around this issue we created a small `handleReset` function that only triggers on resets. It places the raccoon back at the origin of the level and then orients him in the correct direction.
+  The `animPlayer` function also enables us to set a boundary for both the camera and the raccoon. This lets us set a clear focus for each level, telling the user when he should explore and when he doesn't need to go any further.
 
-== State Management //P: Rephrased first sentence
-Naturally, most of the challenges we had were related to the communication between the node editor and the game engine. We needed to find a way to connect the node editor with the game objects in our game, but we also had to communicate other things between the node editor and the game engine, like if the user paused the game or if the user clicked the reset button. We also had to make sure that the current state of the game is preserved. We wanted users to be able to move around the site freely without losing progress or having to go through the level carousel to get back to where they left off.
+  === Handling level reset //P: again minor change in wording
+  One issue that came up was that our raccoon character wouldn't be oriented correctly when the user pressed the reset button. This was because the before mentioned `animPlayer` function would recognize the movement of the raccoon back to it's starting position as walking and make him face in the direction that he moved. To get around this issue we created a small `handleReset` function that only triggers on resets. It places the raccoon back at the origin of the level and then orients him in the correct direction.
 
-=== Game Store //P: lgtm, but not my area of expertise
-The `GameStore` tracks and saves the user's progress and session status, to allow for a more seamless experience while navigating the website. To achieve that the `GameStore` has four main responsibilities:
+  == State Management //P: Rephrased first sentence
+  Naturally, most of the challenges we had were related to the communication between the node editor and the game engine. We needed to find a way to connect the node editor with the game objects in our game, but we also had to communicate other things between the node editor and the game engine, like if the user paused the game or if the user clicked the reset button. We also had to make sure that the current state of the game is preserved. We wanted users to be able to move around the site freely without losing progress or having to go through the level carousel to get back to where they left off.
 
-- The store holds the level ID of the current level. This value is also saved to the local storage of the browser every time a level is opened.
-- The store tracks wether the current level has been completed or not. This value also gets saved in the local storage of the browser. When a level is completed it also sets the `levelCompleteDialogOpen` variable to true, to trigger UI feedback.
-- The `isPaused` variable tracks wether the game is currently paused or not and can be set using the `play` or `pause` functions.
-- Finally the store has an `init` function, which pulls the saved information for the provided level ID from the local storage to make sure the level opens in the correct state. 
+  === Game Store //P: lgtm, but not my area of expertise
+  The `GameStore` tracks and saves the user's progress and session status, to allow for a more seamless experience while navigating the website. To achieve that the `GameStore` has four main responsibilities:
 
-=== Data Store //P: again not really my area of expertise, but looks good
-The Data Store is a per-level state manager, meaning it manages internal connections between the node editor and the game engine. The per-level aspect of this Zustand store is important, because different levels require different game objects to be accessible. We solved this issue by having a seperate `levels` file, which is used by the Data Store. It includes all the dialog, hints and solutions for the levels, but also information on all of the game objects that need to be accessible through the nodes.
+  - The store holds the level ID of the current level. This value is also saved to the local storage of the browser every time a level is opened.
+  - The store tracks wether the current level has been completed or not. This value also gets saved in the local storage of the browser. When a level is completed it also sets the `levelCompleteDialogOpen` variable to true, to trigger UI feedback.
+  - The `isPaused` variable tracks wether the game is currently paused or not and can be set using the `play` or `pause` functions.
+  - Finally the store has an `init` function, which pulls the saved information for the provided level ID from the local storage to make sure the level opens in the correct state.
 
-During initialization of a level the Data Store creates a map of all of the game objects that are required for the level, by going through the `levels` file. The map contains the IDs of these game objects and attachs another map to each ID containing the connections for the specific game object. Each connection a game object has is represented by an instance of the `HandleData` class, which tracks the current value for that connection and the access type. The access type determines wether the value can be read, changed or both using the nodes. The `HandleData` class has a `get` and a `set` function which is then used during level creation and also embedded in the nodes. The store also has functions to add custom handles to each game object.
+  === Data Store //P: again not really my area of expertise, but looks good
+  The Data Store is a per-level state manager, meaning it manages internal connections between the node editor and the game engine. The per-level aspect of this Zustand store is important, because different levels require different game objects to be accessible. We solved this issue by having a seperate `levels` file, which is used by the Data Store. It includes all the dialog, hints and solutions for the levels, but also information on all of the game objects that need to be accessible through the nodes.
 
-//P: Maybe add a more suffisticated diagram
-#figure(
-  block(```
-  -- gameObject
-    |--gobID, handleMap
-    |   |-- handle, handleData
-    |   |-- handle, handleData
-    |--gobID, handleMap
-    |   |-- handle, handleData
-```),
-  caption: [The structure of the nested map]
-)
+  During initialization of a level the Data Store creates a map of all of the game objects that are required for the level, by going through the `levels` file. The map contains the IDs of these game objects and attachs another map to each ID containing the connections for the specific game object. Each connection a game object has is represented by an instance of the `HandleData` class, which tracks the current value for that connection and the access type. The access type determines wether the value can be read, changed or both using the nodes. The `HandleData` class has a `get` and a `set` function which is then used during level creation and also embedded in the nodes. The store also has functions to add custom handles to each game object.
 
-The `save` function converts this nested map of game objects into a format that can be JSON stringified and saves it into the local storage of the browser. The `reset` function clears the map and reinitializes it. The saving of the all of the nodes and edges in the node editor is handled seperately in multiple Zustand stores that control the node editor.
+  //P: Maybe add a more suffisticated diagram
+  #figure(
+    block(
+      ```
+        -- gameObject
+          |--gobID, handleMap
+          |   |-- handle, handleData
+          |   |-- handle, handleData
+          |--gobID, handleMap
+          |   |-- handle, handleData
+      ```,
+    ),
+    caption: [The structure of the nested map],
+  )
 
-== Building levels using Kaplay //P: lgtm, i like the code snippet
-As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Building levels mostly consits of importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and complete the level. Every level is built as an initialize function, which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
+  The `save` function converts this nested map of game objects into a format that can be JSON stringified and saves it into the local storage of the browser. The `reset` function clears the map and reinitializes it. The saving of the all of the nodes and edges in the node editor is handled seperately in multiple Zustand stores that control the node editor.
 
-// Keep code snippets? yay nay?
-// P: i like it, also changed it to display syntax highlighting for typescript
-```ts
-export const initializeLEVEL = () => {
-  const { k, game } = getKaplayCtx();
-  const dataHelper = 
-          createLevelDataHelpers("LEVEL");
+  == Building levels using Kaplay //P: lgtm, i like the code snippet
+  As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Building levels mostly consits of importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and complete the level. Every level is built as an initialize function, which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
 
-  addBackgrounds(["default"]);
+  // Keep code snippets? yay nay?
+  // P: i like it, also changed it to display syntax highlighting for typescript
+  ```ts
+  export const initializeLEVEL = () => {
+    const { k, game } = getKaplayCtx();
+    const dataHelper =
+            createLevelDataHelpers("LEVEL");
 
-  const { raccoon, trashcanFilled } = 
-                          addGameobjects([
-    "raccoon",
-    "trashcanFilled",
-  ]);
-  ...
-```
-The `getKaplayCtx` function imports kaplays internal context object, which gives us access to all of Kaplays functions. It also creates a game object with the `TimerComp` which is our overall game instance.
+    addBackgrounds(["default"]);
 
-=== Game Loop // P: not sure about the factual side of this, would have to do some research especially regarding the frame rate stuff
-We are using Kaplays inbuilt game loop function `onUpdate`. This function runs once for every frame, at a fixed frame rate of 60 frames per second. One big upside of this function is, that it can be used as many times as needed and can also be run on any game object with the `TimerComp` component. This enables us to divide our game loop into multiple components, meaning overarching issues like pausing or the global key tracker don't need to be implemented in each level seperately and can be handled by the Kaplay context itself, while level specific logic is handled by the game instance. This is also what enabled us to implement the flag icon seperately, as described in @loading_gob.
+    const { raccoon, trashcanFilled } =
+                            addGameobjects([
+      "raccoon",
+      "trashcanFilled",
+    ]);
+    ...
+  ```
+  The `getKaplayCtx` function imports kaplays internal context object, which gives us access to all of Kaplays functions. It also creates a game object with the `TimerComp` which is our overall game instance.
 
-The level specific game loop is also where we use some of our functions from the `GameHelper` component, mentioned in @game_utils. For example both the `animPlayer` function and the `handleReset` function run here.
+  === Game Loop // P: not sure about the factual side of this, would have to do some research especially regarding the frame rate stuff
+  We are using Kaplays inbuilt game loop function `onUpdate`. This function runs once for every frame, at a fixed frame rate of 60 frames per second. One big upside of this function is, that it can be used as many times as needed and can also be run on any game object with the `TimerComp` component. This enables us to divide our game loop into multiple components, meaning overarching issues like pausing or the global key tracker don't need to be implemented in each level seperately and can be handled by the Kaplay context itself, while level specific logic is handled by the game instance. This is also what enabled us to implement the flag icon seperately, as described in @loading_gob.
 
-=== Communication between game and nodes //P: lgtm
-While setting up a level we call the `createLevelDataHelpers` function which returns a `DataHelper`object with multiple functions that let us interact with the Data Store from the game side. We can then use the `getData`and `setData` functions from the `DataHelper` in the `onUpdate` function in each level to connect the game objects with the nodes.
+  The level specific game loop is also where we use some of our functions from the `GameHelper` component, mentioned in @game_utils. For example both the `animPlayer` function and the `handleReset` function run here.
 
-Here is an example of what this could look like inside of our level specific game loop:
+  === Communication between game and nodes //P: lgtm
+  While setting up a level we call the `createLevelDataHelpers` function which returns a `DataHelper`object with multiple functions that let us interact with the Data Store from the game side. We can then use the `getData`and `setData` functions from the `DataHelper` in the `onUpdate` function in each level to connect the game objects with the nodes.
 
-```ts //Also added correct syntax highlighting
-game.onUpdate(() => {
-  if (useGameStore.getState().isPaused)
-                                      return;
+  Here is an example of what this could look like inside of our level specific game loop:
 
-  // Get value from exportToGameObject node
-  const value = 
-    dataHelper.getData("raccoon", "solution");
+  ```ts //Also added correct syntax highlighting
+  game.onUpdate(() => {
+    if (useGameStore.getState().isPaused)
+                                        return;
 
-  if (value == 16) {
-    useGameStore.getState()
-                    .setLevelCompleted(true);
-  }
+    // Get value from exportToGameObject node
+    const value =
+      dataHelper.getData("raccoon", "solution");
 
-  if (dataHelper.initData()) {
-    handleReset(raccoon, -1);
-  }
-});
-```
+    if (value == 16) {
+      useGameStore.getState()
+                      .setLevelCompleted(true);
+    }
 
-=== Handling win conditions
-Handling win conditions is an important part of the game for the user to get a feedback to their actions and also feel some sort of progression. Win conditions are also defined in the `onUpdate` function within each level. Win conditions can be very different for each level, some of our levels include the following win conditions: 
-- Finding a specific value
-- Collecting multiple items
-- Doing an action for a set amount of time
-- Walking to a designated area
-Once the win condition is met we call the `setLevelCompleted` function from the `GameStore`.
+    if (dataHelper.initData()) {
+      handleReset(raccoon, -1);
+    }
+  });
+  ```
+
+  === Handling win conditions
+  Handling win conditions is an important part of the game for the user to get a feedback to their actions and also feel some sort of progression. Win conditions are also defined in the `onUpdate` function within each level. Win conditions can be very different for each level, some of our levels include the following win conditions:
+  - Finding a specific value
+  - Collecting multiple items
+  - Doing an action for a set amount of time
+  - Walking to a designated area
+  Once the win condition is met we call the `setLevelCompleted` function from the `GameStore`.
 
 
 ]
@@ -417,7 +426,7 @@ Once the win condition is met we call the `setLevelCompleted` function from the 
 //      Character Animations using Spritesheets ---
 //      handling of Level reset ---
 //  building Levels using Kaplay ---
-//    gameLoop --- 
+//    gameLoop ---
 //    Communication between Game and Nodes ---
 //    Handling Win Conditions ---
 // State Management ---
@@ -430,48 +439,67 @@ Once the win condition is met we call the `setLevelCompleted` function from the 
 // Introduction Dialog
 
 #pagebreak()
-#col[ //provisorischer col unfug
-== User Testing
-The structured user testing began significantly later than originally planned, as this aspect was not given the intended priority during the development phase. We originally intended the user testing to run parallel to the development of the game and the node editor, thereby guiding respective implementation decisions. As a result, we primarily conducted application testing ourselves throughout the development phase, and only occasionally consulted fellow students regarding minor design and usability aspects.
+#col[
+  //provisorischer col unfug
+  == User Testing
+  The structured user testing began significantly later than originally planned, as this aspect was not given the intended priority during the development phase. We originally intended the user testing to run parallel to the development of the game and the node editor, thereby guiding respective implementation decisions. As a result, we primarily conducted application testing ourselves throughout the development phase, and only occasionally consulted fellow students regarding minor design and usability aspects.
 
-=== User Testing Concept
-The original concept for user testing and related research was conducted by Leo Kling and compiled into a `Typst` document. This was then approved by some members of the team but disregarded by others, which led to a noticeable delay in making a decision on how to proceed with user testing and setting up a survey.
+  === User Testing Concept
+  The original concept for user testing and related research was conducted by Leo Kling and compiled into a `Typst` document. This was then approved by some members of the team but disregarded by others, which led to a noticeable delay in making a decision on how to proceed with user testing and setting up a survey.
 
-The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionnaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
+  The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionnaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
 
-// D: maybe add a reference for the system usability scale
-For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS), adopting its proven 10-item structure with a few additional questions tailored to our specific context.
+  // D: maybe add a reference for the system usability scale
+  For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS), adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
-=== Results
-The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. /* this might be bullshit, still have to evaluate the data, looks like we would achieve this tho */ This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
+  === Results
+  The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. /* this might be bullshit, still have to evaluate the data, looks like we would achieve this tho */ This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
 
-The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
+  The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
 
-=== Implementation of findings
-Based on the user testing results, we implemented these essential improvements:
+  === Implementation of findings
+  Based on the user testing results, we implemented these essential improvements:
 
-/ Introduction of a Tutorial: Observations from the think-aloud protocol indicated that new users struggled with initial comprehension of the node-based system and its general interface functionality. In direct response, we developed a structured intro tutorial that introduces core mechanics and significantly improves the learning curve.
+  / Introduction of a Tutorial: Observations from the think-aloud protocol indicated that new users struggled with initial comprehension of the node-based system and its general interface functionality. In direct response, we developed a structured intro tutorial that introduces core mechanics and significantly improves the learning curve.
 
-/ Optimization of Initial Node Selection: Testing revealed that the nodes available by default at level start often appeared confusing or overwhelming to new users. Consequently, we adjusted which nodes are visibly available at the beginning of each level, ensuring that only the most relevant and necessary nodes are presented. This change aims to reduce cognitive load and enhance user understanding of the node system.
+  / Optimization of Initial Node Selection: Testing revealed that the nodes available by default at level start often appeared confusing or overwhelming to new users. Consequently, we adjusted which nodes are visibly available at the beginning of each level, ensuring that only the most relevant and necessary nodes are presented. This change aims to reduce cognitive load and enhance user understanding of the node system.
 
-// also might be bullshit, afaik we already planned for the tutorial and only expanded upon it, and for the node selection i actually dont have a single clue. this was added in the comment tho so i guess its true
-// D: I would leave these parts in here. The user tests proved that we needed an introduction of some sorts, so it makes sense to talk about, even if it was planned in some way beforehand.
+  // also might be bullshit, afaik we already planned for the tutorial and only expanded upon it, and for the node selection i actually dont have a single clue. this was added in the comment tho so i guess its true
+  // D: I would leave these parts in here. The user tests proved that we needed an introduction of some sorts, so it makes sense to talk about, even if it was planned in some way beforehand.
+
+  // User Testing Concept
+  //    Thinking out loud
+  //    Questionnaire Structure/Goals
+  // Results
+  // How did we use these results to improve our tool
+  //    Implementation of the Intro Tutorial
+  //    Changing what nodes show up on the initialization of the level
+
+  == Unit Testing
+
+  Unit testing represents a fundamental practice in software development where individual components or functions are tested in isolation to verify their correctness and reliability. These automated tests serve as a safety net during development, enabling early detection of regressions, facilitating code refactoring, and ensuring that system components behave according to their specifications @osheroveArtUnitTesting2013. In web development projects, unit tests are particularly valuable for maintaining code quality as applications scale and evolve, providing confidence that changes to one part of the system do not inadvertently break functionality elsewhere.
+
+  Testing a web-based educational game that combines a 2D game-canvas with a visual node editor presented unique challenges that extended beyond traditional web application testing. The hybrid nature of the system required validation across multiple interconnected domains: game mechanics, educational content, and interactive visual programming interfaces. The visual node editor introduced complexity in testing state management, particularly in validating that node connections and data flow functioned correctly across different levels. Additionally, verifying that the extensive documentation system remained current with evolving game mechanics proved challenging, as updates to animation concepts or node implementations required corresponding updates to tutorial content, level guides, and reference materials. The interdependency between these systems meant that changes in one area could propagate unexpected effects throughout the platform, necessitating comprehensive cross-system validation to maintain educational coherence and user experience quality.
+
+  The testing infrastructure leverages Bun's built-in test runner, which provides Jest-compatible APIs while offering superior performance and native TypeScript support @TestingAPIBun. To enable comprehensive testing of browser-dependent features, particularly localStorage operations critical to the application's state persistence, the test suite integrates HappyDOM for lightweight DOM emulation. This combination allows the tests to accurately simulate browser environments without the overhead of launching actual browser instances, ensuring that localStorage interactions, DOM manipulations, and other web APIs function correctly within the isolated test environment @HomeCapricorn86Happydom.
+
+  === Elements Tested
+
+  The unit test suite encompasses several critical components of the application architecture. The documentation system underwent comprehensive validation through `docs.test.ts`, which verified the structural integrity of navigation configurations, ensured completeness of markdown file coverage, and validated frontmatter consistency across documentation files. Level definitions received thorough testing via `levels.test.ts`, examining difficulty progressions, available game objects or nodes. The mathematical operations were validated through `mathnode-types.test.ts`, ensuring type, input and naming consistency across computational functions. Additionally, the React Flow state management system was tested in `flow-store.test.ts`, verifying proper state persistence and node highlighting functionality. The data persistence layer was comprehensively tested in `data-store.test.ts`, validating the HandleData class for managing game object connections, testing localStorage integration for state persistence, and ensuring type-safe data operations across different game levels. Loop management functionality was verified through `loop-store.test.ts`, which tested UUID generation for handle identifiers, state persistence mechanisms, and proper handle lifecycle management within loop constructs. Mouse interaction tracking was validated in `mouse-store.test.ts`, ensuring proper function replacement mechanisms for dynamic mouse handling. Time management systems were tested via `time-store.test.ts`, verifying both absolute time and delta time tracking functions with proper state management. Finally, solution file integrity was maintained through `solutions.test.ts`, which ensured every game level has a corresponding solution file and identified any orphaned solution files without matching levels.
+
+  A total of $3503$ `expect()` calls across 117 tests were implemented.
+
+  === Testing Methodology
+
+  The testing approach employed both structural and behavioral validation strategies. For the documentation system, tests utilized file system operations to cross-reference navigation entries with actual markdown files, ensuring bidirectional consistency between the navigation structure and content availability. Frontmatter extraction and parsing were implemented to validate metadata completeness, while link validation checked for broken internal references. Game level testing focused on property validation, ensuring each level contained required fields such as goals, hints, and available nodes, while also verifying the uniqueness of identifiers and the validity of difficulty ratings. State management testing employed mock localStorage operations and state mutation verification to ensure proper data persistence and retrieval.
+
+  === Outcomes and Issue Resolution
+
+  The unit testing implementation proved highly effective in identifying and preventing several categories of issues. Spelling inconsistencies in mathematical node types were systematically detected and corrected, ensuring type safety across computational operations. The testing suite successfully tracked implementation completeness, identifying missing level guides and solution files that corresponded to defined game levels. Documentation coverage analysis revealed gaps in navigation structures and highlighted files with placeholder content or missing frontmatter titles.
+
+  // also hier ist so 50/50 bullshit, aber klingt nett
+  Several critical issues were discovered and resolved through the testing process. The validation of available node types revealed mismatches between game level definitions and actual node implementations, leading to corrections in level configurations. Link validation identified broken internal references within documentation, preventing navigation errors in the deployed application. The solutions tracking system revealed orphaned files and missing implementations, enabling comprehensive coverage of all game levels. These automated checks significantly reduced manual testing overhead while providing continuous validation of system integrity throughout the development process.
 ]
-
-// User Testing Concept
-//    Thinking out loud
-//    Questionnaire Structure/Goals
-// Results
-// How did we use these results to improve our tool
-//    Implementation of the Intro Tutorial
-//    Changing what nodes show up on the initialization of the level
-
-#pagebreak()
-== Unit Testing
-// What Elements were tested?
-// How were the different Elements tested?
-// What was the outcome?
-//    Were any issues found and how were they fixed?
 
 = Results & Conclusion
 
