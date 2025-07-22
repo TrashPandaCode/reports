@@ -532,6 +532,7 @@ Based on the user testing results, we implemented these essential improvements:
 #include "contributions/leo.typ"
 #include "contributions/markus.typ"
 #include "contributions/milan.typ"
+#include "contributions/david.typ"
 
 #pagebreak()
 = Glossary
