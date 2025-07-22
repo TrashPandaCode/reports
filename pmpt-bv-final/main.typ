@@ -74,19 +74,57 @@
 
 = Experimental Methodology
 
-== Evaluation Metrics
+#col[
 
-=== Mean Squared Error & Mean Absolute Error
+  == Evaluation Metrics
 
-=== R#super[2]
+  When evaluating the performance of our estimation model, we employed a comprehensive set of metrics to assess its accuracy and generalization capabilities. The primary evaluation metrics will be briefly described in the following sections.
 
-=== Grad-CAM
+  === Mean Squared Error & Mean Absolute Error
 
-=== t-SNE
+  Mean Squared Error (MSE) and Mean Absolute Error (MAE) serve as fundamental regression metrics for quantifying the accuracy of RT60 predictions. MSE penalizes larger prediction errors more heavily due to its quadratic nature, making it particularly sensitive to outliers, while MAE provides a more robust measure of average prediction deviation. In the context of RT60 estimation, these metrics are calculated per frequency band, allowing for detailed analysis of model performance across the acoustic spectrum @goodfellowDeepLearning2016 @MeanAbsoluteError2025 @MeanSquaredError2025.
 
-// Evaluation Metrics
-//     MSE / RMSE per frequency band.
-//     Overall MAE / correlation.
+  === R#super[2] Coefficient of Determination
+
+  The R#super[2] coefficient quantifies the proportion of variance in the measured RT60 values that is predictable from the input images. This metric provides insight into how well the model captures the underlying acoustic-visual relationships present in the data. An R#super[2] value approaching 1.0 indicates strong predictive capability, while values closer to 0 (or even negative values) suggest limited model effectiveness. For RT60 estimation tasks, R#super[2] values are particularly valuable when evaluated per frequency band, as acoustic behavior varies significantly across the frequency spectrum due to material absorption characteristics and room geometry effects @CoefficientDetermination2025.
+
+  === Grad-CAM Visualization
+
+  Gradient-weighted Class Activation Mapping (Grad-CAM) @selvarajuGradCAMVisualExplanations2016 provides interpretable visualizations of which regions in input images contribute most significantly to RT60 predictions. This technique leverages gradients flowing into the final convolutional layer to generate localization maps highlighting important visual features. In our acoustic estimation context, Grad-CAM reveals whether the model appropriately focuses on acoustically relevant features such as room geometry, surface materials, and furnishing density. This interpretability is crucial for validating that the model learns meaningful acoustic-visual correlations rather than spurious dataset artifacts.
+
+  === t-SNE Analysis
+
+  t-distributed Stochastic Neighbor Embedding (t-SNE) enables visualization of high-dimensional feature representations learned by our CNN model in a reduced 2D (or 3D) space. By analyzing the clustering patterns of room images in this reduced feature space, we can assess whether the model learns to group acoustically similar environments together. Effective clustering would indicate that the model captures underlying acoustic properties that correlate with visual characteristics, providing additional validation of the learned representations beyond numerical accuracy metrics @geronHandsonMachineLearning2023.
+
+  == Experimental Design and Execution
+
+  Our experimental approach emphasized reproducibility, systematic evaluation, and methodical documentation throughout the research process. The experimental methodology was designed to enable rigorous comparison between different model configurations while maintaining scientific rigor in our analysis.
+
+  === Model Version Control and Tracking
+
+  To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ #todo("reference to appendix") spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
+
+  The version control system enabled us to track the evolution of our models systematically, documenting not only quantitative performance metrics but also qualitative observations about training behavior, convergence patterns, and model stability. This methodical approach proved essential for identifying promising research directions and avoiding the repetition of unsuccessful configurations.
+
+  We also utilized _sciebo_ for additional storage and backup of our experimental data, like plots and model weights. Initially, we used _DVC_ for version control of our data and model weights, but later switched to _sciebo_ as it provided a more user-friendly interface, without the need to onboard all team members to a new tool.
+
+  === Architecture Exploration
+
+  Our experimental design incorporated systematic exploration of multiple CNN backbone architectures to identify the most suitable foundation for RT60 estimation. We evaluated several pretrained architectures, including different variants of ResNet (ResNet18, ResNet34, ResNet50), EfficientNet models, and Vision Transformer architectures. Each backbone was assessed based on its capacity to learn meaningful acoustic-visual relationships while maintaining computational efficiency for our specific task requirements.
+
+  The architecture exploration phase involved careful consideration of model complexity versus performance trade-offs, with particular attention to overfitting tendencies given our limited dataset size. We systematically documented the performance characteristics of each architecture across different frequency bands, enabling informed decisions about the optimal balance between model capacity and generalization capability.
+
+  === Hyperparameter Optimization
+
+  We conducted extensive hyperparameter optimization experiments covering learning rates, batch sizes, optimizer configurations, regularization parameters, data augmentation strategies, and learning rate schedules.
+
+  Additionally, we investigated various regularization techniques including dropout rates, weight decay parameters, and early stopping criteria to prevent overfitting on our limited dataset.
+
+  === Documentation of Learnings
+
+  Throughout the experimental process, we maintained detailed documentation of insights and lessons learned from each experimental iteration. This included observations about training dynamics, identification of promising research directions, and documentation of unsuccessful approaches to guide future research efforts.
+]
+
 // Implementation Tools
 //     PyTorch, torchvision, DVC for reproducibility.
 
