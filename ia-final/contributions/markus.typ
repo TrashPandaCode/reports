@@ -31,17 +31,17 @@
 
   At that point I already started with the game development part so it was always easy to have something to do and not have to search for tasks. This was especially due to the fact that we used Github issues to track our tasks and their importantness. This made it easier to prioritize tasks and to see what needs to be done next and who is currently assigned to which task. I started using that tool more frequently to give updates on my current state and report bugs I found or features I wanted to implement.
 
-  When having meetings with Mr. Grünvogel about the project progress we also discussed our time tracking methods and came to the conclusion that actual more precise time tracking by using a google sheet for example could help us a lot in order to keep track of how much time we spent in general and on which tasks.
+  When having meetings with Mr. Grünvogel about the project progress we also discussed our time tracking methods because of concerns named by Leo Kling and Jonathan Kron. We came to the conclusion that actual more precise time tracking by using a google sheet for example could help us a lot in order to keep track of how much time we spent in general and on which tasks.
   This was especially helpful for me to have actual numbers on the time spent.
   It might sound silly but it also kind of motivated me to spend more time on the project so I can type in more hours into the sheet, also because I had the comparison to the other team members.
 
-  Especially at the end of May I tried to work more hours than the normal workload per week in order to pre-work for my missing time during the summer school I was going to attend. Which was difficult considering I was still behind time schedule. I was working way more in comparison to the weeks before, to try being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
+  At the end of May I tried to work more hours than the normal workload per week in order to pre-work for my missing time during the summer school I was going to attend. Which was difficult considering I was still behind time schedule. I was working way more in comparison to the weeks before, to try being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
   I was not part of the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
-  When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
+  When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would be able to finish the project in time and also to try providing the working hours I had to make up for.
 
   I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
   So I wanted to make sure that I can contribute a significant amount of time within the last two weeks of July in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
@@ -54,14 +54,17 @@
 
   === Concept and Design<markus_concept_design>
 
+  For me this phase not only describes the first period of time where we discussed key concepts and designs on figma, but also conceptional and design decisions throughout the whole project.
+
   At the beginning of the concept and design phase I started creating a first `wireframe` showing a very simple example of a home screen for the game and a level selection screen. This was mainly to get a first idea of how the game preview could look like and to have a starting point for further discussions with the team. This was then developed further by Leo Kling and Jonathan Kron, who created more detailed wireframes and mockups for the home and the level selection screen.
+
   After that I was involved in the discussion where we chose the design of our website and whether the game should be in 2D or 3D. As me being responsible for the game design part this was an important decision that would highly influence the workflow of the game and the graphical design.
 
-  Later in this phase I was mainly contributing regarding the `level content` itself, the `story` of the game and how to connect those two aspects of the game. After setting up initial levels I was also involved in working out and designing `tutorial levels` to introduce the player to the game mechanics and also help him navigate within the system. This was a very important part of the game design, as it was crucial to make the game `user-friendly` and easy to understand for the player.
+  Later in this phase I was contributing regarding the `level content` itself, the `story` of the game and how to connect those two aspects of the game. After setting up initial levels I was also involved in working out and designing `tutorial levels` to introduce the player to the game mechanics and also help him navigate within the system. This was a very important part of the game design, as it was crucial to make the game `user-friendly` and easy to understand for the player.
 
-  When we had first user tests we realized that we should give a better introduction outside of the game itself. Therefore I designed a `tutorial section` that goes through the main elements of the game, like buttons, the game and editor window, the node system and so on.
+  When we had first user tests we realized that we should give a better introduction outside of the game itself. Therefore I designed a `tutorial section` that goes through the main elements of the game, like buttons, the game and editor window, the node system and so on. This was then furthermore developed by other team members adding images and videos for example.
 
-  For the assets I was mainly involved in the discussion about which assets to use and how to integrate them into the game but less involved in the actual creation of the assets.
+  For the assets I was involved in the discussion about which assets to use and how to integrate them into the game but less involved in the actual creation of the assets.
 
   Other than that I was somewhat involved in minor `styling` of the landing page and the game window when necessary.
 
@@ -118,9 +121,9 @@
   Right before that we've had some first user tests with the game and due to the feedback we realized that another short guidance through the elements of the game and node window would be very helpful in order to understand that the player has two separate windows that interact with each other and that he gets a first overview of the functionality of the buttons for example.
   Therefore I created a whole `tutorial guidance` that would be shown when you first enter the game. It guides you through different sections of the game and explains key elements supported with images or short videos. I also added the option to skip the tutorial and mark a checkbox to not show it again in the future.
 
-  The next days after this until the 17th of June I was only able to spend a few hours on the already existing levels and adding victory conditions to the movement level. As mentioned in the @markus_time_management section, this lower time effort here was due to moving out and the preparation for Japan.
+  The next days after this until the 10th of June I was working on the already existing levels and adding victory conditions to the movement level. As mentioned in the @markus_time_management section.
 
-  With the 17th of June my development phase was done as we planned to finish the whole game by the end of June and I was going to leave for the summer school program in Japan for the whole rest of June and the beginning of July.
+  With the 10th of June my development phase was done as we planned to finish the whole game by the end of June and I was going to leave for the summer school program in Japan for the rest of June and the beginning of July.
 
   In the @markus_documentation section I will describe my work on the documentation part of the project after I returned.
 
