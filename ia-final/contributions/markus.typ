@@ -25,24 +25,24 @@
 
   My plan was to spend a few hours almost each day a week instead of only working like one day a week but the whole day.
 
-  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But I was able to catch up on that time schedule at the beginning of May.
-  //  but therefore had to make a couple more hours in order to make up for the time I missed beforehand.
-  At that point I already started with the game development part so It was always easy to have something to do and not have to search for tasks. This was especially due to the fact that we used Github issues to track our tasks and their importantness. This made it easier to prioritize tasks and to see what needs to be done next and who is currently assigned to which task.
+  As mentioned in the @markus_dev_phase section , the first weeks were difficult to manage properly. But I was able to catch up on that time schedule at the beginning of May. I tried making more hours here and there in order to at least compensate a little bit for the time I lost in the beginning.
 
-  Later in the project while having meetings with Mr. Grünvogel about the project progress we also discussed our time tracking methods and came to the conclusion that actual more precise time tracking by using a google sheet for example could help us a lot in order to keep track of how much time we spent in general and on which tasks.
+  At that point I already started with the game development part so it was always easy to have something to do and not have to search for tasks. This was especially due to the fact that we used Github issues to track our tasks and their importantness. This made it easier to prioritize tasks and to see what needs to be done next and who is currently assigned to which task. I started using that tool more frequently to give updates on my current state and report bugs I found or features I wanted to implement.
+
+  When having meetings with Mr. Grünvogel about the project progress we also discussed our time tracking methods and came to the conclusion that actual more precise time tracking by using a google sheet for example could help us a lot in order to keep track of how much time we spent in general and on which tasks.
   This was especially helpful for me to have actual numbers on the time spent.
-  It might sound silly but it also kind of motivated me to work more on the project so I can type in more hours into the sheet, also because I had the comparison to the other team members.
+  It might sound silly but it also kind of motivated me to spend more time on the project so I can type in more hours into the sheet, also because I had the comparison to the other team members.
 
-  Especially at the end of May I tried to work more hours than intended per week in order to pre-work for my missing time during the summer school I was going to attend. This led to some stress as I was working way more in comparison to the weeks before, but I tried being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
+  Especially at the end of May I tried to work more hours than the normal workload per week in order to pre-work for my missing time during the summer school I was going to attend. This led to some stress as I was working way more in comparison to the weeks before, but I tried being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
   One thing I couldn't make up for was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but unfortunately wasn't able to attend it.
 
-  When coming back at the middle of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide the working hours I had to make up for.
+  When coming back at the middle of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
 
   I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
-  So I wanted to make sure that I can contribute a significant amount of time to this part in order to catch up on the documentation part as well as the whole project was meant to be done by the end of July.
+  So I wanted to make sure that I can contribute a significant amount of time to this part in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
 
   At that time the project itself was already declared as finished and only the documentation was missing. So I was able to spend all my working time left on the documentation part.
 
@@ -67,11 +67,11 @@
 
   ==== Landing Page, Level Selection and Kaplay
 
-  As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I wasn't able to start with the game development part right away which in addition to time management issues caused my start to be very slow.
+  As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I wasn't able to start with the game development part right away which in addition to my own time management caused my start to be very slow.
 
   However, I started using some time to work my self into the `kaplay game engine` to get a better understanding of how to use it and how to make it interact with the nodes. This also gave me a perspective on what levels are actually possible and how to implement them. Furthermore I also started setting up a level document with the game development team to have a first `overview of the levels` we wanted to create, how they should be structured and what nodes would be needed. This also helped us figuring out which `tutorial levels` we should implement in order to explain certain, more complex, nodes.
 
-  In the first weeks of development I also tried to give feedback and work on the `landing page` including the `level selection` part. I worked on the level navigation and made sure that the levels are displayed correctly. Simultaneously I was working on smaller parts of the landing page like the visual feedback when hovering over certain elements such as buttons. This was at the end of April.
+  In the first weeks of development I also tried to give feedback and work on the `landing page` including the `level selection` part. I worked on the level navigation and made sure that the levels are displayed correctly, which was reworked later on though. Simultaneously I was working on smaller parts of the landing page like the visual feedback when hovering over certain elements such as buttons. This was at the end of April.
 
   ==== Introduction and Navigation of the Game
 
@@ -80,7 +80,7 @@
 
   After that at the middle of May I started a first `testing level` in which I tried to implement basic movement and object collision. This was important in order to see the interaction of different game objects.
 
-  Besides that I used some time to make the kaplay game window `responsive` so objects wouldn't change their position when resizing the window or having different resolutions.
+  Besides that I used some time to make the kaplay game window `responsive` so objects wouldn't change their position when resizing the window or having different resolutions. Later during the project other teammembers such as David Klein and Leo Kling also worked on this part of the project.
   On the same day, the 20th of May, I started making the `level complete dialog` which is shown when the player completed a level. This would open another conversation with the raccoon and after that also give the player the option to go back to the main menu (the landing page) or to continue to the next level. This made it easier for the player to navigate through the game and give a more connected experience.
   This task took a lot of time as me and other team members faced a lot of issues when it came to properly navigating through all the levels.
 
@@ -95,13 +95,14 @@
 
   Having different game objects that wouldn't be needed in every level made me restructure the `game object system` a little bit. From now on you would have `constants` which are game objects that are always present in every level, like the raccoon and `level game objects` which are only present in a specific level, like the two trashcans in the bounce level. This made it easier to manage the game objects and also to create new levels.
 
-  As we also wanted to implement movement for the raccoon I started on expanding our `movement animation system` for the raccoon on the 1st of June.
+  As we already implemented basic movement for the raccoon I started on expanding our `movement animation system` for the raccoon on the 1st of June.
   This was important as I wanted to have different movement modes. So dependent on the level I either wanted to raccoon movement to be implemented `manually` by the player via the node system or to have `pre-implemented keyboard movement` or to have the raccoon move `automatically in a certain way`. This was important to have different levels of complexity and also serve the needs of each individual level.
 
-  With this being done and adjusting it for each already excisting level I started with a `movement level` and a `time-transformation level` those were the first two non tutorial levels.
+  With this being done and adjusting it for each already existing level I started with a `movement level` and a `time-transformation level` those were the first two non tutorial levels.
 
-  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the overview section even though I was not assigned to it, the rest of the documentation was done by Leo Kling though. I also checked for content and typos.
-  Aditionally I filled the landing page with some text content so it'd be easier to understand for the first user tests coming up.
+  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the overview section even though I was not assigned to it, the rest of the documentation was done by Leo Kling. I also checked for content and typos.
+
+  Additionally I filled the landing page with some text content so it'd be easier to understand for the first user tests coming up.
   Therefore I also added player and camera clamping so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.
   I tried making the game experience more fun in giving the player more options than just moving sideways by adding ladders the player could interact with by climbing up and down.
 
@@ -115,8 +116,7 @@
   Right before that we've had some first user tests with the game and due to the feedback we realized that another short guidance through the elements of the game and node window would be very helpful in order to understand that the player has two separate windows that interact with each other and that he gets a first overview of the functionality of the buttons for example.
   Therefore I created a whole `tutorial guidance` that would be shown when you first enter the game. It guides you through different sections of the game and explains key elements supported with images or short videos. I also added the option to skip the tutorial and mark a checkbox to not show it again in the future.
 
-  The next days after this until the 17th of June I spend more time on the already excisting levels, adding victory conditions to the movement level for example and setting up a `looping level` where the player has to use the for loop node in order to do some looping algorithm to complete the level.
-  This was supposed to be the last of the tutorial levels, that was not originally planned but decided to be necessary for a better understanding of this node in specific.
+  The next days after this until the 17th of June I was only able to spend a few hours on the already existing levels and adding victory conditions to the movement level. As mentioned in the @markus_time_management section, this lower time effort here was due to moving out and the preparation for Japan.
 
   With the 17th of June my development phase was done as we planned to finish the whole game by the end of June and I was going to leave for the summer school program in Japan for the whole rest of June and the beginning of July.
 
@@ -126,17 +126,18 @@
 
   During the development phase (@markus_dev_phase), I always tried to keep everyone updated about my current progress and what I was working on. This was mainly done via the `GitHub issues` and separate `Github branches` for bigger tasks I was working on.
   It made the work flow a lot easier to instantly create a new issue once you find a bug or have an idea for a new feature or task that needs to be done.
-  Creating an individual branch for huge tasks made sure that I don't mess up the main branch and that I can work on the task without having to worry about other changes that might happen in the main branch. This also gave the opportunity for other team members to review my code and give feedback. It not only helped me to improve my code but also made sure that the code is more readable and understandable for others.
+  Creating an individual branch for huge tasks made sure that I don't mess up the main branch and that I can work on the task without having to worry about other changes that might happen in the main branch. This also gave the opportunity for other team members to review my code and give feedback. Big thanks at that point to Jonathan Kron and Leo Kling who spend a lot of time on reviewing my code and giving feedback. It not only helped me to improve my coding but also made sure that the code is more readable and understandable for others.
 
   Therefore I also tried to write short comments so me and others can understand what the code is doing when reviewing it later on.
 
   === Documentation<markus_documentation>
 
-  I was taking part in the documentation part of the draft for the final web report and contributed a solid amount of work to this task. After that we then decided to already start with the main documentation phase in order to write the final reports for the project. At that time I was not deeply involved in the documentation as we still had to finish the levels of the game. Later in June I had to leave my team for a couple weeks due to the summer school program in Japan. Therefore I was not able to contribute to the project in any way during that time.
-  This was already agreed with the rest of the team at the beginning of the project, so eventhough it was kind of rough to have one less team member during that time, we had to make it work.
+  I was taking part in the documentation part of the draft for the final web report and contributed a solid amount of work to this task. After that we then decided to already start with the main documentation phase in order to write the final reports for the project. At that time I was not deeply involved in the documentation as we still had to finish the levels of the game. Later in June I had to leave my team for 3 weeks due to the summer school program in Japan. Therefore I was not able to contribute to the project in any way during that time.
+  This was already agreed with the rest of the team at the beginning of the project, so eventhough it was kind of rough to have one less team member during that time.
+  Additionally I lost 2 weeks with almost no work because of moving and the preparation for Japan which was not planned to be that time consuming and therefore was not involved into the documentation part during that time.
   This led to me having to manage my time differently to the other team members which you can read in the @markus_time_management section.
 
-  As I spend more time on the project before the summer school, I also wanted to catch up on the documentation part after I came back. Therefore I tried to spend as much time as possible during the last weeks of the project as we as a team agreed on finishing the project including the poster and the final reports by the end of July. This was a very tight schedule, but we wanted to make it work.
+  As I spend more time on the project before the summer school, I also wanted to catch up on the documentation part after I came back. Therefore I tried to spend as much time as possible during the last weeks of the project as we as a team agreed on finishing the project including the poster and the final reports by the end of July. This was a very tight schedule though.
 
   === Personal Conclusion<markus_personal_conclusion>
 
