@@ -62,7 +62,7 @@
 
   Later in this phase I was contributing regarding the `level content` itself, the `story` of the game and how to connect those two aspects of the game. After setting up initial levels I was also involved in working out and designing `tutorial levels` to introduce the player to the game mechanics and also help him navigate within the system. This was a very important part of the game design, as it was crucial to make the game `user-friendly` and easy to understand for the player.
 
-  When we had first user tests we realized that we should give a better introduction outside of the game itself. Therefore I designed a `tutorial section` that goes through the main elements of the game, like buttons, the game and editor window, the node system and so on. This was then furthermore developed by other team members adding images and videos for example.
+  When we had first user tests we realized that we should give a better introduction outside of the game itself. Therefore I designed a `tutorial section` that goes through the main elements of the game, like buttons, the game and editor window, the node system and so on. This was then further developed into its final state by Leo Kling and Jonathan Kron.
 
   For the assets I was involved in the discussion about which assets to use and how to integrate them into the game but less involved in the actual creation of the assets.
 
@@ -72,11 +72,12 @@
 
   ==== Landing Page, Level Selection and Kaplay
 
-  As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I wasn't able to start with the game development part right away which in addition to my own time management caused my start to be very slow.
+  As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I found it hard to start with the game development part right away which caused my start to be very slow.
 
   However, I started using some time to work my self into the `kaplay game engine` to get a better understanding of how to use it and how to make it interact with the nodes. This also gave me a perspective on what levels are actually possible and how to implement them. Furthermore I also started setting up a level document with the game development team to have a first `overview of the levels` we wanted to create, how they should be structured and what nodes would be needed. This also helped us figuring out which `tutorial levels` we should implement in order to explain certain, more complex, nodes.
 
-  In the first weeks of development I also tried to give feedback and work on the `landing page` including the `level selection` part. I worked on the level navigation and made sure that the levels are displayed correctly, which was reworked later on though. Simultaneously I was working on smaller parts of the landing page like the visual feedback when hovering over certain elements such as buttons. This was at the end of April.
+  In the first weeks of development I also tried to give feedback and did small parts on the landing page. In specific this included minor `hover effects` on buttons and the `dropdown` menu in the `level selection` part. Furthermore I worked on level `transitions` and a `scrolling effect`. This was at the end of April.
+  The landing page was reworked later on though by Leo Kling and Jonathan Kron.
 
   ==== Introduction and Navigation of the Game
 
@@ -85,31 +86,29 @@
 
   After that at the middle of May I started a first `testing level` in which I tried to implement basic movement and object collision. This was important in order to see the interaction of different game objects.
 
-  Besides that I used some time to make the kaplay game window `responsive` so objects wouldn't change their position when resizing the window or having different resolutions. Later during the project other teammembers such as David Klein and Leo Kling also worked on this part of the project.
+  Besides that I used some time to make the kaplay game window `responsive` so objects wouldn't change their position when resizing the window or having different resolutions. Later during the project other team members such as David Klein and Leo Kling also worked on this part of the project.
   On the same day, the 20th of May, I started making the `level complete dialog` which is shown when the player completed a level. This would open another conversation with the raccoon and after that also give the player the option to go back to the main menu (the landing page) or to continue to the next level. This made it easier for the player to navigate through the game and give a more connected experience.
   This task took a lot of time as me and other team members faced a lot of issues when it came to properly navigating through all the levels.
 
   ==== Levels, Features and Polishing
 
   When this feature was done I started to rework the `testing level` to make an actual first `tutorial level` out of it. At that time we were already planning on doing like 3-4 of them, each introducing basic game mechanics and interaction with the node system.
-  So the first level I made was an `math based level` where the player had to solve a simple math problem in order to complete the level. This was meant to introduce the player into using first nodes and how to do computations with them. This level was also the first prototype level to show to the customer as what is possible and how the player could interact with the game.
+  So the first level I worked on was a `math based level` where the player had to solve a simple math problem in order to complete the level. This was meant to introduce the player into using first nodes and how to do computations with them. This level was also the first prototype level to show to the customer as what is possible and how the player could interact with the game.
 
-  The second tutorial level I created was focused on `game object positioning`. In this level, players had to manipulate the raccoons position and put him into a filled trashcan in order to complete the level.
+  The second tutorial level I worked on was focused on `game object positioning`. In this level, players had to manipulate the raccoons position and put him into a filled trashcan in order to complete the level.
 
-  On May 30th while cleaning up the other levels and also filling them with dialog content I started working on the `bounce level`. This would introduce the player to the `switch` node. For this case I created two trashcans, one filled with trash and one empty. The player had to use the switch node to check whether the raccoon is in the filled trashcan or not. The goal is that the raccoon jumps into the filled trashcan everytime they randomly switch positions.
+  On May 30th while cleaning up the other levels and also filling them with dialog content with Leo Kling, I started working on the `bounce level`. This would introduce the player to the `switch` node. For this case I created two trashcans, one filled with trash and one empty. The player had to use the switch node to check whether the raccoon is in the filled trashcan or not. The goal is that the raccoon jumps into the filled trashcan everytime they randomly switch positions.
 
   Having different game objects that wouldn't be needed in every level made me restructure the `game object system` a little bit. From now on you would have `constants` which are game objects that are always present in every level, like the raccoon and `level game objects` which are only present in a specific level, like the two trashcans in the bounce level. This made it easier to manage the game objects and also to create new levels.
 
   As we already implemented basic movement for the raccoon I started on expanding our `movement animation system` for the raccoon on the 1st of June.
   This was important as I wanted to have different movement modes. So dependent on the level I either wanted to raccoon movement to be implemented `manually` by the player via the node system or to have `pre-implemented keyboard movement` or to have the raccoon move `automatically in a certain way`. This was important to have different levels of complexity and also serve the needs of each individual level.
 
-  With this being done and adjusting it for each already existing level I started with a `movement level` and a `time-transformation level` those were the first two non tutorial levels.
+  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the `overview section` even though I was not assigned to it, the rest of the documentation was done by Leo Kling and Jonathan Kron. I also checked for content and typos.
 
-  During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the `overview section` even though I was not assigned to it, the rest of the documentation was done by Leo Kling. I also checked for content and typos.
-
-  Additionally I filled the landing page with some text content so it'd be easier to understand for the first user tests coming up.
+  Additionally I filled the landing page with some text so it'd be a little bit more filled with content for the first user tests coming up.
   Therefore I also added player and camera clamping so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.
-  I tried making the game experience more fun in giving the player more options than just moving sideways by adding ladders the player could interact with by climbing up and down.
+  I tried making the game experience more fun in giving the player more options than just moving sideways by adding ladders the player could interact with by climbing up and down. This feature was removed later on as it wasn't needed.
 
   We're now at the 5th of June when I started setting up a `parenting level` which would give the player the task to implement parenting in the node system. As this is also one of the base concepts of the Computer Animation course which this game is based on, it was very important to find a good engaging solution that is understandable for the player. So I tried to figure out a good solution that would make sure that the player uses parenting properly in order to complete the level.
 
@@ -119,9 +118,9 @@
   This dialog would always be shown in the game window after completing the introduction dialog with the raccoon. This allows the player to have a better overview of what the current task is. I also decided to make it draggable and snappable so the player can move it around as he likes and the dialog wouldn't block the view on important parts of the game.
 
   Right before that we've had some first user tests with the game and due to the feedback we realized that another short guidance through the elements of the game and node window would be very helpful in order to understand that the player has two separate windows that interact with each other and that he gets a first overview of the functionality of the buttons for example.
-  Therefore I created a whole `tutorial guidance` that would be shown when you first enter the game. It guides you through different sections of the game and explains key elements supported with images or short videos. I also added the option to skip the tutorial and mark a checkbox to not show it again in the future.
+  Therefore I created a whole `tutorial guidance` that would be shown when you first enter the game. It guides you through different sections of the game and explains key elements supported with images or short videos. I also added the option to skip the tutorial and mark a checkbox to not show it again in the future. Other team members such as Leo Kling also contributed to this feature.
 
-  The next days after this until the 10th of June I was working on the already existing levels and adding victory conditions to the movement level. As mentioned in the @markus_time_management section.
+  The next days after this until the 10th of June I was working on the already existing levels and adding victory conditions to the movement level.
 
   With the 10th of June my development phase was done as we planned to finish the whole game by the end of June and I was going to leave for the summer school program in Japan for the rest of June and the beginning of July.
 
@@ -129,8 +128,8 @@
 
   === Organization<markus_organization>
 
-  During the development phase (@markus_dev_phase), I always tried to keep everyone updated about my current progress and what I was working on. This was mainly done via the `GitHub issues` and separate `Github branches` for bigger tasks I was working on.
-  It made the work flow a lot easier to instantly create a new issue once you find a bug or have an idea for a new feature or task that needs to be done.
+  During the development phase (@markus_dev_phase), I was trying to keep everyone updated about my current progress and what I was working on. This was mainly done via the `GitHub issues` and separate `Github branches` for bigger tasks I was working on.
+  It made the work flow a lot easier to instantly create a new issue once you find a bug or have an idea for a new feature or task that needs to be done. Giving it a level of importance also helped figuring out which tasks to work on first.
   Creating an individual branch for huge tasks made sure that I don't mess up the main branch and that I can work on the task without having to worry about other changes that might happen in the main branch. This also gave the opportunity for other team members to review my code and give feedback. Big thanks at that point to Jonathan Kron and Leo Kling who spend a lot of time on reviewing my code and giving feedback. It not only helped me to improve my coding but also made sure that the code is more readable and understandable for others.
 
   Therefore I also tried to write short comments so me and others can understand what the code is doing when reviewing it later on.
@@ -145,6 +144,6 @@
 
   === Personal Conclusion<markus_personal_conclusion>
 
-  //missing support in the game development team at the beginning of that work package
+  //missing communication in game development at the beginning of that work package
   #todo("markus_personal_conclusion")
 ]
