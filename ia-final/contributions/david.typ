@@ -13,11 +13,11 @@ During the planning phase of the project I vocalized that I wanted to be part of
 // helped define workpackages
 // did not have any contributions on my own during this time
 
-=== Preparations & Tech Stack
+=== Concept and Design Phase
 The plan for the team working on the `UI/UX Overall` workpackage was to create a mini style guide for the website, that was supposed to include a color scheme and also font choices. The workpackage also included building the web pages inside of react and creating a theme and assets for the game. Due to requirements for the WEB side of the project we had to build a working wireframe for the website. The team responsible for that came up with multiple different approaches including a well thought out design for the landing page. This left me a bit stumped on how to proceed, as I felt creating a style guide at this point would be redundant and I wasn't sure how we would handle the tech stack and get started with the development. However I did not communicate my uncertainties with the rest of the team, which lead to me not contributing on some crucial decisions on the tech stack and the set up of the website.
 
 === Development
-I started working on the website on the April, 26th. I edited the `init-game` page, trying to set up some basic game mechanics with the default sprite, to get used to the game engine. I also edited one of the the assets created in Figma by the prototype team to create a back button,  which I added to our game window.
+I started working on the website on April, 26th. I edited the `init-game` page, trying to set up some basic game mechanics with the default sprite, to get used to the game engine. I also edited one of the the assets created in Figma by the prototype team to create a back button,  which I added to our game window.
 
 Over the next week I spent time looking for other fonts for our website, which I shared with the team and figured out how to import and use custom fonts with Tailwind. During this time the team was heavily focused on the node editor and creating nodes, so I spent time changing some of the styling of the dropdown menus and I added a basic search function to the right-click context menu. I also had an idea for the search bar, to be able to add the math nodes already in the correct state (e.g. searching for "Add" would spawn a math node with the add function already selected). However I did not implement this myself and left it for somebody else, as I was still trying to work myself into typescript and felt like other people would be better at implementing it than me. I think this was a terrible mindset which repeated multiple times during the project and lead to other people having to pick up after me.
 
