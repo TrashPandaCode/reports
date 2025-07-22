@@ -439,6 +439,7 @@ The original concept for user testing and related research was conducted by Leo 
 
 The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionnaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
 
+// D: maybe add a reference for the system usability scale
 For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS), adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
 === Results
@@ -454,6 +455,7 @@ Based on the user testing results, we implemented these essential improvements:
 / Optimization of Initial Node Selection: Testing revealed that the nodes available by default at level start often appeared confusing or overwhelming to new users. Consequently, we adjusted which nodes are visibly available at the beginning of each level, ensuring that only the most relevant and necessary nodes are presented. This change aims to reduce cognitive load and enhance user understanding of the node system.
 
 // also might be bullshit, afaik we already planned for the tutorial and only expanded upon it, and for the node selection i actually dont have a single clue. this was added in the comment tho so i guess its true
+// D: I would leave these parts in here. The user tests proved that we needed an introduction of some sorts, so it makes sense to talk about, even if it was planned in some way beforehand.
 ]
 
 // User Testing Concept
