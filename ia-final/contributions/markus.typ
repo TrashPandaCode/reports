@@ -33,7 +33,7 @@
   This was especially helpful for me to have actual numbers on the time spent.
   It might sound silly but it also kind of motivated me to spend more time on the project so I can type in more hours into the sheet, also because I had the comparison to the other team members.
 
-  Especially at the end of May I tried to work more hours than the normal workload per week in order to pre-work for my missing time during the summer school I was going to attend. This led to some stress as I was working way more in comparison to the weeks before, but I tried being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
+  Especially at the end of May I tried to work more hours than the normal workload per week in order to pre-work for my missing time during the summer school I was going to attend. Which was difficult considering I was still behind time schedule. I was working way more in comparison to the weeks before, to try being as fair as possible as I would be missing for 3 weeks and the team would have to work without me during that time.
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
@@ -44,7 +44,7 @@
   I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
   So I wanted to make sure that I can contribute a significant amount of time within the last two weeks of July in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
 
-  At that time the project itself was already declared as finished and only the documentation was missing. So the last two weeks I only spent on the documentation part starting with my contributions.
+  At this point in time the project itself was already declared as finished and only the documentation was missing. So the last two weeks I only spent on the documentation part starting with my contributions.
 
   === Project Planning<markus_project_planning>
 
@@ -91,7 +91,7 @@
 
   The second tutorial level I created was focused on `game object positioning`. In this level, players had to manipulate the raccoons position and put him into a filled trashcan in order to complete the level.
 
-  On May 30th while cleaning up the other levels and also filling them with dialog content I started working on the `bounce level`. This would introduce the player to the `if node`. For this case I created two trashcans, one filled with trash and one empty. The player had to use the if node to check whether the raccoon is in the filled trashcan or not. The goal is that the raccoon jumps into the filled trashcan everytime they randomly switch positions.
+  On May 30th while cleaning up the other levels and also filling them with dialog content I started working on the `bounce level`. This would introduce the player to the `switch` node. For this case I created two trashcans, one filled with trash and one empty. The player had to use the switch node to check whether the raccoon is in the filled trashcan or not. The goal is that the raccoon jumps into the filled trashcan everytime they randomly switch positions.
 
   Having different game objects that wouldn't be needed in every level made me restructure the `game object system` a little bit. From now on you would have `constants` which are game objects that are always present in every level, like the raccoon and `level game objects` which are only present in a specific level, like the two trashcans in the bounce level. This made it easier to manage the game objects and also to create new levels.
 
@@ -132,7 +132,7 @@
 
   === Documentation<markus_documentation>
 
-  The main documentation phase for the IA project was planned to take place in July, as mentioned in other sections before I was only working on the documentation within the last two weeks of July. I started working on my own contributions part as I wanted to have this section mainly done first and then work on the other sections of the documentation.
+  The main documentation phase for the project was planned to take place in July, as mentioned in other sections before I was only working on the documentation within the last two weeks of July. I started working on my own contributions part as I wanted to have this section mainly done first and then work on the other sections of the documentation.
 
   //continue documentation part here
 
