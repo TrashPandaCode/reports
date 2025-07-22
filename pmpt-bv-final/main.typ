@@ -67,6 +67,8 @@
 #include "chapters/dataset.typ"
 // move this to its desired location whenever
 #include "chapters/synth-vs-real-data.typ"
+// move this to its desired location whenever
+#include "chapters/machinelearning-cnns.typ"
 
 #pagebreak()
 
