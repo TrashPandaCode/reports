@@ -39,7 +39,7 @@
 
   One thing I was not part of at all was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
-  When coming back at the middle of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
+  When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
 
   I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
   So I wanted to make sure that I can contribute a significant amount of time to this part in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
