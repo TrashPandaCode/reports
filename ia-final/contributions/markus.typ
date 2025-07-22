@@ -37,14 +37,14 @@
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
-  One thing I was not part of at all was the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
+  I was not part of the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
   When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would hopefully be able to finish the project in time and also to provide some of the working hours I had to make up for.
 
   I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
-  So I wanted to make sure that I can contribute a significant amount of time to this part in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
+  So I wanted to make sure that I can contribute a significant amount of time within the last two weeks of July in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
 
-  At that time the project itself was already declared as finished and only the documentation was missing. So I was able to spend all my working time left on the documentation part.
+  At that time the project itself was already declared as finished and only the documentation was missing. So the last two weeks I only spent on the documentation part starting with my contributions.
 
   === Project Planning<markus_project_planning>
 
@@ -132,12 +132,11 @@
 
   === Documentation<markus_documentation>
 
-  I was taking part in the documentation part of the draft for the final web report and contributed a solid amount of work to this task. After that we then decided to already start with the main documentation phase in order to write the final reports for the project. At that time I was not deeply involved in the documentation as we still had to finish the levels of the game. Later in June I had to leave my team for 3 weeks due to the summer school program in Japan. Therefore I was not able to contribute to the project in any way during that time.
-  This was already agreed with the rest of the team at the beginning of the project, so eventhough it was kind of rough to have one less team member during that time.
-  Additionally I lost 2 weeks with almost no work because of moving and the preparation for Japan which was not planned to be that time consuming and therefore was not involved into the documentation part during that time.
-  This led to me having to manage my time differently to the other team members which you can read in the @markus_time_management section.
+  The main documentation phase for the IA project was planned to take place in July, as mentioned in other sections before I was only working on the documentation within the last two weeks of July. I started working on my own contributions part as I wanted to have this section mainly done first and then work on the other sections of the documentation.
 
-  As I spend more time on the project before the summer school, I also wanted to catch up on the documentation part after I came back. Therefore I tried to spend as much time as possible during the last weeks of the project as we as a team agreed on finishing the project including the poster and the final reports by the end of July. This was a very tight schedule though.
+  //continue documentation part here
+
+  We wanted to have the documentation and also the poster done by the end of July.
 
   === Personal Conclusion<markus_personal_conclusion>
 
