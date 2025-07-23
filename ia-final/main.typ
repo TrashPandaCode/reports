@@ -259,12 +259,14 @@
 #col[
   //provisorischer col unfug
   == Game <game>
-  The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements. This component also handles the initialization of the game engine and transitions between levels.
+  The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component---called the Game component---that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements.
+
+  Another challenge was creating a system to not only load a level, but to also be able to smoothly swap between levels without losing progress. This was also handled inside of the Game component.
 
   // in general i would combine all these implementation details with a specific issue we faced
+  // D: I tried writing a small introduction paragraph for each chapter where I talk about some of the challenges and our approach and then went into more detail about the solutions in the sub sections of the chapter
 
-  // i would change the heading, it's too ambiguous, imo
-  === First call of the Component //P: corrected some minor sentence structure stuff
+  === Loading a Level //P: corrected some minor sentence structure stuff
   When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check wether the Tutorial Dialog should be shown, based on whether the user had previously read the tutorial. If the Tutorial is skipped, the Level Dialog will be displayed and wait for the current level to be set.
 
   //P: not to sure about the validity of all of this, looks good but would be good to have a second pair of eyes on it
@@ -276,19 +278,18 @@
 
   To prevent users from losing their progress due to accidental reloads or crashes, the component also sets up an auto-save system. A function is called every 10 seconds using JavaScripts `setInterval` function. This function calls the `save` function for all of our aforementioned Zustand stores.
 
-  // i would change the heading, it's too ambiguous, imo
-  === Calling the Component again //P: again not really my area of expertise, but looks good
+  === Switching Levels //P: again not really my area of expertise, but looks good
   If the level ID in the route paramters changes or the user navigates back to the same level, the componenet is re-rendered. Before any initialization starts again severeal clean up functions are called:
-  - Kaplays own clean up function is called to erase everything that was already loaded from the previous level // we wrote this cleanup function, also the desc isn't really accurate
+  - Our own clean up function for Kaplay, which completely quits the game engine and resets the global context
   - The auto-save interval is cleared
   - The global key tracker also has his clean up function called
 
   Once the clean up is completed, the Level Dialog will be displayed again and the same initialization steps from the previous section will start again.
 
   == Game Utils <game_utils> //P: again not really my area of expertise, but looks good
-  As already described in the last chapter, the Game componenet calls an `initGame` function, before it loads the selected level. This simplifies what needs to be done inside of each level initialization function itself. The main thing that needs to happen within each level initialization function is, placing game objects, connecting them using the Data Store and creating the logic that determines the win condition and the flow of the level. However loading game objects can be quite tedious, especially when we're loading sprite sheets for animations and multiple images at once for backgrounds. To further simplify level building we built a `gameHelper` component which has multiple functions to simplify some common game logic and loading assets.
+  As already described in the last chapter, the Game componenet calls an `initGame` function, before it loads the selected level. This simplifies what needs to be done inside of each level initialization function itself. The main thing that needs to happen within each level initialization function is, placing game objects, connecting them using the Data Store and creating the logic that determines the win condition and the flow of the level. However loading game objects can be quite tedious, especially when we're loading sprite sheets for animations and multiple images at once for backgrounds. Certain behaviours like character and camera movement also needed to be implemented into each level. To further simplify level building we built a `gameHelper` component which has multiple functions to simplify some common game logic and loading assets.
 
-  === Loading game objects <loading_gob> //P: again not really my area of expertise, but looks good
+  === Loading Game Objects <loading_gob> //P: again not really my area of expertise, but looks good
   Game objects are loaded using the `addGameobjects` function. The function has a list of game objects, each with their own function to load and place the assets.
 
   The raccoon is the most commonly used game object and also one of the most complex ones. It is loaded from a 4x4 spritesheet that contains all of its animations. Kaplay has the option to cut the spritesheet into multiple animations, which you can then play on the game object. All of the animations are of course only saved on the sprite sheet with the raccoon facing in one direction, to make the file as small as possible. This means we cannot just call the play function for each movement as the orientation of the raccoon would be wrong whenever the raccoon moves to the left. To fix this issue the raccoon has multiple states that all correspond to a movement or activity. When a state is triggered it will play the corresponding animation in the correct orientation.
@@ -330,10 +331,11 @@
   During initialization of a level the Data Store creates a map of all of the game objects that are required for the level, by going through the `levels` file. The map contains the IDs of these game objects and attachs another map to each ID containing the connections for the specific game object. Each connection a game object has is represented by an instance of the `HandleData` class, which tracks the current value for that connection and the access type. The access type determines wether the value can be read, changed or both using the nodes. The `HandleData` class has a `get` and a `set` function which is then used during level creation and also embedded in the nodes. The store also has functions to add custom handles to each game object.
 
   //P: Maybe add a more suffisticated diagram
+  /*
   #figure(
     block(
       ```
-        -- gameObject
+        -- gameObjectMap
           |--gobID, handleMap
           |   |-- handle, handleData
           |   |-- handle, handleData
@@ -342,12 +344,20 @@
       ```,
     ),
     caption: [The structure of the nested map],
+  )*/
+
+  // This might be way too small, but I think it's better than having that raw text block
+  #figure(
+    image("/ia-final/images/gameobj-map.svg"),
+    caption: "The structure of the nested map" 
   )
 
   The `save` function converts this nested map of game objects into a format that can be JSON stringified and saves it into the local storage of the browser. The `reset` function clears the map and reinitializes it. The saving of the all of the nodes and edges in the node editor is handled seperately in multiple Zustand stores that control the node editor.
 
-  == Building levels using Kaplay //P: lgtm, i like the code snippet
-  As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Building levels mostly consits of importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and complete the level. Every level is built as an initialize function, which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
+
+  // Maybe I can frame this chapter to sort of be the outcome of all of the solutions that we came up with for the aforementioned challenges
+  == Building levels using Kaplay 
+  As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Because of the aforementioned functions and systems, building levels now only comes down to importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and to complete the level. For the levels to easily be loaded by the Game component, every level is built as an initialize function which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
 
   // Keep code snippets? yay nay?
   // P: i like it, also changed it to display syntax highlighting for typescript
@@ -378,7 +388,8 @@
 
   Here is an example of what this could look like inside of our level specific game loop:
 
-  ```ts //Also added correct syntax highlighting
+  //Also added correct syntax highlighting
+  ```ts 
   game.onUpdate(() => {
     if (useGameStore.getState().isPaused)
                                         return;
