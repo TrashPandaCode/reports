@@ -144,6 +144,13 @@
 
   === Personal Conclusion<markus_personal_conclusion>
 
-  //missing communication in game development at the beginning of that work package
-  #todo("markus_personal_conclusion")
+  Looking back at the project, one of the main challenges I personally faced was the way of communication within the whole team during the project. When I first started building the initial levels, I sometimes found it difficult to clearly understand how everything was meant to come together.
+  At times, this left me feeling a bit on my own in terms of direction and expectations. As for example at the beginning I was expecting to make `one continous level` that gets harder and harder (which was the initial idea) and therefore the character needs to learn new `abilities` in order to progress instead of `multiple distinct levels` with each explaining a specific concept independent of the other levels. I want to emphasize that this is not meant as a complaint, but rather as a reflection on where better coordination could have helped improve the process, at least for me.
+
+  Another aspect I noticed throughout the project was that certain features or design elements I had worked on were later `reworked` or `replaced` - which in itself is completely fine and part of a normal development process. However, these changes were not always communicated clearly, which occasionally made it hard for me to keep up with the current status or understand the reasons behind some decisions. It should be mentioned that this behaviour grew out of frustation due to the lack of communication and commitment from the rest of the team, me included.
+
+  That being said, I still learned a lot throughout this project. It taught me how to adapt to changing plans, how to work more independently when needed, and how important ongoing and transparent communication is within a team. I also gained experience working with `collaborative tools` like GitHub more effectively, especially when it came to sharing progress, handling feedback, and keeping track of tasks.
+
+  Finally, I’d like to give a special thanks to `Jonathan Kron` and `Leo Kling` for their continuous support, their patience, helpful feedback, and all the time they spent reviewing my code, as well as the enormous time they spent on the project in general. Their input not only improved the overall quality of the game but also helped me improve my own skills during this project.
+
 ]
