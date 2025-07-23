@@ -15,4 +15,9 @@ Pre-trained models, such as ResNet architectures trained on ImageNet or speciali
 
 The implementation of transfer learning for CNN's can follow different strategies: feature extraction, where pre-trained layers are frozen and used as fixed feature extractors, or fine-tuning, where the entire network or selected layers are updated with a lower learning rate. The choice between these approaches depends on the similarity between source and target domains, the amount of available training data and computational constraints.
 
+//Not sure about this section. It feels like its a bit brief and not really adding much value, even if formulated in a much larger context. It was listed in the outline in the corresponding git issue, so I included it here.
+== Loss Functions for Regression
+In regression tasks, the choice of loss function significantly impacts model performance and training dynamics. Mean Squared Error (MSE) remains the most commonly used loss function for regression problems due to its mathematical properties and ease of optimization, computing the average squared difference between predicted and target values.
+For multi-dimensional regression outputs, such as predicting reverberation times across multiple frequency bands, individual frequency band losses can be monitored separately while the overall loss represents the aggregate error across all dimensions. The selection of appropriate optimizers like AdamW, which incorporates weight decay regularization, and learning rate scheduling techniques such as ReduceLROnPlateau help achieve better convergence and avoid overfitting.
+
 ]
