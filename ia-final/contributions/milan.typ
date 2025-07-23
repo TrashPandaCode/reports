@@ -35,11 +35,18 @@ On the 10th of May I continued working on the `Group` node, this time focusing o
 // both went our own ways? cant think of a better phrase rn
 In between these workdays I had consulted with Jonerthan Kron about our approach to implementing a loop node. After we brainstormed a bit and exchanged ideas on how the loop node should look and behave, we both went our own ways again. And when I returned Jonerthan had built the `ForLoop` which consists of the `ForStart` and `ForEnd` nodes.
 
-On the 15th of May I reworked the UI of the `FoorLoop`.
+// cognitive load... is this mean to jonerthan?
+On the 15th of May I styled the UI of the `ForLoop` to adhere to the styles of other nodes and simplify the cognitive load for the user. Especially the UI for adding custom `Handles` to the `ForLoop` was hard to understand and I wanted to make it as intuitive as possible. I also added the possibility to delete custom `Handles` by clicking on an `x` that appears whren they are hovered over with the mouse pointer. This was a feature that was missing in the first version of the `ForLoop` and I wanted to ensure that the user could easily remove custom `Handles` if they were not needed anymore. After this I tried to help out with a problem concerning the sorting of the node graph regarading the `ForLoop` nodes. The Problem was that computing a `ForEnd` node before its corresponding `ForStart` node would lead to an error and we did not handle that case yet. Therefore i devised an idea together with Philipp Wendt and left it as comments in the code base. The Issue was then solved by Jonathan Kron.
+
+On May 20th I worked to integrate the `Group` node with our other systems. I reworked the `duplciateNode` function of the `NodeContextMenu` to ensure that it would duplicate the `Group` node and all of its children. I then reworked the `deleteNode` function such that when a `Group` node is deleted, all of its children are also deleted. I also stopped `Group` nodes from being added into the compute graph, since they do not have any computational implications. After which I started modifying the resize logic for `Group` nodes. Jonerthan had already implemented a resize logic that would ensure that the `Group` node would resize to fit all of its children. However, this did not include all edgecases and we wanted to also limit the user from resizing the `Group` node to a size that would not fit all of its children.
+
+On May 21st I started work on building a robust duplication function in our `utilities` as we needed such functionality in many places and our current implementations were lacking and had many edgecases with weird and unintuitive behaviour. By the end of the day I had a first version of the duplication function that would duplicate a set of nodes with respect to their child and parent, this was still very much in progress though.
+
+On the 22nd of May i added most of the logic for duplicating `ForLoops` and their children. This Implementation still had Issues and I improved it's handling of children by the end of the day
 
 // mention everything that was scrapped or changed
-// However, this component was scrapped as it introduced more clicks to the user flow and broke the keyboard navigation of the dropdown menu with no straight forward fix available.
-// rework of of the computeTypes in search
+// custom dropdown was scrapped as it introduced more clicks to the user flow and broke the keyboard navigation of the dropdown menu with no straight forward fix available.
+// reworked and expanded computeTypes in search
 
 ==== June<milan_dev_june>
 
