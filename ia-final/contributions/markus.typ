@@ -12,7 +12,7 @@
 
   Especially in the early and towards the end of the project I struggled with my own time management as well as general communication problems within the whole team.
 
-  In the following sections especially the @markus_dev_phase I'll focus more on the progress and the work I put into the project. This includes challenges I faced and also learnings I made during the project.
+  In the following sections especially the @markus_dev_phase I'll focus more on the progress and the work I put into the project. This includes challenges I faced and also learnings I made during the project as you can read in @markus_personal_conclusion.
 
   === Time Tracking Methodology <markus_time_methodology>
 
@@ -21,7 +21,7 @@
 
   Later during the project the whole team agreed on using a `google sheet` to track our time and the tasks we worked on during that time. This made it easier to keep track of your own time and also to see what other team members are currently working on. Additionally it made it easier to see how much time was spent on each task and to identify potential bottlenecks in the project.
 
-  At the end I also used the the same `Git-based time tracking tool`, described in @jonathan_time_methodology, to track my time spent on the programming and documentation tasks. But as described at the end of @philipp_time_methodology, it turned out that this tool wasn't able to track the time properly as I was just like Philipp working on a task the whole day and only doing like one or two commits per day. This behaviour of me was not only problematic for the tool but more importantly made it sometimes difficult to see what I did within one commit and sometimes caused problems that were harder to fix later on as it was to much code of different tasks in one commit. Thats something I tried to change later on in the project.
+  At the end I also used the the same `Git-based time tracking tool`, described in @jonathan_time_methodology, to track my time spent on the programming and documentation tasks. But as described at the end of @philipp_time_methodology, it turned out that this tool wasn't able to track the time properly as I was just like Philipp Wendt working on a task the whole day and only doing like one or two commits per day. This behaviour of me was not only problematic for the tool but more importantly made it sometimes difficult to see what I did within one commit and sometimes caused problems that were harder to fix later on as it was to much code of different tasks in one commit. Thats something I tried to change later on in the project.
 
   === Time Management<markus_time_management>
 
@@ -39,14 +39,14 @@
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
-  I was not part of the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
+  I wasn't part of the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
-  When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to a deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would be able to finish the project in time and also to try providing the working hours I had to make up for.
+  When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to another deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would be able to finish the project in time and also to try providing the working hours I had to make up for.
 
-  I was not deeply involved in the documentation part yet as descibed in the @markus_documentation section.
+  I wasn't deeply involved in the documentation part at that point as described in the @markus_documentation section.
   So I wanted to make sure that I can contribute a significant amount of time within the last two weeks of July in order to be involved in the documentation part as well as the whole project was meant to be done by the end of July.
 
-  At this point in time the project itself was already declared as finished and only the documentation was missing. So the last two weeks I only spent on the documentation part starting with my contributions.
+  At this point in time the project itself was already declared as finished and only the documentation was missing. So the last two weeks I only spent on the documentation part starting with my personal contributions.
 
   === Project Planning<markus_project_planning>
 
@@ -59,6 +59,9 @@
   At the beginning of the concept and design phase I started creating a first `wireframe` showing a very simple example of a home screen for the game and a level selection screen. This was mainly to get a first idea of how the game preview could look like and to have a starting point for further discussions with the team. This was then developed further by Leo Kling and Jonathan Kron, who created more detailed wireframes and mockups for the home and the level selection screen.
 
   After that I was involved in the discussion where we chose the design of our website and whether the game should be in 2D or 3D. As me being responsible for the game design part this was an important decision that would highly influence the workflow of the game and the graphical design.
+
+  My first idea was to have a learning puzzle game in which you play a character that has no skills at all so he isn't even able to walk right at the beginning. So as a player you need to teach everything to the character which would be done by some kind of coding using the concepts of the computer animation course. Therefore this would be one continuous level that gets harder and more complex and requires more features and skills such as jumping or pushing objectives for example in order to continue.
+  However, during the process of discussing and developing it became more and more a game of distinct levels, each teaching a specific concept and being mostly independent of the other levels as for example movement is already pre-implemented in the levels after if reasonable but its not necessary to complete the movement level beforehand in order to have that feature in the next levels. The main reason for this was that we wanted to start with some very simple levels instead of having to implement something complex like movement right at the beginning.
 
   Later in this phase I was contributing regarding the `level content` itself, the `story` of the game and how to connect those two aspects of the game. After setting up initial levels I was also involved in working out and designing `tutorial levels` to introduce the player to the game mechanics and also help him navigate within the system. This was a very important part of the game design, as it was crucial to make the game `user-friendly` and easy to understand for the player.
 
@@ -74,7 +77,7 @@
 
   As mentioned at the beginning of my contribution section, the development phase started kind of rough for me. We as a team agreed on setting up the development environment together so everyone is included and knows how to set up the project on his computer. However, due to miscommunication this didn't work out as planned. This led to me being a little bit lost in the beginning and not knowing what to do next, which is of course also my fault. I found it hard to start with the game development part right away which caused my start to be very slow.
 
-  However, I started using some time to work my self into the `kaplay game engine` to get a better understanding of how to use it and how to make it interact with the nodes. This also gave me a perspective on what levels are actually possible and how to implement them. Furthermore I also started setting up a level document with the game development team to have a first `overview of the levels` we wanted to create, how they should be structured and what nodes would be needed. This also helped us figuring out which `tutorial levels` we should implement in order to explain certain, more complex, nodes.
+  However, I started using a little bit of time to work my self into the `kaplay game engine` to get a better understanding of how to use it and how to make it interact with the nodes. This also gave me a perspective on what levels are actually possible and how to implement them. Furthermore I also started setting up a level document with the game development team to have a first `overview of the levels` we wanted to create, how they should be structured and what nodes would be needed. This also helped us figuring out which `tutorial levels` we should implement in order to explain certain, more complex, nodes.
 
   In the first weeks of development I also tried to give feedback and did small parts on the landing page. In specific this included minor `hover effects` on buttons and the `dropdown` menu in the `level selection` part. Furthermore I worked on level `transitions` and a `scrolling effect`. This was at the end of April.
   The landing page was reworked later on though by Leo Kling and Jonathan Kron.
@@ -107,7 +110,7 @@
   During that time (beginning of June) I was a little bit involved in the `documentation part` by writing the `overview section` even though I was not assigned to it, the rest of the documentation was done by Leo Kling and Jonathan Kron. I also checked for content and typos.
 
   Additionally I filled the landing page with some text so it'd be a little bit more filled with content for the first user tests coming up.
-  Therefore I also added player and camera clamping so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.
+  Therefore I also added player and camera `clamping` so the player wouldn't get lost outside of the level area. Meanwhile I always tried to focus on not limiting the player too much in his actions within the game, so he could still explore the levels in its own way and find a unique solution for the goal that is given by the game.
   I tried making the game experience more fun in giving the player more options than just moving sideways by adding ladders the player could interact with by climbing up and down. This feature was removed later on as it wasn't needed.
 
   We're now at the 5th of June when I started setting up a `parenting level` which would give the player the task to implement parenting in the node system. As this is also one of the base concepts of the Computer Animation course which this game is based on, it was very important to find a good engaging solution that is understandable for the player. So I tried to figure out a good solution that would make sure that the player uses parenting properly in order to complete the level.
@@ -130,6 +133,7 @@
 
   During the development phase (@markus_dev_phase), I was trying to keep everyone updated about my current progress and what I was working on. This was mainly done via the `GitHub issues` and separate `Github branches` for bigger tasks I was working on.
   It made the work flow a lot easier to instantly create a new issue once you find a bug or have an idea for a new feature or task that needs to be done. Giving it a level of importance also helped figuring out which tasks to work on first.
+
   Creating an individual branch for huge tasks made sure that I don't mess up the main branch and that I can work on the task without having to worry about other changes that might happen in the main branch. This also gave the opportunity for other team members to review my code and give feedback. Big thanks at that point to Jonathan Kron and Leo Kling who spend a lot of time on reviewing my code and giving feedback. It not only helped me to improve my coding but also made sure that the code is more readable and understandable for others.
 
   Therefore I also tried to write short comments so me and others can understand what the code is doing when reviewing it later on.
