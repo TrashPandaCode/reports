@@ -11,11 +11,11 @@
 
   Before describing our dataset, it is important to discuss the existing datasets available in the literature. While the audio research community has access to numerous large-scale datasets, such as the VCTK Corpus @veauxVoiceBankCorpus2013 and EARS @richterEARSAnechoicFullband2024, none specifically address our particular requirements for reverb (or impulse response) and image pairs.
 
-  The OpenAIR dataset @shelleyOpenAIR129thAudio2010 does contain an extensive collection of impulse responses alongside images; however, these images prove unsuitable for our purposes as they primarily feature outdoor scenes or cathedral-type environments rather than typical room interiors.
+  The OpenAIR dataset @shelleyOpenAIR129thAudio2010 does contain an extensive collection of impulse responses alongside images; however, these images prove unsuitable for our purposes as they primarily feature outdoor scenes or cathedral-type environments rather than typical office room interiors.
 
   This data scarcity represents a well-documented challenge in the field, as highlighted by #cite(<singhImage2ReverbCrossModalReverb2021>, form: "author"). Their approach involved aggregating data from multiple sources, including the OpenAIR dataset @shelleyOpenAIR129thAudio2010, various online libraries, and web scraping techniques. Due to limited availability of properly labeled data, they relied heavily on weak supervision, supplementing gaps with plausible data as determined by their research team.
 
-  We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
+  We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on office room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
 
   == Data Sources
 
@@ -25,9 +25,8 @@
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
-  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, Samsung Galaxy S10, and iPad Mini. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
+  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
 
-  #todo("check devices")
   #todo("go more in depth about analyzing recordings")
 
   To ensure comprehensive coverage, multiple measurements and images were recorded in each room, with the objective of capturing diverse acoustic and visual conditions. Throughout the data collection process, we took care to avoid capturing room modes or other acoustic artifacts that could introduce bias into our results.
@@ -69,6 +68,23 @@
 
   The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with 10% for validation, 20% for testing, and the remaining 70% for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
 
+  == Domain Gap Considerations
+  A significant challenge encountered in this hybrid approach was the presence of a substantial domain gap between synthetic and real images. The synthetic images, despite sophisticated rendering techniques, exhibited characteristic artifacts and stylistic differences that distinguished them from real photography—including lighting models, material appearance, geometric precision, and subtle environmental factors that are difficult to replicate synthetically.
+  
+  The lighting differences were particularly notable, as Blender's physically-based rendering, while mathematically accurate, often lacked the natural imperfections present in real-world mobile photography. Real images exhibited variations in exposure, white balance, and the complex interplay of artificial office lighting with natural daylight. Material appearance also differed significantly, with synthetic surfaces appearing too pristine compared to real-world counterparts that show natural wear, dust, and subtle color variations developed through use.
+  
+  Additionally, the geometric precision of synthetic environments, with perfectly aligned surfaces and idealized proportions, contrasted with the minor construction imperfections and organic irregularities found in actual office spaces. Environmental details such as cable management, personal belongings, and incidental objects naturally present in real offices were either absent or insufficiently varied in synthetic scenes.
+  
+  This domain gap likely created confusion within the neural network during training, as evidenced by inconsistent validation performance across synthetic and real data subsets, though we acknowledge that comprehensive empirical analysis of this effect remains to be conducted. The model struggled to generalize effectively across the two distinct visual domains, potentially degrading overall prediction accuracy and robustness.
+
+  == Implications for Model Performance
+  The integration of synthetic and real data created a complex training environment where the model needed to generalize between two distinct visual domains while learning consistent acoustic prediction principles. This multi-domain learning challenge was compounded by the fundamental differences in how acoustic properties manifest visually between synthetic and real environments.
+  
+  Despite our synthetic data augmentation efforts, the total of approximately 4,073 datapoints remained insufficient for robust CNN training on complex acoustic-visual relationships. This data insufficiency became apparent during training through significant variation in loss curves and difficulty achieving stable convergence. The limited dataset size likely contributed to overfitting behaviors, where the model memorized specific visual patterns rather than learning generalizable acoustic-visual correlations.
+  
+  Training instability manifested through high variance in validation loss across epochs and notable performance differences when evaluated separately on synthetic versus real data subsets. This indicated that the domain gap prevented the model from developing unified representations capable of handling both data types effectively. Limited generalization capabilities became evident when testing on held-out real-world samples that differed from the training distribution, with the model showing increased uncertainty and reduced accuracy.
+  
+  These observations suggest that significantly larger datasets would be necessary for optimal model performance. However, the optimal composition of such an expanded dataset remains an open question. Future approaches might involve dramatically increasing real-world data collection, improving synthetic generation techniques to reduce domain gap, or developing domain adaptation methods. How this larger dataset would be constructed is up to discussion, as we have not empirically proven that one approach is better than the other yet.
   // == Data Augmentation
   // move augmentation to experiments
 
