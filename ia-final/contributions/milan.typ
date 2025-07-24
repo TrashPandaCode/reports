@@ -42,11 +42,21 @@ On May 20th I worked to integrate the `Group` node with our other systems. I rew
 
 On May 21st I started work on building a robust duplication function in our `utilities` as we needed such functionality in many places and our current implementations were lacking and had many edgecases with weird and unintuitive behaviour. By the end of the day I had a first version of the duplication function that would duplicate a set of nodes with respect to their child and parent, this was still very much in progress though.
 
-On the 22nd of May i added most of the logic for duplicating `ForLoops` and their children. This Implementation still had Issues and I improved it's handling of children by the end of the day
+On the 22nd of May i added most of the logic for duplicating `ForLoops` and their children. This Implementation still had Issues and I improved it's handling of children and their parents by the end of the day, but duplicating loops was still not functioning correctly.
 
-// mention everything that was scrapped or changed
-// custom dropdown was scrapped as it introduced more clicks to the user flow and broke the keyboard navigation of the dropdown menu with no straight forward fix available.
-// reworked and expanded computeTypes in search
+On the 23rd of May I continued working on the duplication logic, I expanded the logic to handle the state of a given `ForLoop`, ergo the custom `Handles` that were added to the `ForLoop`. Afterwards i debugged and fixed a problem with selecting nodes, where selecting a node would not toggle correctly when duplicating and nodes had to sometimes be selected multiple times or their selection was inverted. And finally I created constants for the default sizes of the `Group` node and refactored all refrences accordingly.
+
+On the 25th I revisited the `duplicateNodes` and the `computeGroupSizings`functions. For the `duplicateNodes` function I adjusted parenting behaviiours once again and then added the default case for nodes that fall outside of groups, loops and children. After this I deemed this the first usable or stable version of the `duplicateNodes` function. I then moved on to the `computeGroupSizings` function, having it return the default sizes when the group is empty.
+
+On the 26th of May I basically rewrote the `onNodeDragstop` function, which determines when and how to add nodes to a `Group`, once more and hoped it to be ready this time. I refactored more of our code to make use of the `duplicateNodes` function and adjusted our logic for adding nodes to a `ForLoop` to also add these nodes to the `ForLoop`'s parent, if it has one. Afterwards i adjusted the `duplicateNodes` function once more to ensure proper handling of `Handles` and refactored more refrences to this funcion.
+
+On the 27th I realized that the `onNodeDragstop` function was still not working as intended and started another rewrite.
+
+I continued this rewrite on the 28th of May and finished it early on. I then moved to refactor more code regarding the `duplicateNodes` function. This included changes to the `AddNodes` component, the `NodeContextMenu` and `SelectionContextMenu`, as well as the `duplicateNodes`function itself. Afterwards it finally looked like I was on the home stretch regarding my feature branch for the `Group` nodes, which now also contained the new diplicate logic.
+
+On the 29th of May I started work by fixing an issue with the `duplicateNodes` function, where duplicating a loop and its children while they were in two seperate groups would parent all children to the `ForStart`'s parent. At this point the `duplicateNodes` function was rather unwildy as one needed to pass a lot of functions into it, but Jonerthan Kron showed me that i could directly interact with our zustand stores state and get most functionality i needed from there. I then used this knowledge the `duplicateNodes` function accordingly. I also adjusted the deletion behaviour of the `Group` node to unparent all children rather than deleting them. We had came to the conclusion that deleting children of a `Group` was unintuitive and very destrucitve, especially since we did not have undo functionality at that point. Afterwards with the approval of most team members and reviews by Jonathan Kron and Leo Kling I merged my feature branch into the main branch.
+
+This marked the end of my work in May. Most of my work in May was focused on the `Group` node and the `duplicateNodes` function. It should be noted that my earlier work in May on the custom dropdown component was scrapped, as it introduced more clicks to the user flow and broke the keyboard navigation of the dropdown menu with no straight forward fix available. And that the functionality for searching `computeTypes` and directly adding the corresponding note later expanded and reworked.
 
 ==== June<milan_dev_june>
 
