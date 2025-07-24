@@ -467,6 +467,45 @@
 
   The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
 
+#figure(
+    table(
+    columns: (1fr, 1fr),
+    table-header("User", "SUS-Score"),
+
+    [1],
+    [77,5],
+
+    [2],
+    [80],
+
+    [3],
+    [72,5],
+
+    [4],
+    [60],
+
+    [5],
+    [75],
+
+    [6],
+    [67,5],
+
+    [7],
+    [75],
+
+    [8],
+    [77,5],
+    
+
+    [9],
+    [82,5],
+
+    [*Total*],
+    [*74,2*],
+  ), caption:"User Testing Results"
+)
+
+
   === Implementation of findings
   Based on the user testing results, we implemented these essential improvements:
 
