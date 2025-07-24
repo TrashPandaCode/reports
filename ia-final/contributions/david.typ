@@ -1,5 +1,6 @@
 #import "../lib.typ": col
 #import "@preview/big-todo:0.2.0": *
+
 #pagebreak()
 #col[
 == Contributions of David Klein
@@ -11,7 +12,7 @@ During the planning phase of the project I vocalized that I wanted to be part of
 // Project planning
 // participated in meetings and tried contributing ideas and brainstorming
 // helped define workpackages
-// did not have any contributions on my own during this time
+// did not have any contributions outside of the meetings own during this time
 
 === Concept and Design Phase
 At this point we were still unsure about using Kaplay, three.js or Babylon.js, so I looked a bit more into them, so I would be able to contribute to the discussion about them. We had a team meeting on April, 9th where we talked about different concepts for the game and discussed the prospect of 2D vs 3D. I brought up some isometric and top down view games, but the concensus was that they would complicate the coordinate system too much. We took multiple votes and ended up going with a 2D side scroller in Kaplay.
@@ -37,11 +38,33 @@ In the last two weeks of June I turned my original kinematics level into a level
 
 Our goal was to be done with the development phase by the time of the milestone presentation, so I picked up the Gravity level which was one of the last few planned levels remaining. I came up with a concept and implemented it. The goal was to teach the user both about velocity-based movement and gravity. After finishing the Gravity level I wrote the level guide for it and also added solutions to the Gravity and the Forwards level. At this point my mental state had already declined by a lot and I started making a lot of mistakes that me and other members had to pick up after. I had to correct the level guide and the solution for the Gravity level multiple times and even now the solution to this level is partially incorrect. The kinematic arms in my Forwards level are also still just placeholders, because I did not make any other assets for them.
 
-=== Documentation
+=== Documentation <david_doc>
+Looking back at the Development Phase I was really dissappointed with myself and the work I had put towards the project. In an attempt to regain my focus and put a more adequate amount of time into the documentation I decided to start tracking my time sepereately and focus more on myself. Watching other team members get back on track and contribute more consistently after some of the changes we made, while I was still struggling with the same issues was really frustrating and I thought this change would help mitigate that.
+
+At the start of July I came up with a rough structure for the documentation and we started the writing process on some of the sections. On July, 13th we had a team meeting where we talked more in depth about the structure. We decided to change some of the already existing sections to fit more into our new structure and also ended up removing some parts. In the end I ended up writing various sections about the implementation of the game. // Add section refs i guess
 
 
+=== Time Tracking Methodology
+I had a similar approach to time tracking as the rest of the team. For each session I tried to be honest with myself and only log time, which was actually spent working on an issue. Time spent discussing topics with other team members and also most untracked efforts were be ignored.
 
-=== Time Tracking Method
+Since we only started to actively track time in June, I also used the same git-based time tracking algorithm mentioned in /*@jonathan_time_methodology*/ for all previous development. This method however does not account for the time spent on creating the assets. To estimate the time spent in Blender I checked the time at which the project file was created and then the time at which I saved the last image for that session. I also used progress images which I shared with other team members to estimate the time of these sessions. To account for potential breaks I substracted at least 25% off of the estimated time. Even more if there could've been a break for lunch or dinner. The time I spent in Krita is quite easily accounted for, as the software automatically tracks time spent actively working for each project #footnote([https://docs.krita.org/en/user_manual/working_with_images.html#author-and-description]).
+
+As metioned in /*@david_doc*/ my time spent in July was tracked seperately from our shared Google Sheet in an attempt to focus on myself and not compare myself too much with the other team members. For the sake of accountability I also transfered all of this into the shared Google Sheet before the end of the project. //planning to do this on saturday
+
+#todo("fix refs to previous sections")
+
+// jikyuu time tracking
+// time spent on design is not considered by this
+// for backgrounds estimating time spent by checking creation date of the projects and creation date of the final product
+// subtracting at least 25% for more realistic time
+// subtracting even more if the session lasts throughout lunch/dinner
+// for drawings krita time
+// time spent researching these topic is not considered as i did not track them at the time and don't want to make random guesses
+// 
+// time spent in july was tracked seperately as to focus on myself
+// tracked time was transfered into the shared google sheet for accountability
+
+=== Time
 
 
 // Originally assigned to UI/UX Overall, Game Design, Game Creation
