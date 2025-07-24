@@ -349,14 +349,14 @@
   // This might be way too small, but I think it's better than having that raw text block
   #figure(
     image("/ia-final/images/gameobj-map.svg"),
-    caption: "The structure of the nested map" 
+    caption: "The structure of the nested map",
   )
 
   The `save` function converts this nested map of game objects into a format that can be JSON stringified and saves it into the local storage of the browser. The `reset` function clears the map and reinitializes it. The saving of the all of the nodes and edges in the node editor is handled seperately in multiple Zustand stores that control the node editor.
 
 
   // Maybe I can frame this chapter to sort of be the outcome of all of the solutions that we came up with for the aforementioned challenges
-  == Building levels using Kaplay 
+  == Building levels using Kaplay
   As already mentioned in @game_utils we tried to reduce the amount of game logic and asset loading that needs to be implemented for each level as much as possible. Because of the aforementioned functions and systems, building levels now only comes down to importing the needed utility functions and then implementing the needed logic for the user to interact with the game objects and to complete the level. For the levels to easily be loaded by the Game component, every level is built as an initialize function which consits of loading and setting up all of the needed assets and the game loop in which the behaviour of all the game objects is implemented. This set up allows us to load up any level inside of the `Game` component as mentioned in @game. The level set up for most levels looks something like this:
 
   // Keep code snippets? yay nay?
@@ -392,7 +392,7 @@
   Here is an example of what this could look like inside of our level specific game loop:
 
   //Also added correct syntax highlighting
-  ```ts 
+  ```ts
   game.onUpdate(() => {
     if (useGameStore.getState().isPaused)
                                         return;
@@ -471,43 +471,33 @@
   #todo("add reference to appendix, add think-aloud protocol to appendix")
   The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
 
-#figure(
+  #figure(
     table(
-    columns: (1fr, 1fr),
-    table-header("User", "SUS-Score"),
+      columns: (1fr, 1fr),
+      table-header("User", "SUS-Score"),
 
-    [1],
-    [77,5],
+      [1], [77,5],
 
-    [2],
-    [80],
+      [2], [80],
 
-    [3],
-    [72,5],
+      [3], [72,5],
 
-    [4],
-    [60],
+      [4], [60],
 
-    [5],
-    [75],
+      [5], [75],
 
-    [6],
-    [67,5],
+      [6], [67,5],
 
-    [7],
-    [75],
+      [7], [75],
 
-    [8],
-    [77,5],
-    
+      [8], [77,5],
 
-    [9],
-    [82,5],
+      [9], [82,5],
 
-    [*Total*],
-    [*74,2*],
-  ), caption:"User Testing Results"
-)
+      [*Total*], [*74,2*],
+    ),
+    caption: "User Testing Results",
+  )
 
 
   === Implementation of findings
@@ -552,11 +542,9 @@
 
   // also hier ist so 50/50 bullshit, aber klingt nett
   Several critical issues were discovered and resolved through the testing process. The validation of  identified broken internal references within documentation, preventing navigation errors in the deployed application. The solutions tracking system revealed orphaned files and missing implementations, enabling comprehensive coverage of all game levels. These automated checks significantly reduced manual testing overhead while providing continuous validation of system integrity throughout the development process.
-]
 
-= Results & Conclusion
+  = Results & Conclusion
 
-#col([
   == Project Achievement Summary
 
   The Dumpster Diving project successfully achieved its primary objective of creating an accessible, engaging educational tool for teaching computer animation concepts through visual node-based programming. Through a structured development process spanning several months, the team delivered a functional web application that combines interactive gameplay with educational content, addressing the identified gap between theoretical computer animation knowledge and practical implementation skills.
@@ -577,7 +565,7 @@
 
   The project's educational effectiveness was validated through comprehensive user testing:
 
-#todo("add reference to 'established benchmark'")
+  #todo("add reference to 'established benchmark'")
   / System Usability Scale Results: With a mean SUS score of 74.2, the application exceeded the established benchmark of 68, demonstrating above-average perceived usability. Individual scores ranged from 60.0 to 82.5, indicating consistent positive user experience across diverse user expertise levels.
 
   / User Feedback Integration: Qualitative insights from think-aloud protocols identified specific improvement areas, leading to successful implementation of an introduction tutorial and optimization of initial node selection to reduce cognitive overload for new users.
