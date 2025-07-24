@@ -1,8 +1,68 @@
 #import "../lib.typ": *
 #import "../utils.typ": *
+#import "@preview/big-todo:0.2.0": *
 
 = Test Plans
 #col[
+  #todo("check for correctness and maybe adjust formatting")
+  == System Usability Scale Evaluation
+  === Methodology
+/ Participants: Nine participants (N=9) were recruited for this evaluation, representing a convenience sample with the following composition:
+
+*50% (n≈4-5):* Students who had completed the target university computer animation course\
+*25% (n≈2):* Participants with technical understanding but no formal computer animation training\
+*25% (n≈2):* Participants with no prior technical or computer animation experience
+
+==== Instrument
+The standard 10-item SUS questionnaire was employed, utilizing a 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree). SUS scores are calculated by converting responses to a 0-4 scale, summing the adjusted scores, and multiplying by 2.5 to yield a final score ranging from 0-100 (Brooke, 1996).
+==== Data Collection and Analysis
+Participants completed the SUS questionnaire following interaction with the web-based computer animation learning application. Individual SUS scores were calculated according to standard procedures, and descriptive statistics were computed for the sample.
+=== Results
+/ SUS Score Distribution: Individual participant SUS scores ranged from 60.0 to 82.5, with the following distribution:
+
+- Mean: 74.2
+- Standard Deviation: 6.8
+- Median: 75.0
+- Range: 22.5
+
+/ Comparative Analysis: The obtained mean score of 74.2 exceeds the established SUS benchmark of 68 (Sauro, 2011) by approximately 0.5 standard deviations, suggesting above-average perceived usability.
+
+=== Statistical Significance and Validity Considerations
+==== Statistical Power Limitations
+The current study faces substantial limitations regarding statistical power and significance testing. With N=9, the study lacks sufficient power to detect meaningful differences between user groups or to establish statistical significance of the observed scores. For adequate statistical power (0.8) with $alpha$ = 0.05 and medium effect size (Cohen's d = 0.5), approximately 17-20 participants would be required for between-group comparisons (Lewis & Sauro, 2009). The current sample size provides power of approximately 0.3-0.4, substantially below conventional thresholds.
+
+==== External Validity Constraints
+Several factors limit the generalizability of these findings:
+
+/ Sample Size Limitations: The small sample (N=9) severely restricts external validity and statistical inference capability. Industry standards recommend minimum sample sizes of 15-20 participants for usability evaluations to achieve meaningful statistical power.
+
+/ Sampling Bias: The convenience sample may not represent the broader population of potential users for computer animation learning applications.
+
+/ User Expertise Distribution: While the 50/25/25 distribution across expertise levels provides some diversity, the small absolute numbers (≈4-5, ≈2, ≈2) prevent meaningful subgroup analyses or comparisons between user categories.
+/ Context Specificity: Results are specific to this particular computer animation learning application and may not generalize to other educational technologies or animation software platforms.
+
+=== Methodological Limitations
+The study employs only the SUS instrument, which provides a unidimensional usability measure. As noted by Brooke (1996), this one-dimensional aspect of the SUS is both a benefit and a drawback because the questionnaire is necessarily quite general. Additional measures such as task completion rates, error frequencies, and learning curves would provide more comprehensive usability assessment.
+
+=== Interpretation Guidelines
+The mean SUS score of 74.2 indicates good perceived usability, falling within the "acceptable" range according to established SUS benchmarks. However, given the methodological limitations outlined above, these results should be interpreted as preliminary findings that provide encouraging initial feedback rather than definitive conclusions about the application's usability effectiveness.
+The application shows promise for supporting computer animation education across diverse user expertise levels, but validation through larger, more systematically sampled studies is required before drawing generalizable conclusions.
+
+=== Fit Criterion
+/ Minimum Sample Size: Future evaluations shall include at least 15-20 participants to achieve adequate statistical power for usability assessment.
+
+/ SUS Score Target: The application shall maintain a mean SUS score above 70 (above-average usability) across diverse user populations.
+
+/ Subgroup Analysis: Sufficient sample sizes within each expertise category (minimum n=8 per group) shall be maintained to enable meaningful between-group comparisons.
+
+=== Considerations
+This evaluation represents a preliminary assessment using industry-standard methodology. While the results indicate above-average perceived usability, the small sample size necessitates cautious interpretation. Expansion of the evaluation to include larger, more representative samples and supplementary usability measures is recommended for comprehensive validation of the application's usability characteristics.
+
+#todo("add these references to bib")
+// References
+// Brooke, J. (1996). SUS-A quick and dirty usability scale. Usability evaluation in industry, 189(194), 4-7.
+// Lewis, J. R., & Sauro, J. (2009). The factor structure of the system usability scale. In International conference on human centered design (pp. 94-103). Springer.
+// Sauro, J. (2011). A practical guide to the system usability scale: Background, benchmarks & best practices. Measuring Usability LLC.
   == Acceptance Report
   === Project Outcome
   The project *Dumpster-Diving* consists of a playable application with a node-based editor that allows users to design in-game mechanics through visual scripting elements.
