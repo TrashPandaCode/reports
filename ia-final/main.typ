@@ -25,7 +25,7 @@
   bibliography: bibliography("bibliography.bib"),
 )
 
-#outline(depth: 3)
+#outline(depth: 2)
 #todo_outline
 #pagebreak()
 
