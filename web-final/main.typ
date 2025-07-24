@@ -54,3 +54,7 @@
 #todo("add references (e.g. from user testing, accessibility)")
 
 // = Index
+
+
+#pagebreak()
+#include "chapters/appendix.typ"
