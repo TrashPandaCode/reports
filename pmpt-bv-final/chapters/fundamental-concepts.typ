@@ -95,9 +95,31 @@
   == Room Acoustics and Image-based Prediction
 
   === Plausibility of Predicting RT60 from Images
-  Predicting RT60 from images is plausible because visual cues in a room's appearance often correlate strongly with its acoustic characteristics. Key visual indicators such as room size, shape, surface materials, and furnishing density provide valuable information for estimating reverberation time. For instance, large rooms with hard, reflective surfaces like bare concrete or glass typically have longer RT60s, while smaller, carpeted spaces with soft furnishings tend to have shorter RT60s. The presence of diffusive elements, ceiling height, and spatial openness also contribute to acoustic behavior and are often clearly visible in images. With the increasing power of computer vision and deep learning, models can learn to associate such visual patterns with measured RT60 values, making image-based prediction a promising and intuitive approach to room acoustics analysis.
+  Predicting RT60 from images is plausible because visual cues in a room's appearance often correlate strongly with its acoustic characteristics. Key visual indicators such as room size, shape, surface materials, and furnishing density provide valuable information for estimating reverberation time. /*https://www.researchgate.net/publication/346886274_Acoustic_Room_Modelling_Using_360_Stereo_Cameras */ /* https://pure.solent.ac.uk/en/publications/use-of-artificial-intelligence-in-room-acoustics-prediction-using? */ For instance, large rooms with hard, reflective surfaces like bare concrete or glass typically have longer RT60s, while smaller, carpeted spaces with soft furnishings tend to have shorter RT60s. The presence of diffusive elements, ceiling height, and spatial openness also contribute to acoustic behavior and are often clearly visible in images. With the increasing power of computer vision and deep learning, models can learn to associate such visual patterns with measured RT60 values, making image-based prediction a promising and intuitive approach to room acoustics analysis.
 
   === Prior Work in this Field
+  As the use of AI is growing very fast, there is a lot of research in the field of using image-based prediction of acoustic property and also more specifically on room acoustics and RT60 predictions. The prior work we're going to name not always directly predicts RT60, but covers parts of our project, such as predicting the sound of specific materials, or predicting room types. As for example predicting material also provides its absorption value which is needed for RT60 calculations. We found it very helpful to look at other approaches in order to see in what scope our project is actually feasible.
+
+  `Visually Indicated Sounds` /* https://arxiv.org/pdf/1512.08512 */
+  - In this paper, the authors trained a model that is able to predict the sound of different materials based on their visual appearance. They used a dataset of silent videos that show a person hitting a specific object or material using a drumstick. This was a good example on how good a neural network could make predicitons on object materials.
+
+  `USE OF ARTIFICIAL INTELLIGENCE IN ROOM ACOUSTICS PREDICTION USING A PHOTOGRAPH` /* https://pure.solent.ac.uk/en/publications/use-of-artificial-intelligence-in-room-acoustics-prediction-using? */
+  - Predicting the RT60 of a room by using a image-processing AI is also the goal that's described in this paper. They use a total of 24 images for a single room though. For each position in the room they take a picture in a straight 90° angle to the floor and then go 25° up and down for the second and third image.
+
+  `AV-RIR: Audio-Visual Room Impulse Response Estimation` /* https://arxiv.org/pdf/2312.00834 */
+  - Different to others this approach uses a speech audio file of the corresponding room and an image to have both visual and auditive information of that room in order to predict the RT60 value. This is a very interesting approach, as it provides a lot of room information for the training and therefore can be very precise but also requires a lot of data storage.
+
+    `Acoustic Room Modelling Using 360 Stereo Cameras` /* https://www.researchgate.net/publication/346886274_Acoustic_Room_Modelling_Using_360_Stereo_Cameras */
+  - This paper describes a method of predicting the RT60 of a room using 360° stereo cameras. Instead of making a certain amount of normal images, they created a dataset of 360° images from two heights to train a model that predicts the RT60 also based on the visual appearance of the room. The problem of this method is that it not only requires a lot more storage but also a very specific camera setup.
+
+  `Visual Acoustic Matching` /* https://arxiv.org/pdf/2202.06875 */
+  - This project uses a dataset of room images and audio files unrelated to the room, in order to train a model that transforms the source audio file to sound like it was recorded in the room shown in the image. This comes very close to our project, as it also uses a single image but the output is an audio file instead of a RT60 value.
+
+  Besides inspiration from other projects it can also be helpful to use pre-existing model architectures and datasets to train a model on. Unfortunately, there is no suitable single room RT60 dataset yet, so we had to create our own dataset.
+  However, due to training we found out that using a `ResNet50` model pretrained on the `Places365` dataset is very helpful even though it doesn't include RT60 data. The `Places365` dataset contains 365 different room types and is trained on more than 1.8 million images. Therefore this model is very good in differentiating between different room types such as kitchens, offices, living rooms and so on. `ResNet50` is a convolutional neural network (CNN) that extracts high-level visual features from images, making it well-suited for tasks like scene understanding and classification.
+
+
+
 
   //
   // Machine Learning & CNNs
