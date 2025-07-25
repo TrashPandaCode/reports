@@ -70,7 +70,7 @@ This marked the end of my work in May. Most of my work in May was focused on the
 In June I assigned myself for the task of implementing unit tests for our code base. I started by reading and learning about unit tests, Jest, React Testing Library and how to test zustand stores. I then started experimenting with writing a test for our `game-store` but ran into issues rather quickly. I talked about this a lot with Jonathan Kron who tried helping me, but I was uanble to get these tests running on my own. I then wrote a test together with Jonathan Kron for the `data-store` which was a lot more successful. But we ultimately ran into issues with correctly mocking the `localStorage` and the `zustand` stores. Jonathan Kron then fixed these issues on his own. This marked the end of my contributions to the unit tests, as well as development in general on the 13th of June.
 
 === Documentation and Report<milan_documentation_report>
-As of now I have contributed to this report by Explaining my contributions.
+As of now I have contributed to this report by Explaining my contributions to the project itself.
 #todo("")
 
 === Personal Reflections<milan_reflections>
