@@ -71,4 +71,9 @@ In June I assigned myself for the task of implementing unit tests for our code b
 
 === Documentation<milan_documentation>
 #todo("add documentation")
+
+=== Personal Reflections<milan_reflections>
+I learned a lot during this project, both about myself and about software development. I learned that I need to be more proactive in my work and that I need to manage my time better. I also learned that I need to be more communicative with my team and that I need to explicitly ask for help when I need it. In retrospective I rarely felt like i was working with the team even though I value each member personally. I also learned a lot about the technologies we used, especially React, Zustand and React Flow. I am proud of the work I did on the `Group` node and the `duplicateNodes` function. I also learned a lot about the importance of documentation and how it can help both the user and the developer. Overall, this project was a great learning experience for me and I am grateful for the opportunity to work on it.
+
+For future projects I would like to work more with the team and be more proactive in my work.
 ]
