@@ -3,10 +3,14 @@
 #pagebreak()
 #col[
 == Contributions of Milan Jezovsek
-#todo("introduce contributions of Milan Jezovsek")
+The following outlines my contributions to the project throughout its various phases, including planning, concept and design, development, and documentation. While the work was collaborative and many tasks were shared among team members, I focused on specific areas where I could bring the most value. In the following sections, I will describe my involvement in each phase, highlighting both the responsibilities I was assigned and the areas where I took initiative. My contributions ranged from collaborative design and UI/UX work to implementing features and handling technical challenges during development.
+
+Initially assigned to the a variety of work packages, I later focused on the `Node Types`, `Node Execution`, `Help Tool`, and `UI/UX Overall` work packages. My contributions were not limited to these areas, as I also supported my teammates in other aspects of the project whenever possible. However, due to the nature of our collaboration, I often found myself working independently, reviewing existing work and determining how I could best contribute to the project.
+
+It should be noted that my contributions were not always reflected in the final codebase, as many of my early implementations were reworked or replaced by other team members. And my contributions are not as plentyful as some of my teammates, as I failed to keep up with the pace of development and managed my time inefficiently. However, I believe that my work in the areas I focused on was valuable and helped shape the project in those areas.
 
 === Project Planning<milan_project_planning>
-#todo("add project planning")
+In the first weeks of the project we all worked on the `Project Planning` together. During this time we discussed the overall structure of the project, the technologies we wanted to use and how we wanted to approach the development of the project. We also discussed the timeline of the project and how we wanted to split up the work into different work packages. We collaborated on a variety of documents, including the `Projektauftragsformular`, `Projektorganisation`, and `Projektplanung`, as well as corresponding presentations for each stage. I contributed wherever I could and supported my teammates in different areas, though I often missed the specific days when most of the core work was completed. As a result, I frequently had to work independently, reviewing what had already been done and figuring out how I could add value to the project on my own.
 
 === Concept and Design<milan_concept_design>
 I was assigned to two major work packages concerning the concept and design of the project. The first of which was the `First Prototype` and the second was the `UI/UX Overall` workpackage.
@@ -67,8 +71,4 @@ In June I assigned myself for the task of implementing unit tests for our code b
 
 === Documentation<milan_documentation>
 #todo("add documentation")
-
-=== Time Tracking Methodology <milan_time_methodology>
-#todo("add time tracking methodology")
-
 ]
