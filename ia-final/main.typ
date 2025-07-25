@@ -691,7 +691,7 @@
   The project's open-source nature and comprehensive documentation ensure that future developers and educators can build upon this foundation, extending both technical capabilities and educational applications. As educational technology continues to evolve, projects like Dumpster Diving demonstrate the potential for innovative approaches that make complex technical domains more accessible to diverse learners while maintaining educational effectiveness and professional relevance.
 
   Through successful integration of technical innovation, pedagogical design, and user-centered development, the Dumpster Diving project establishes a valuable contribution to computer animation education and demonstrates the broader potential of visual programming interfaces for technical learning domains.
-])
+]
 
 #pagebreak()
 #col([
@@ -756,16 +756,3 @@
 #include "contributions/markus.typ"
 #include "contributions/milan.typ"
 #include "contributions/david.typ"
-
-#pagebreak()
-= Glossary
-#todo("fill glossary (if needed)")
-
-// Perhaps this could go in the glossary later
-//=== Constructivism
-//Constructivism is rooted in the theories of Jean Piaget — developed over the course of fifty years until his death in 1980 — who believed that individuals build their knowledge through their experiences and their reflections on those experiences @piaget_psychology_1969. However the term constructivism was not coined by Piaget himself, but emerged later on as others expanded on his ideas. Catherine Fosnot defined it as a psychological theory that "construes learning as an interpretive, recursive, nonlinear building process" @fosnot_constructivism_1995.
-
-#todo("add references (e.g. from user testing, accessibility, teaching concept)")
-
-#pagebreak()
-= Index
