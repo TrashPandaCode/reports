@@ -219,7 +219,7 @@
   = Technical Challenges & Solutions
   == Use of React and React Flow <techstack_react_reactflow>
   //has to be checked for correctness and completeness
-  React @React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use React Flow @ReactFlow2025 to create the node editor upon. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sophisticated node editor needed for our project. As our programming language of choice, we decided to use TypeScript @Typescript — a statically typed superset of JavaScript. TypeScript allows us to catch type-related errors early in the development process and contributes to clearer, more maintainable code. These benefits are particularly important in a project like ours, which involves a complex system with many interconnected components and evolving interfaces. Since we're working with React and TypeScript, we naturally use TSX — the standard syntax extension for TypeScript that allows us to write HTML-like markup within TypeScript code. This makes building and maintaining the user interface more intuitive, especially in areas like the node editor, where we create various custom components with specific properties and behaviors.
+  React @React is a modern, free and open source JavaScript library for building user interfaces through a declerative, component-based architecture. Its efficient update model via a virutal DOM makes it ideal for developing interactive web applications. In our project, React serves as the foundation for our user interface, allowing us to create a dynamic and responsive experience for users. To avoid the overhead of implementing a complex node system from scratch, which would have been impossible within the set time frame of the project, we chose to use React Flow @ReactFlow2025 to create the node editor. Flow is a library specifically designed for creating node and graph-based interfaces in React applications. It provides a set of essential features such as general node management, the canvas for the nodes and the ability to create fully custom sets of nodes. This allowed us to create the sophisticated node editor needed for our project. As our programming language of choice, we decided to use TypeScript @Typescript — a statically typed superset of JavaScript. TypeScript allows us to catch type-related errors early in the development process and contributes to clearer, more maintainable code. These benefits are particularly important in a project like ours, which involves a complex system with many interconnected components and evolving interfaces. Since we're working with React and TypeScript, we naturally use TSX — the standard syntax extension for TypeScript that allows us to write HTML-like markup within TypeScript code. This makes building and maintaining the user interface more intuitive, especially in areas like the node editor, where we create various custom components with specific properties and behaviors.
 
 
   == Evaluation of Game Engines: Kaplay, Three.js and Unity
@@ -420,7 +420,35 @@
   - Walking to a designated area
   Once the win condition is met we call the `setLevelCompleted` function from the `GameStore`.
 
+  == Node Editor
+  Another core component of our game is the node editor. We built it using ReactFlow as a foundation, which provides a framework for rendering nodes and the visual interactions between them. However all internal logic, like how nodes process data and the computing of the node graph, needed to be developed and implemented by us. Managing the state of the node graph was another major focus. We needed a structure that could track nodes and edges reliably, for us to be able to implement saving of the node graph and other quality of life features. Accessiblity was also one of the primary concerns while developing the node editor. We wanted a system that can compute complex algorithms, but at the same time is beginner friendly and not overwhelming.
+  //challenges: 
+  //  create logic to add nodes 
+  //  compute nodes
+  //  create structure to manage and save current state of the node graph
+  //  make the node editor accesible and add qol features
+  //    undo/redo
+  //    shortcut (custom mac hook)
+  // 
 
+  === Creating Nodes
+  Nodes are built as individual React components using React Flow. The components itself are not directly involved with the execution of the node graph, they do however provide a compute function which is used during the execution of the graph. Each node component defines its visual layout and the input/output handles, which are linked to the nodes data transformation logic through the compute function. 
+
+  === Computing the Node Graph
+  ReactFlow does handle the visual side of the node interactions, however we still need to track and manage these connections to be able to compute the graph correctly. All of this is handled via Zustand in the `NodeStore`. 
+
+  The `NodeStore` has a custom `AppNode` class which holds among other things, seperate maps for all of the connected input and output handles and the compute function. Each time a new node gets added to the node editor the `NodeStore` adds a new `AppNode` object to the unsorted node map which it maintains. The `AppNode` receives the compute function directly from the react component defining each node.
+
+  Each time a node is added or a connection is changed the unsorted map gets ordered through a topological sorting algorithm and saved seperately. The sorting algorithm marks the current node and then recursively goes through all of the nodes that a are conneted to the nodes output. Once it reaches a node that has no other nodes connect to its output it adds it to the sorted list and permanently marks the node. If the algorithm reaches a node with a non-permanent mark it means that a cyclic connection exists in the graph and an error message will be triggered.
+
+  Maintaining a sorted list is necessary to execute the node graph, as it prevents nodes from being computed without their dependencies having been computed. Once the sorted list is completed without errors, the node graph can be executed by simply iterating over the list and executing each nodes compute function.
+
+  //Heavily simplified this whole process, but I think it is too complex to be much more specific
+
+  === Managing the Node Graph State
+
+  === Shortcuts / QOL / ? //need better title here
+  
 ]
 // Website Strucutre/Navigation
 //  Landing Page also functions as Level select screen
@@ -465,6 +493,32 @@
 
   For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS) @brookeSUSQuickDirty1995 /*i love this being the citation*/, adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
+  === Tracking Player Behaviours
+  We aimed to collect data on user behaviour during testing to find patterns or tendencies in how users interact with our application. Several options were discussed for implementing telemetry, such as using a dedicated API, but we chose to keep things simple by collecting and storing the data locally. Since we did not plan to include data tracking in the final release, a more lightweight solution seemed like the more appropriate choice at the time.
+
+  Tracking was implemented in a separate branch using Zustand. A custom Zustand store was created to manage an array of `LevelLog` objects, each representing a user's interaction with a single level. When a new level is started, a new `LevelLog` entry is appended to the store. Data is then collected continuously until the level is completed. The following information gets captured for each level:
+  - Time spent to complete the level
+  - Nodes that were used
+  - The users solution for the level
+  - Wether the tutorial was skipped
+  Additionally, the store included a function to convert all collected logs into JSON format and trigger a download directly from the browser.
+
+  We ultimately decided not to use the implemented tracking system for several reasons. Originally, the website was hosted on GitHub Pages, and we planned to host the user testing branch there as well. However GitHub Pages does not natively support single-page applications due to how it handles routing. While there are ways to configure React Router to specifically work with GitHub Pages we decided to just use a different platform to host our website. Another limiting factor was the manual nature of the data collection. Users would have needed to download and send us their tracking logs after each session, or we would have needed to conduct every test on our computers. We ended up primarily using the main website, hosted on Vercel and never set up a separate domain for the telemetry branch, as other tasks took priority at the time.
+  
+
+  // planned to track user habits 
+  // used a custom zustand store in a seperate branch
+  // did not want to implement it on main branch as we dont plan on collecting data further outside of testing
+  // due to problems with the way our website routing works and the way repositories are routed on github pages ended up hosting on vercel
+  // did not end up hosting another site using this branch as other issues had higher priority
+  // 
+  // features:
+  // dialog/tutorial skipped
+  // time spent on level
+  // nodes used
+  // full solution
+  // download full log as json
+  
   === Results
   The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
 
