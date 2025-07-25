@@ -69,11 +69,12 @@ This marked the end of my work in May. Most of my work in May was focused on the
 ==== June<milan_dev_june>
 In June I assigned myself for the task of implementing unit tests for our code base. I started by reading and learning about unit tests, Jest, React Testing Library and how to test zustand stores. I then started experimenting with writing a test for our `game-store` but ran into issues rather quickly. I talked about this a lot with Jonathan Kron who tried helping me, but I was uanble to get these tests running on my own. I then wrote a test together with Jonathan Kron for the `data-store` which was a lot more successful. But we ultimately ran into issues with correctly mocking the `localStorage` and the `zustand` stores. Jonathan Kron then fixed these issues on his own. This marked the end of my contributions to the unit tests, as well as development in general on the 13th of June.
 
-=== Documentation<milan_documentation>
-#todo("add documentation")
+=== Documentation and Report<milan_documentation_report>
+As of now I have contributed to this report by Explaining my contributions.
+#todo("")
 
 === Personal Reflections<milan_reflections>
-I learned a lot during this project, both about myself and about software development. I learned that I need to be more proactive in my work and that I need to manage my time better. I also learned that I need to be more communicative with my team and that I need to explicitly ask for help when I need it. In retrospective I rarely felt like i was working with the team even though I value each member personally. I also learned a lot about the technologies we used, especially React, Zustand and React Flow. I am proud of the work I did on the `Group` node and the `duplicateNodes` function. I also learned a lot about the importance of documentation and how it can help both the user and the developer. Overall, this project was a great learning experience for me and I am grateful for the opportunity to work on it.
+I learned a lot during this project, both about myself and about software development. I learned that I need to be more proactive in my work and that I need to manage my time better. I also learned that I need to be more communicative with my team and that I need to explicitly ask for help when I need it. In retrospective I rarely felt like i was working with the team even though I value each member personally. I also learned a lot about the technologies we used, especially React, Zustand and React Flow. I am proud of the work I did on the `Group` node and the `duplicateNodes` function. I also learned a lot about the importance of planning a project. Overall, this project was a great learning experience for me and I am grateful for the opportunity to work on it.
 
 For future projects I would like to work more with the team and be more proactive in my work.
 ]
