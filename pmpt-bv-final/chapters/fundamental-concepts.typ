@@ -87,10 +87,10 @@
 
   Listeners are often subconsciously aware of RT60 even without precise measurements. A room that "feels echoey" or "boomy" often has a high RT60, while one that feels "dead" or "flat" may have been over-treated with absorption. Thus, tailoring RT60 to the intended function of a space is one of the most critical decisions in acoustic design. Getting this balance right enhances comfort, usability, and overall auditory experience.
 
+  // Markus: In progress, see below. Can be cleaned once declared as finished.
   // Room Acoustics and Image-based Prediction
   //     Why predicting RT60 from images is plausible (visual cues: size, materials, layout).
   //     Prior work (if any): vision-based acoustics inference.
-  //
 
   == Room Acoustics and Image-based Prediction
 
