@@ -90,12 +90,94 @@
   //    CSS Battles (puzzles to learn Css and compete)
   //
   // Conclusion + Relation to our Tool
+
+  = Project Planning
+
+  The project planning phase for the Dumpster-Diving educational platform encompassed a comprehensive analysis of project requirements, technical specifications, and resource allocation. This web-based game and visual scripting environment, designed to facilitate computer animation education, required systematic decomposition into manageable work packages to ensure successful implementation within the established timeline.
+
+  == Project Structure and Decomposition
+
+  The project was structured using a function-oriented Project Structure Plan (PSP), dividing the development process into eleven distinct work packages (WPs). This approach enabled parallel development streams while maintaining clear dependencies and milestone checkpoints. Dependencies between WPs were managed carefully; for instance, UI/UX design (WP3) depended on the first prototype (WP2), while node execution logic (WP7) required a stable base from earlier technical and gameplay developments (WP1, WP5). The work packages were categorized into three primary domains: technical foundation, core implementation, and quality assurance.
+
+  === Technical Foundation Phase<t_f_p>
+
+  The initial phase consisted of proof-of-concept development (WP-1) and prototype creation (WP-2). The proof-of-concept work package, scheduled for eight days, focused on establishing the technological foundation through comprehensive evaluation of React versions, bundler selection (with preference for Bun), programming language determination (JavaScript vs. TypeScript), and game engine assessment comparing Kaplay.js for 2D and Babylon.js for 3D implementations. Concurrently, the first prototype development initiated wireframe creation using Figma, establishing the interface specifications for node-game integration.
+
+  === Core Implementation Phase<c_i_p>
+
+  The core development phase encompassed six work packages (WP-3 through WP-8) addressing user interface design, node system implementation, game design, game creation, node execution logic, and testing frameworks. The UI/UX development (WP-3) established the visual design language, asset creation pipeline, and styling implementation using Tailwind CSS. Node type implementation (WP-4) was planned to require 18 days to develop type-safe node connections supporting various data types including floats, vectors, and game objects. As many features were simplified this work package was later mergen with the node execution systen (WP-7).
+  Game design and creation represented the most substantial development effort, with WP-5 requiring 26 days for topic identification and level design, while WP-6 extended over 45 days for implementing core game mechanics including character controllers, physics systems, audio integration, animations, and graphics rendering.
+
+
+  The node execution system (WP-7) implemented topological sorting algorithms and depth-first search mechanisms to ensure acyclic graph validation and proper execution flow.
+
+  === Quality Assurance and Enhancement Phase<q_a_a_e_p>
+
+  The final development phase incorporated comprehensive testing methodologies (WP-8 and WP-9), help system development (WP-10), and an optional AI-assisted help menu (WP-11).
+  #colbreak()
+
+  User testing was planned to extend throughout the development cycle (90 days) to gather continuous feedback and iterate on design decisions. The help system development focused on creating documentation, prebuilt node structures, and tutorial materials to enhance user experience and learning outcomes.
+
+  === Project schedule
+
+  The project schedule visualization is presented through two comparative Gantt charts (@gantt_initial, @gantt_actual) that illustrate both the initial planning assumptions and the actual project execution timeline. The first Gantt chart represents the theoretical schedule developed during the planning phase, based on estimated work package durations and optimal resource allocation (@t_f_p, @c_i_p, @q_a_a_e_p). This initial schedule assumed linear progression through the eleven work packages with minimal delays and efficient parallel processing of independent tasks. The second Gantt chart documents the actual project timeline, revealing deviations from the original plan due to unforeseen technical challenges, resource constraints, and iterative development requirements. This comparative presentation enables analysis of planning accuracy and provides insights into the factors that influenced schedule variance, demonstrating the dynamic nature of software development projects and the importance of adaptive project management approaches.
+
 ]
-#pagebreak()
-= Project Planning
-// Distribution of Tasks
-// Einteilung Gruppenmitglieder
-// Project Management (Discord, GitHub, Typst, Figma)
+#figure(caption: "Initial Gantt Chart", image("../assets/initial_gantt_ia.png"))<gantt_initial>
+#figure(caption: "Actual Gantt Chart", image("../assets/actual_gantt_ia.png"))<gantt_actual>
+#col[
+
+  == Scheduling and Dependencies
+
+  The project timeline was structured using Critical Path Method (CPM) analysis, resulting in a precedence diagram that identified critical dependencies and resource constraints. The scheduling analysis revealed that the proof-of-concept phase served as the foundation for most subsequent work packages, while the first prototype created dependencies for UI/UX development and node type implementation.
+
+  #colbreak()
+
+  The process list indicated a total development effort of 281 working days across all work packages, with significant parallel processing opportunities. Key milestones were established at the 30th of June 2025 for interim presentation and 31st of August 2025 for final submission, providing structured checkpoints for progress evaluation and course correction.
+
+]
+
+#figure(caption: "Precedence Diagram", image("../assets/npt_ia.svg"))
+// #figure(caption: "Actual Gantt Chart", image("../assets/psp_ia.svg")) //TODO: wo?
+
+
+#col[
+
+  == Resource Allocation and Capacity Planning
+
+  Human resource allocation was distributed across the six-member development team, with specialized roles assigned based on expertise areas. The team structure included three programmers focused on visual scripting implementation (Milan Jezovsek as project lead, Jonathan Kron, and Philipp Wendt) and three team members responsible for game design and development (Markus Heming, Leo Kling, and David Klein).
+
+  Material resource requirements were identified as minimal, leveraging open-source technologies and freely available development tools. The technology stack selection prioritized cost-effectiveness while maintaining technical capabilities, resulting in zero direct software licensing costs. Infrastructure requirements were limited to GitHub repository management, Figma for design collaboration, Discord/WhatsApp for team communication and Typst for collaborative work on text-based documents.
+
+  Every team member had access to suitable hardware and development environments, including modern code editors and browser-based testing tools. All resources were made available remotely via cloud storage, ensuring platform independence and workflow continuity.
+
+  == Quality Assurance Framework
+
+  A comprehensive quality plan was established encompassing five primary quality dimensions: technical feasibility, usability, performance, functionality, and user support. Each quality goal was associated with specific criteria, quality assurance pathways, and control mechanisms.
+
+  Technical feasibility assurance focused on technology stack validation through prototype development and compatibility testing. Usability requirements emphasized intuitive node-based scripting through wireframe design, style guide creation, and extensive user testing with non-technical participants. Performance optimization targeted smooth execution through algorithmic efficiency and device compatibility testing.
+
+  Functionality assurance incorporated automated unit testing frameworks, cycle detection algorithms, and comprehensive node configuration validation. The user support framework integrated  help systems, documentation development, and tutorial creation to minimize learning barriers and enhance educational effectiveness.
+
+  == Risk Assessment and Mitigation
+
+  The project planning phase identified several potential risk factors including technology compatibility issues, resource availability constraints, and scope creep potential. Mitigation strategies included early proof-of-concept validation, modular development approaches, and clearly defined work package boundaries.
+
+  Technical risks were addressed through comprehensive technology evaluation and prototype validation before full implementation commitment. Resource risks were mitigated through distributed expertise allocation and flexible task assignment capabilities within the team structure.
+
+  == Development Model
+
+  To structure the development process in a systematic and goal-oriented manner, the project team initially adopted a linear process model inspired by the classical waterfall methodology. This model, characterized by its sequential phases — requirements analysis, system design, implementation, testing, and evaluation — provided a clear framework for decomposing the project into logically ordered development stages. In the early phases, this approach proved especially beneficial for defining educational objectives, conceptualizing game mechanics, and outlining the architectural design of the user interface. The phase-oriented structure facilitated early alignment on key deliverables and responsibilities and contributed to a shared understanding of the project's overall scope and trajectory.
+
+  As the project evolved and requirements became increasingly dynamic — particularly in response to user testing and iterative feedback — the team supplemented this foundational structure with agile elements, specifically the Kanban methodology. Kanban enabled a continuous and transparent workflow by visualizing active, pending, and completed tasks in a digital task board. This approach supported the real-time reprioritization of activities, the identification of process bottlenecks, and the systematic integration of user feedback, particularly from formative usability studies and playtesting sessions.
+
+  Project management was operationalized using GitHub's integrated issue tracking and Kanban board. Each task was assigned to specific team members with defined deadlines and dependencies, promoting individual accountability and team-wide coordination. The visibility of task progression and workload distribution ensured that responsibilities remained transparent, and that adjustments could be made efficiently in response to unforeseen technical or pedagogical challenges. This hybrid model—combining elements of waterfall planning with agile Kanban-based task management—enabled the team to maintain methodological rigor while remaining adaptive to the iterative nature of educational software development.
+
+
+  == Conclusion
+
+  The project planning phase established a robust framework for systematic development of the Dumpster-Diving educational platform. The structured approach to work package decomposition, dependency management, and quality assurance provided clear pathways for successful project completion within the established constraints. The planning methodology emphasized iterative development, continuous user feedback integration, and maintainable technology selections to ensure both immediate project success and long-term platform viability.
+]
 
 #pagebreak()
 #col[
@@ -422,20 +504,20 @@
 
   == Node Editor
   Another core component of our game is the node editor. We built it using ReactFlow as a foundation, which provides a framework for rendering nodes and the visual interactions between them. However all internal logic, like how nodes process data and the computing of the node graph, needed to be developed and implemented by us. Managing the state of the node graph was another major focus. We needed a structure that could track nodes and edges reliably, for us to be able to implement saving of the node graph and other quality of life features. Accessiblity was also one of the primary concerns while developing the node editor. We wanted a system that can compute complex algorithms, but at the same time is beginner friendly and not overwhelming.
-  //challenges: 
-  //  create logic to add nodes 
+  //challenges:
+  //  create logic to add nodes
   //  compute nodes
   //  create structure to manage and save current state of the node graph
   //  make the node editor accesible and add qol features
   //    undo/redo
   //    shortcut (custom mac hook)
-  // 
+  //
 
   === Creating Nodes
-  Nodes are built as individual React components using React Flow. The components itself are not directly involved with the execution of the node graph, they do however provide a compute function which is used during the execution of the graph. Each node component defines its visual layout and the input/output handles, which are linked to the nodes data transformation logic through the compute function. 
+  Nodes are built as individual React components using React Flow. The components itself are not directly involved with the execution of the node graph, they do however provide a compute function which is used during the execution of the graph. Each node component defines its visual layout and the input/output handles, which are linked to the nodes data transformation logic through the compute function.
 
   === Computing the Node Graph
-  ReactFlow does handle the visual side of the node interactions, however we still need to track and manage these connections to be able to compute the graph correctly. All of this is handled via Zustand in the `NodeStore`. 
+  ReactFlow does handle the visual side of the node interactions, however we still need to track and manage these connections to be able to compute the graph correctly. All of this is handled via Zustand in the `NodeStore`.
 
   The `NodeStore` has a custom `AppNode` class which holds among other things, seperate maps for all of the connected input and output handles and the compute function. Each time a new node gets added to the node editor the `NodeStore` adds a new `AppNode` object to the unsorted node map which it maintains. The `AppNode` receives the compute function directly from the react component defining each node.
 
@@ -448,7 +530,7 @@
   === Managing the Node Graph State
 
   === Shortcuts / QOL / ? //need better title here
-  
+
 ]
 // Website Strucutre/Navigation
 //  Landing Page also functions as Level select screen
@@ -504,21 +586,21 @@
   Additionally, the store included a function to convert all collected logs into JSON format and trigger a download directly from the browser.
 
   We ultimately decided not to use the implemented tracking system for several reasons. Originally, the website was hosted on GitHub Pages and we planned to host the user testing branch there as well. However GitHub Pages does not natively support single-page applications due to how it handles routing. While there are ways to configure React Router to specifically work with GitHub Pages we decided to just use a different platform to host our website. Another limiting factor was the manual nature of the data collection. Users would have needed to download and send us their tracking logs after each session, or we would have needed to conduct every test on our own computers. We ended up primarily using the main website, hosted on Vercel and never set up a separate domain for the telemetry branch, as other tasks took priority at the time.
-  
 
-  // planned to track user habits 
+
+  // planned to track user habits
   // used a custom zustand store in a seperate branch
   // did not want to implement it on main branch as we dont plan on collecting data further outside of testing
   // due to problems with the way our website routing works and the way repositories are routed on github pages ended up hosting on vercel
   // did not end up hosting another site using this branch as other issues had higher priority
-  // 
+  //
   // features:
   // dialog/tutorial skipped
   // time spent on level
   // nodes used
   // full solution
   // download full log as json
-  
+
   === Results
   The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
 
