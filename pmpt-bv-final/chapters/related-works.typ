@@ -2,7 +2,7 @@
 #import "../utils.typ": *
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
-= Related Work
+= Related Works
 
 #col[
   Traditionally, RT estimation relied on the analysis of room impulse responses, which are often difficult to obtain in practical scenarios @kuttruffRoomAcoustics2006. This limitation has motivated the development of blind or non-intrusive methods that estimate RT directly from recorded audio, particularly speech.
@@ -20,9 +20,9 @@
   Despite these advances, robust RT estimation across diverse real-world conditions remains challenging. Factors such as background noise, speaker variability, and multiple sound sources can degrade performance. Ongoing research continues to explore novel feature representations, improved learning architectures, and data augmentation strategies to enhance generalization and reliability @singhImage2ReverbCrossModalReverb2021.
 
   In summary, the field has progressed from statistical and signal processing-based methods to sophisticated machine learning and deep learning approaches, with increasing emphasis on perceptually motivated features. The integration of auditory-inspired features with modern machine learning, as explored by #cite(<perezMachinelearningbasedEstimationReverberation>, form: "prose") and #cite(<singhImage2ReverbCrossModalReverb2021>, form: "prose"), represents a promising direction for advancing non-intrusive reverberation time estimation from images.
-  
+
   #todo("merge this into the above")
-  
+
   == Room Acoustics and Image-based Prediction
 
   === Plausibility of Predicting RT60 from Images

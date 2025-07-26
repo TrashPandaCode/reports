@@ -29,6 +29,8 @@
 
 // Abstact & Introduction
 #include "chapters/abstract-introduction.typ"
+// Related Works
+#include "chapters/related-works.typ"
 // Fundamental Concepts
 #include "chapters/fundamental-concepts.typ"
 // Project Planning
