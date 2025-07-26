@@ -12,7 +12,9 @@
   === Individual Product Use Cases
 
   == Functional Requirements
-  #todo("we are really unsure what to put here")
+  #todo("DO THIS")
+  // Stichpunkt mässige Func req 
+  // https://www.reqview.com/doc/iso-iec-ieee-29148-srs-example/
 
   // == Data Requirements
 
