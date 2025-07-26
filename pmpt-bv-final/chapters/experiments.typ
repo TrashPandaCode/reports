@@ -184,3 +184,8 @@
   ),
   caption: [Summary of all experimental iterations showing version, date, responsible team member, MSE performance, architecture used, and key methodological changes. The best performing model were v1.4 (MSE = 0.0973).],
 )
+
+
+#todo(
+  "Jonathan: add simple experiment (w Leo), add custom backbone experiments, add random weight backbone experiments",
+)

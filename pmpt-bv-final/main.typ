@@ -37,24 +37,7 @@
 #include "chapters/dataset.typ"
 // Experiments
 #include "chapters/experiments.typ"
-
-= Discussion
-
-// Insights
-//     How well can images predict RT60?
-//     Strengths and limitations of the approach.
-// Challenges Faced
-//     Domain gap from synthetic to real.
-//     Variability in real image quality.
-// Potential Improvements
-
-#pagebreak()
-
-= Conclusion
-// Summary of the work.
-// Key findings.
-// Relevance and potential applications.
-// Recommendations for future work.
-
-#pagebreak()
-
+// Discussion
+#include "chapters/discussion.typ"
+// Conclusion
+#include "chapters/conclusion.typ"
