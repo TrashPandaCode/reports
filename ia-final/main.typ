@@ -348,7 +348,7 @@
   // in general i would combine all these implementation details with a specific issue we faced
   // D: I tried writing a small introduction paragraph for each chapter where I talk about some of the challenges and our approach and then went into more detail about the solutions in the sub sections of the chapter
 
-  === Loading a Level //P: corrected some minor sentence structure stuff
+  === Loading a Level <loading_level>//P: corrected some minor sentence structure stuff
   When the component is first called, it checks the route parameters for a level ID to determine which level to load. If no level is specified, it will default to the first level, "Calculator". At this point we also check whether the Tutorial Dialog should be shown, based on whether the user had previously read the tutorial. If the Tutorial is skipped, the Level Dialog will be displayed and wait for the current level to be set.
 
   //P: not to sure about the validity of all of this, looks good but would be good to have a second pair of eyes on it
@@ -516,7 +516,16 @@
   === Creating Nodes
   Nodes are built as individual React components using React Flow. The components itself are not directly involved with the execution of the node graph, they do however provide a compute function which is used during the execution of the graph. Each node component defines its visual layout and the input/output handles, which are linked to the nodes data transformation logic through the compute function.
 
-  === Computing the Node Graph
+  === Managing the Node Graph State
+  To mange the node editor's state we use two sepererate Zustand stores: `FlowStore` and `NodeStore`. Both of them serve distinct purposes. The `FlowStore` handles the visual state, while the `NodeStore` is responsible for the internal logic and the computation of the graph. Both of these stores are connected to React Flow using a custom hook called `useFlow`.
+
+  The `FlowStore` keeps track of all of the nodes and edges that are currently being rendered in the node editor. Whenever a user performs an action like dragging a node, adding an edge or deleting something from the graph, React Flow automatically calls one of the specific handler functions, which are defined in the `useFlow` hook. These handler functions then update the nodes or the edges inside of the `FlowStore`. For every frame the nodes and edges stored in the `FlowStore` are passed back to the `ReactFlow` component inside of our node editor and React Flow re-renders the graph.
+
+  The `NodeStore` handles all of the logic specific state. It tracks all of the nodes similarly to the `FlowStore` through the callback functions defined in `useFlow`. However instead of tracking nodes and edges it keeps a map of it's own abstracted node class, which only carries variables, that are relevant for sorting and computing the node graph. This process is explained in more detail in @node_computation.
+
+  Both stores include functions to save all of their internal data. These functions are called frequently as described in @loading_level, ensuring the user's progress isn't lost.
+
+  === Computing the Node Graph <node_computation>
   ReactFlow does handle the visual side of the node interactions, however we still need to track and manage these connections to be able to compute the graph correctly. All of this is handled via Zustand in the `NodeStore`.
 
   The `NodeStore` has a custom `AppNode` class which holds among other things, seperate maps for all of the connected input and output handles and the compute function. Each time a new node gets added to the node editor the `NodeStore` adds a new `AppNode` object to the unsorted node map which it maintains. The `AppNode` receives the compute function directly from the react component defining each node.
@@ -527,9 +536,8 @@
 
   //Heavily simplified this whole process, but I think it is too complex to be much more specific
 
-  === Managing the Node Graph State
-
-  === Shortcuts / QOL / ? //need better title here
+  === Undo & Redo
+  Seperating the visual and the logic layers of the node graph also made it much easier to implement an undo and redo functionality. We used `zundo`#footnote([https://github.com/charkour/zundo]), a small library that adds undo and redo support to Zustand. `zundo` provides a `temporal` wrapper, which tracks changes to the store's state in an internal history array. We were applied this directly to the `FlowStore`, as it already maintains lists of all nodes and edges. For the system to be functional we added a helper function to update the `NodeStore` whenever undo or redo is used. This function clears all of the nodes from the `NodeStore`'s unsorted node map and fills it up again using the latest data from the `FlowStore`.
 
 ]
 // Website Strucutre/Navigation
