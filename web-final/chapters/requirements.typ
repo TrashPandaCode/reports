@@ -12,9 +12,63 @@
   === Individual Product Use Cases
 
   == Functional Requirements
-  #todo("DO THIS")
+  #todo("needs review")
   // Stichpunkt mässige Func req 
   // https://www.reqview.com/doc/iso-iec-ieee-29148-srs-example/
+  === Landing Page
+  *DDFR1*: The application shall have a landing page with direct navigation to the game.
+  - When the application is launched in a supported browser, the landing page is displayed and includes a clearly labeled link or button that navigates to the game page.
+
+  *DDFR2*: The landing page shall contain a level selection screen or contain the option to navigate to a level selection screen.
+  - The landing page includes either an embedded level selector or a button/link that, when clicked, transitions to a level selection interface with a list of available levels.
+
+  *DDFR3*: The landing page shall contain a navigation to navigate to the documentation and the game.
+  - The navigation bar includes labeled links to both the game page and the documentation page, and clicking each link routes the user to the appropriate section without a full page reload.
+
+  *DDFR4*: If the user has already progressed through the game the navigation shall allow users to automatically go back to the last level they were playing.
+  - If a saved game state exists in local or server storage, the button navigating to the game page redirects the user to the last played level upon click.
+
+  === Game Page
+  *DDFR5*: The application shall display a game window and a node editor aside each other.
+  - Upon loading the game page, the UI shows two adjacent panels: one for the game window and one for the node editor, both visible simultaneously.
+
+  *DDFR6*: The application shall load predefined levels selected by the user in the level selection screen.
+  - When a user selects a level, the corresponding game state and logic are correctly loaded into the game window and node editor without error.
+
+  *DDFR7*: The application shall give an option to load the next level upon level completion.
+  - Upon satisfying the win condition for a level, the game window automatically opens a dialog or displays a button with an option to go to the next level.
+
+  *DDFR8*: The game window shall render game elements and respond to user inputs in real time.
+  - All player input (keyboard/mouse) and node changes result in visible changes in the game depending on the level.
+
+  *DDFR9*: The user shall be able to pause, resume and reset the current level using UI elements.
+  - The game page UI includes buttons for "Pause", "Resume" and "Reset". Clicking each button performs the corresponding action reliably across all tested levels.
+
+  *DDFR10*: The application shall save game and node states persistently (locally or server-sided).
+  - After making changes in the node editor or playing the game, the current state is automatically or manually saved and restored correctly when the user reloads or returns to the game page.
+  // not sure about "or playing the game"
+
+  *DDFR11*: The application shall provide a node editor, allowing users to add, connect and delete nodes using their mouse and keyboard shortcuts.
+  - The node editor allows the user to create nodes by clicking, connect nodes by dragging, and delete them via a contextual menu or keyboard key.
+
+  *DDFR12*: The node editor shall validate node connections to prevent invalid configurations.
+  - Invalid connections (e.g., cycles) are visually rejected or flagged immediately with an error tooltip or red highlight and the game stops computing the node graph.
+
+  *DDFR13*: Changes made in the node editor shall dynamically update the game logic affecting gameplay.
+  -  After modifying a node configuration, the game reacts in real time (e.g., physics, events) without requiring a manual refresh or restart.
+
+  *DDFR14*: The game page shall link directly to the needed documentation and level guides.
+  - The game UI includes links or tooltips inside the nodes or levels that, when clicked, open the relevant documentation page or guide section in the same or a new panel.
+
+  === Documentation Page
+  *DDFR15*: The application shall provide a documentation page with textual and visual content, explaining nodes, level guides and concepts related to the Computer Animation module.
+  - The documentation page loads relevant sections for nodes, levels, and concepts with text and images. Each section can be accessed via direct link or navigation, and renders correctly across supported devices.
+
+  *DDFR16*: The documentation page shall contain a sidebar or menu to navigate all of the content.
+  - A collapsible sidebar or persistent menu is visible on the documentation page, listing all major content sections. Clicking each item scrolls or navigates to the appropriate section without error.
+
+  *DDFR17*: Users shall be able to search for specific topics or levels within the documentation.
+  - A search bar is available that returns results matching keywords in titles or body text of documentation entries. Clicking a result navigates the user to the corresponding section.
 
   // == Data Requirements
 
