@@ -76,59 +76,59 @@
   === Initial Baseline (v1.0)
   Our first experiment established the foundational architecture using ResNet50 pretrained on Places365, chosen for its relevance to scene understanding tasks. The model employed a hybrid training strategy, utilizing both synthetic and real data during training and evaluation phases.
 
-  The synthetic dataset initially comprised samples from Leo Kling (scenes 1-10) and Jonathan Kron (scenes 1-6, 9), representing a diverse set of room configurations. This baseline achieved an MSE of 0.1076, providing our initial performance benchmark.
+  The synthetic dataset initially comprised samples from Leo Kling (scenes 1-10) and Jonathan Kron (scenes 1-6, 9), representing a diverse set of room configurations. This baseline achieved an MSE of $0.1076$, providing our initial performance benchmark.
 
   === Dataset Expansion (v1.1-v1.2)
-  Building upon the baseline architecture, v1.1 expanded the synthetic dataset to include contributions from additional team members: Milan (scenes 1-4), Markus (scenes 1-10), and David (scenes 1-3), alongside the original Leo and modified Jonathan datasets. This expansion improved performance to an MSE of 0.0934, representing a 13.2% improvement over the baseline.
+  Building upon the baseline architecture, v1.1 expanded the synthetic dataset to include contributions from additional team members: Milan (scenes 1-4), Markus (scenes 1-10), and David (scenes 1-3), alongside the original Leo and modified Jonathan datasets. This expansion improved performance to an MSE of $0.0934$, representing a $13.2%$ improvement over the baseline.
 
-  However, v1.2 demonstrated the importance of data quality over quantity. Adding Jonathan's remaining scenes (6, 7, 8) actually degraded performance to an MSE of 0.1144, indicating that indiscriminate dataset expansion can be counterproductive.
+  However, v1.2 demonstrated the importance of data quality over quantity. Adding Jonathan's remaining scenes (6, 7, 8) actually degraded performance to an MSE of $0.1144$, indicating that indiscriminate dataset expansion can be counterproductive.
 
   == Phase 2: Architecture and Training Optimization (v1.3-v1.8)
 
   === Simulation Method Analysis (v1.3)
   Version 1.3 investigated the impact of different acoustic simulation methodologies by partitioning the synthetic training data into "hybrid" and "Image Source Method (ISM) and Ray-Radiosity (RR)" categories. Three separate training runs were conducted:
 
-  - Hybrid-only training: MSE = 0.1128
-  - Non-hybrid-only training: MSE = 0.1078
-  - Combined training: MSE = 0.1114
+  - Hybrid-only training: MSE = $0.1128$
+  - Non-hybrid-only training: MSE = $0.1078$
+  - Combined training: MSE = $0.1114$
 
-  The results revealed that hybrid simulation methods did not yield superior performance, with only a 4.4% difference between approaches—likely within the margin of experimental error. This finding simplified our data preparation pipeline by eliminating the need for simulation method stratification.
+  The results revealed that hybrid simulation methods did not yield superior performance, with only a $4.4%$ difference between approaches—likely within the margin of experimental error. This finding simplified our data preparation pipeline by eliminating the need for simulation method stratification.
 
   === Data Augmentation Enhancement (v1.4)
-  Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = 0.0973, representing a slight but consistent enhancement over v1.3.
+  Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = $0.0973$, representing a slight but consistent enhancement over v1.3.
 
   === Ensemble Methods Investigation (v1.5)
   Our exploration of ensemble methods in v1.5 involved training three separate models and combining their predictions. Individual model performances were remarkably consistent:
-  - Ensemble model 1: MSE = 0.0923
-  - Ensemble model 2: MSE = 0.0923
-  - Ensemble model 3: MSE = 0.0930
-  - Combined ensemble: MSE = 0.0925
+  - Ensemble model 1: MSE = $0.0923$
+  - Ensemble model 2: MSE = $0.0923$
+  - Ensemble model 3: MSE = $0.0930$
+  - Combined ensemble: MSE = $0.0925$
 
   While achieving our best performance to date, the ensemble approach came with significant computational overhead. The combined model size of 327.244 KB exceeded our 250MB soft limit, making this approach impractical for deployment scenarios requiring model efficiency.
 
   === Architecture Scaling Experiments (v1.6-v1.8)
   We systematically investigated the trade-offs between model complexity and performance through architecture scaling experiments:
 
-  *ResNet18 (v1.6):* Implementing gradient accumulation, improved learning rate scheduling with OneCycleLR, enhanced early stopping criteria, and gradient clipping, we achieved MSE = 0.1022 with a significantly reduced model size (~50MB). This represented only a marginal performance decrease while providing substantial computational benefits.
+  *ResNet18 (v1.6):* Implementing gradient accumulation, improved learning rate scheduling with OneCycleLR, enhanced early stopping criteria, and gradient clipping, we achieved MSE = $0.1022$ with a significantly reduced model size (~50MB). This represented only a marginal performance decrease while providing substantial computational benefits.
 
-  *ResNet50 Comparison (v1.7):* Using identical training procedures as v1.6 but with ResNet50 architecture resulted in MSE = 0.1283, unexpectedly worse than the smaller ResNet18 variant, suggesting potential overfitting or suboptimal hyperparameter scaling.
+  *ResNet50 Comparison (v1.7):* Using identical training procedures as v1.6 but with ResNet50 architecture resulted in MSE = $0.1283$, unexpectedly worse than the smaller ResNet18 variant, suggesting potential overfitting or suboptimal hyperparameter scaling.
 
-  *Progressive Resolution Training (v1.8):* Experimenting with progressive resolution scaling (224px → 320px → 448px) yielded MSE = 0.1114, indicating that the standard 224px resolution was sufficient for our task requirements.
+  *Progressive Resolution Training (v1.8):* Experimenting with progressive resolution scaling (224px → 320px → 448px) yielded MSE = $0.1114$, indicating that the standard 224px resolution was sufficient for our task requirements.
 
   == Phase 3: Advanced Techniques and Alternative Approaches (v1.9-v1.11)
 
   === Multi-Domain Training Challenges (v1.9)
-  Version 1.9 attempted to bridge the domain gap between synthetic and real data by simultaneously training on both data types. This approach resulted in significant training instability, with MSE = 0.2803 (best checkpoint: 0.157). The training exhibited erratic loss behavior and convergence difficulties, highlighting the challenges of multi-domain learning without proper domain adaptation techniques.
+  Version 1.9 attempted to bridge the domain gap between synthetic and real data by simultaneously training on both data types. This approach resulted in significant training instability, with MSE = $0.2803$ (best checkpoint: $0.157$). The training exhibited erratic loss behavior and convergence difficulties, highlighting the challenges of multi-domain learning without proper domain adaptation techniques.
 
   === Alternative Architecture Exploration (v1.10-v1.11)
   Our final experimental phase explored alternative architectural approaches:
 
-  *Single Model Refinement (v1.10):* Returning to the v1.5 architecture without ensemble methods, we achieved MSE = 0.0919, slightly improving upon the single-model performance from v1.5. However, qualitative analysis revealed concerning prediction behavior, with the model consistently predicting similar RT60 values regardless of input variations.
+  *Single Model Refinement (v1.10):* Returning to the v1.5 architecture without ensemble methods, we achieved MSE = $0.0919$, slightly improving upon the single-model performance from v1.5. However, qualitative analysis revealed concerning prediction behavior, with the model consistently predicting similar RT60 values regardless of input variations.
 
   *Backbone Architecture Survey (v1.11):* Our most comprehensive architectural exploration evaluated multiple pretrained backbones:
-  - DINOv2: Validation loss = 0.1758, R² = 0.3687
-  - OpenCLIP (ViT-B-32): Validation loss = 0.1789, R² = 0.3312
-  - OpenCLIP (ViT-L-14): Validation loss = 0.1799, R² = 0.3635
+  - DINOv2: Validation loss = $0.1758$, R² = $0.3687$
+  - OpenCLIP (ViT-B-32): Validation loss = $0.1789$, R² = $0.3312$
+  - OpenCLIP (ViT-L-14): Validation loss = $0.1799$, R² = $0.3635$
   - Additional variants including ConvNext and EfficientNet were tested
 
   These results demonstrated that while alternative architectures could achieve reasonable performance, they did not substantially outperform our optimized ResNet-based approaches.
@@ -137,9 +137,9 @@
 
   Our experimental campaign yielded several critical insights:
 
-  1. *Optimal Performance:* The best single-model performance was achieved in v1.4 with MSE = 0.0973, representing a 9.6% improvement over our initial baseline.
+  1. *Optimal Performance:* The best single-model performance was achieved in v1.4 with MSE = $0.0973$, representing a $9.6%$ improvement over our initial baseline.
 
-  2. *Architecture Efficiency:* ResNet18 (v1.6) provided an excellent balance between performance (MSE = 0.1022) and computational efficiency (~50MB), making it suitable for deployment scenarios.
+  2. *Architecture Efficiency:* ResNet18 (v1.6) provided an excellent balance between performance (MSE = $0.1022$) and computational efficiency (~50MB), making it suitable for deployment scenarios.
 
   3. *Data Quality Over Quantity:* Version 1.2 demonstrated that dataset expansion must be carefully considered, as additional data does not automatically improve performance.
 

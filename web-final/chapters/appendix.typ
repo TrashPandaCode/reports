@@ -155,3 +155,4 @@
     [#214], [Replace TODOs in Imprint and Privacy Policy], [Legal page content completion and cleanup],
   ),
 )
+// Hier die kompletten Functional Requirements (hilfe)

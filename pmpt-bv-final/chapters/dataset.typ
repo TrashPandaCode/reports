@@ -58,7 +58,7 @@
 
   == Preprocessing
 
-  When calculating RT60 values, we initially considered 11 bands ranging from 50 Hz to 8 kHz. However, we ultimately decided to exclude the lower frequency bands (up to 250 Hz) due to the susceptibility to interference from low-frequency noise and other artifacts. Consequently, our final dataset comprises five frequency bands: 250 Hz, 500 Hz, 1 kHz, 2 kHz, 4 kHz and 8 kHz.
+  When calculating RT60 values, we initially considered 11 bands ranging from $50 "Hz"$ to $8 "kHz"$. However, we ultimately decided to exclude the lower frequency bands (up to $250 "Hz"$) due to the susceptibility to interference from low-frequency noise and other artifacts. Consequently, our final dataset comprises five frequency bands: $250 "Hz"$, $500 "Hz"$, $1 "kHz"$, $2 "kHz"$, $4 "kHz"$ and $8 "kHz"$.
 
   Due to some outliers in the dataset, we capped RT60 values exceeding 4 seconds by applying local linear interpolation. This adjustment was necessary to ensure that the model could effectively learn from the data without being skewed by extreme values.
 
@@ -66,7 +66,7 @@
 
   #figure(caption: [], image("../images/rt60_outlier_boxplot.png"))
 
-  The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with 10% for validation, 20% for testing, and the remaining 70% for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
+  The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with $10%$ for validation, $20%$ for testing, and the remaining $70%$ for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
 
   == Domain Gap Considerations
   A significant challenge encountered in this hybrid approach was the presence of a substantial domain gap between synthetic and real images. The synthetic images, despite sophisticated rendering techniques, exhibited characteristic artifacts and stylistic differences that distinguished them from real photography—including lighting models, material appearance, geometric precision, and subtle environmental factors that are difficult to replicate synthetically.
@@ -80,7 +80,7 @@
   == Implications for Model Performance
   The integration of synthetic and real data created a complex training environment where the model needed to generalize between two distinct visual domains while learning consistent acoustic prediction principles. This multi-domain learning challenge was compounded by the fundamental differences in how acoustic properties manifest visually between synthetic and real environments.
   
-  Despite our synthetic data augmentation efforts, the total of approximately 4,073 datapoints remained insufficient for robust CNN training on complex acoustic-visual relationships. This data insufficiency became apparent during training through significant variation in loss curves and difficulty achieving stable convergence. The limited dataset size likely contributed to overfitting behaviors, where the model memorized specific visual patterns rather than learning generalizable acoustic-visual correlations.
+  Despite our synthetic data augmentation efforts, the total of approximately $4,073$ datapoints remained insufficient for robust CNN training on complex acoustic-visual relationships. This data insufficiency became apparent during training through significant variation in loss curves and difficulty achieving stable convergence. The limited dataset size likely contributed to overfitting behaviors, where the model memorized specific visual patterns rather than learning generalizable acoustic-visual correlations.
   
   Training instability manifested through high variance in validation loss across epochs and notable performance differences when evaluated separately on synthetic versus real data subsets. This indicated that the domain gap prevented the model from developing unified representations capable of handling both data types effectively. Limited generalization capabilities became evident when testing on held-out real-world samples that differed from the training distribution, with the model showing increased uncertainty and reduced accuracy.
   
