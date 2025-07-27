@@ -25,13 +25,11 @@
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
-  #todo("check for correctness")
+  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, this process was partially automated through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response (IR) by convolving the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. RT60 values and plots for visual verification are generated. To measure reverberation characteristics, the IR is band-pass filtered into standard octave and third-octave bands ranging from $50 "Hz"$ to $16 "kHz"$. For each band, the energy decay curve (EDC) is being computed using a combination of Chu's and Lundeby's method to account for the high noise floor in the recordings. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches $-60 "dB"$.
 
-  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. The Python script does this by multiplying the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. To measure reverberation characteristics, the filtered IR is band-pass filtered into standard octave and third-octave bands ranging from 50 Hz to 16 kHz. For each band, the energy decay curve (EDC) is being computed using a combination of Chu's and Lundeby's method to account for the high noise floor in the recordings. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches -60dB. // wording on this last sentence might be shit
+  To avoid capturing room modes or other acoustic artifacts that could introduce bias into our results multiple measurements were recorded in each room. To ensure comprehensive coverage various images were taken, with the objective of capturing diverse acoustic and visual conditions. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
 
-  To ensure comprehensive coverage, multiple measurements and images were recorded in each room, with the objective of capturing diverse acoustic and visual conditions. Throughout the data collection process, we took care to avoid capturing room modes or other acoustic artifacts that could introduce bias into our results. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
-
-  We collected data from a total of 63 distinct rooms, two of which were recorded twice, once with open curtains and once with closed curtains, resulting in 65 unique room configurations. For each room configuration, we captured multiple images of the room. This process yielded a dataset comprising 298 images.
+  Data from a total of 63 distinct rooms was collected, two of which were recorded twice, once with open curtains and once with closed curtains, resulting in 65 unique room configurations. This process yielded a dataset comprising 298 images.
 
   === Synthetic Data Generation
 
@@ -70,20 +68,20 @@
 
   == Domain Gap Considerations
   A significant challenge encountered in this hybrid approach was the presence of a substantial domain gap between synthetic and real images. The synthetic images, despite sophisticated rendering techniques, exhibited characteristic artifacts and stylistic differences that distinguished them from real photography—including lighting models, material appearance, geometric precision, and subtle environmental factors that are difficult to replicate synthetically.
-  
+
   The lighting differences were particularly notable, as Blender's physically-based rendering, while mathematically accurate, often lacked the natural imperfections present in real-world mobile photography. Real images exhibited variations in exposure, white balance, and the complex interplay of artificial office lighting with natural daylight. Material appearance also differed significantly, with synthetic surfaces appearing too pristine compared to real-world counterparts that show natural wear, dust, and subtle color variations developed through use.
-  
+
   Additionally, the geometric precision of synthetic environments, with perfectly aligned surfaces and idealized proportions, contrasted with the minor construction imperfections and organic irregularities found in actual office spaces. Environmental details such as cable management, personal belongings, and incidental objects naturally present in real offices were either absent or insufficiently varied in synthetic scenes.
-  
+
   This domain gap likely created confusion within the neural network during training, as evidenced by inconsistent validation performance across synthetic and real data subsets, though we acknowledge that comprehensive empirical analysis of this effect remains to be conducted. The model struggled to generalize effectively across the two distinct visual domains, potentially degrading overall prediction accuracy and robustness.
 
   == Implications for Model Performance
   The integration of synthetic and real data created a complex training environment where the model needed to generalize between two distinct visual domains while learning consistent acoustic prediction principles. This multi-domain learning challenge was compounded by the fundamental differences in how acoustic properties manifest visually between synthetic and real environments.
-  
+
   Despite our synthetic data augmentation efforts, the total of approximately $4,073$ datapoints remained insufficient for robust CNN training on complex acoustic-visual relationships. This data insufficiency became apparent during training through significant variation in loss curves and difficulty achieving stable convergence. The limited dataset size likely contributed to overfitting behaviors, where the model memorized specific visual patterns rather than learning generalizable acoustic-visual correlations.
-  
+
   Training instability manifested through high variance in validation loss across epochs and notable performance differences when evaluated separately on synthetic versus real data subsets. This indicated that the domain gap prevented the model from developing unified representations capable of handling both data types effectively. Limited generalization capabilities became evident when testing on held-out real-world samples that differed from the training distribution, with the model showing increased uncertainty and reduced accuracy.
-  
+
   These observations suggest that significantly larger datasets would be necessary for optimal model performance. However, the optimal composition of such an expanded dataset remains an open question. Future approaches might involve dramatically increasing real-world data collection, improving synthetic generation techniques to reduce domain gap, or developing domain adaptation methods. How this larger dataset would be constructed is up to discussion, as we have not empirically proven that one approach is better than the other yet.
   // == Data Augmentation
   // move augmentation to experiments
