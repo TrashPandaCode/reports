@@ -156,6 +156,21 @@
 
 ]
 
+#col[
+  == Simple Experiment
+
+    #figure(caption: [],  table(
+      columns: (1fr, 1fr),
+      [*Dimensions (m)*],[*RT60 (s)*],
+      [3$times$3$times$3],[2.008],
+      [8$times$4$times$3],[4.823],
+      [6$times$7$times$3],[5.171],
+      [8$times$10$times$3],[6.635],
+      [15$times$12$times$3],[9.838],
+      [30$times$25$times$3],[9.788],
+    ))
+  #figure(caption: [], image("../images/simple_example.jpg"))
+]
 
 == Experimental Results Summary
 
