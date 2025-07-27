@@ -71,7 +71,7 @@
 
 #pagebreak()
 
-= Experiments and Results
+= Experiments and Results<experiments_and_results>
 
 #col[
   This section presents the results of our systematic experimentation process, which involved 11 major experimental iterations (v1.0 through v1.11) spanning approximately two months of development. Each experiment was designed to explore different aspects of the RT60 prediction problem, from architectural choices to training methodologies and data augmentation strategies.
@@ -239,7 +239,7 @@
 
   The experimental progression demonstrates a systematic approach to model development, with each iteration building upon previous insights to refine our understanding of the RT60 prediction problem from single images.
 
-  == Simple Experiment
+  == Simple Experiment<simple_experiment>
 
   To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics.
 
@@ -292,11 +292,16 @@
     [v1.11], [06/06/25], [Leo Kling], [—], [Various], [Multiple backbone comparison],
     [v1.12], [06/06/25], [Jonathan Kron], [0.0973], [ResNet50], [Backbone architecture survey],
     [v1.13], [09/06/25], [Philipp Wendt], [0.1233], [ResNeXt50], [ResNeXt architecture test],
-    [v1.14], [06/10/25], [Milan Jezovsek], [0.0993], [ResNet50], [Spatial attention mechanism],
+    [v1.14], [10/06/25], [Milan Jezovsek], [0.0993], [ResNet50], [Spatial attention mechanism],
     [v1.15], [11/06/25], [Milan Jezovsek], [0.0975], [ResNet50], [Enhanced spatial attention],
     [v1.16], [12/06/25], [David Klein], [0.0946], [U-Net], [U-Net with improved bottleneck],
+    [v2], [14/06/25], [Jonathan Kron], [0.2040], [Custom Attention-Based CNN], [no pretrained visual representations],
+    [v3], [12/06/25], [Jonathan Kron], [0.9346], [Baseline CNN], [lower-bound baseline model],
     [v1.10.1], [29/06/25], [David Klein], [—], [ResNet50], [Real vs. synthetic data analysis],
     [v1.4.1], [28/06/25], [Philipp Wendt], [1.0948], [ResNet50], [Frozen backbone experiment],
+
+    [v4], [06/07/25], [Leo Kling & Jonathan Kron], [0.56174], [ResNet50], [new simple dataset (see @simple_experiment)],
   ),
-  caption: [Summary of all experimental iterations showing version, date, responsible team member, MSE performance, architecture used, and key methodological changes. The best performing model were v1.4 (MSE = 0.0973).],
+  caption: [Summary of all experimental iterations showing version, date, responsible team member, MSE performance, architecture used, and key methodological changes. The best performing model were v1.4 (MSE = 0.0973).
+  ],
 )
