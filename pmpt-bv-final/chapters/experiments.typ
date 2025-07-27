@@ -159,17 +159,23 @@
 #col[
   == Simple Experiment
 
-    #figure(caption: [],  table(
-      columns: (1fr, 1fr),
-      [*Dimensions (m)*],[*RT60 (s)*],
-      [3$times$3$times$3],[2.008],
-      [8$times$4$times$3],[4.823],
-      [6$times$7$times$3],[5.171],
-      [8$times$10$times$3],[6.635],
-      [15$times$12$times$3],[9.838],
-      [30$times$25$times$3],[9.788],
-    ))
-  #figure(caption: [], image("../images/simple_example.jpg"))
+  To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics. For this proof-of-concept, we implemented a CNN architecture with a ResNet50 backbone pretrained on Places365 (selected for its superior scene understanding capabilities), followed by global pooling and fully connected regression layers (2048→512→256→128→64→1) with appropriate dropout for regularization. The model demonstrated remarkable performance on this constrained problem, achieving an R² score of $0.902$, indicating that over $90%$ of variance in RT60 values could be explained by the visual features extracted by our CNN architecture. The error metrics further confirmed strong performance, with $"MSE"=0.562$, $"RMSE"=0.749$, and $"MAE"=0.569$. The mean prediction error was $-0.480$ seconds with a standard deviation of $0.576$ seconds, and a median error of $-0.437$ seconds. These promising results provided strong validation that even a standard CNN could successfully learn the fundamental relationship between visual room characteristics and acoustic properties when the problem space is sufficiently constrained, justifying our progression to more complex real-world scenarios.
+
+  #figure(caption: [Example room dimensions and RT], table(
+    columns: (1fr, 1fr),
+    [*Dimensions (m)*], [*RT60 (s)*],
+    [3$times$3$times$3], [2.008],
+    [8$times$4$times$3], [4.823],
+    [6$times$7$times$3], [5.171],
+    [8$times$10$times$3], [6.635],
+    [15$times$12$times$3], [9.838],
+    [30$times$25$times$3], [9.788],
+  ))
+  #figure(caption: [Example image used for the experiment], image("../images/simple_example.jpg"))
+
+  #figure(caption: [], image("../images/simple_rt60_kde_heatmap.png"))
+
+  #figure(caption: [], image("../images/simple_error_distribution.png"))
 ]
 
 == Experimental Results Summary
