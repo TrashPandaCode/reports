@@ -43,7 +43,7 @@
 
   === Model Version Control and Tracking
 
-  To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ (@time_tracking) spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
+  To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ (@appendix_experiments) spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
 
   The version control system enabled us to track the evolution of our models systematically, documenting not only quantitative performance metrics but also qualitative observations about training behavior, convergence patterns, and model stability. This methodical approach proved essential for identifying promising research directions and avoiding the repetition of unsuccessful configurations.
 
@@ -167,7 +167,15 @@
 #col[
   == Simple Experiment
 
-  To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics. For this proof-of-concept, we implemented a CNN architecture with a ResNet50 backbone pretrained on Places365 (selected for its superior scene understanding capabilities), followed by global pooling and fully connected regression layers (2048→512→256→128→64→1) with appropriate dropout for regularization. The model demonstrated remarkable performance on this constrained problem, achieving an R² score of $0.902$, indicating that over $90%$ of variance in RT60 values could be explained by the visual features extracted by our CNN architecture. The error metrics further confirmed strong performance, with $"MSE"=0.562$, $"RMSE"=0.749$, and $"MAE"=0.569$. The mean prediction error was $-0.480$ seconds with a standard deviation of $0.576$ seconds, and a median error of $-0.437$ seconds. These promising results provided strong validation that even a standard CNN could successfully learn the fundamental relationship between visual room characteristics and acoustic properties when the problem space is sufficiently constrained, justifying our progression to more complex real-world scenarios.
+  To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics.
+
+  For each room configuration, a single, non-frequency-dependent RT60 value was simulated using the _pyroomacoustics_ Python module. The simulation incorporated ray tracing and air absorption to approximate more realistic sound propagation. Microphone and sound source were placed in opposite corners of the room, each positioned 1 meter from the nearest walls to ensure consistent placement across samples. Notably, the resulting RT60 values were often quite large. While this trend was consistent across room sizes, we are currently unsure why the absolute values are so high and suspect it may stem from either the material parameter settings, geometric extremes, or limitations of the ray tracing model itself. However, these inflated values do not undermine the experiment, as the goal was to assess relative variations in RT60 across different room geometries rather than to produce physically accurate absolute values.
+
+  #figure(caption: [Room Volume vs RT60], image("../images/simple_vol_vs_rt60.svg"))
+
+  For this proof-of-concept, we implemented a CNN architecture with a ResNet50 backbone pretrained on Places365 (selected for its superior scene understanding capabilities), followed by global pooling and fully connected regression layers (2048→512→256→128→64→1) with appropriate dropout for regularization. The model demonstrated remarkable performance on this constrained problem, achieving an R² score of $0.902$, indicating that over $90%$ of variance in RT60 values could be explained by the visual features extracted by our CNN architecture. The error metrics further confirmed strong performance, with $"MSE"=0.562$, $"RMSE"=0.749$, and $"MAE"=0.569$. The mean prediction error was $-0.480$ seconds with a standard deviation of $0.576$ seconds, and a median error of $-0.437$ seconds. These promising results provided strong validation that even a standard CNN could successfully learn the fundamental relationship between visual room characteristics and acoustic properties when the problem space is sufficiently constrained, justifying our progression to more complex real-world scenarios.
+
+  While these results do not constitute formal proof of the initial approach, they provide a promising foundation for further research and do not contradict the primary hypothesis.
 
   #figure(caption: [Example room dimensions and RT], table(
     columns: (1fr, 1fr),
@@ -181,9 +189,11 @@
   ))
   #figure(caption: [Example image used for the experiment], image("../images/simple_example.jpg"))
 
-  #figure(caption: [], image("../images/simple_rt60_kde_heatmap.png"))
+  #figure(caption: [Heatmap of predicted RT60 values vs. ground truth RT60 values], image(
+    "../images/simple_rt60_kde_heatmap.png",
+  ))
 
-  #figure(caption: [], image("../images/simple_error_distribution.png"))
+  #figure(caption: [Prediction error distribution in seconds], image("../images/simple_error_distribution.png"))
 ]
 
 == Experimental Results Summary
