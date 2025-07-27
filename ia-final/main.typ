@@ -705,8 +705,7 @@
 
   The project's educational effectiveness was validated through comprehensive user testing:
 
-  #todo("add reference to 'established benchmark'")
-  / System Usability Scale Results: With a mean SUS score of 74.2, the application exceeded the established benchmark of 68, demonstrating above-average perceived usability. Individual scores ranged from 60.0 to 82.5, indicating consistent positive user experience across diverse user expertise levels.
+  / System Usability Scale Results: With a mean SUS score of 74.2, the application exceeded the established benchmark of 68 @sauroQuantifyingUserExperience2012a, demonstrating above-average perceived usability. Individual scores ranged from 60.0 to 82.5, indicating consistent positive user experience across diverse user expertise levels.
 
   / User Feedback Integration: Qualitative insights from think-aloud protocols identified specific improvement areas, leading to successful implementation of an introduction tutorial and optimization of initial node selection to reduce cognitive overload for new users.
 
