@@ -8,27 +8,31 @@
 = Fundamental Concepts
 #col[
   == Reverberation Time (RT60)
-  Reverbaration Time describes the Time it takes for sound to decay in a given environment. It is a crucial parameter in acoustics, influencing how sound behaves in an environment. The most prolific measurement method is the RT60, which measures the time it takes for sound to decay by 60 decibels. This measurement is frequency-dependent, meaning that RT60 values can vary significantly across different frequency bands. This is due to the fact that different frequencies absorb differently in different materials. Low frequencies for example tend to have an easier time passing through materials such as stone or similar materials. The RT60 can be measured or estimated using various methods, including manual measurements, simulation methods, and machine learning approaches.
 
-  The 60 decibel threshold is chosen because it represents a significant reduction in sound energy, making it a practical point for measuring decay. A Falloff of 60 dB also corresponds a to a thousandth of the inital sound pressure level or a millionth of the initial sound intensity.
+  Reverberation time quantifies the temporal characteristics of sound decay within an enclosed acoustic environment. This parameter serves as a fundamental metric in architectural acoustics, significantly influencing the acoustic behavior and perceptual quality of enclosed spaces @sabineCollectedPapersAcoustics1922. The most prevalent measurement standard is RT60, which defines the time required for sound pressure level to decay by 60 decibels from its initial value. This measurement exhibits frequency-dependent characteristics, with RT60 values varying substantially across different frequency bands due to the frequency-selective absorption properties of boundary materials @longArchitecturalAcoustics2006.
 
-  === Sabine & Eyring
-  The Sabine @sabineReverberation1922 and Eyring @eyringReverberationTimeDead1930 formulas are two of the most widely used methods for calculating RT60. The Sabine formula is based on the assumption that sound energy is uniformly distributed in a room, while the Eyring formula accounts for the absorption of sound by surfaces in the room. Both formulas provide a way to estimate RT60 based on the volume of the room and the absorption coefficients of its surfaces. It should be noted that these formulas only approximate the RT60, as they do not account for all factors that influence sound decay in a room. The Sabine formula is often used for rooms with high absorption coefficients, while the Eyring formula is more suitable for rooms with lower absorption coefficients.
+  Alternative decay metrics include RT20 and RT30, which measure decay times for 20 dB and 30 dB reductions, respectively, with values extrapolated to estimate RT60. These shorter decay measurements are often employed when signal-to-noise ratios are insufficient for reliable 60 dB decay measurements, with the initial 5 dB of decay typically ignored to exclude early reflections that may compromise measurement uniformity @ISO3382220082008. RT20 and RT30 values are typically extrapolated to estimate RT60, though this extrapolation may introduce measurement uncertainties in acoustically complex environments.
 
-  Sabine's formula @sabineReverberation1922: \
+  The 60 dB threshold represents a logarithmic reduction corresponding to one-thousandth of the initial sound pressure level, or equivalently, one-millionth of the initial sound intensity. This substantial reduction provides a practical and perceptually significant measurement point for acoustic decay analysis.
+
+  RT60 can be determined through direct measurement, computational simulation, or predictive calculation methodologies, with machine learning approaches increasingly being employed for complex acoustic modeling.
+
+  === Theoretical Calculation Methods
+
+  Direct measurement of RT60 requires considerable instrumentation and temporal resources, whereas theoretical calculation demands minimal equipment but extensive parameter determination @beranekConcertHallsOpera2010. Calculation-based approaches necessitate manual acquisition of room-specific variables, including volumetric dimensions, boundary surface areas, and absorption coefficients of constituent materials. Multiple theoretical frameworks exist for RT60 estimation, including the Sabine, Norris-Eyring, and Millington-Sette equations @longArchitecturalAcoustics2006. These formulations demonstrate that reverberation time increases proportionally with room volume and inversely with total acoustic absorption.
+
+  Research indicates that the Sabine equation provides the most accurate RT60 estimation among commonly employed theoretical methods @kuttruffRoomAcoustics2006. Due to its minimal parametric requirements, the Sabine approach also offers superior computational efficiency for practical RT60 calculation.
+
+  *Sabine Formula* @sabineReverberation1922:
   $
-    "RT60 (seconds)" approx 0.161 dot V / A \
-    V = "Volume of the room in cubic meters" \
-    A = "Total absorption area in square meters"
+    "RT"_60 approx 0.161 (V/sum(alpha_i A_i))
   $
+  where:
+  - $V$ = Volume of the room ($"m"^3$)
+  - $A_i$ = Surface area of each boundary ($"m"^2$)
+  - $alpha_i$ = Absorption coefficient of each boundary
 
-  Eyring expanded on Sabine as follows @eyringReverberationTimeDead1930: \
-  $
-    "RT60 (seconds)" approx 0.161 dot V / (A' + 4"mV") dot s \
-    "A'" = S_"tot" [-2.30 log_10(1-alpha_"ey")] dot m^2 \
-    alpha_"ey" = (accent(alpha_T, ´) dot S_T + accent(alpha_R, ´) dot S_R + sum accent(alpha_i, ´) dot S_i) / S_"tot"
-  $
-
+  The Sabine formula assumes uniform sound energy distribution throughout the acoustic volume and is typically applied to spaces with varying absorption characteristics @cremerPrinciplesApplicationsRoom1982. It is crucial to recognize that this formulation provides an estimation rather than an exact calculation, as it does not account for all physical phenomena influencing sound decay, including diffraction effects, coupled volumes, and non-uniform absorption distributions @kuttruffRoomAcoustics2006.
 
   // What is Lundeby's Method? I have read this https://akutek.info/Papers/IW_Uncertainties.pdf and many other websites, but I am still not sure what it is.
   === Manual Measurement (Lundeby's Method)<rev_man_meas>
