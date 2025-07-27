@@ -25,13 +25,13 @@
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
-  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
+  #todo("check for correctness")
 
-  #todo("go more in depth about analyzing recordings")
+  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, we partially automated this process through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response, RT60 values, and generates plots for visual verification. The Python script does this by multiplying the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. To measure reverberation characteristics, the filtered IR is band-pass filtered into standard octave and third-octave bands ranging from 50 Hz to 16 kHz. For each band, the energy decay curve (EDC) is being computed using Lundeby's method. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches -60dB. // wording on this last sentence might be shit
 
-  To ensure comprehensive coverage, multiple measurements and images were recorded in each room, with the objective of capturing diverse acoustic and visual conditions. Throughout the data collection process, we took care to avoid capturing room modes or other acoustic artifacts that could introduce bias into our results.
+  To ensure comprehensive coverage, multiple measurements and images were recorded in each room, with the objective of capturing diverse acoustic and visual conditions. Throughout the data collection process, we took care to avoid capturing room modes or other acoustic artifacts that could introduce bias into our results. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
 
-  #todo("add amounts of data collected, some stats")
+  We collected data from a total of 63 distinct rooms, two of which were recorded twice, once with open curtains and once with closed curtains, resulting in 65 unique room configurations. For each room configuration, we captured multiple images of the room. This process yielded a dataset comprising 298 images.
 
   === Synthetic Data Generation
 
