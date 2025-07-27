@@ -35,7 +35,7 @@
 
   === Model Version Control and Tracking
 
-  To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ #todo("reference to appendix") spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
+  To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ (@time_tracking) spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
 
   The version control system enabled us to track the evolution of our models systematically, documenting not only quantitative performance metrics but also qualitative observations about training behavior, convergence patterns, and model stability. This methodical approach proved essential for identifying promising research directions and avoiding the repetition of unsuccessful configurations.
 

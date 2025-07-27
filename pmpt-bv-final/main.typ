@@ -43,3 +43,9 @@
 #include "chapters/discussion.typ"
 // Conclusion
 #include "chapters/conclusion.typ"
+
+= Appendix
+
+== Time Tracking<time_tracking>
+
+#todo("add time tracking")
