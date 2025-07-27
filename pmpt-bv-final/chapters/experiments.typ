@@ -103,10 +103,25 @@
   - Non-hybrid-only training: MSE = $0.1078$
   - Combined training: MSE = $0.1114$
 
+  #figure(caption: [From left to right: Hybrid-only, Non-hybrid-only, combined], grid(
+    columns: 3,
+    image("../images/experiments/v1_3/1_rt60_kde_heatmap.png"),
+    image("../images/experiments/v1_3/2_rt60_kde_heatmap.png"),
+    image("../images/experiments/v1_3/3_rt60_kde_heatmap.png"),
+  ))
+
   The results revealed that hybrid simulation methods did not yield superior performance, with only a $4.4%$ difference between approaches—likely within the margin of experimental error. This finding simplified our data preparation pipeline by eliminating the need for simulation method stratification.
 
   === Data Augmentation Enhancement (v1.4)
   Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = $0.0973$, representing a slight but consistent enhancement over v1.3.
+
+  #figure(caption: [From left to right: Error distribution, prediction with uncertainty, prediction heatmap], grid(
+    columns: 3,
+    image("../images/experiments/v1_4/error_distribution.png"),
+    image("../images/experiments/v1_4/prediction_with_uncertainty.png"),
+    image("../images/experiments/v1_4/rt60_kde_heatmap.png"),
+  ))
+  #figure(caption: [Grad-CAM example], image("../images/experiments/v1_4/gradcam_combined_img26.png"))
 
   === Ensemble Methods Investigation (v1.5)
   Our exploration of ensemble methods in v1.5 involved training three separate models and combining their predictions. Individual model performances were remarkably consistent:
@@ -141,6 +156,66 @@
   - OpenCLIP (ViT-B-32): Validation loss = $0.1789$, R² = $0.3312$
   - OpenCLIP (ViT-L-14): Validation loss = $0.1799$, R² = $0.3635$
   - Additional variants including ConvNext and EfficientNet were tested
+
+  *Backbone Architecture Survey (v1.12):* A focused evaluation of additional pretrained CNN backbones
+
+  - ResNet50 (Places365): Validation loss = $0.0973$
+  - EfficientNet-B4: Validation loss = $0.1026$
+  - ConvNeXt-Base: Validation loss = $0.1079$
+  - DenseNet169: Validation loss = $0.1234$
+  - Despite this variation, none of these backbones outperformed ResNet50 (Places365), which remained the strongest CNN-based option.
+
+  #figure(
+    caption: [Prediction vs ground truth heatmap \ From left to right: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
+    grid(
+      columns: 4,
+      image("../images/experiments/v1_12/convnext_rt60_kde_heatmap.png"),
+      image("../images/experiments/v1_12/densenet_rt60_kde_heatmap.png"),
+      image("../images/experiments/v1_12/efficientnet_rt60_kde_heatmap.png"),
+      image("../images/experiments/v1_12/resnet_rt60_kde_heatmap.png"),
+    ),
+  )
+
+  #figure(
+    caption: [t-sne analysis of the different backbones. \ From left to right: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
+    grid(
+      columns: 4,
+      image("../images/experiments/v1_12/convnext_base_all_preds.png"),
+      image("../images/experiments/v1_12/densenet169_all_preds.png"),
+      image("../images/experiments/v1_12/efficientnet_all_preds.png"),
+      image("../images/experiments/v1_12/resnet50_places365_all_preds.png"),
+    ),
+  )
+
+  *Custom Attention-Based CNN (No Pretraining):* A custom architecture based on EfficientNet-B3 with channel and spatial attention, multi-scale feature extraction, and a frequency-aware prediction head was evaluated without any pretrained weights. Despite its architectural complexity, it underperformed compared to simpler pretrained models:
+
+  - Validation MSE = $0.2040$
+  - RMSE = $0.4517$
+  - MAE = $0.3170$
+  - R² = $-2.2477$
+  - These results suggest that training from scratch on limited data yields suboptimal generalization, and that pretrained visual representations remain crucial for this task.
+
+  #figure(caption: [From left to right: t-sne analysis, error distribution, prediction heatmap], grid(
+    columns: 3,
+    image("../images/experiments/jojo_complex/latent_vis.png"),
+    image("../images/experiments/jojo_complex/error_distribution.png"),
+    image("../images/experiments/jojo_complex/rt60_kde_heatmap.png"),
+  ))
+
+  *Baseline CNN (Simple Architecture):* A minimal convolutional model with just two convolutional layers followed by average pooling and a basic MLP head was trained from scratch:
+
+  -Validation MSE = $0.9346$
+  -RMSE = $0.9668$
+  -MAE = $0.8906$
+  -R² = $-14.7485$
+  -This model served as a lower-bound baseline. Its poor performance underscores the necessity of both architectural depth and prior knowledge (e.g., pretrained features) for learning meaningful visual-acoustic representations.
+
+  #figure(caption: [From left to right: error distribution, prediction heatmap], grid(
+    columns: 2,
+    image("../images/experiments/jojo_simple/error_distribution.png"),
+    image("../images/experiments/jojo_simple/rt60_kde_heatmap.png"),
+  ))
+
 
   These results demonstrated that while alternative architectures could achieve reasonable performance, they did not substantially outperform our optimized ResNet-based approaches.
 
