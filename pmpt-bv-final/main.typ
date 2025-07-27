@@ -22,6 +22,7 @@
   show-title-page: true,
   img: none,
   show-outline: true,
+  outline-depth: 2,
   bibliography: bibliography("reverbaration_estimation.bib"),
 )
 
