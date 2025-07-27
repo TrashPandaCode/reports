@@ -105,11 +105,8 @@
 
   === Core Implementation Phase<c_i_p>
 
-  The core development phase encompassed six work packages (WP-3 through WP-8) addressing user interface design, node system implementation, game design, game creation, node execution logic, and testing frameworks. The UI/UX development (WP-3) established the visual design language, asset creation pipeline, and styling implementation using Tailwind CSS. Node type implementation (WP-4) was planned to require 18 days to develop type-safe node connections supporting various data types including floats, vectors, and game objects. As many features were simplified this work package was later mergen with the node execution systen (WP-7).
-  Game design and creation represented the most substantial development effort, with WP-5 requiring 26 days for topic identification and level design, while WP-6 extended over 45 days for implementing core game mechanics including character controllers, physics systems, audio integration, animations, and graphics rendering.
-
-
-  The node execution system (WP-7) implemented topological sorting algorithms and depth-first search mechanisms to ensure acyclic graph validation and proper execution flow.
+  The core development phase encompassed six work packages (WP-3 through WP-8) addressing user interface design, node system implementation, game design, game creation, node execution logic, and testing frameworks. The UI/UX development (WP-3) established the visual design language, asset creation pipeline, and styling implementation using Tailwind CSS. Node type implementation (WP-4) was planned to require 18 days to develop type-safe node connections supporting various data types including floats, vectors, and game objects. As many features were simplified this work package was later merged with the node execution systen (WP-7).
+  Game design and creation represented the most substantial development effort, with WP-5 requiring 26 days for topic identification and level design, while WP-6 extended over 45 days for implementing core game mechanics including character controllers, physics systems, audio integration, animations, and graphics rendering. The node execution system (WP-7) implemented topological sorting algorithms and depth-first search mechanisms to ensure acyclic graph validation and proper execution flow.
 
   === Quality Assurance and Enhancement Phase<q_a_a_e_p>
 
