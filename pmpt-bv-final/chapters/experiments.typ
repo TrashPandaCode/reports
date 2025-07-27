@@ -25,9 +25,17 @@
 
   Gradient-weighted Class Activation Mapping (Grad-CAM) @selvarajuGradCAMVisualExplanations2016 provides interpretable visualizations of which regions in input images contribute most significantly to RT60 predictions. This technique leverages gradients flowing into the final convolutional layer to generate localization maps highlighting important visual features. In our acoustic estimation context, Grad-CAM reveals whether the model appropriately focuses on acoustically relevant features such as room geometry, surface materials, and furnishing density. This interpretability is crucial for validating that the model learns meaningful acoustic-visual correlations rather than spurious dataset artifacts.
 
+  #figure(caption: [Grad-CAM example], image("../images/gradcam_combined_img4.png"))<grad_cam_example>
+
   === t-SNE Analysis
 
-  t-distributed Stochastic Neighbor Embedding (t-SNE) enables visualization of high-dimensional feature representations learned by our CNN model in a reduced 2D (or 3D) space. By analyzing the clustering patterns of room images in this reduced feature space, we can assess whether the model learns to group acoustically similar environments together. Effective clustering would indicate that the model captures underlying acoustic properties that correlate with visual characteristics, providing additional validation of the learned representations beyond numerical accuracy metrics @geronHandsonMachineLearning2023.
+  t-distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear dimensionality reduction technique widely used for visualizing high-dimensional data in a low-dimensional space (typically 2D or 3D). Unlike linear methods such as Principal Component Analysis (PCA), t-SNE aims to preserve local neighborhood relationships rather than global structure @caiTheoreticalFoundationsTSNE2022. It does so by converting pairwise similarities in high-dimensional space into joint probabilities and minimizing the divergence between these and their low-dimensional counterparts @andrewsDimensionReductionPCA.
+
+  Importantly, t-SNE visualizations have limitations: the absolute values of the X and Y coordinates are not meaningful, and distances between distant points cannot be reliably interpreted. However, close proximity between points is highly informative and often reveals significant local structure. Unlike PCA, which assumes linear relationships and can blur local structures, t-SNE excels at highlighting small-scale patterns and nonlinear separations, which is particularly useful when visualizing clustered or manifold-structured data @andrewsDimensionReductionPCA.
+
+  We chose t-SNE over PCA for our analysis because it better handles the nonlinear and potentially hierarchical structure in our data. Specifically, we were interested in identifying whether our convolutional neural network (CNN) learns to encode acoustically meaningful visual features. Initial experiments applying t-SNE to the high-dimensional feature representations of our ground truth (gt) data revealed clear groupings that appeared to correspond to different room types as seen in @tsne_gt. Motivated by this, we applied t-SNE to the feature embeddings learned by our CNN model. By analyzing the resulting 2D plots, we examined whether similar room-dependent clusters emerged. Observing such groupings in the predicted features would suggest that the model captures underlying acoustic properties that correlate with visual cues, providing additional validation of the learned representations beyond numerical accuracy metrics @geronHandsonMachineLearning2023.
+
+  #figure(caption: [t-sne analysis of gt data], image("../images/gt_latent_visualization.png"))<tsne_gt>
 
   == Experimental Design and Execution
 
