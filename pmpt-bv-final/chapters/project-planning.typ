@@ -3,6 +3,8 @@
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
 
+#pagebreak()
+
 #todo(
   "Please give feedback on the whole project planning section. Some sections feel kind of useless in my opinion.",
 )
