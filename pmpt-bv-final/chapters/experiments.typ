@@ -237,9 +237,6 @@
 
   The experimental progression demonstrates a systematic approach to model development, with each iteration building upon previous insights to refine our understanding of the RT60 prediction problem from single images.
 
-]
-
-#col[
   == Simple Experiment
 
   To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics.
