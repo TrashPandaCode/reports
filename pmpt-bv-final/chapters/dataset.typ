@@ -31,6 +31,18 @@
 
   Data from a total of 63 distinct rooms was collected, two of which were recorded twice, once with open curtains and once with closed curtains, resulting in 65 unique room configurations. This process yielded a dataset comprising 298 images.
 
+  #figure(caption: [Example label for real data], table(
+    columns: (1fr, 1fr),
+    [*Frequency (Hz)*], [*RT60 (s)*],
+    [250], [1.05],
+    [500], [1.02],
+    [1000], [0.55],
+    [2000], [0.53],
+    [4000], [0.45],
+    [8000], [0.37],
+  ))
+  #figure(caption: [Example image for real data], image("../images/real_example.jpg"))
+
   === Synthetic Data Generation
 
   The synthetic component of our dataset was developed through a three-stage pipeline. Initially, room environments were generated using the Blender software @foundationBlenderorgHomeBlender, which enabled us to create diverse room geometries and material properties while simultaneously rendering corresponding images of these virtual spaces.
@@ -42,6 +54,18 @@
   In the second stage, we generated impulse responses based on the room parameters extracted from Blender. These parameters encompassed the vertices defining the room's floor plan, the quantity of furniture elements comprised of chairs and desks, and the material properties of walls, ceilings, and floors. All rooms maintained a consistent height of 3 meters. Using the Treble SDK @Treble, an acoustic simulation platform, allowed us to generate a simplified virtual model of the room from these extraced parameters and compute the corresponding impulse responses for each virtual room.
 
   The final stage involved deriving RT60 values from the generated impulse responses. This process utilized the pyfar @PyfarPyfar2025 and pyrato @PyfarPyrato2025 libraries, maintaining consistency with our methodology for processing the real-world acoustic data.
+
+  #figure(caption: [Example label for synthetic data], table(
+    columns: (1fr, 1fr),
+    [*Frequency (Hz)*], [*RT60 (s)*],
+    [250], [0.97],
+    [500], [1.19],
+    [1000], [0.97],
+    [2000], [0.94],
+    [4000], [1.01],
+    [8000], [0.94],
+  ))
+  #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg"))
 
   == Data Structure
 
@@ -56,13 +80,24 @@
 
   == Preprocessing
 
-  When calculating RT60 values, we initially considered 11 bands ranging from $50 "Hz"$ to $8 "kHz"$. However, we ultimately decided to exclude the lower frequency bands (up to $250 "Hz"$) due to the susceptibility to interference from low-frequency noise and other artifacts. Consequently, our final dataset comprises five frequency bands: $250 "Hz"$, $500 "Hz"$, $1 "kHz"$, $2 "kHz"$, $4 "kHz"$ and $8 "kHz"$.
+  When calculating RT60 values, we initially considered 11 bands ranging from $50 "Hz"$ to $8 "kHz"$. However, we ultimately decided to exclude the lower frequency bands (up to $250 "Hz"$) due to the susceptibility to interference
+  #figure(
+    caption: [
+      RT60 values overlayed for all rooms (including outliers) across all frequency bands
+    ],
+    image("../images/rt60_outlier_curves.png"),
+  )
+  from low-frequency noise and other artifacts.
+  Consequently, our final dataset comprises five frequency bands: $250 "Hz"$, $500 "Hz"$, $1 "kHz"$, $2 "kHz"$, $4 "kHz"$ and $8 "kHz"$.
 
   Due to some outliers in the dataset, we capped RT60 values exceeding 4 seconds by applying local linear interpolation. This adjustment was necessary to ensure that the model could effectively learn from the data without being skewed by extreme values.
 
-  #figure(caption: [], image("../images/rt60_outlier_curves.png"))
-
-  #figure(caption: [], image("../images/rt60_outlier_boxplot.png"))
+  #figure(
+    caption: [
+      Boxplot of RT60 values across all frequency bands, highlighting outliers
+    ],
+    image("../images/rt60_outlier_boxplot.png"),
+  )
 
   The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with $10%$ for validation, $20%$ for testing, and the remaining $70%$ for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
 
@@ -83,11 +118,6 @@
   Training instability manifested through high variance in validation loss across epochs and notable performance differences when evaluated separately on synthetic versus real data subsets. This indicated that the domain gap prevented the model from developing unified representations capable of handling both data types effectively. Limited generalization capabilities became evident when testing on held-out real-world samples that differed from the training distribution, with the model showing increased uncertainty and reduced accuracy.
 
   These observations suggest that significantly larger datasets would be necessary for optimal model performance. However, the optimal composition of such an expanded dataset remains an open question. Future approaches might involve dramatically increasing real-world data collection, improving synthetic generation techniques to reduce domain gap, or developing domain adaptation methods. How this larger dataset would be constructed is up to discussion, as we have not empirically proven that one approach is better than the other yet.
-  // == Data Augmentation
-  // move augmentation to experiments
-
-  #todo("add example datapoints from real and synth")
-
 ]
 
 // Data Sources
