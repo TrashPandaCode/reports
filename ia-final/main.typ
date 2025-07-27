@@ -608,8 +608,7 @@
   === Results
   The user testing results were overwhelmingly positive. Our predefined goal of achieving an average SUS score above 70 was not only met but exceeded. This evaluation confirms that our tool and its interface as well as design achieved satisfactory usability and user experience as well as remaining accessible to the target audience.
 
-  #todo("add reference to appendix, add think-aloud protocol to appendix")
-  The qualitative insights from the think-aloud protocol identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
+  The qualitative insights from the think-aloud protocol (@think_aloud_protocols) identified specific areas for improvement, particularly regarding initial user onboarding and the clarity of certain interface elements.
 
   #figure(
     table(
@@ -705,7 +704,7 @@
 
   The project's educational effectiveness was validated through comprehensive user testing:
 
-  / System Usability Scale Results: With a mean SUS score of 74.2, the application exceeded the established benchmark of 68 @sauroQuantifyingUserExperience2012a, demonstrating above-average perceived usability. Individual scores ranged from 60.0 to 82.5, indicating consistent positive user experience across diverse user expertise levels.
+  / System Usability Scale Results: With a mean SUS score of 74.2, the application exceeded the established benchmark of 68 @sauroAverageSUS2012, demonstrating above-average perceived usability. Individual scores ranged from 60.0 to 82.5, indicating consistent positive user experience across diverse user expertise levels.
 
   / User Feedback Integration: Qualitative insights from think-aloud protocols identified specific improvement areas, leading to successful implementation of an introduction tutorial and optimization of initial node selection to reduce cognitive overload for new users.
 
@@ -895,3 +894,11 @@
 #include "contributions/markus.typ"
 #include "contributions/milan.typ"
 #include "contributions/david.typ"
+
+= Appendix
+
+== Time Tracking<time_tracking>
+#todo("add time tracking")
+
+== Think-Aloud Protocols<think_aloud_protocols>
+#todo("add think-aloud protocols")
