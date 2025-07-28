@@ -38,20 +38,19 @@
 
   === Project Schedule
 
-  Our project schedule is visualized by our two Gantt charts (@gantt_initial and @gantt_actual) that show the comparison of the initial planning and how it actually turned out. The first Gantt chart was developed during the project planning phase and follows the work package durations and dependencies as initially declared. The second one was created at the end of the project to give an overview of the actual durations and dependencies of the work packages and phases. 
+  Our project schedule is visualized by our two Gantt charts (@gantt_initial and @gantt_actual) that show the comparison of the initial planning and how it actually turned out. The first Gantt chart was developed during the project planning phase and follows the work package durations and dependencies as initially declared. The second one was created at the end of the project to give an overview of the actual durations and dependencies of the work packages and phases.
   //The comparison of both might give a hint on where challenges occurred.
-
-  #todo("idk about the actual gantt chart")
-  #figure(caption: [Gantt chart as initially planned], image("../images/initial_gantt.png"))<gantt_initial>
-  #figure(caption: [Gantt chart reflecting actual progress], image("../images/maybe_actual_gantt.png"))<gantt_actual>
 
   == Requirements and Solutions
 
   A comprehensive requirements analysis was conducted, establishing specific technical and operational requirements with corresponding solution approaches. This analysis provided systematic mapping between project needs and implementation strategies. Examples include the requirement for visual explanation of model predictions addressed through Grad-CAM implementation to highlight contributing image regions, and validation requirements on unseen rooms addressed through strategic dataset partitioning to establish proper training and validation sets.
 
+
   == Risk Assessment and Mitigation
 
   The project planning phase identified multiple categories of potential risk factors that could impact successful project completion. These risks were systematically analyzed and categorized into data-related, model-related, and general project risks, with each category requiring specific mitigation strategies.
+
+  #colbreak()
 
   *Data Collection and Quality Risks* encompassed insufficient data volume for proper model training, dataset bias, labeling errors, and potential loss of access to critical software tools such as Treble for RT60 calculations. Mitigation strategies included diversified data collection approaches, rigorous quality control procedures, and backup software solutions to ensure continuity of synthetic data generation capabilities.
 
@@ -60,11 +59,17 @@
   *General Project Risks* encompassed library deprecation, legal considerations regarding data usage, potential data loss, and integration challenges between project components. Mitigation approaches included version control best practices, legal compliance review, comprehensive backup strategies, and modular development approaches to minimize integration dependencies.
 
   Each identified risk was evaluated for potential impact on project success, enabling prioritized resource allocation for mitigation efforts and development of contingency plans for high-priority risk scenarios.
+]
 
+#v(.5cm)
+#figure(caption: [Gantt chart as initially planned], image("../images/initial_gantt.png"))<gantt_initial>
+#v(.5cm)
+#figure(caption: [Gantt chart reflecting actual progress], image("../images/maybe_actual_gantt.png"))<gantt_actual>
+
+#col[
   == Resource Allocation and Capacity Planning
 
   The project utilized existing equipment resources, eliminating hardware acquisition costs. Software expenses were also avoided through utilization of open-source tools and the two-week free trial of Treble software for RT60 calculations. As described in the @project_organization section we would have five of six members participating in both courses of the project with 360 hours each and one person only participating in the BV course with 180 hours. This makes up a total of 1980 hours during the whole project.
-
   == Quality Assurance
 
   A comprehensive quality assurance framework was established encompassing seven distinct quality dimensions: Accurate RT60 Estimation, Visual Input Robustness, Inference Speed, Model Size, Label Quality for synthetic data, Scalability & Maintainability, and Stakeholder Satisfaction. Each quality goal was associated with specific measurable criteria, quality assurance pathways, and control mechanisms.
@@ -78,3 +83,5 @@
   The project planning phase established a robust framework for the systematic development of the Ertsi neural network system. The structured approach to work package decomposition, risk assessment, and quality assurance provided clear pathways for successful project completion while maintaining flexibility to adapt to evolving technical requirements.
   The planning methodology emphasized comprehensive data collection strategies, rigorous model development protocols, and thorough evaluation procedures to ensure both technical accuracy and practical applicability of the resulting system. The comparative analysis between planned and actual execution timelines provided valuable insights into the challenges inherent in machine learning project estimation and demonstrated the effectiveness of adaptive project management in research-oriented development contexts.
 ]
+
+
