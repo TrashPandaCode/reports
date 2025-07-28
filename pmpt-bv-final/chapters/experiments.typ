@@ -35,7 +35,7 @@
 
   We chose t-SNE over PCA for our analysis because it better handles the nonlinear and potentially hierarchical structure in our data. Specifically, we were interested in identifying whether our convolutional neural network (CNN) learns to encode acoustically meaningful visual features. Initial experiments applying t-SNE to the high-dimensional feature representations of our ground truth (gt) data revealed clear groupings that appeared to correspond to different room types as seen in @tsne_gt. Motivated by this, we applied t-SNE to the feature embeddings learned by our CNN model. By analyzing the resulting 2D plots, we examined whether similar room-dependent clusters emerged. Observing such groupings in the predicted features would suggest that the model captures underlying acoustic properties that correlate with visual cues, providing additional validation of the learned representations beyond numerical accuracy metrics @geronHandsonMachineLearning2023.
 
-  #figure(caption: [t-sne analysis of gt data], image("../images/gt_latent_visualization.png"))<tsne_gt>
+  #figure(caption: [t-SNE analysis of gt data], image("../images/gt_latent_visualization.png"))<tsne_gt>
 
   == Experimental Design and Execution
 
