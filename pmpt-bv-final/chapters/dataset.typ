@@ -65,7 +65,7 @@
     [4000], [1.01],
     [8000], [0.94],
   ))
-  #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg"))
+  #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg", width: 80%))
 
   == Data Structure
 

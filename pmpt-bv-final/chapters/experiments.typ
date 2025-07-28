@@ -166,11 +166,13 @@
   - Despite this variation, none of these backbones outperformed ResNet50 (Places365), which remained the strongest CNN-based option.
 
   #figure(
-    caption: [Prediction vs ground truth heatmap \ From left to right: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
+    caption: [Prediction vs ground truth heatmap \ From left to right and top to bottom: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
     grid(
-      columns: 4,
+      columns: 2,
+      gutter: .2cm,
       image("../images/experiments/v1_12/convnext_rt60_kde_heatmap.png"),
       image("../images/experiments/v1_12/densenet_rt60_kde_heatmap.png"),
+
       image("../images/experiments/v1_12/efficientnet_rt60_kde_heatmap.png"),
       image("../images/experiments/v1_12/resnet_rt60_kde_heatmap.png"),
     ),
@@ -262,11 +264,16 @@
   ))
   #figure(caption: [Example image used for the experiment], image("../images/simple_example.jpg"))
 
-  #figure(caption: [Heatmap of predicted RT60 values vs. ground truth RT60 values], image(
-    "../images/simple_rt60_kde_heatmap.png",
-  ))
-
-  #figure(caption: [Prediction error distribution in seconds], image("../images/simple_error_distribution.png"))
+  #figure(
+    caption: [Heatmap of predicted RT60 values vs. ground truth RT60 values (left) and prediction error distribution in seconds (right)],
+    grid(
+      columns: 2,
+      image("../images/simple_rt60_kde_heatmap.png"),
+      image(
+        "../images/simple_error_distribution.png",
+      ),
+    ),
+  )
 ]
 
 == Experimental Results Summary
