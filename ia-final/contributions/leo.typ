@@ -20,6 +20,8 @@
 
   For programming-related work carried out prior to the start of formal time logging, I utilized a Git-based time estimation algorithm, as detailed in @jonathan_est_tracked_efforts.
 
+  In total I tracked a total of approximately 98.24 hours spent coding throughout the project. This figure does not include additional time spent on design work in Figma, documentation and research in Typst, code review activities, and assisting team members with their tasks. The Git-based time estimation algorithm aligned well with my actual coding effort, providing a reliable measure for the programming-specific portions of my contributions.
+
   === Project Planning<leo_plan_phase>
 
   === Concept and Design<leo_des_phase>
@@ -31,6 +33,8 @@
   Following that decision, Jonathan and I each wireframed a version of the landing page, and we also collaborated on a wireframe for the documentation page. However, as the wireframing process became stagnant, we decided to shift our focus and created a full visual design for the landing page, going beyond low-fidelity prototypes. I later implemented this design in code. Eventually, the layout was refined by Jonathan to better accommodate a growing number of levels and to reduce unnecessary visual clutter.
 
   In addition to my contributions to the site and documentation design, I was also responsible for designing the visual style and layout of the nodes and the node editor. These designs were critical to the usability of the game interface and had to strike a balance between usability, functionality, and aesthetics. Alongside this, I also established the overall style and color scheme of the website, ensuring visual consistency across the node and web components.
+
+  I also designed 7 levels (Calculator, Sitting, Bounce, Move, Free Falling, Jumping, Race) based on the structuring done by Markus, all of which are currently in the game in some form. These designs consisted of defining the goals, what the player should do, and required nodes and assets.
 
   Overall, while design was not my designated responsibility, I contributed meaningfully throughout the phase, especially in shaping the layout and structure of core parts of the user experience.
 
@@ -120,8 +124,6 @@
 
   Regarding user testing, we wanted to start user testing as early as possible, but no one felt responsible again. I took initiative to create a document, outlining different user testing methods, tests, GEQ, SUS, a procedure for how we could conduct user tests and a section about the usability of node systems, as well as some literature to read—8 pages in total. This document would then be left untouched by the team, with no one giving feedback (I don't know if anyone even read it). I then created a Google form for the user tests together with Jonathan based on this document. User tests could have started at this point, but only started way later.
 
-  #todo("add that I designed 7 levels, all of which are implemented")
-
   ==== Advanced Features and Responsive Design (June)
   //june
   // - cleaning up carousel component on the landing page together with jonathan
@@ -197,6 +199,4 @@
   Throughout the development process, I took on significant responsibilities for maintaining code quality and project organization. I regularly reviewed and edited pull requests from team members, ensuring code consistency and catching potential issues before they were merged into the main branch. I also organized and cleaned up the project's issue tracker, categorizing bugs, feature requests, and tasks to keep the development process structured and manageable.
 
   When broken or incomplete commits made it to the main branch, I too took the initiative to fix them promptly to maintain project stability. Additionally, I frequently cleaned up code left by other team members, refactoring unclear implementations, removing dead code, and improving overall code organization and maintainability. This ongoing maintenance work ensured that the codebase remained clean and comprehensible as the project evolved.
-
-  === Documentation<leo_doc_phase>
 ]
