@@ -204,11 +204,11 @@
 
   *Baseline CNN (Simple Architecture):* A minimal convolutional model with just two convolutional layers followed by average pooling and a basic MLP head was trained from scratch:
 
-  -Validation MSE = $0.9346$
-  -RMSE = $0.9668$
-  -MAE = $0.8906$
-  -R² = $-14.7485$
-  -This model served as a lower-bound baseline. Its poor performance underscores the necessity of both architectural depth and prior knowledge (e.g., pretrained features) for learning meaningful visual-acoustic representations.
+  - Validation MSE = $0.9346$
+  - RMSE = $0.9668$
+  - MAE = $0.8906$
+  - R² = $-14.7485$
+  - This model served as a lower-bound baseline. Its poor performance underscores the necessity of both architectural depth and prior knowledge (e.g., pretrained features) for learning meaningful visual-acoustic representations.
 
   #figure(caption: [From left to right: error distribution, prediction heatmap], grid(
     columns: 2,
@@ -216,8 +216,7 @@
     image("../images/experiments/jojo_simple/rt60_kde_heatmap.png"),
   ))
 
-
-  These results demonstrated that while alternative architectures could achieve reasonable performance, they did not substantially outperform our optimized ResNet-based approaches.
+  Overall these results demonstrated that while alternative architectures could achieve reasonable performance, they did not substantially outperform our optimized ResNet-based approaches.
 
   #todo("v1.13 to v1.16 and v1.10.1 and v1.4.1 are missing")
 
