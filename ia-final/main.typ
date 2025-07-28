@@ -26,7 +26,6 @@
 )
 
 #outline(depth: 2)
-#todo_outline
 #pagebreak()
 
 #set heading(numbering: "1.1.a") // idk können wir auch noch ändern
@@ -780,9 +779,7 @@
 
   === Team Coordination
 
-  #todo("das ist alles sehr nett formuliert. meinetwegen passt das so, feel free das anzupassen oder feedback zu geben")
-
-  The team faced coordination challenges throughout the project lifecycle. Despite uneven work distribution challenges, critical project components were successfully completed through adaptive task reallocation and flexible role assignments that matched individual strengths with project needs. Discord-based communication supplemented by in-person meetings maintained team coordination throughout development phases, enabling both synchronous collaboration and asynchronous progress updates. Shared documentation through Typst and Figma enabled collaborative design and specification development, ensuring all team members remained aligned on project goals and implementation details.
+  The team faced tremendous coordination challenges throughout the project lifecycle. Despite uneven work distribution challenges, critical project components were successfully completed through adaptive task reallocation and flexible role assignments that matched individual strengths with project needs. Discord-based communication supplemented by in-person meetings maintained team coordination throughout development phases, enabling both synchronous collaboration and asynchronous progress updates. Shared documentation through Typst and Figma enabled collaborative design and specification development, ensuring all team members remained aligned on project goals and implementation details.
 
   === Timeline and Scope Management
 
