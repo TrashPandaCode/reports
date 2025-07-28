@@ -218,9 +218,43 @@
     image("../images/experiments/jojo_simple/rt60_kde_heatmap.png"),
   ))
 
+  *U-Net Architecture (v1.16):* A U-Net architecture with a custom bottleneck was evaluated. The U-Net architecture is usually used for image segmentation tasks, but we adapted it for regression by adding a regression head at the end. The model consisted of a symmetric encoder-decoder structure with skip connections:
+
+  - *Encoder Path:* Four downsampling blocks with increasing channel depths (64→128→256→512), each comprising dual convolutions with batch normalization, ReLU activation, and dropout (p=0.2)
+  - *Bottleneck:* Standard double convolutional block at 512 channels
+  - *Decoder Path:* Four upsampling blocks with skip connections from corresponding encoder levels, progressively reducing channel depth (512→256→128→64)
+  - *Regression Head:* Final 1x1 convolution reducing to 32 channels, followed by global average pooling and fully connected layer outputting 6 frequency bands
+
+  The model used Huber Loss for training stability and employed AdamW optimization with weight decay (1e-3) and a reduce-on-plateau learning rate schedule.
+
+  The U-Net architecture achieved decent results with MSE = 0.0946. Similar to v1.10 further analysis revealed that the model consistently guessed similar RT60 values regardless of input, which lead to it having a good average score while failing to capture the datasets variance.
+
   Overall these results demonstrated that while alternative architectures could achieve reasonable performance, they did not substantially outperform our optimized ResNet-based approaches.
 
-  #todo("v1.13 to v1.16 and v1.10.1 and v1.4.1 are missing")
+  === Data Domain Analysis (v1.10.1)
+  To better understand the model's behavior across different data domains, we conducted a series of experiments using the v1.10 architecture trained and validated on distinct data subsets. Three configurations were tested:
+
+  1. *Real-Only:* Training and validation using exclusively real-world data
+  - MSE = $0.0918$
+  - RMSE = $0.3030$
+  - MAE = $0.2027$
+  - R² = $-0.1738$
+
+  2. *Synthetic-Only:* Training and validation using exclusively synthetic data
+  - MSE = $1.3696$
+  - RMSE = $1.1703$
+  - MAE = $0.9214$
+  - R² = $-21.2365$
+
+  3. *Mixed Domain (v1.10 baseline):* Original configuration with synthetic and then real data
+  - MSE = $0.0955$
+  - RMSE = $0.3091$
+  - MAE = $0.1983$
+  - R² = $-0.1889$
+
+  The real-only configuration achieved slightly better performance (MSE = $0.0918$) compared to the mixed-domain approach (MSE = $0.0955$). However, the synthetic-only configuration performed significantly worse (MSE = $1.3696$), indicating the domain gap between synthetic and real data might be larger than previously thought. The dramatically lower R² score ($-21.2365$) in the synthetic-only case further emphasizes the challenge of generalizing purely synthetic training to realistic acoustic scenarios. These findings suggest that while our synthetic data generation approach provides valuable training signals, there remain significant differences between our synthetic and real acoustic environments.
+
+  #todo("v1.13 to v1.15 and v1.4.1 are missing")
 
   == Performance Summary and Key Findings
 
