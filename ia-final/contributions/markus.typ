@@ -142,7 +142,7 @@
 
   The main documentation phase for the project was planned to take place in July, as mentioned in other sections before I was only working on the documentation within the last two weeks of July. I started working on my own contributions part as I wanted to have this section mainly done first and then work on the other sections of the documentation.
 
-  //continue documentation part here
+  Throughout this process, I collaborated closely with my teammates to ensure consistency across all documentation sections and to coordinate our writing efforts. I actively participated in team meetings where we established guidelines to define what content still needed to be written and how it should be structured. During that duration I was also reviewing written sections from other team members to give feedback and working on the poster.
 
   We wanted to have the documentation and also the poster done by the end of July.
 
