@@ -40,9 +40,9 @@
 
   Our project schedule is visualized by our two Gantt charts (@gantt_initial and @gantt_actual) that show the comparison of the initial planning and how it actually turned out. The first Gantt chart was developed during the project planning phase and follows the work package durations and dependencies as initially declared. The second one was created at the end of the project to give an overview of the actual durations and dependencies of the work packages and phases. The comparison of both might give a hint on where challenges occurred.
 
-  #todo("change images to gantt charts")
-  #figure(caption: [], image("../images/gradcam_combined_img4.png"))<gantt_initial>
-  #figure(caption: [], image("../images/gradcam_combined_img4.png"))<gantt_actual>
+  #todo("idk about the actual gantt chart")
+  #figure(caption: [Gantt chart as initially planned], image("../images/initial_gantt.png"))<gantt_initial>
+  #figure(caption: [Gantt chart reflecting actual progress], image("../images/maybe_actual_gantt.png"))<gantt_actual>
 
   == Requirements and Solutions
 
