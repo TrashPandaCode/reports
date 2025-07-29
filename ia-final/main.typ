@@ -173,10 +173,7 @@
   == Conclusion
 
   The project planning phase established a robust framework for systematic development of the Dumpster-Diving educational platform. The structured approach to work package decomposition, dependency management, and quality assurance provided clear pathways for successful project completion within the established constraints. The planning methodology emphasized iterative development, continuous user feedback integration, and maintainable technology selections to ensure both immediate project success and long-term platform viability.
-]
 
-#pagebreak()
-#col[
   = Background
   == 2D vs. 3D<2d_vs_3d>
   // Computer Animation is dimensionless
@@ -325,10 +322,7 @@
   This on-demand loading significantly improves the scalability and responsiveness of the site. Users only download the content they actively view, which helps reduce network usage and speeds up the initial loading experience, especially for first-time visitors. It also aligns well with modern web development practices, such as code-splitting and lazy loading, both of which we make use of elsewhere in the project.
 
   This dynamic content loading was made easier by the structured nature of Markdown files, and it integrates seamlessly with our use of React Router and Vite as our build system. As a result, we're able to maintain a clean separation between content and application logic, while also achieving an efficient and responsive user experience.
-]
-#pagebreak()
-#col[
-  //provisorischer col unfug
+
   == Game <game>
   The main challenge of creating the game was of course having two seperate elements of our game being displayed side by side. Both of these elements need to run inside of their own shell, as to not get into each others way, but they still need to communicate with another to create an immersive experience. To achieve this the game runs inside a dedicated React Component---called the Game component---that acts as a wrapper for the key components of the game: the canvas in which the game is rendered, the node editor and several UI elements.
 
@@ -527,40 +521,36 @@
   === Undo & Redo
   Seperating the visual and the logic layers of the node graph also made it much easier to implement an undo and redo functionality. We used `zundo` @kornoeljeCharkourZundo2025, a small library that adds undo and redo support to Zustand. `zundo` provides a `temporal` wrapper, which tracks changes to the store's state in an internal history array. This was applied directly to the `FlowStore`, as it already maintains lists of all nodes and edges. For the system to be functional we added a helper function to update the `NodeStore` whenever undo or redo is used. This function clears all of the nodes from the `NodeStore`'s unsorted node map and fills it up again using the latest data from the `FlowStore`.
 
-]
-// Website Strucutre/Navigation
-//  Landing Page also functions as Level select screen
-// Node-Editor
-//    Overall explanation of ReactFlow
-//    How are Nodes implemented
-//      Perhaps also some details on more complicated Nodes
-//      eg. For-Loops
-//    Copy/Paste
-//    Undo/Redo
-//
-// Game
-//    Level initialization / switching between Levels ---
-//    GameUtils ---
-//      loading GameObjects ---
-//      loading Backgrounds ---
-//      Character Animations using Spritesheets ---
-//      handling of Level reset ---
-//  building Levels using Kaplay ---
-//    gameLoop ---
-//    Communication between Game and Nodes ---
-//    Handling Win Conditions ---
-// State Management ---
-//    GameStore ---
-//    DataStore ---
-//    Time ---
-// Custom Game Dialog
-//    Start Dialog
-//    Finish Dialog
-// Introduction Dialog
+  // Website Strucutre/Navigation
+  //  Landing Page also functions as Level select screen
+  // Node-Editor
+  //    Overall explanation of ReactFlow
+  //    How are Nodes implemented
+  //      Perhaps also some details on more complicated Nodes
+  //      eg. For-Loops
+  //    Copy/Paste
+  //    Undo/Redo
+  //
+  // Game
+  //    Level initialization / switching between Levels ---
+  //    GameUtils ---
+  //      loading GameObjects ---
+  //      loading Backgrounds ---
+  //      Character Animations using Spritesheets ---
+  //      handling of Level reset ---
+  //  building Levels using Kaplay ---
+  //    gameLoop ---
+  //    Communication between Game and Nodes ---
+  //    Handling Win Conditions ---
+  // State Management ---
+  //    GameStore ---
+  //    DataStore ---
+  //    Time ---
+  // Custom Game Dialog
+  //    Start Dialog
+  //    Finish Dialog
+  // Introduction Dialog
 
-#pagebreak()
-#col[
-  //provisorischer col unfug
   == User Testing
   The structured user testing began significantly later than originally planned, as this aspect was not given the intended priority during the development phase. We originally intended the user testing to run parallel to the development of the game and the node editor, thereby guiding respective implementation decisions. As a result, we primarily conducted application testing ourselves throughout the development phase, and only occasionally consulted fellow students regarding minor design and usability aspects.
 
