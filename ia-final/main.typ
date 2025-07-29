@@ -532,7 +532,7 @@
   //Heavily simplified this whole process, but I think it is too complex to be much more specific
 
   === Undo & Redo
-  Seperating the visual and the logic layers of the node graph also made it much easier to implement an undo and redo functionality. We used `zundo`#footnote([https://github.com/charkour/zundo]), a small library that adds undo and redo support to Zustand. `zundo` provides a `temporal` wrapper, which tracks changes to the store's state in an internal history array. We were applied this directly to the `FlowStore`, as it already maintains lists of all nodes and edges. For the system to be functional we added a helper function to update the `NodeStore` whenever undo or redo is used. This function clears all of the nodes from the `NodeStore`'s unsorted node map and fills it up again using the latest data from the `FlowStore`.
+  Seperating the visual and the logic layers of the node graph also made it much easier to implement an undo and redo functionality. We used `zundo` @kornoeljeCharkourZundo2025, a small library that adds undo and redo support to Zustand. `zundo` provides a `temporal` wrapper, which tracks changes to the store's state in an internal history array. We were applied this directly to the `FlowStore`, as it already maintains lists of all nodes and edges. For the system to be functional we added a helper function to update the `NodeStore` whenever undo or redo is used. This function clears all of the nodes from the `NodeStore`'s unsorted node map and fills it up again using the latest data from the `FlowStore`.
 
 ]
 // Website Strucutre/Navigation
