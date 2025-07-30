@@ -44,7 +44,9 @@
 #include "chapters/discussion.typ"
 // Conclusion
 #include "chapters/conclusion.typ"
+#include "chapters/contributions.typ"
 
+#pagebreak()
 = Appendix
 
 == Experiments<appendix_experiments>
