@@ -7,13 +7,15 @@
 #col[
   == Product Use Cases
   === Use Case Diagram
-  
+
   #figure(caption: [Use Case Diagram], image("../images/use-case-diagram.png"))
+  
   === Individual Product Use Cases
 
+  The individual product use cases describe the specific interactions users have with the application, focusing on the main functionalities and user goals. Each use case outlines the primary actions a user can take, the expected outcomes, and any relevant conditions or exceptions. They can be found under @use_cases in the appendix.
+
   == Functional Requirements
-  #todo("needs review")
-  // Stichpunkt mässige Func req 
+  // Stichpunkt mässige Func req
   // https://www.reqview.com/doc/iso-iec-ieee-29148-srs-example/
   === Landing Page
   *DDFR1*: The application shall have a landing page with direct navigation to the game.
@@ -45,8 +47,7 @@
   - The game page UI includes buttons for "Pause", "Resume" and "Reset". Clicking each button performs the corresponding action reliably across all tested levels.
 
   *DDFR10*: The application shall save game and node states persistently (locally or server-sided).
-  - After making changes in the node editor or playing the game, the current state is automatically or manually saved and restored correctly when the user reloads or returns to the game page.
-  // not sure about "or playing the game"
+  - After making changes in the node editor or playing the game, the current state is automatically or manually saved and restored correctly when the user reloads or returns to the game page. This also includes undo/redo functionality for node changes.
 
   *DDFR11*: The application shall provide a node editor, allowing users to add, connect and delete nodes using their mouse and keyboard shortcuts.
   - The node editor allows the user to create nodes by clicking, connect nodes by dragging, and delete them via a contextual menu or keyboard key.
@@ -55,7 +56,7 @@
   - Invalid connections (e.g., cycles) are visually rejected or flagged immediately with an error tooltip or red highlight and the game stops computing the node graph.
 
   *DDFR13*: Changes made in the node editor shall dynamically update the game logic affecting gameplay.
-  -  After modifying a node configuration, the game reacts in real time (e.g., physics, events) without requiring a manual refresh or restart.
+  - After modifying a node configuration, the game reacts in real time (e.g., physics, events) without requiring a manual refresh or restart.
 
   *DDFR14*: The game page shall link directly to the needed documentation and level guides.
   - The game UI includes links or tooltips inside the nodes or levels that, when clicked, open the relevant documentation page or guide section in the same or a new panel.

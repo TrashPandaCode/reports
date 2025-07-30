@@ -12,21 +12,21 @@
   The primary design goals for the system focus on user engagement, educational clarity, and performance responsiveness, in line with the product's role as an interactive, browser-based learning tool. The following goals are prioritized:
 
   - Responsiveness and smooth interaction:
-    - The system should provide immediate feedback to user actions (e.g., node placement, simulation control), with minimal lag, to maintain immersion and reduce frustration.
-    - While real-time performance is not mission-critical, frame drops or noticeable delays are to be minimized to preserve a fluid learning experience.
+    - The system should provide immediate feedback to user actions (e.g., node placement, simulation control), with minimal lag, to maintain immersion and reduce frustration (see DDFR8, DDFR13).
+    - While real-time performance is not mission-critical, frame drops or noticeable delays are to be minimized to preserve a fluid learning experience (see DDFR8).
   - Scalability of complexity:
-    - The system should gracefully scale from beginner-level visual nodes to more advanced setups without overwhelming the user or compromising usability.
-    - Internally, the architecture should support the potential extension of more node types, logical layers, or deeper mechanics without requiring major structural rewrites.
+    - The system should gracefully scale from beginner-level visual nodes to more advanced setups without overwhelming the user or compromising usability (see DDFR6, DDFR7).
+    - Internally, the architecture should support the potential extension of more node types, logical layers, or deeper mechanics without requiring major structural rewrites (see DDFR11).
   - Clarity of visualization:
-    - Diagrams and visual elements should communicate meaning effectively, especially for abstract programming or logic concepts.
-    - Node layouts, labels, and flows must be readable and interpretable without requiring users to memorize symbols or look up meanings frequently.
+    - Diagrams and visual elements should communicate meaning effectively, especially for abstract programming or logic concepts (see DDFR5, DDFR11).
+    - Node layouts, labels, and flows must be readable and interpretable without requiring users to memorize symbols or look up meanings frequently (see DDFR11).
     - Modularity and maintainability:
-      - Code should be written in a modular way to support easy extension, replacement, and refactoring of features.
+      - Code should be written in a modular way to support easy extension, replacement, and refactoring of features (see DDFR11).
       - Given the educational setting and potential future re-use, clarity and separation of concerns in the codebase are prioritized over optimization.
     - Accessibility and inclusivity:
-      - Though basic WCAG-level support is implemented (e.g., color-contrast choices, ARIA roles), the broader goal is to keep the product inclusive in tone and interface, encouraging participation from a diverse audience with varying levels of familiarity with tech.
+      - Though basic WCAG-level support is implemented (e.g., color-contrast choices, ARIA roles), the broader goal is to keep the product inclusive in tone and interface, encouraging participation from a diverse audience with varying levels of familiarity with tech (see DDFR14).
     - Aesthetic and motivational design:
-      - A playful, slightly whimsical visual tone (with mascot characters and light gamification) is prioritized to keep learners emotionally engaged.
+      - A playful, slightly whimsical visual tone (with mascot characters and light gamification) is prioritized to keep learners emotionally engaged (see DDFR1).
       - A minimalistic and inviting UI is preferred over dense or technically styled interfaces.
 
   These goals reflect the project's primary function as a learning and exploration tool for logic or programming-like structures, used in classrooms, demonstrations, or self-driven discovery. Since user motivation and ease of comprehension are as important as functional correctness, the system's design must support fast feedback, gradual complexity, and a strong visual narrative.
@@ -80,13 +80,15 @@
   === Overview
 
 
-  The proposed architecture is a modular, client-side web application designed for interactive logic editing using node-based visual programming. It prioritizes performance, maintainability, and a smooth user experience.
+  The proposed architecture is a modular, client-side web application designed for interactive logic editing using node-based visual programming. It prioritizes performance, maintainability, and a smooth user experience (see DDFR5, DDFR11).
 
   At its core, the system follows a component-based architecture, with a clear separation between the user interface, state management, and game logic. The UI is composed of reusable components that render visual elements and respond to user input in real time.
 
-  The project integrates a visual programming environment enabling users to construct animation logic through node-based graphs. This environment is tightly coupled with a custom game engine responsible for executing and animating user-defined logic.
+  The project integrates a visual programming environment enabling users to construct animation logic through node-based graphs. This environment is tightly coupled with a custom game engine responsible for executing and animating user-defined logic (see DDFR8, DDFR13).
 
-  State management is centralized and enhanced with undo/redo capabilities, allowing for a smooth, user-friendly editing workflow. The architecture supports lazy loading and code splitting, ensuring efficient resource usage by loading heavy components such as the editor or documentation only when needed.
+  State management is centralized and enhanced with undo/redo capabilities, allowing for a smooth, user-friendly editing workflow (see DDFR10).
+
+  The architecture supports lazy loading and code splitting, ensuring efficient resource usage by loading heavy components such as the editor or documentation only when needed.
 
   // The proposed architecture is a modular, client-side web application designed for interactive logic editing using node-based visual programming. It prioritizes performance, maintainability, and a smooth user experience.
 
@@ -118,8 +120,8 @@
 
   // *Considerations:*\
   // The architecture is optimized for educational use, with future expansion possible for real-time collaboration or backend persistence.
-  === Class Diagrams
-  #todo("diagramme")
+  // === Class Diagrams
+  // #todo("diagramme")
   // Due to the use of React and JavaScript, logic is function/component-based rather than class-based. However, entities are conceptually modeled as follows:
 
   //     NodeComponent – Represents visual logic blocks.
@@ -151,17 +153,17 @@
   === Subsystem Decomposition
   The app is organized into:
 
-  *Editor -* The main workspace of the app, where the primary canvas (React Flow) allows interaction with nodes. Users can create, move, connect, and modify nodes, ensuring a seamless and intuitive experience for building workflows or logic structures.
+  *Editor -* The main workspace of the app, where the primary canvas (React Flow) allows interaction with nodes. Users can create, move, connect, and modify nodes, ensuring a seamless and intuitive experience for building workflows or logic structures (see DDFR11).
 
-  *UI Layer -* Includes all user interface elements such as toolbars, modals, and input fields. These components are implemented using Radix UI, ensuring a consistent, accessible, and responsive user experience. The UI layer plays a crucial role in guiding users through the app's functionalities.
+  *UI Layer -* Includes all user interface elements such as toolbars, modals, and input fields. These components are implemented using Radix UI, ensuring a consistent, accessible, and responsive user experience. The UI layer plays a crucial role in guiding users through the app's functionalities (see DDFR14).
 
-  *State Management -* Managed using the Zustand store, which efficiently handles global and local states within the application. This enables reactive updates and high-performance processing of user interactions and application state changes.
+  *State Management -* Managed using the Zustand store, which efficiently handles global and local states within the application. This enables reactive updates and high-performance processing of user interactions and application state changes (see DDFR10).
 
-  *Node System -* Defines the logic and structure of nodes within the editor. It establishes various node types, their behaviors, and evaluation mechanisms, ensuring accurate input processing and data flow throughout the system.
+  *Node System -* Defines the logic and structure of nodes within the editor. It establishes various node types, their behaviors, and evaluation mechanisms, ensuring accurate input processing and data flow throughout the system (see DDFR11, DDFR12, DDFR13).
 
-  *Kaplay Integration -* Refers to the specialized integration of Kaplay for rendering and interacting with game nodes. This includes both visual representation and control logic behind game elements, making the editor a powerful tool for game-related applications.
+  *Kaplay Integration -* Refers to the specialized integration of Kaplay for rendering and interacting with game nodes. This includes both visual representation and control logic behind game elements, making the editor a powerful tool for game-related applications (see DDFR8, DDFR13).
 
-  *Documentation & Onboarding -* A collection of embedded guides and a level-based learning system designed to introduce users to the app's features and concepts. The goal is to provide structured and accessible tutorials that support both new and experienced users.
+  *Documentation & Onboarding -* A collection of embedded guides and a level-based learning system designed to introduce users to the app's features and concepts. The goal is to provide structured and accessible tutorials that support both new and experienced users (see DDFR14, DDFR15).
 
   *Motivation:*\
   To simplify maintenance and encourage modular expansion.
@@ -180,8 +182,7 @@
   === Persistent Data management
   Currently, persistence is limited to local state (in-browser). Future versions may support:
   - Export/Import JSON
-  - Remote sync via localStorage or cloud storage
-
+  - Remote sync via localStorage or cloud storage (see DDFR10).
   *Motivation:*
   To simplify the product while allowing for future enhancement.
 
@@ -196,7 +197,7 @@
   === Global software control
   // Approved und angepasst von L.
   *Content:*\
-  Global software control is implemented through centralized state management via Zustand. The system manages three primary global behaviors: undo/redo operations using state history, node-graph state, and game-state logic. Requests are initiated through React component events and propagated via Zustand actions. Synchronization occurs through reactive state subscriptions, where changes automatically trigger updates across all subsystems.
+  Global software control is implemented through centralized state management via Zustand. The system manages three primary global behaviors: undo/redo operations using state history, node-graph state, and game-state logic. Requests are initiated through React component events and propagated via Zustand actions. Synchronization occurs through reactive state subscriptions, where changes automatically trigger updates across all subsystems (see DDFR10, DDFR13).
 
   *Motivation:*\
   To ensure cohesive control flow and prevent state inconsistencies between the visual editor, simulation engine, and user interface components.
@@ -211,7 +212,7 @@
 
   === Boundary conditions
   Handled via:
-  - Invalid connections: rejected with visual cues
+  - Invalid connections: rejected with visual cues (see DDFR12)
   - Infinite loops or unconnected graphs: disabled and warned with visual
 
   *Motivation:*\
