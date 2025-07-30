@@ -199,4 +199,8 @@
   Throughout the development process, I took on significant responsibilities for maintaining code quality and project organization. I regularly reviewed and edited pull requests from team members, ensuring code consistency and catching potential issues before they were merged into the main branch. I also organized and cleaned up the project's issue tracker, categorizing bugs, feature requests, and tasks to keep the development process structured and manageable.
 
   When broken or incomplete commits made it to the main branch, I too took the initiative to fix them promptly to maintain project stability. Additionally, I frequently cleaned up code left by other team members, refactoring unclear implementations, removing dead code, and improving overall code organization and maintainability. This ongoing maintenance work ensured that the codebase remained clean and comprehensible as the project evolved.
+
+  === Documentation
+
+  During the documentation phase, I took on substantial responsibilities for both content creation and visual presentation. I designed and filled the project poster with comprehensive content, ensuring it effectively communicated the key aspects and achievements of the project. Additionally, I wrote substantial portions of the final documentation, contributing to multiple sections.
 ]
