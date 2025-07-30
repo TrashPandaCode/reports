@@ -21,7 +21,7 @@
 
   To address the absence of suitable existing datasets, we undertook our own data collection efforts. Recognizing that capturing sufficient real-world data for effective model training would be impractical, we adopted a hybrid approach that combines authentic measurements with synthetically generated images and impulse responses to supplement our real-world dataset. Reseach in the machine learning field has shown such hybrid approaches to be effective @yangDepthAnythingUnleashing2024.
 
-  === Real-World Measurements
+  === Real-World Measurements #pmpt
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
@@ -43,7 +43,7 @@
   ))
   #figure(caption: [Example image for real data], image("../images/real_example.jpg"))
 
-  === Synthetic Data Generation
+  === Synthetic Data Generation #pmpt
 
   The synthetic component of our dataset was developed through a three-stage pipeline. Initially, room environments were generated using the Blender software @foundationBlenderorgHomeBlender, which enabled us to create diverse room geometries and material properties while simultaneously rendering corresponding images of these virtual spaces.
 
@@ -67,7 +67,7 @@
   ))
   #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg", width: 80%))
 
-  == Data Structure
+  == Data Structure #bv
 
   The dataset is divided into two primary directories: one containing real-world measurements and another housing synthetically generated data.
 
@@ -78,7 +78,7 @@
   - An `images` subfolder containing multiple images of the room (photographs for real rooms, rendered images for synthetic rooms)
   - A CSV file storing the corresponding RT60 values across different frequency bands for that specific room
 
-  == Preprocessing
+  == Preprocessing #pmpt
 
   When calculating RT60 values, we initially considered 11 bands ranging from $50 "Hz"$ to $8 "kHz"$. However, we ultimately decided to exclude the lower frequency bands (up to $250 "Hz"$) due to the susceptibility to interference
   #figure(
@@ -101,7 +101,7 @@
 
   The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with $10%$ for validation, $20%$ for testing, and the remaining $70%$ for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
 
-  == Domain Gap Considerations
+  == Domain Gap Considerations #bv
   A significant challenge encountered in this hybrid approach was the presence of a substantial domain gap between synthetic and real images. The synthetic images, despite sophisticated rendering techniques, exhibited characteristic artifacts and stylistic differences that distinguished them from real photography—including lighting models, material appearance, geometric precision, and subtle environmental factors that are difficult to replicate synthetically.
 
   The lighting differences were particularly notable, as Blender's physically-based rendering, while mathematically accurate, often lacked the natural imperfections present in real-world mobile photography. Real images exhibited variations in exposure, white balance, and the complex interplay of artificial office lighting with natural daylight. Material appearance also differed significantly, with synthetic surfaces appearing too pristine compared to real-world counterparts that show natural wear, dust, and subtle color variations developed through use.
@@ -110,7 +110,7 @@
 
   This domain gap likely created confusion within the neural network during training, as evidenced by inconsistent validation performance across synthetic and real data subsets, though we acknowledge that comprehensive empirical analysis of this effect remains to be conducted. The model struggled to generalize effectively across the two distinct visual domains, potentially degrading overall prediction accuracy and robustness.
 
-  == Implications for Model Performance
+  == Implications for Model Performance #bv
   The integration of synthetic and real data created a complex training environment where the model needed to generalize between two distinct visual domains while learning consistent acoustic prediction principles. This multi-domain learning challenge was compounded by the fundamental differences in how acoustic properties manifest visually between synthetic and real environments.
 
   Despite our synthetic data augmentation efforts, the total of approximately $4,073$ datapoints remained insufficient for robust CNN training on complex acoustic-visual relationships. This data insufficiency became apparent during training through significant variation in loss curves and difficulty achieving stable convergence. The limited dataset size likely contributed to overfitting behaviors, where the model memorized specific visual patterns rather than learning generalizable acoustic-visual correlations.
