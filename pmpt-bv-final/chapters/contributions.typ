@@ -52,12 +52,10 @@
 
   == Milan Jezovsek
   === Project Phase
-  - been involved in the real world data collection
-  - generated synthetic data using Jonathan's tooling
-  - experimented with the models architecture
+  During the project development phase, I contributed to multiple aspects of the research pipeline, ranging from data collection to architectural experimentation. I participated in real-world data collection efforts to build the empirical dataset and leveraged Jonathan's tooling to generate synthetic training data, expanding the available data resources for model development. My primary focus centered on architectural experimentation, particularly through the implementation of experiments v1.14 and v1.15, which investigated the integration of spatial attention mechanisms into the existing model framework. These experiments aimed to enhance the model's ability to focus on acoustically relevant spatial features within room imagery for improved RT60 prediction accuracy.
 
   === Documentation Phase
-  - contributed to the documentation by initializing the fundamental concepts section and fleshing out the parts for Reverberation Time. Laying the groundwork for the section on Reverberation Time which has then been restrucutred and expanded by other team members and myself
+  In the documentation phase, I made substantial contributions to the project's technical documentation by initializing the fundamental concepts section and comprehensively developing the reverberation time components. This foundational work established the theoretical groundwork for the reverberation time section, which was subsequently restructured and expanded through collaborative efforts with other team members and myself. Additionally, I enriched the experiments and results documentation by incorporating detailed analyses of experiments v1.14 and v1.15, providing comprehensive coverage of the spatial attention investigation including methodology, performance metrics, and critical evaluation of the approach's effectiveness for visual-acoustic RT60 estimation.
 
   == Philipp Wendt
   === Project Phase
