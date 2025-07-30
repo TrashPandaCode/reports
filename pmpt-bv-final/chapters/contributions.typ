@@ -75,10 +75,20 @@
 
 
   == Leo Kling
-  - script für aufnahmen
-  - Datenaufbereitung
-  - Datenanalyse
-  - Modelltraining
-  -
+  === Project Phase
+  
+  During the project phase, I developed comprehensive scripts for recording and analyzing room impulse responses (RIR). These scripts facilitated both the collection of acoustic data and subsequent analysis of the recordings. I conducted extensive data exploration and cleanup of the real-world data to ensure quality and consistency, and personally participated in one day of real data recording sessions.
+
+  I was solely responsible for all synthetic impulse response generation using the Treble framework. This involved creating the Treble script, generating the synthetic RIRs, researching and implementing alternatives to Treble for synthetic data generation, and conducting thorough synthetic data exploration, cleanup, and analysis. Using Jonathan's room generator, I generated 10 synthetic rooms with varying acoustic properties.
+
+  To facilitate collaboration, I implemented a dataset synchronization solution using WebDAV and Sciebo, ensuring all team members had access to the latest data. I also developed the dataset splitting script to properly separate training, validation, and testing data. I created the initial baseline model for our experiments and conducted a total of 10 experiments as documented in @exp_result_summary.
+
+  I collaborated closely with Jonathan on the "simple experiment," where we jointly developed the model architecture and training methodology, created a new simulation script for room impulse responses, and performed detailed analysis of the experimental results.
+
+  === Documentation Phase
+  
+  In the documentation phase, I authored the dataset section, detailing both real-world and synthetic data collection and processing. I wrote the experimental methodology section, explaining our approach to model training and evaluation. I collaborated with other team members on documenting the experiments and results, as well as on the related works section.
+
+  For the fundamental concepts chapter, I contributed sections on theoretical calculation methods, Reverberation Time (RT60), and simulation methods. Finally, I co-authored the conclusion and discussion sections together with Markus, synthesizing our findings and identifying future research directions.
 
 ]
