@@ -254,7 +254,37 @@
 
   The real-only configuration achieved slightly better performance (MSE = $0.0918$) compared to the mixed-domain approach (MSE = $0.0955$). However, the synthetic-only configuration performed significantly worse (MSE = $1.3696$), indicating the domain gap between synthetic and real data might be larger than previously thought. The dramatically lower R² score ($-21.2365$) in the synthetic-only case further emphasizes the challenge of generalizing purely synthetic training to realistic acoustic scenarios. These findings suggest that while our synthetic data generation approach provides valuable training signals, there remain significant differences between our synthetic and real acoustic environments.
 
-  #todo("v1.13 to v1.15 and v1.4.1 are missing")
+  === Frozen Backbone Experiment (v1.4.1)
+  Building upon v1.4's enhanced data augmentation, experiment v1.4.1 investigated the effects of freezing the ResNet50 backbone layers while training only the final classification layers. This transfer learning approach was motivated by the hypothesis that low-level visual features from Places365 pretraining would remain relevant for acoustic scene understanding.
+  Training was conducted exclusively on synthetic data with identical hyperparameters to v1.4, except for the reduced parameter space due to frozen layers. The results demonstrated significant performance degradation:
+
+  - MSE = $1.0948$
+  - RMSE = $1.0463$
+  - MAE = $0.7198$
+  - R² = $-0.2622$
+
+  The substantial increase in MSE from v1.4's $0.0973$ to $1.0948$ represents more than a 10-fold deterioration in prediction accuracy. The negative R² score indicates performance worse than a simple mean predictor, suggesting that frozen features were insufficient for capturing visual-acoustic relationships required for RT60 estimation.
+  These findings highlight the importance of end-to-end fine-tuning for cross-modal tasks, reinforcing that acoustic prediction necessitates comprehensive feature adaptation throughout the network architecture rather than just final layer modification.
+
+  === Spatial Attention Experiment (v1.14 and v1.15)
+  Building upon the baseline architecture, experiments v1.14 and v1.15 investigated the integration of spatial attention mechanisms to enhance the model's ability to focus on acoustically relevant spatial features within room imagery. This approach was motivated by the hypothesis that explicit attention to spatial relationships could improve RT60 prediction accuracy by emphasizing regions that most significantly influence reverberation characteristics.
+  Version v1.14, developed on October 6, 2025, implemented spatial attention components throughout the architecture based on architectural modifications suggested for improved spatial feature extraction. The initial results showed:
+
+  - MSE = $0.0993$
+  - RMSE = $0.3151$
+  - MAE = $0.2161$
+  - R² = $-0.2714$
+
+  Building on v1.14's foundation, version v1.15 was developed on June 11, 2025, with a more comprehensive spatial attention integration. This iteration yielded marginally improved performance:
+
+  - MSE = $0.0975$
+  - RMSE = $0.3123$
+  - MAE = $0.2226$
+  - R² = $-0.0375$
+
+  While both versions demonstrated slight reductions in MSE compared to v1.14, the persistently negative R² values indicate that spatial attention mechanisms failed to achieve meaningful predictive improvements over a simple mean predictor. The modest MSE improvements of approximately 1.8% suggest that the spatial attention approach, as implemented, provided limited benefits for visual-acoustic RT60 estimation. These findings indicate that either more sophisticated attention mechanisms are necessary to realize the theoretical advantages of spatially-aware feature processing, or these theoretical advantages may be purely conceptual.
+
+  #todo("v1.13")
 
   == Performance Summary and Key Findings
 
@@ -310,7 +340,7 @@
   )
 ]
 
-== Experimental Results Summary
+== Experimental Results Summary<exp_result_summary>
 
 #figure(
   table(

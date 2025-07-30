@@ -133,4 +133,6 @@
   It is also worth mentioning the additional effort I invested in maintaining the overall quality and consistency of the project. This included tasks such as removing temporary files that had been inadvertently committed to the main branch, restoring accidentally deleted but necessary code, fixing broken or deleting unused code, as well as addressing minor issues related to logging statements or styling.
 
   === Documentation
+
+  During the documentation phase, I assumed significant responsibilities. I contributed extensively to the project poster as well as the final report, writing major parts of several sections, including the introduction, motivation, project planning, evaluation of game engines, unit testing, and time tracking.
 ])
