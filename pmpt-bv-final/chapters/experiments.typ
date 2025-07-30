@@ -5,7 +5,7 @@
 
 #pagebreak()
 
-= Experimental Methodology
+= Experimental Methodology #bv
 
 #col[
 
@@ -71,7 +71,7 @@
 
 #pagebreak()
 
-= Experiments and Results<experiments_and_results>
+= Experiments and Results #bv <experiments_and_results>
 
 #col[
   This section presents the results of our systematic experimentation process, which involved 11 major experimental iterations (v1.0 through v1.11) spanning approximately two months of development. Each experiment was designed to explore different aspects of the RT60 prediction problem, from architectural choices to training methodologies and data augmentation strategies.
