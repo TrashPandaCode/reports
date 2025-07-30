@@ -68,4 +68,6 @@
   This tool however does not accurately reflect the time I spent on my tasks, as it only tracks the time between two commits that lie within a time span of 2.5 hours. For an accurate way of estimating time spent, my way of handling commits was not optimal. I would often begin work on a task and then only commit once I was completely finished, rather than commiting more frequently for each step I would progress. This would lead to a lot of hours not being tracked through the tool. I tried to improve this by committing more frequently, but I was not able to consequently adapt to this way of working.
 
   === Time Spent
+
+  #todo("this section needs to be filled out with actual time tracking data")
 ]
