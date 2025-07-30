@@ -30,6 +30,8 @@
   //
   During the project phase, I was primarily responsible for the creation and implementation of the synthetic room generator in Blender. This included the detailed modeling of various assets such as chairs, tables, and wall assets, as documented in @synth_data_gen. To enable further processing, I developed scripts that export the generated room data in formats compatible with Leo Kling's Treble script. Additionally, I authored a script that facilitates quick adjustments to the room generator's parameters and configuration, streamlining dataset creation.
 
+  In preparation for potential issues with Treble, I also dedicated time to learning the I-SIMPA simulation tool. This included an attempt to export the generated room geometries to a format usable by I-SIMPA, in order to evaluate it as a fallback solution for acoustic simulation. Although this alternative path was not ultimately pursued further, the exploration helped reduce the risk of pipeline failure due to software limitations or incompatibilities.
+
   In total, I generated 10 distinct room configurations. I conducted seven official experiments with neural network models as listed in the @exp_result_summary. In parallel, I also explored minor experiments involving image resolution; however, these did not lead to conclusive results.
 
   I collaborated closely with Leo on the "simple experiment" subproject. My contributions included adapting the room generator for the newly defined room types and generating the corresponding dataset in its entirety. Together with Leo, I modified the model architecture and updated the training and evaluation scripts accordingly. We also co-developed a new simulation script tailored to the specific requirements of the simplified room configurations, as detailed in the @simple_experiment documentation.
@@ -46,18 +48,16 @@
   //   - wrote t-sne section
   //   - created the gantt charts
 
-  In the documentation phase, I was responsible for substantial portions of the final report. I collaborated with Milan on the abstract and co-authored the section on fundamental concepts of reverberation time. I also wrote the Introduction and Motivation section.
+  In the documentation phase, I was responsible for substantial portions of the final report. I collaborated with Milan on the abstract and co-authored the section on fundamental concepts of reverberation time. I also wrote the Introduction and Motivation section based on the first drafts by Milan Jezovsek.
 
   Regarding the dataset, I co-authored the corresponding documentation, focusing on the synthetic data generation process. I also co-authored the section describing the simple experiment and contributed to the broader discussion in the experiments section. Additionally, I was responsible for writing the subsection on the t-SNE visualizations used to evaluate feature-space clustering. Finally, I designed and created the Gantt charts used to visualize our project timeline.
 
   == Milan Jezovsek
   === Project Phase
-  - been involved in the real world data collection
-  - generated synthetic data using Jonathan's tooling
-  - experimented with the models architecture
+  During the project development phase, I contributed to multiple aspects of the research pipeline, ranging from data collection to architectural experimentation. I participated in real-world data collection efforts to build the empirical dataset and leveraged Jonathan's tooling to generate synthetic training data, expanding the available data resources for model development. My primary focus centered on architectural experimentation, particularly through the implementation of experiments v1.14 and v1.15, which investigated the integration of spatial attention mechanisms into the existing model framework. These experiments aimed to enhance the model's ability to focus on acoustically relevant spatial features within room imagery for improved RT60 prediction accuracy.
 
   === Documentation Phase
-  - contributed to the documentation by initializing the fundamental concepts section and fleshing out the parts for Reverberation Time. Laying the groundwork for the section on Reverberation Time which has then been restrucutred and expanded by other team members and myself
+  In the documentation phase, I made substantial contributions to the project's technical documentation by initializing the fundamental concepts section and comprehensively developing the reverberation time components. This foundational work established the theoretical groundwork for the reverberation time section, which was subsequently restructured and expanded through collaborative efforts with other team members and myself. Additionally, I enriched the experiments and results documentation by incorporating detailed analyses of experiments v1.14 and v1.15, providing comprehensive coverage of the spatial attention investigation including methodology, performance metrics, and critical evaluation of the approach's effectiveness for visual-acoustic RT60 estimation. I also wrote the first drafts for our abstract as well as the Introduction and Motivation sections, which were later refined through collaborative efforts by Jonathan Kron.
 
   == Philipp Wendt
   === Project Phase
