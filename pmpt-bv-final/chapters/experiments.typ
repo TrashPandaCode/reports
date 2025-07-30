@@ -254,6 +254,19 @@
 
   The real-only configuration achieved slightly better performance (MSE = $0.0918$) compared to the mixed-domain approach (MSE = $0.0955$). However, the synthetic-only configuration performed significantly worse (MSE = $1.3696$), indicating the domain gap between synthetic and real data might be larger than previously thought. The dramatically lower R² score ($-21.2365$) in the synthetic-only case further emphasizes the challenge of generalizing purely synthetic training to realistic acoustic scenarios. These findings suggest that while our synthetic data generation approach provides valuable training signals, there remain significant differences between our synthetic and real acoustic environments.
 
+  === Frozen Backbone Experiment (v1.4.1)
+  Building upon v1.4's enhanced data augmentation, experiment v1.4.1 investigated the effects of freezing the ResNet50 backbone layers while training only the final classification layers. This transfer learning approach was motivated by the hypothesis that low-level visual features from Places365 pretraining would remain relevant for acoustic scene understanding.
+  Training was conducted exclusively on synthetic data with identical hyperparameters to v1.4, except for the reduced parameter space due to frozen layers. The results demonstrated significant performance degradation:
+
+  - MSE = $1.0948$
+  - RMSE = $1.0463$
+  - MAE = $0.7198$
+  - R² = $-0.2622$
+
+  The substantial increase in MSE from v1.4's $0.0973$ to $1.0948$ represents more than a 10-fold deterioration in prediction accuracy. The negative R² score indicates performance worse than a simple mean predictor, suggesting that frozen features were insufficient for capturing visual-acoustic relationships required for RT60 estimation.
+  These findings highlight the importance of end-to-end fine-tuning for cross-modal tasks, reinforcing that acoustic prediction necessitates comprehensive feature adaptation throughout the network architecture rather than just final layer modification.
+  
+
   #todo("v1.13 to v1.15 and v1.4.1 are missing")
 
   == Performance Summary and Key Findings
