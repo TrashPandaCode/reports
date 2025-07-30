@@ -9,13 +9,46 @@
 
 #col[
   == Markus Heming
-  === 
+  ===
 
   == David Klein
 
 
   == Jonathan Kron
+  === Project Phase
+  // - created the room generator in Blender
+  //   - modelling of chair, tables and other assets explained in @synth_data_gen
+  //   - wrote scripts to export room data (for use in Treble)
+  //   - wrote script to make adjusting the room generator easier
+  // - 10 Räume generiert
+  // - 7 official model experiments as listed in @exp_result_summary
+  //   - some smaller experiments regarding resolution that didn't go anywhere
+  // - collaborated with Leo on the "simple experiment"
+  //   - adjusted the room generator
+  //   - generated the entire new dataset
+  //   - together with leo adjusted model, train and evaluate scripts, as well as wrote the simulation script for the new roomtypes as explained in @simple_experiment
+  //
+  During the project phase, I was primarily responsible for the creation and implementation of the synthetic room generator in Blender. This included the detailed modeling of various assets such as chairs, tables, and wall assets, as documented in @synth_data_gen. To enable further processing, I developed scripts that export the generated room data in formats compatible with Leo Kling's Treble script. Additionally, I authored a script that facilitates quick adjustments to the room generator's parameters and configuration, streamlining dataset creation.
 
+  In total, I generated 10 distinct room configurations. I conducted seven official experiments with neural network models as listed in the @exp_result_summary. In parallel, I also explored minor experiments involving image resolution; however, these did not lead to conclusive results.
+
+  I collaborated closely with Leo on the "simple experiment" subproject. My contributions included adapting the room generator for the newly defined room types and generating the corresponding dataset in its entirety. Together with Leo, I modified the model architecture and updated the training and evaluation scripts accordingly. We also co-developed a new simulation script tailored to the specific requirements of the simplified room configurations, as detailed in the @simple_experiment documentation.
+
+  === Documentation Phase
+
+  // - wrote major parts of the documentation including:
+  //   - collaborated with Milan on the abstract
+  //   - wrote Introduction and motivation
+  //   - collaborated with Milan on fundamental-concepts regarding reverberation time
+  //   - co-authored dataset, contributing to the synthetic generation explaination
+  //   - co-authored the simple experiment
+  //   - contributed to the experiemnts section
+  //   - wrote t-sne section
+  //   - created the gantt charts
+
+  In the documentation phase, I was responsible for substantial portions of the final report. I collaborated with Milan on the abstract and co-authored the section on fundamental concepts of reverberation time. I also wrote the Introduction and Motivation section.
+
+  Regarding the dataset, I co-authored the corresponding documentation, focusing on the synthetic data generation process. I also co-authored the section describing the simple experiment and contributed to the broader discussion in the experiments section. Additionally, I was responsible for writing the subsection on the t-SNE visualizations used to evaluate feature-space clustering. Finally, I designed and created the Gantt charts used to visualize our project timeline.
 
   == Milan Jezovsek
 
@@ -40,6 +73,6 @@
   - Datenaufbereitung
   - Datenanalyse
   - Modelltraining
-  - 
+  -
 
 ]

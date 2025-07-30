@@ -43,7 +43,7 @@
   ))
   #figure(caption: [Example image for real data], image("../images/real_example.jpg"))
 
-  === Synthetic Data Generation
+  === Synthetic Data Generation<synth_data_gen>
 
   The synthetic component of our dataset was developed through a three-stage pipeline. Initially, room environments were generated using the Blender software @foundationBlenderorgHomeBlender, which enabled us to create diverse room geometries and material properties while simultaneously rendering corresponding images of these virtual spaces.
 
