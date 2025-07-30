@@ -17,11 +17,11 @@
 
   We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on office room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
 
-  == Data Sources
+  == Data Sources #pmpt
 
   To address the absence of suitable existing datasets, we undertook our own data collection efforts. Recognizing that capturing sufficient real-world data for effective model training would be impractical, we adopted a hybrid approach that combines authentic measurements with synthetically generated images and impulse responses to supplement our real-world dataset. Reseach in the machine learning field has shown such hybrid approaches to be effective @yangDepthAnythingUnleashing2024.
 
-  === Real-World Measurements #pmpt
+  === Real-World Measurements
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
@@ -43,7 +43,7 @@
   ))
   #figure(caption: [Example image for real data], image("../images/real_example.jpg"))
 
-  === Synthetic Data Generation #pmpt
+  === Synthetic Data Generation
 
   The synthetic component of our dataset was developed through a three-stage pipeline. Initially, room environments were generated using the Blender software @foundationBlenderorgHomeBlender, which enabled us to create diverse room geometries and material properties while simultaneously rendering corresponding images of these virtual spaces.
 

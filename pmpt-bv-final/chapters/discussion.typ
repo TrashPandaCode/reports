@@ -10,7 +10,7 @@
 
   The Ertsi project represents a systematic investigation into the feasibility of predicting frequency-dependent reverberation time (RT60) from single room images using deep learning techniques. This discussion examines the key findings, limitations, and implications of our experimental work, while contextualizing the results within the broader field of acoustic-visual learning.
 
-  == Performance Analysis and Model Effectiveness
+  == Performance Analysis and Model Effectiveness #bv
 
   Our experimental campaign yielded mixed but informative results regarding the viability of image-based RT60 estimation. The best-performing model (v1.4) achieved an MSE of 0.0973, representing a 9.6% improvement over the initial baseline. While this demonstrates measurable progress through systematic optimization, the absolute performance levels suggest significant challenges remain in achieving the precision required for practical applications.
 
@@ -18,7 +18,7 @@
 
   The consistent performance across multiple architectural variants (ResNet18, ResNet50, EfficientNet, ConvNeXt) suggests that the primary limitations lie not in model capacity but rather in the fundamental challenges of the acoustic-visual mapping problem and dataset constraints. This finding aligns with recent observations in domain adaptation literature, where data quality and domain alignment often prove more critical than architectural sophistication.
 
-  == Dataset Challenges and Domain Gap Issues
+  == Dataset Challenges and Domain Gap Issues #bv
 
   The hybrid synthetic-real dataset approach, while necessary given the absence of suitable existing datasets, introduced several fundamental challenges that significantly impacted model performance. The domain gap between synthetic and real images proved more problematic than initially anticipated, with direct multi-domain training (v1.9) resulting in substantial performance degradation (MSE = 0.2803) and training instability.
 
@@ -28,7 +28,7 @@
 
   The finding that data quality matters more than quantity, demonstrated by v1.2's performance degradation when adding lower-quality synthetic scenes, emphasizes the critical importance of curated dataset development in specialized domains like acoustic modeling. These observations suggest that significantly larger datasets would be necessary for optimal model performance. However, the optimal composition of such an expanded dataset remains an open question. While we are confident that more data is needed, it is yet to be discovered whether more synthetic or more real data would be better. The question of how this larger dataset should be constructed requires further empirical investigation to determine the most effective balance between synthetic and real data sources.
 
-  == Methodological Insights and Technical Lessons
+  == Methodological Insights and Technical Lessons #bv
 
   Several key methodological insights emerged from our systematic experimental approach. The comparable performance across different backbone architectures (ResNet, EfficientNet, ConvNeXt, Vision Transformers) suggests that the choice of visual encoder is less critical than previously hypothesized. ResNet50 pretrained on Places365 consistently performed well, likely due to its scene-understanding capabilities being well-aligned with our room analysis task. The marginal differences between architectures indicate that the bottleneck lies in the acoustic-visual relationship learning rather than feature extraction capacity.
 
@@ -36,14 +36,14 @@
 
   While ensemble approaches (v1.5) achieved marginally better performance (MSE = 0.0925), the computational overhead and minimal gains made single-model approaches more practical. This observation is particularly relevant for deployment scenarios where model efficiency is crucial. The systematic exploration of training techniques revealed that careful regularization, appropriate learning rate scheduling, and gradient accumulation could provide modest but consistent improvements. However, these optimizations could not overcome the fundamental data limitations.
 
-  == Acoustic Modeling Considerations
+  == Acoustic Modeling Considerations #pmpt
 
   The frequency-dependent nature of RT60 prediction introduced additional complexity beyond standard computer vision tasks. Our results indicate that certain frequency bands may be more predictable from visual cues than others, though comprehensive frequency-specific analysis remains incomplete. The variation in prediction accuracy across frequency bands likely reflects the complex relationship between visual material properties and their acoustic absorption characteristics.
 
   The simplified experiment's success suggests that fundamental acoustic principles, particularly room volume effects on reverberation, can be learned effectively from visual data. However, the translation to complex real-world scenarios involving furniture, varying materials, and acoustic interactions proved significantly more challenging. This gap indicates that while the core hypothesis is sound, practical implementation requires more sophisticated approaches to handle acoustic complexity.
 
   == Limitations and Scope Constraints
-
+  
   Several important limitations must be acknowledged in interpreting these results. The focus on TH Köln office environments limits generalizability to other architectural styles, room types, or acoustic conditions. The relatively homogeneous nature of office spaces may not provide sufficient acoustic diversity for robust model training.
 
   While RT60 measurements followed established protocols, the acoustic complexity of real rooms with furniture, occupants, and varying materials may not be fully captured by our simplified measurement setup. Environmental factors such as temperature, humidity, and air circulation were not systematically controlled or incorporated into the modeling. Single viewpoint images inherently limit the available spatial information compared to 360° panoramic views or multiple perspective approaches used in related work. The standardized doorway perspective, while ensuring consistency, may not capture acoustically relevant details visible from other viewpoints. This limitation of single images and specific viewpoints stems from the project's initial usage for mobile AR/MR applications.

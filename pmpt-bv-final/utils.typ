@@ -4,8 +4,8 @@
 
 #let entry_counter = counter("entry_counter")
 
-#let pmpt = text(fill: rgb("#086bff"), size: 8pt)["PMPT"]
-#let bv = text(fill: rgb("#ff0852"), size: 8pt)["BV"]
+#let pmpt = text(fill: rgb("#086bff"), size: 10pt)["PMPT"]
+#let bv = text(fill: rgb("#ff0852"), size: 10pt)["BV"]
 
 #let entry(title, beginn_date, end_date, resp, results, activities, dependencies) = {
   entry_counter.step()
