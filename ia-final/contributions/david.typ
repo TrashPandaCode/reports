@@ -4,9 +4,11 @@
 #pagebreak()
 #col[
 == Contributions of David Klein
-// More intro
-
 During the planning phase of the project I vocalized that I wanted to be part of the game development team and also wanted to work on the design of the website. I was consequently assigned to these work packages: `Proof of Concept`, `UI/UX Overall`, `Game Design`, `Game Creation`, `Unit Test`, `User Testing` and `Help Tool`.
+
+During the course of this project I ended up spending most of my time on the game design, the creation of the game assets and the development of the game and it's levels. I also contributed to the documentation and user testing. I struggled a lot with integrating myself into the project, which lead to me not contributing as much as I could have. I tried to consistently contribute to the project, but already early on I was not happy with the amount and the quality of my contributions, which also started to affect my confidence regarding the project.
+
+Because of this I did not end up spending any time on the `Unit Testing` and the `Help Tool` work packages, even though I was assigned to them. 
 
 === Planning Phase
 // Project planning
@@ -41,8 +43,11 @@ Our goal was to be done with the development phase by the time of the milestone 
 === Documentation <david_doc>
 Looking back at the Development Phase I was really dissappointed with myself and the work I had put towards the project. In an attempt to regain my focus and put a more adequate amount of time into the documentation I decided to start tracking my time sepereately and focus more on myself. Watching other team members get back on track and contribute more consistently after some of the changes we made, while I was still struggling with the same issues was really frustrating and I thought this change would help mitigate that.
 
-At the start of July I came up with a rough structure for the documentation and we started the writing process on some of the sections. On July, 13th we had a team meeting where we talked more in depth about the structure. We decided to change some of the already existing sections to fit more into our new structure and also ended up removing some parts. In the end I ended up writing various sections about the implementation of the game. // more detailed + Add section refs i guess
+At the start of July I came up with a rough structure for the documentation and we started the writing process on some of the sections. I wrote some texts, trying to expand on what we already had for the didactic concept and started writing abou the implementation of the game. 
 
+On July, 13th we had a team meeting where we talked more in depth about the structure. We decided to change some of the already existing sections to fit more into our new structure and also ended up removing some parts. We changed the section about the implementation to inculde Challenges and Solutions, so I revised some of the texts I had already written and added more sections to it. I ended up writing the sections from `Game` to `Node Editor`. I also wrote a small section in the `Unit Testing` section about tracking player behaviour.
+
+Throught the Documentation Phase I also spent time reviewing texts written by other team members and giving feedback on them. 
 
 === Time Tracking Methodology
 I had a similar approach to time tracking as the rest of the team. For each session I tried to be honest with myself and only log time, which was actually spent working on an issue. Time spent discussing topics with other team members and also most untracked efforts were be ignored.

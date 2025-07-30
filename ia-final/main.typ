@@ -484,7 +484,7 @@
   - Walking to a designated area
   Once the win condition is met we call the `setLevelCompleted` function from the `GameStore`.
 
-  == Node Editor
+  == Node Editor <node_editor>
   Another core component of our game is the node editor. It was build using ReactFlow as a foundation, which provides a framework for node-based editors @ReactFlow2025. However all internal logic, such as data flow and computation of the node graph, needed to be developed and implemented by us. Managing the state of the node graph was another major focus. We needed a structure that could track nodes and edges reliably, so that we were able to implement serializing the node graph and other quality of life features. Accessiblity was also one of the primary concerns while developing the node editor. We wanted a system that can compute complex algorithms, but at the same time is beginner friendly and not overwhelming.
   //challenges:
   //  create logic to add nodes
@@ -554,14 +554,14 @@
   == User Testing
   The structured user testing began significantly later than originally planned, as this aspect was not given the intended priority during the development phase. We originally intended the user testing to run parallel to the development of the game and the node editor, thereby guiding respective implementation decisions. As a result, we primarily conducted application testing ourselves throughout the development phase, and only occasionally consulted fellow students regarding minor design and usability aspects.
 
-  === User Testing Concept
+  === User Testing Concept <user_testing>
   The original concept for user testing and related research was conducted by Leo Kling and compiled into a `Typst` document. This was then approved by some members of the team but disregarded by others, which led to a noticeable delay in making a decision on how to proceed with user testing and setting up a survey.
 
   The user testing concept was designed to gather feedback on the usability and educational effectiveness of Dumpster Diving. It was conducted as a structured evaluation combining think-aloud protocol with standardized questionnaires. Test participants were asked to complete the first four levels of the game while continuously verbalizing their thoughts, impressions, and most importantly their points of confusion. An observer would document these utterances and transfer them into a structured list of concrete improvement suggestions.
 
   For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS) @brookeSUSQuickDirty1995 /*i love this being the citation*/, adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
-  === Tracking Player Behaviours
+  === Tracking Player Behaviours 
   We planned to collect data on user behaviour during testing to find patterns or tendencies in how users interact with our application. Several options were discussed for implementing telemetry, such as using a dedicated API, but we chose to keep things simple by collecting and storing the data locally. Since we did not plan to include data tracking in the final release, a lightweight solution seemed like the more appropriate choice at the time.
 
   Tracking was implemented in a separate branch using Zustand. A custom Zustand store was created to manage an array of `LevelLog` objects, each representing a user's interaction with a single level. When a new level is started, a new `LevelLog` entry is appended to the store. Data is then collected continuously until the level is completed. The following information gets captured for each level:
