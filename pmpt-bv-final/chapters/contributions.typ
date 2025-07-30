@@ -51,7 +51,13 @@
   Regarding the dataset, I co-authored the corresponding documentation, focusing on the synthetic data generation process. I also co-authored the section describing the simple experiment and contributed to the broader discussion in the experiments section. Additionally, I was responsible for writing the subsection on the t-SNE visualizations used to evaluate feature-space clustering. Finally, I designed and created the Gantt charts used to visualize our project timeline.
 
   == Milan Jezovsek
+  === Project Phase
+  - been involved in the real world data collection
+  - generated synthetic data using Jonathan's tooling
+  - experimented with the models architecture
 
+  === Documentation Phase
+  - contributed to the documentation by initializing the fundamental concepts section and fleshing out the parts for Reverberation Time. Laying the groundwork for the section on Reverberation Time which has then been restrucutred and expanded by other team members and myself
 
   == Philipp Wendt
   === Project Phase
