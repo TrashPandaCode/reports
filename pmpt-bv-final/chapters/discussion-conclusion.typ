@@ -69,9 +69,13 @@
   Systematic collection of larger, more diverse datasets across multiple architectural styles and acoustic conditions would enable more robust model development. Collaborative data collection efforts across multiple institutions could accelerate progress in this field. Improving synthetic data generation through more sophisticated rendering techniques, better material modeling, and enhanced environmental realism could reduce domain gap issues. Future work should also incorporate perceptual studies to understand the relationship between numerical prediction accuracy and perceived acoustic quality, ensuring that technical improvements translate to meaningful user benefits.
 
   The Ertsi project demonstrates both the promise and challenges of visual-acoustic learning. While significant obstacles remain, the systematic methodology and insights gained provide a solid foundation for continued investigation in this emerging interdisciplinary field.
+]
 
-  = Conclusion<conclusion>
+#pagebreak()
 
+= Conclusion<conclusion>
+
+#col[
   This project set out to investigate the viability of predicting frequency-dependent reverberation times (RT60) from single RGB images of office rooms at TH Köln using deep learning techniques, building on the concepts introduced in @fundamental_concepts. Through the development and analysis of two distinct convolutional neural network (CNN) models based on the ResNet50 architecture, we demonstrated that visual features alone can serve as informative predictors of acoustic characteristics, even in the absence of audio data or explicit 3D spatial input. By employing a hybrid dataset of real-world measurements and synthetically rendered scenes (@data_sources and @synth_data_gen), we sought to overcome the limitations of data scarcity and improve generalization across diverse room configurations.
 
   While the large model trained on both real and synthetic data faced challenges due to domain discrepancies and insufficient data volume, the smaller model trained solely on synthetic shoebox rooms performed remarkably well, showing accurate predictions across a wide range of room volumes. These results suggest that with controlled environments and simplified assumptions, image-based RT60 estimation is not only feasible but can yield robust outcomes. However, the limitations observed—particularly in terms of data variability, domain adaptation, and frequency-dependent accuracy—underscore the need for larger and more diverse datasets, improved simulation realism, and domain adaptation strategies to close the gap between synthetic and real-world imagery.
