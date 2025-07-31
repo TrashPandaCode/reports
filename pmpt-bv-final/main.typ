@@ -57,5 +57,7 @@
 #pagebreak()
 
 == Time Tracking<time_tracking>
+#place(center + horizon, dy: 1cm, muchpdf(read("./docs/Stundentracking1.pdf", encoding: none), width: 90%))
+#pagebreak()
+#place(center + horizon, dy: 1cm, muchpdf(read("./docs/Stundentracking2.pdf", encoding: none), width: 90%))
 
-#todo("add time tracking")

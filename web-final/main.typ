@@ -28,7 +28,7 @@
 #outline(depth: 3)
 #outline(title: [List of Figures], target: figure.where(kind: image))
 #outline(title: [List of Tables], target: figure.where(kind: table))
-#todo_outline
+// #todo_outline
 #pagebreak()
 
 #set heading(numbering: "I.1.a") // idk können wir auch noch ändern
