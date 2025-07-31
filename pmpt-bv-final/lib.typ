@@ -50,7 +50,11 @@
     heading(level: 1)[Table of Contents]
   }
 
+
   contents(depth: depth)
+  
+  outline(title: [List of Figures], target: figure.where(kind: image))
+  outline(title: [List of Tables], target: figure.where(kind: table))
   v(0.4in)
   pagebreak()
 }

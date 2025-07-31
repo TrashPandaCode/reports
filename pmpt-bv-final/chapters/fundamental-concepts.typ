@@ -51,7 +51,7 @@
 
   #figure(
     image("../images/audio-installation-to-evaluate-reverberation-properties.png"),
-    caption: "A Sketch of a setup for measuring RT60 using Lundeby's Method. Source: https://vocal.com/dereverberation/methods-of-rt60-estimation/",
+    caption: [Sketch of a setup for measuring reverberation times @MethodsReverbTime],
   )<measurement_sketch>
 
   ==== Simulation Methods
