@@ -18,7 +18,7 @@
   outline(depth: depth, title: none)
 }
 
-#let quote = (body) => {
+#let quote = body => {
   align(center)[
     #line(length: 80%, stroke: primary)
     #text(style: "italic")[#body]
@@ -136,7 +136,6 @@
   }
 
   let footer = () => {
-
     context {
       if counter(page).get().first() == 1 and show-title-page { return }
 
@@ -144,13 +143,18 @@
 
       let elems = query(selector(heading.where(level: 1)).before(loc))
       let section = if elems == () {} else { elems.last().body }
-      grid(columns: (1fr, 20pt, 1fr), align(left)[
-        #text(size: 10pt, fill: black.lighten(70%))[#title]
-      ], align(center)[
-        *#counter(page).display()*
-      ], pad(left: 15%, align(right)[
-        #text(size: 10pt, fill: black.lighten(70%))[#section]
-      ]))
+      grid(
+        columns: (1fr, 20pt, 1fr),
+        align(left)[
+          #text(size: 10pt, fill: black.lighten(70%))[#title]
+        ],
+        align(center)[
+          *#counter(page).display()*
+        ],
+        pad(left: 15%, align(right)[
+          #text(size: 10pt, fill: black.lighten(70%))[#section]
+        ]),
+      )
     }
   }
 
@@ -202,11 +206,16 @@
             columns: (1fr, 3fr, 1fr),
             align(left, none),
             align(center, none),
-            align(right, authors.map(author => align(start)[#text(font: "Satoshi", [
-                *#author.name* -
-                #author.matnr
-              ])
-            ]).join(", ")),
+            align(
+              right,
+              authors
+                .map(author => align(start)[#text(font: "Satoshi", [
+                    *#author.name* -
+                    #author.matnr
+                  ])
+                ])
+                .join(", "),
+            ),
           )
         },
       )
@@ -226,7 +235,7 @@
   if bibliography != none {
     show std-bibliography: set text(11pt)
     set std-bibliography(title: none, style: "ieee")
-    
+
     pagebreak()
     if lang == "de" {
       heading(level: 1)[Literaturverzeichnis]
@@ -234,9 +243,7 @@
       heading(level: 1)[References]
     }
     col[
-      #par(justify: false, leading: 0.5em)[
-        #bibliography
-      ]
+      #bibliography
     ]
   }
 }

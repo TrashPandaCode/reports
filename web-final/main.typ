@@ -22,6 +22,7 @@
   show-title-page: true,
   img: none,
   show-outline: false,
+  bibliography: bibliography("web.bib"),
 )
 
 #outline(depth: 3)
@@ -47,14 +48,6 @@
 
 // = Glossary
 // #todo("fill glossary (if needed)")
-
-
-
-= References / Bibliography
-#todo("add references (e.g. from user testing, accessibility)")
-
-// = Index
-
 
 #pagebreak()
 #include "chapters/appendix.typ"
