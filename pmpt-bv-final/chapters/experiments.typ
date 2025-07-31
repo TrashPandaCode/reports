@@ -5,29 +5,29 @@
 
 #pagebreak()
 
-= Experimental Methodology #bv
+= Experimental Methodology #bv <experimental_methodology>
 
 #col[
 
-  == Evaluation Metrics
+  == Evaluation Metrics <evaluation_metrics>
 
   When evaluating the performance of our estimation model, we employed a comprehensive set of metrics to assess its accuracy and generalization capabilities. The primary evaluation metrics will be briefly described in the following sections.
 
-  === Mean Squared Error & Mean Absolute Error
+  === Mean Squared Error & Mean Absolute Error <mse_mae>
 
   Mean Squared Error (MSE) and Mean Absolute Error (MAE) serve as fundamental regression metrics for quantifying the accuracy of RT60 predictions. MSE penalizes larger prediction errors more heavily due to its quadratic nature, making it particularly sensitive to outliers, while MAE provides a more robust measure of average prediction deviation. In the context of RT60 estimation, these metrics are calculated per frequency band, allowing for detailed analysis of model performance across the acoustic spectrum @goodfellowDeepLearning2016 @MeanAbsoluteError2025 @MeanSquaredError2025.
 
-  === R#super[2] Coefficient of Determination
+  === R#super[2] Coefficient of Determination <r2_coefficient>
 
   The R#super[2] coefficient quantifies the proportion of variance in the measured RT60 values that is predictable from the input images. This metric provides insight into how well the model captures the underlying acoustic-visual relationships present in the data. An R#super[2] value approaching 1.0 indicates strong predictive capability, while values closer to 0 (or even negative values) suggest limited model effectiveness. For RT60 estimation tasks, R#super[2] values are particularly valuable when evaluated per frequency band, as acoustic behavior varies significantly across the frequency spectrum due to material absorption characteristics and room geometry effects @CoefficientDetermination2025.
 
-  === Grad-CAM Visualization
+  === Grad-CAM Visualization <gradcam>
 
   Gradient-weighted Class Activation Mapping (Grad-CAM) @selvarajuGradCAMVisualExplanations2016 provides interpretable visualizations of which regions in input images contribute most significantly to RT60 predictions. This technique leverages gradients flowing into the final convolutional layer to generate localization maps highlighting important visual features. In our acoustic estimation context, Grad-CAM reveals whether the model appropriately focuses on acoustically relevant features such as room geometry, surface materials, and furnishing density. This interpretability is crucial for validating that the model learns meaningful acoustic-visual correlations rather than spurious dataset artifacts. An example Grad-CAM visualization is shown in @grad_cam_example, where the model's attention is directed towards the absorbers, which are critical for reverberation characteristics.
 
   #figure(caption: [Grad-CAM example], image("../images/gradcam_combined_img4.png"))<grad_cam_example>
 
-  === t-SNE Analysis
+  === t-SNE Analysis <tsne_analysis>
 
   t-distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear dimensionality reduction technique widely used for visualizing high-dimensional data in a low-dimensional space (typically 2D or 3D). Unlike linear methods such as Principal Component Analysis (PCA), t-SNE aims to preserve local neighborhood relationships rather than global structure @caiTheoreticalFoundationsTSNE2022. It does so by converting pairwise similarities in high-dimensional space into joint probabilities and minimizing the divergence between these and their low-dimensional counterparts @andrewsDimensionReductionPCA.
 
@@ -37,11 +37,11 @@
 
   #figure(caption: [t-SNE analysis of gt data], image("../images/gt_latent_visualization.png"))<tsne_gt>
 
-  == Experimental Design and Execution
+  == Experimental Design and Execution <experimental_design>
 
   Our experimental approach emphasized reproducibility, systematic evaluation, and methodical documentation throughout the research process. The experimental methodology was designed to enable rigorous comparison between different model configurations while maintaining scientific rigor in our analysis.
 
-  === Model Version Control and Tracking
+  === Model Version Control and Tracking <version_control>
 
   To ensure comprehensive documentation of our experimental progress, we implemented a systematic tracking methodology using a _Google Sheets_ (@appendix_experiments) spreadsheet to meticulously record all experimental configurations and outcomes. This approach allowed us to maintain a detailed log of model versions, hyperparameter settings, training configurations, and corresponding performance metrics across all frequency bands. Each experimental run was assigned a unique version identifier, referencing a git commit, facilitating easy reference and comparison between different model iterations.
 
@@ -49,13 +49,13 @@
 
   We also utilized _sciebo_ for additional storage and backup of our experimental data, like plots and model weights. Initially, we used _DVC_ for version control of our data and model weights, but later switched to _sciebo_ as it provided a more user-friendly interface, without the need to onboard all team members to a new tool.
 
-  === Architecture Exploration
+  === Architecture Exploration <architecture_exploration>
 
   Our experimental design incorporated systematic exploration of multiple CNN backbone architectures to identify the most suitable foundation for RT60 estimation. We evaluated several pretrained architectures, including different variants of ResNet (ResNet18, ResNet34, ResNet50), EfficientNet models, and Vision Transformer architectures. Each backbone was assessed based on its capacity to learn meaningful acoustic-visual relationships while maintaining computational efficiency for our specific task requirements.
 
   The architecture exploration phase involved careful consideration of model complexity versus performance trade-offs, with particular attention to overfitting tendencies given our limited dataset size. We systematically documented the performance characteristics of each architecture across different frequency bands, enabling informed decisions about the optimal balance between model capacity and generalization capability.
 
-  === Hyperparameter Optimization
+  === Hyperparameter Optimization <hyperparameter_optimization>
 
   We conducted extensive hyperparameter optimization experiments covering learning rates, batch sizes, optimizer configurations, regularization parameters, data augmentation strategies, and learning rate schedules.
 
@@ -76,27 +76,27 @@
 #col[
   This section presents the results of our systematic experimentation process, which involved 11 major experimental iterations (v1.0 through v1.11) spanning approximately two months of development. Each experiment was designed to explore different aspects of the RT60 prediction problem, from architectural choices to training methodologies and data augmentation strategies.
 
-  == Experimental Framework
+  == Experimental Framework <experimental_framework>
 
   Our experimental approach followed a structured methodology with comprehensive tracking of hyperparameters, architectural decisions, and performance metrics. All experiments were version-controlled using Git, with commit hashes recorded for reproducibility. The primary evaluation metric used throughout was Mean Squared Error (MSE) on the validation set, supplemented by visual inspection of prediction distributions and R² scores where applicable.
 
   The experiments can be broadly categorized into three phases: initial baseline establishment (v1.0-v1.2), architectural and training optimizations (v1.3-v1.8), and advanced techniques exploration (v1.9-v1.11).
 
-  == Phase 1: Baseline Development (v1.0-v1.2)
+  == Phase 1: Baseline Development (v1.0-v1.2) <phase1>
 
-  === Initial Baseline (v1.0)
+  === Initial Baseline (v1.0) <initial_baseline>
   Our first experiment established the foundational architecture using ResNet50 pretrained on Places365, chosen for its relevance to scene understanding tasks. The model employed a hybrid training strategy, utilizing both synthetic and real data during training and evaluation phases.
 
   The synthetic dataset initially comprised samples from Leo Kling (scenes 1-10) and Jonathan Kron (scenes 1-6, 9), representing a diverse set of room configurations. This baseline achieved an MSE of $0.1076$, providing our initial performance benchmark.
 
-  === Dataset Expansion (v1.1-v1.2)
+  === Dataset Expansion (v1.1-v1.2) <dataset_expansion>
   Building upon the baseline architecture, v1.1 expanded the synthetic dataset to include contributions from additional team members: Milan (scenes 1-4), Markus (scenes 1-10), and David (scenes 1-3), alongside the original Leo and modified Jonathan datasets. This expansion improved performance to an MSE of $0.0934$, representing a $13.2%$ improvement over the baseline.
 
   However, v1.2 demonstrated the importance of data quality over quantity. Adding Jonathan's remaining scenes (6, 7, 8) actually degraded performance to an MSE of $0.1144$, indicating that indiscriminate dataset expansion can be counterproductive.
 
-  == Phase 2: Architecture and Training Optimization (v1.3-v1.8)
+  == Phase 2: Architecture and Training Optimization (v1.3-v1.8) <phase2>
 
-  === Simulation Method Analysis (v1.3)
+  === Simulation Method Analysis (v1.3) <simulation_method>
   Version 1.3 investigated the impact of different acoustic simulation methodologies by partitioning the synthetic training data into "hybrid" and "Image Source Method (ISM) and Ray-Radiosity (RR)" categories. Three separate training runs were conducted:
 
   - Hybrid-only training: MSE = $0.1128$
@@ -112,7 +112,7 @@
 
   The results revealed that hybrid simulation methods did not yield superior performance, with only a $4.4%$ difference between approaches—likely within the margin of experimental error. This finding simplified our data preparation pipeline by eliminating the need for simulation method stratification.
 
-  === Data Augmentation Enhancement (v1.4)
+  === Data Augmentation Enhancement (v1.4) <data_augmentation>
   Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = $0.0973$, representing a slight but consistent enhancement over v1.3. Results can be seen in @v1_4_results and @v1_4_grad_cam.
 
   #figure(caption: [From left to right: Error distribution, prediction with uncertainty, prediction heatmap], grid(
@@ -123,7 +123,7 @@
   ))<v1_4_results>
   #figure(caption: [Grad-CAM example], image("../images/experiments/v1_4/gradcam_combined_img26.png"))<v1_4_grad_cam>
 
-  === Ensemble Methods Investigation (v1.5)
+  === Ensemble Methods Investigation (v1.5) <ensemble_methods>
   Our exploration of ensemble methods in v1.5 involved training three separate models and combining their predictions. Individual model performances were remarkably consistent:
   - Ensemble model 1: MSE = $0.0923$
   - Ensemble model 2: MSE = $0.0923$
@@ -132,7 +132,7 @@
 
   While achieving our best performance to date, the ensemble approach came with significant computational overhead. The combined model size of about 327 MB exceeded our 250 MB soft limit, making this approach impractical for deployment scenarios requiring model efficiency.
 
-  === Architecture Scaling Experiments (v1.6-v1.8)
+  === Architecture Scaling Experiments (v1.6-v1.8) <architecture_scaling>
   We systematically investigated the trade-offs between model complexity and performance through architecture scaling experiments:
 
   *ResNet18 (v1.6):* Implementing gradient accumulation, improved learning rate scheduling with OneCycleLR, enhanced early stopping criteria, and gradient clipping, we achieved MSE = $0.1022$ with a significantly reduced model size (~50 MB). This represented only a marginal performance decrease while providing substantial computational benefits.

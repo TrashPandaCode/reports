@@ -5,15 +5,15 @@
 
 #pagebreak()
 
-= Fundamental Concepts
+= Fundamental Concepts<fundamental_concepts>
 #col[
-  == Reverberation Time #pmpt
+  == Reverberation Time<reverberation_time> #pmpt
 
-  Reverberation time quantifies the temporal characteristics of sound decay within an enclosed acoustic environment. This parameter serves as a fundamental metric in architectural acoustics, significantly influencing the acoustic behavior and perceptual quality of enclosed spaces @sabineCollectedPapersAcoustics1922. The most prevalent measurement standard is RT60, which defines the time required for sound pressure level to decay by $60$ decibels from its initial value corresponding to one-thousandth of the initial sound pressure level, or equivalently, one-millionth of the initial sound intensity. This measurement exhibits frequency-dependent characteristics, with RT60 values varying substantially across different frequency bands due to the frequency-selective absorption properties of boundary materials @longArchitecturalAcoustics2006. In what follows, the terms _reverberation time_ and _RT60_ are used interchangeably.
+  As introduced in @introduction, reverberation time quantifies the temporal characteristics of sound decay within an enclosed acoustic environment. This parameter serves as a fundamental metric in architectural acoustics, significantly influencing the acoustic behavior and perceptual quality of enclosed spaces @sabineCollectedPapersAcoustics1922. The most prevalent measurement standard is RT60, which defines the time required for sound pressure level to decay by $60$ decibels from its initial value corresponding to one-thousandth of the initial sound pressure level, or equivalently, one-millionth of the initial sound intensity. This measurement exhibits frequency-dependent characteristics, with RT60 values varying substantially across different frequency bands due to the frequency-selective absorption properties of boundary materials @longArchitecturalAcoustics2006. In what follows, the terms _reverberation time_ and _RT60_ are used interchangeably.
 
   Alternative decay metrics include RT20 and RT30, which measure decay times for $20 "dB"$ and $30 "dB"$ reductions, respectively, with values extrapolated to estimate RT60. These shorter decay measurements are often employed when signal-to-noise ratios are insufficient for reliable $60 "dB"$ decay measurements, with the initial $5 "dB"$ of decay typically ignored to exclude early reflections that may compromise measurement uniformity @ISO3382220082008. RT20 and RT30 values are typically extrapolated to estimate RT60, though this extrapolation may introduce measurement uncertainties in acoustically complex environments.
 
-  === Perceptual Relevance
+  === Perceptual Relevance<perceptual_relevance>
 
   Reverberation time varies significantly depending on a room's purpose, size, geometry, and surface materials. Larger volumes generally yield longer RT60s due to extended sound paths and energy retention. Reflective surfaces increase reverberation, whereas absorptive materials and furnishings — especially with human occupancy — effectively reduce it. Geometric features that scatter sound can modify reflection patterns and decay behavior. Additionally, air absorption, particularly at higher frequencies, and environmental parameters such as humidity further influence RT60, especially in large or acoustically sensitive spaces.
 

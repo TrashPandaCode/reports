@@ -2,10 +2,10 @@
 #import "../utils.typ": *
 #import "@preview/splash:0.3.0": tailwind
 #import "@preview/big-todo:0.2.0": *
-= Related Works
+= Related Works<related_works>
 
 #col[
-  Traditionally, reverberation time (RT) estimation relied on the analysis of room impulse responses, which are often difficult to obtain in practical scenarios @kuttruffRoomAcoustics2006. This limitation has motivated the development of blind or non-intrusive methods that estimate RT directly from recorded audio, particularly speech.
+  Traditionally, reverberation time (RT) estimation relied on the analysis of room impulse responses, which are often difficult to obtain in practical scenarios @kuttruffRoomAcoustics2006, as described in @rev_man_meas. This limitation has motivated the development of blind or non-intrusive methods that estimate RT directly from recorded audio, particularly speech.
 
   Early non-intrusive approaches exploited statistical properties of speech or energy decay characteristics. For example, maximum likelihood estimation and linear prediction methods were used to model the decay rate of the reverberant tail in speech @ratnamBlindEstimationReverberation2003. While effective under controlled conditions, these methods often struggle with background noise or highly non-stationary speech.
 

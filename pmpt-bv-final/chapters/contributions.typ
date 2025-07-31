@@ -116,7 +116,7 @@
 
   To facilitate collaboration, I implemented a dataset synchronization solution using WebDAV and Sciebo, ensuring all team members had access to the latest data. I also developed the dataset splitting script to properly separate training, validation, and testing data. I created the initial baseline model for our experiments and conducted a total of 10 experiments as documented in @exp_result_summary.
 
-  I collaborated closely with Jonathan on the "simple experiment," where we jointly developed the model architecture and training methodology, created a new simulation script for room impulse responses, and performed detailed analysis of the experimental results.
+  I collaborated closely with Jonathan on the "simple experiment", where we jointly developed the model architecture and training methodology, created a new simulation script for room impulse responses, and performed detailed analysis of the experimental results.
 
   === Documentation Phase
 

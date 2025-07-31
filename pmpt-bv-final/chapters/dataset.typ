@@ -4,7 +4,7 @@
 
 #pagebreak()
 
-= Dataset
+= Dataset<dataset>
 
 #col[
   Creating the dataset represented one of the most substantial undertakings of this project, which led us to dedicate approximately 50% of our time to this task.
@@ -17,15 +17,15 @@
 
   We determined this methodology was not appropriate for our specific requirements, as we needed a dataset focused exclusively on office room images. Additionally, we identified significant concerns regarding data ownership, given the copyright complications frequently associated with web-scraped content. Consequently, we made the decision to develop our own proprietary dataset, which we detail in the following section.
 
-  == Data Sources #pmpt
+  == Data Sources<data_sources> #pmpt
 
   To address the absence of suitable existing datasets, we undertook our own data collection efforts. Recognizing that capturing sufficient real-world data for effective model training would be impractical, we adopted a hybrid approach that combines authentic measurements with synthetically generated images and impulse responses to supplement our real-world dataset. Reseach in the machine learning field has shown such hybrid approaches to be effective @yangDepthAnythingUnleashing2024.
 
-  === Real-World Measurements
+  === Real-World Measurements<real_world_measurements>
 
   The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format (examples in @real_example_image and @real_example_table). This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
-  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, this process was partially automated through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response (IR) by convolving the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. RT60 values and plots for visual verification are generated. To measure reverberation characteristics, the IR is band-pass filtered into standard octave and third-octave bands ranging from $50 "Hz"$ to $16 "kHz"$. For each band, the energy decay curve (EDC) is being computed using a combination of Chu's @chuComparisonReverberationMeasurements1978 and Lundeby's @lundebyUncertaintiesMeasurementsRoom1995 @PyratoEnergyDecay method to account for the high noise floor in the recordings. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches $-60 "dB"$.
+  The acoustic measurements were conducted following the methodology outlined in @rev_man_meas and the fundamental concepts discussed in @reverberation_time. To enhance efficiency, this process was partially automated through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response (IR) by convolving the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. RT60 values and plots for visual verification are generated. To measure reverberation characteristics, the IR is band-pass filtered into standard octave and third-octave bands ranging from $50 "Hz"$ to $16 "kHz"$. For each band, the energy decay curve (EDC) is being computed using a combination of Chu's @chuComparisonReverberationMeasurements1978 and Lundeby's @lundebyUncertaintiesMeasurementsRoom1995 @PyratoEnergyDecay method to account for the high noise floor in the recordings. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches $-60 "dB"$.
 
   To avoid capturing room modes or other acoustic artifacts that could introduce bias into our results multiple measurements were recorded in each room. To ensure comprehensive coverage various images were taken, with the objective of capturing diverse acoustic and visual conditions. Images were captured using a range of mobile devices, including a Google Pixel 8, iPhone 13, iPad Gen. 10, Samsung Galaxy S10 and a Xiaomi Poco F3. All photographs were taken from the doorway threshold at approximately head height (1.7m to 1.9m).
 
