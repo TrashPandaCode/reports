@@ -284,8 +284,6 @@
 
   While both versions demonstrated slight reductions in MSE compared to v1.14, the persistently negative R² values indicate that spatial attention mechanisms failed to achieve meaningful predictive improvements over a simple mean predictor. The modest MSE improvements of approximately 1.8% suggest that the spatial attention approach, as implemented, provided limited benefits for visual-acoustic RT60 estimation. These findings indicate that either more sophisticated attention mechanisms are necessary to realize the theoretical advantages of spatially-aware feature processing, or these theoretical advantages may be purely conceptual.
 
-  #todo("v1.13")
-
   == Performance Summary and Key Findings
 
   Our experimental campaign yielded several critical insights:
