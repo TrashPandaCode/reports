@@ -39,7 +39,7 @@
 
   Unfortunately I also had to move out of my apartment at the middle of June, which consumed a lot of time, more than I wanted to spend on it. Therefore this caused a deficit in my time effort for the project during the week right before the summer school.
 
-  I wasn't part of the final presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
+  I wasn't part of the milestone presentation which was prepared and held right in the middle of the summer school program. I wanted to be part of the presentation as a part of the team but sadly wasn't able to attend it.
 
   When coming back at the 10th of July I first had to move into my new apartment which also consumed a lot of time, leading to another deficit in my time effort for the project during that week. But after this was finished I spent as much time as possible so we would be able to finish the project in time and also to try providing the working hours I had to make up for.
 
