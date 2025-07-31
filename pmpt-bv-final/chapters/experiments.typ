@@ -130,12 +130,12 @@
   - Ensemble model 3: MSE = $0.0930$
   - Combined ensemble: MSE = $0.0925$
 
-  While achieving our best performance to date, the ensemble approach came with significant computational overhead. The combined model size of 327.244 KB exceeded our 250MB soft limit, making this approach impractical for deployment scenarios requiring model efficiency.
+  While achieving our best performance to date, the ensemble approach came with significant computational overhead. The combined model size of about 327 MB exceeded our 250 MB soft limit, making this approach impractical for deployment scenarios requiring model efficiency.
 
   === Architecture Scaling Experiments (v1.6-v1.8)
   We systematically investigated the trade-offs between model complexity and performance through architecture scaling experiments:
 
-  *ResNet18 (v1.6):* Implementing gradient accumulation, improved learning rate scheduling with OneCycleLR, enhanced early stopping criteria, and gradient clipping, we achieved MSE = $0.1022$ with a significantly reduced model size (~50MB). This represented only a marginal performance decrease while providing substantial computational benefits.
+  *ResNet18 (v1.6):* Implementing gradient accumulation, improved learning rate scheduling with OneCycleLR, enhanced early stopping criteria, and gradient clipping, we achieved MSE = $0.1022$ with a significantly reduced model size (~50 MB). This represented only a marginal performance decrease while providing substantial computational benefits.
 
   *ResNet50 Comparison (v1.7):* Using identical training procedures as v1.6 but with ResNet50 architecture resulted in MSE = $0.1283$, unexpectedly worse than the smaller ResNet18 variant, suggesting potential overfitting or suboptimal hyperparameter scaling.
 
@@ -240,13 +240,13 @@
   - MAE = $0.2027$
   - R² = $-0.1738$
 
-  2. *Synthetic-Only:* Training and validation using exclusively synthetic data
+  1. *Synthetic-Only:* Training and validation using exclusively synthetic data
   - MSE = $1.3696$
   - RMSE = $1.1703$
   - MAE = $0.9214$
   - R² = $-21.2365$
 
-  3. *Mixed Domain (v1.10 baseline):* Original configuration with synthetic and then real data
+  1. *Mixed Domain (v1.10 baseline):* Original configuration with synthetic and then real data
   - MSE = $0.0955$
   - RMSE = $0.3091$
   - MAE = $0.1983$
