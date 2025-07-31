@@ -23,7 +23,7 @@
 
   === Real-World Measurements
 
-  The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format. This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
+  The real-world portion contains room images paired with RT60 values across six frequency bands, with the acoustic data stored in CSV format (examples in @real_example_image and @real_example_table). This data was collected from various spaces throughout TH Köln, with a primary focus on office environments. However, the dataset also includes several outlier room types, such as server rooms, laboratories, and a motion capture studio.
 
   The acoustic measurements were conducted following the methodology outlined in @rev_man_meas. To enhance efficiency, this process was partially automated through a custom Python script that accepts the room name as input, performs a frequency sweep, and automatically saves the resulting impulse response (IR) by convolving the recorded signal with the regularized spectral inversion of the original sweep to extract the room's impulse response, which is then high-pass filtered to remove low-frequency noise. RT60 values and plots for visual verification are generated. To measure reverberation characteristics, the IR is band-pass filtered into standard octave and third-octave bands ranging from $50 "Hz"$ to $16 "kHz"$. For each band, the energy decay curve (EDC) is being computed using a combination of Chu's @chuComparisonReverberationMeasurements1978 and Lundeby's @lundebyUncertaintiesMeasurementsRoom1995 @PyratoEnergyDecay method to account for the high noise floor in the recordings. The RT60 value is then derived by fitting a line to the EDC using linear regression and finding the point where the line reaches $-60 "dB"$.
 
@@ -40,8 +40,8 @@
     [2000], [0.53],
     [4000], [0.45],
     [8000], [0.37],
-  ))
-  #figure(caption: [Example image for real data], image("../images/real_example.jpg"))
+  ))<real_example_table>
+  #figure(caption: [Example image for real data], image("../images/real_example.jpg"))<real_example_image>
 
   === Synthetic Data Generation<synth_data_gen>
 
@@ -49,11 +49,11 @@
 
   In the first stage of our synthetic data pipeline, we constructed a wide range of virtual room environments using Blender. To enable controlled variability and reproducibility, we employed a hybrid approach combining manual asset design with procedural placement via Blender's geometry nodes system. A set of modular wall segments was created to support diverse architectural configurations, including plain walls, walls with cable runs, integrated pillars, and window elements with variable blind heights. Each wall asset was standardized to a length of 1 meter, facilitating grid-based layout along the perimeter of a manually constructed floor plan. The base floor mesh was created using common mesh modeling techniques such as plane extrusion, loop cuts, and edge manipulations. Geometry nodes were then used to scatter wall elements along the outer edge loop of the floor plan in 1-meter increments. The orientation of surface normals was used to determine a primary window-facing wall, along which window assets were distributed. One randomly selected wall segment was replaced with a door asset. The ceiling was created by duplicating the floor mesh and translating it upwards, maintaining a constant room height of 3 meters. Wall surfaces were consistently assigned a concrete material, while the ceiling alternated between concrete and absorptive acoustic materials.
 
-  To introduce variability in lighting, furnishings, and surface appearance, each rendered frame involved randomized scene parameters. These included the choice and rotation of HDRI environment maps for global illumination, ceiling material selection, wall paint color, and the position and rotation of chairs. Three distinct table types were modeled, featuring variations such as integrated computers or power outlets, and each table was assigned one of three surface materials: white plastic, dark plastic, or wood. A single chair model was reused throughout but varied in position and rotation for each instance. Custom table generator node systems were implemented to procedurally instantiate sets of tables with accompanying chairs, based on manually positioned control nodes. This semi-procedural furnishing strategy allowed us to retain realistic room configurations while achieving a high degree of diversity across synthetic samples. The resulting Blender-generated scenes provided both high-quality image renderings and complete 3D geometry and material metadata, which served as input for the subsequent acoustic simulation stage.
+  To introduce variability in lighting, furnishings, and surface appearance, each rendered frame involved randomized scene parameters. These included the choice and rotation of HDRI environment maps for global illumination, ceiling material selection, wall paint color, and the position and rotation of chairs. Three distinct table types were modeled, featuring variations such as integrated computers or power outlets, and each table was assigned one of three surface materials: white plastic, dark plastic, or wood. A single chair model was reused throughout but varied in position and rotation for each instance. Custom table generator node systems were implemented to procedurally instantiate sets of tables with accompanying chairs, based on manually positioned control nodes. This semi-procedural furnishing strategy allowed us to retain realistic room configurations while achieving a high degree of diversity across synthetic samples. The resulting Blender-generated scenes provided both high-quality image renderings (seen in @synth_example_image) and complete 3D geometry and material metadata, which served as input for the subsequent acoustic simulation stage.
 
   In the second stage, we generated impulse responses based on the room parameters extracted from Blender. These parameters encompassed the vertices defining the room's floor plan, the quantity of furniture elements comprised of chairs and desks, and the material properties of walls, ceilings, and floors. All rooms maintained a consistent height of 3 meters. Using the Treble SDK @Treble, an acoustic simulation platform, allowed us to generate a simplified virtual model of the room from these extraced parameters and compute the corresponding impulse responses for each virtual room.
 
-  The final stage involved deriving RT60 values from the generated impulse responses. This process utilized the pyfar @PyfarPyfar2025 and pyrato @PyfarPyrato2025 libraries, maintaining consistency with our methodology for processing the real-world acoustic data.
+  The final stage involved deriving RT60 values (shown in @synth_example_table) from the generated impulse responses. This process utilized the pyfar @PyfarPyfar2025 and pyrato @PyfarPyrato2025 libraries, maintaining consistency with our methodology for processing the real-world acoustic data.
 
   #figure(caption: [Example label for synthetic data], table(
     columns: (1fr, 1fr),
@@ -64,8 +64,8 @@
     [2000], [0.94],
     [4000], [1.01],
     [8000], [0.94],
-  ))
-  #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg", width: 80%))
+  ))<synth_example_table>
+  #figure(caption: [Example image for synthetic data], image("../images/synth_example.jpg", width: 80%))<synth_example_image>
 
   == Data Structure #bv
 
@@ -86,18 +86,18 @@
       RT60 values overlayed for all rooms (including outliers) across all frequency bands
     ],
     image("../images/rt60_outlier_curves.png"),
-  )
+  )<rt60_outlier_curves>
   from low-frequency noise and other artifacts.
   Consequently, our final dataset comprises five frequency bands: $250 "Hz"$, $500 "Hz"$, $1 "kHz"$, $2 "kHz"$, $4 "kHz"$ and $8 "kHz"$.
 
-  Due to some outliers in the dataset, we capped RT60 values exceeding 4 seconds by applying local linear interpolation. This adjustment was necessary to ensure that the model could effectively learn from the data without being skewed by extreme values.
+  Due to some outliers in the dataset (as shown in @rt60_outlier_curves and @rt60_outlier_boxplot), we capped RT60 values exceeding 4 seconds by applying local linear interpolation. This adjustment was necessary to ensure that the model could effectively learn from the data without being skewed by extreme values.
 
   #figure(
     caption: [
       Boxplot of RT60 values across all frequency bands, highlighting outliers
     ],
     image("../images/rt60_outlier_boxplot.png"),
-  )
+  )<rt60_outlier_boxplot>
 
   The dataset was then split into training, validation, and test sets, with the split performed on a room-wise basis, with $10%$ for validation, $20%$ for testing, and the remaining $70%$ for training. This approach ensures that all images and RT60 values for a given room are consistently assigned to the same set, preventing data leakage and ensuring that the model is evaluated on unseen rooms.
 

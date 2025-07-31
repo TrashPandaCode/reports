@@ -23,7 +23,7 @@
 
   === Grad-CAM Visualization
 
-  Gradient-weighted Class Activation Mapping (Grad-CAM) @selvarajuGradCAMVisualExplanations2016 provides interpretable visualizations of which regions in input images contribute most significantly to RT60 predictions. This technique leverages gradients flowing into the final convolutional layer to generate localization maps highlighting important visual features. In our acoustic estimation context, Grad-CAM reveals whether the model appropriately focuses on acoustically relevant features such as room geometry, surface materials, and furnishing density. This interpretability is crucial for validating that the model learns meaningful acoustic-visual correlations rather than spurious dataset artifacts.
+  Gradient-weighted Class Activation Mapping (Grad-CAM) @selvarajuGradCAMVisualExplanations2016 provides interpretable visualizations of which regions in input images contribute most significantly to RT60 predictions. This technique leverages gradients flowing into the final convolutional layer to generate localization maps highlighting important visual features. In our acoustic estimation context, Grad-CAM reveals whether the model appropriately focuses on acoustically relevant features such as room geometry, surface materials, and furnishing density. This interpretability is crucial for validating that the model learns meaningful acoustic-visual correlations rather than spurious dataset artifacts. An example Grad-CAM visualization is shown in @grad_cam_example, where the model's attention is directed towards the absorbers, which are critical for reverberation characteristics.
 
   #figure(caption: [Grad-CAM example], image("../images/gradcam_combined_img4.png"))<grad_cam_example>
 
@@ -113,15 +113,15 @@
   The results revealed that hybrid simulation methods did not yield superior performance, with only a $4.4%$ difference between approaches—likely within the margin of experimental error. This finding simplified our data preparation pipeline by eliminating the need for simulation method stratification.
 
   === Data Augmentation Enhancement (v1.4)
-  Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = $0.0973$, representing a slight but consistent enhancement over v1.3.
+  Version 1.4 focused on improving data augmentation strategies, implementing more aggressive techniques including random perspective transformations, enhanced cropping, and increased rotation ranges. This approach yielded a modest improvement to MSE = $0.0973$, representing a slight but consistent enhancement over v1.3. Results can be seen in @v1_4_results and @v1_4_grad_cam.
 
   #figure(caption: [From left to right: Error distribution, prediction with uncertainty, prediction heatmap], grid(
     columns: 3,
     image("../images/experiments/v1_4/error_distribution.png"),
     image("../images/experiments/v1_4/prediction_with_uncertainty.png"),
     image("../images/experiments/v1_4/rt60_kde_heatmap.png"),
-  ))
-  #figure(caption: [Grad-CAM example], image("../images/experiments/v1_4/gradcam_combined_img26.png"))
+  ))<v1_4_results>
+  #figure(caption: [Grad-CAM example], image("../images/experiments/v1_4/gradcam_combined_img26.png"))<v1_4_grad_cam>
 
   === Ensemble Methods Investigation (v1.5)
   Our exploration of ensemble methods in v1.5 involved training three separate models and combining their predictions. Individual model performances were remarkably consistent:
@@ -163,7 +163,18 @@
   - EfficientNet-B4: Validation loss = $0.1026$
   - ConvNeXt-Base: Validation loss = $0.1079$
   - DenseNet169: Validation loss = $0.1234$
-  - Despite this variation, none of these backbones outperformed ResNet50 (Places365), which remained the strongest CNN-based option.
+  - Despite this variation, none of these backbones outperformed ResNet50 (Places365), which remained the strongest CNN-based option, as shown in the prediction heatmaps in @v1_12_results. Further analysis using t-SNE visualizations (@v1_12_tsne) revealed differences in how each backbone encoded the acoustic information, with ResNet50 demonstrating the most (if any) clustering patterns.
+
+  #figure(
+    caption: [t-sne analysis of the different backbones. \ From left to right: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
+    grid(
+      columns: 4,
+      image("../images/experiments/v1_12/convnext_base_all_preds.png"),
+      image("../images/experiments/v1_12/densenet169_all_preds.png"),
+      image("../images/experiments/v1_12/efficientnet_all_preds.png"),
+      image("../images/experiments/v1_12/resnet50_places365_all_preds.png"),
+    ),
+  )<v1_12_tsne>
 
   #figure(
     caption: [Prediction vs ground truth heatmap \ From left to right and top to bottom: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
@@ -176,18 +187,8 @@
       image("../images/experiments/v1_12/efficientnet_rt60_kde_heatmap.png"),
       image("../images/experiments/v1_12/resnet_rt60_kde_heatmap.png"),
     ),
-  )
+  )<v1_12_results>
 
-  #figure(
-    caption: [t-sne analysis of the different backbones. \ From left to right: ConvNeXt-Base, DenseNet169, EfficientNet-B4, ResNet50 (Places365)],
-    grid(
-      columns: 4,
-      image("../images/experiments/v1_12/convnext_base_all_preds.png"),
-      image("../images/experiments/v1_12/densenet169_all_preds.png"),
-      image("../images/experiments/v1_12/efficientnet_all_preds.png"),
-      image("../images/experiments/v1_12/resnet50_places365_all_preds.png"),
-    ),
-  )
 
   *Custom Attention-Based CNN (No Pretraining):* A custom architecture based on EfficientNet-B3 with channel and spatial attention, multi-scale feature extraction, and a frequency-aware prediction head was evaluated without any pretrained weights. Despite its architectural complexity, it underperformed compared to simpler pretrained models:
 
@@ -195,14 +196,14 @@
   - RMSE = $0.4517$
   - MAE = $0.3170$
   - R² = $-2.2477$
-  - These results suggest that training from scratch on limited data yields suboptimal generalization, and that pretrained visual representations remain crucial for this task.
+  - These results suggest that training from scratch on limited data yields suboptimal generalization, and that pretrained visual representations remain crucial for this task. The t-SNE analysis in @jojo_complex_results shows an unexplainable (but unwanted) structure in the learned feature space, while the prediction heatmap reveals a strong tendency toward mean prediction rather than capturing the true variation in RT60 values.
 
   #figure(caption: [From left to right: t-sne analysis, error distribution, prediction heatmap], grid(
     columns: 3,
     image("../images/experiments/jojo_complex/latent_vis.png"),
     image("../images/experiments/jojo_complex/error_distribution.png"),
     image("../images/experiments/jojo_complex/rt60_kde_heatmap.png"),
-  ))
+  ))<jojo_complex_results>
 
   *Baseline CNN (Simple Architecture):* A minimal convolutional model with just two convolutional layers followed by average pooling and a basic MLP head was trained from scratch:
 
@@ -210,13 +211,13 @@
   - RMSE = $0.9668$
   - MAE = $0.8906$
   - R² = $-14.7485$
-  - This model served as a lower-bound baseline. Its poor performance underscores the necessity of both architectural depth and prior knowledge (e.g., pretrained features) for learning meaningful visual-acoustic representations.
+  - This model served as a lower-bound baseline. Its poor performance underscores the necessity of both architectural depth and prior knowledge (e.g., pretrained features) for learning meaningful visual-acoustic representations. As shown in @jojo_simple_results, the error distribution is heavily skewed and the prediction heatmap reveals virtually no correlation between predictions and ground truth values, except continuously high prediction values.
 
   #figure(caption: [From left to right: error distribution, prediction heatmap], grid(
     columns: 2,
     image("../images/experiments/jojo_simple/error_distribution.png"),
     image("../images/experiments/jojo_simple/rt60_kde_heatmap.png"),
-  ))
+  ))<jojo_simple_results>
 
   *U-Net Architecture (v1.16):* A U-Net architecture with a custom bottleneck was evaluated. The U-Net architecture is usually used for image segmentation tasks, but we adapted it for regression by adding a regression head at the end. The model consisted of a symmetric encoder-decoder structure with skip connections:
 
@@ -304,13 +305,13 @@
 
   == Simple Experiment<simple_experiment>
 
-  To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics.
+  To establish baseline feasibility for RT60 prediction from visual data, we conducted an initial simplified experiment using a controlled synthetic dataset. This experiment utilized only synthetic rooms of varying dimensions without any furniture or complex acoustic elements, effectively functioning as an "advanced room volume estimator." We generated shoebox-shaped rooms with dimensions ranging from small ($3 times 3 times 3 "m"$) to very large ($30 times 25 times 3 "m"$) spaces, rendering them with consistent surface materials to isolate the relationship between spatial dimensions and reverberation characteristics, as shown in @simple_example_image.
 
-  For each room configuration, a single, non-frequency-dependent RT60 value was simulated using the _pyroomacoustics_ Python module. The simulation incorporated ray tracing and air absorption to approximate more realistic sound propagation. Microphone and sound source were placed in opposite corners of the room, each positioned 1 meter from the nearest walls to ensure consistent placement across samples. Notably, the resulting RT60 values were often quite large. While this trend was consistent across room sizes, we are currently unsure why the absolute values are so high and suspect it may stem from either the material parameter settings, geometric extremes, or limitations of the ray tracing model itself. However, these inflated values do not undermine the experiment, as the goal was to assess relative variations in RT60 across different room geometries rather than to produce physically accurate absolute values.
+  For each room configuration, a single, non-frequency-dependent RT60 value was simulated using the _pyroomacoustics_ Python module. The simulation incorporated ray tracing and air absorption to approximate more realistic sound propagation. Microphone and sound source were placed in opposite corners of the room, each positioned 1 meter from the nearest walls to ensure consistent placement across samples. Notably, the resulting RT60 values were often quite large, as documented in @simple_example_table and visualized in @simple_vol_vs_rt60. While this trend was consistent across room sizes, we are currently unsure why the absolute values are so high and suspect it may stem from either the material parameter settings, geometric extremes, or limitations of the ray tracing model itself. However, these inflated values do not undermine the experiment, as the goal was to assess relative variations in RT60 across different room geometries rather than to produce physically accurate absolute values.
 
-  #figure(caption: [Room Volume vs RT60], image("../images/simple_vol_vs_rt60.svg"))
+  #figure(caption: [Room Volume vs RT60], image("../images/simple_vol_vs_rt60.svg"))<simple_vol_vs_rt60>
 
-  For this proof-of-concept, we implemented a CNN architecture with a ResNet50 backbone pretrained on Places365 (selected for its superior scene understanding capabilities), followed by global pooling and fully connected regression layers (2048→512→256→128→64→1) with appropriate dropout for regularization. The model demonstrated remarkable performance on this constrained problem, achieving an R² score of $0.902$, indicating that over $90%$ of variance in RT60 values could be explained by the visual features extracted by our CNN architecture. The error metrics further confirmed strong performance, with $"MSE"=0.562$, $"RMSE"=0.749$, and $"MAE"=0.569$. The mean prediction error was $-0.480$ seconds with a standard deviation of $0.576$ seconds, and a median error of $-0.437$ seconds. These promising results provided strong validation that even a standard CNN could successfully learn the fundamental relationship between visual room characteristics and acoustic properties when the problem space is sufficiently constrained, justifying our progression to more complex real-world scenarios.
+  For this proof-of-concept, we implemented a CNN architecture with a ResNet50 backbone pretrained on Places365 (selected for its superior scene understanding capabilities), followed by global pooling and fully connected regression layers (2048→512→256→128→64→1) with appropriate dropout for regularization. The model demonstrated remarkable performance on this constrained problem, achieving an R² score of $0.902$, indicating that over $90%$ of variance in RT60 values could be explained by the visual features extracted by our CNN architecture. The error metrics further confirmed strong performance, with $"MSE"=0.562$, $"RMSE"=0.749$, and $"MAE"=0.569$. The mean prediction error was $-0.480$ seconds with a standard deviation of $0.576$ seconds, and a median error of $-0.437$ seconds, as visualized in @simple_heatmap_and_error_distribution. These promising results provided strong validation that even a standard CNN could successfully learn the fundamental relationship between visual room characteristics and acoustic properties when the problem space is sufficiently constrained, justifying our progression to more complex real-world scenarios.
 
   While these results do not constitute formal proof of the initial approach, they provide a promising foundation for further research and do not contradict the primary hypothesis.
 
@@ -323,8 +324,8 @@
     [8$times$10$times$3], [6.635],
     [15$times$12$times$3], [9.838],
     [30$times$25$times$3], [9.788],
-  ))
-  #figure(caption: [Example image used for the experiment], image("../images/simple_example.jpg"))
+  ))<simple_example_table>
+  #figure(caption: [Example image used for the experiment], image("../images/simple_example.jpg"))<simple_example_image>
 
   #figure(
     caption: [Heatmap of predicted RT60 values vs. ground truth RT60 values (left) and prediction error distribution in seconds (right)],
@@ -335,7 +336,7 @@
         "../images/simple_error_distribution.png",
       ),
     ),
-  )
+  )<simple_heatmap_and_error_distribution>
 ]
 
 == Experimental Results Summary<exp_result_summary>
