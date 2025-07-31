@@ -561,7 +561,7 @@
 
   For quantitative assessment, we implemented a Google Form that exclusively captured anonymized data. The only demographic information collected included the participants' age and prior knowledge - specifically whether they studied a related field or had already taken and passed the Computer Animation module. The questionnaire followed the established System Usability Scale (SUS) @brookeSUSQuickDirty1995 /*i love this being the citation*/, adopting its proven 10-item structure with a few additional questions tailored to our specific context.
 
-  === Tracking Player Behaviours 
+  === Tracking Player Behaviours
   We planned to collect data on user behaviour during testing to find patterns or tendencies in how users interact with our application. Several options were discussed for implementing telemetry, such as using a dedicated API, but we chose to keep things simple by collecting and storing the data locally. Since we did not plan to include data tracking in the final release, a lightweight solution seemed like the more appropriate choice at the time.
 
   Tracking was implemented in a separate branch using Zustand. A custom Zustand store was created to manage an array of `LevelLog` objects, each representing a user's interaction with a single level. When a new level is started, a new `LevelLog` entry is appended to the store. Data is then collected continuously until the level is completed. The following information gets captured for each level:
@@ -875,10 +875,93 @@
 #include "contributions/milan.typ"
 #include "contributions/david.typ"
 
+
+
 = Appendix
 
-== Time Tracking<time_tracking>
-#todo("add time tracking")
-
 == Think-Aloud Protocols<think_aloud_protocols>
-#todo("add think-aloud protocols")
+
+#col[
+
+
+  == Participant 1
+  - Starting dialogue doesnt play when not selecting "dont show again"
+  - "Node editor looks cramped" (didnt know you could zoom via scrollwheel, also might be the zooming in on creating first node)
+  - "Where do i get the coordinates for the trashcan" level 2
+  - import from gameobject list being individual toggles was confusing level 3
+  - i want to snap the trashcan to the raccoon. idk how level 4
+  - i thought it had to overlap first for the raccoon to hold the trashcan level 4
+
+  == Participant 2
+
+  - level 1
+    - I geuss i need math nodes to solve this
+    - handles seem too small
+  - level 2
+    - why is display there
+    - why is exportto game object the lowest on the list
+    - moving up by using negative values seems odd
+  - level 3
+    - didnt know outputs could be used multiple times
+
+  == Participant 3
+  - had no experience with nodes, but adapted pretty quickly
+  - level 1
+    - used all math nodes to solve the equation, didn't end up using any value nodes
+    - thought the nodes were too big (didn't know you could zoom)
+  - level 3
+    - understood Import Node quickly, but the filled output on the trashcans wasn't clear
+    - also switch node had to be explained, because the inputs weren't clear enough
+  - Maybe intro dialog shouldn't play again on second level when you already went through it once
+
+  == Participant 4
+
+  - tutorial dialog
+    - "so viel text"
+
+  - hat nach 4 leveln einfach weiter gemacht ohne es zu merken
+  - hat während des gesammten tests kein einziges mal zoom benutzt oder das canvas bewegt, da er keine erfahrung mit node systemen hat
+
+  - level 5
+    - hat 50 sekunden addiert nachdem er die uhr schneller laufen lässt, da sonst auch die 50 sekunden skaliert werden
+      - eventuell zu ungenaues ziel?
+
+  == Participant 5
+  - raccoon hat keinen namen
+  - man kann nicht mit scroll die value node ändern
+  - level 4
+    - lösung zu einfach/verwirrend
+    - in den goals runter zählen wieviele mülltonnen noch gebraucht werden
+  - Tabs haben keine Namen, wird verwirrend wenn man mehrere docs seiten auf hat
+
+  == Participant 6
+
+  - level 1
+    - zooming out of canvas unintuitive
+    - solved level instinctively
+  - level 2
+    - solved instinctively
+  - level 3
+    - tried to deselect an import from a game object through rightclick delete xd
+    - "you can pull out of outputs twice???"
+    - solved the level without too many issues
+  - level 4
+    - does something weird with the addition node idek why
+    - ability to add handles is confusing
+    - solved without many problems
+]
+
+
+#import "@preview/muchpdf:0.1.0": muchpdf
+#set page(flipped: true)
+#pagebreak()
+== Time Tracking<time_tracking>
+#place(center + horizon, dy: 1cm, muchpdf(read("./appendix/Stundentracking1.pdf", encoding: none), width: 90%))
+#pagebreak()
+#place(center + horizon, dy: 1cm, muchpdf(read("./appendix/Stundentracking2.pdf", encoding: none), width: 90%))
+
+
+
+
+
+
