@@ -155,4 +155,274 @@
     [#214], [Replace TODOs in Imprint and Privacy Policy], [Legal page content completion and cleanup],
   ),
 )
-// Hier die kompletten Functional Requirements (hilfe)
+
+== Functional Requirements
+
+#let thing = (number, description, rationale, originator, fit_criterion) => {
+  box(stroke: black + 0.01cm, inset: 0.2cm, width: 100%)[
+    *Requirement:* #number \
+    *Description*: #description \
+    *Rationale:* #rationale \
+    *Originator:* #originator \
+    *Fit Criterion:* #fit_criterion
+  ]
+}
+
+#thing(
+  "DDFR1",
+  "The application shall have a landing page with direct navigation to the game.",
+  "Ensures users can easily access the main functionality of the application.",
+  "Stakeholders, Product Owner, Game Team",
+  "When the application is launched in a supported browser, the landing page is displayed and includes a clearly labeled link or button that navigates to the game page.",
+)
+#thing(
+  "DDFR2",
+  "The landing page shall contain a level selection screen or contain the option to navigate to a level selection screen.",
+  "Allows users to choose their starting point and replay specific levels.",
+  "Stakeholders, Product Owner, Game Team",
+  "The landing page includes either an embedded level selector or a button/link that, when clicked, transitions to a level selection interface with a list of available levels.",
+)
+#thing(
+  "DDFR3",
+  "The landing page shall contain a navigation to navigate to the documentation and the game.",
+  "Facilitates access to help resources and main features.",
+  "Stakeholders, Product Owner, Game Team",
+  "The navigation bar includes labeled links to both the game page and the documentation page, and clicking each link routes the user to the appropriate section without a full page reload.",
+)
+#thing(
+  "DDFR4",
+  "If the user has already progressed through the game the navigation shall allow users to automatically go back to the last level they were playing.",
+  "Improves user experience by resuming progress.",
+  "Stakeholders, Product Owner, Game Team",
+  "If a saved game state exists in local or server storage, the button navigating to the game page redirects the user to the last played level upon click.",
+)
+#thing(
+  "DDFR5",
+  "The application shall display a game window and a node editor aside each other.",
+  "Supports simultaneous interaction with game and logic editor.",
+  "Stakeholders, Product Owner, Game Team, Node Team",
+  "Upon loading the game page, the UI shows two adjacent panels: one for the game window and one for the node editor, both visible simultaneously.",
+)
+#thing(
+  "DDFR6",
+  "The application shall load predefined levels selected by the user in the level selection screen.",
+  "Enables structured progression and replayability.",
+  "Stakeholders, Product Owner, Game Team",
+  "When a user selects a level, the corresponding game state and logic are correctly loaded into the game window and node editor without error.",
+)
+#thing(
+  "DDFR7",
+  "The application shall give an option to load the next level upon level completion.",
+  "Facilitates smooth progression through the game.",
+  "Stakeholders, Product Owner, Game Team",
+  "Upon satisfying the win condition for a level, the game window automatically opens a dialog or displays a button with an option to go to the next level.",
+)
+#thing(
+  "DDFR8",
+  "The game window shall render game elements and respond to user inputs in real time.",
+  "Ensures interactive and engaging gameplay.",
+  "Stakeholders, Product Owner, Game Team",
+  "All player input (keyboard/mouse) and node changes result in visible changes in the game depending on the level.",
+)
+#thing(
+  "DDFR9",
+  "The user shall be able to pause, resume and reset the current level using UI elements.",
+  "Provides control over gameplay flow.",
+  "Stakeholders, Product Owner, Game Team",
+  "The game page UI includes buttons for 'Pause', 'Resume' and 'Reset'. Clicking each button performs the corresponding action reliably across all tested levels.",
+)
+#thing(
+  "DDFR10",
+  "The application shall save game and node states persistently (locally or server-sided).",
+  "Prevents loss of progress and supports undo/redo.",
+  "Stakeholders, Product Owner, Game Team, Node Team",
+  "After making changes in the node editor or playing the game, the current state is automatically or manually saved and restored correctly when the user reloads or returns to the game page. This also includes undo/redo functionality for node changes.",
+)
+#thing(
+  "DDFR11",
+  "The application shall provide a node editor, allowing users to add, connect and delete nodes using their mouse and keyboard shortcuts.",
+  "Enables visual programming and experimentation.",
+  "Stakeholders, Product Owner, Node Team",
+  "The node editor allows the user to create nodes by clicking, connect nodes by dragging, and delete them via a contextual menu or keyboard key.",
+)
+#thing(
+  "DDFR12",
+  "The node editor shall validate node connections to prevent invalid configurations.",
+  "Ensures logical correctness and prevents errors.",
+  "Stakeholders, Product Owner, Node Team",
+  "Invalid connections (e.g., cycles) are visually rejected or flagged immediately with an error tooltip or red highlight and the game stops computing the node graph.",
+)
+#thing(
+  "DDFR13",
+  "Changes made in the node editor shall dynamically update the game logic affecting gameplay.",
+  "Provides immediate feedback and supports experimentation.",
+  "Stakeholders, Product Owner, Node Team, Game Team",
+  "After modifying a node configuration, the game reacts in real time (e.g., physics, events) without requiring a manual refresh or restart.",
+)
+#thing(
+  "DDFR14",
+  "The game page shall link directly to the needed documentation and level guides.",
+  "Supports learning and reduces confusion.",
+  "Stakeholders, Product Owner, Game Team, Node Team",
+  "The game UI includes links or tooltips inside the nodes or levels that, when clicked, open the relevant documentation page or guide section in the same or a new panel.",
+)
+#thing(
+  "DDFR15",
+  "The application shall provide a documentation page with textual and visual content, explaining nodes, level guides and concepts related to the Computer Animation module.",
+  "Facilitates self-directed learning and reference.",
+  "Stakeholders, Product Owner, Node Team, Game Team",
+  "The documentation page loads relevant sections for nodes, levels, and concepts with text and images. Each section can be accessed via direct link or navigation, and renders correctly across supported devices.",
+)
+#thing(
+  "DDFR16",
+  "The documentation page shall contain a sidebar or menu to navigate all of the content.",
+  "Improves navigation and discoverability of information.",
+  "Stakeholders, Product Owner, Node Team",
+  "A collapsible sidebar or persistent menu is visible on the documentation page, listing all major content sections. Clicking each item scrolls or navigates to the appropriate section without error.",
+)
+#thing(
+  "DDFR17",
+  "Users shall be able to search for specific topics or levels within the documentation.",
+  "Enables quick access to relevant information.",
+  "Stakeholders, Product Owner, Node Team",
+  "A search bar is available that returns results matching keywords in titles or body text of documentation entries. Clicking a result navigates the user to the corresponding section.",
+)
+
+#pagebreak()
+=== Individual Product Use Cases<use_cases>
+
+#let thing = (
+  use_case_name,
+  participating_actors,
+  flow_of_events,
+  entry_conditions,
+  exit_conditions,
+  quality_requirements,
+) => {
+  table(
+    columns: (1fr, 2fr),
+    [*Use case name*], [#use_case_name],
+    [*Participating actors*], [#participating_actors],
+    [*Flow of events*], [#flow_of_events],
+    [*Entry conditions*], [#entry_conditions],
+    [*Exit conditions*], [#exit_conditions],
+    [*Quality requirements*], [#quality_requirements],
+  )
+}
+
+#thing(
+  "Search Documentation",
+  "User enters a query in the documentation search bar.",
+  "System filters and displays relevant documentation entries matching the query.",
+  "User selects a result to view the corresponding documentation section.",
+  "Documentation page updates to show the selected content.",
+  "User quickly finds and navigates to needed information.",
+)
+
+#thing(
+  "Show Toast Notifications",
+  "System detects an event requiring user feedback (e.g., error, success, info).",
+  "A toast notification appears on the screen with a brief message.",
+  "User reads the notification and optionally dismisses it.",
+  "Notification disappears after a timeout or user action.",
+  "User is informed of important events without interrupting workflow.",
+)
+
+#thing(
+  "Interact with Node Editor",
+  "User clicks, drags, or uses keyboard shortcuts within the node editor area.",
+  "System allows adding, connecting, moving, or deleting nodes and edges.",
+  "Node editor updates visually in real time to reflect changes.",
+  "Game logic updates dynamically based on node configuration.",
+  "User can visually program and modify game mechanics.",
+)
+
+#thing(
+  "Start a Level",
+  "User selects a level from the level selection screen or continues from last progress.",
+  "System loads the selected level's game state and node configuration.",
+  "Game window and node editor display the loaded level.",
+  "User begins interacting with the level.",
+  "User can play and solve the chosen level.",
+)
+
+#thing(
+  "Navigate Between Levels",
+  "User clicks navigation buttons (e.g., next, previous, or level list).",
+  "System loads the corresponding level and updates the UI.",
+  "Game window and node editor reflect the new level's state.",
+  "User continues gameplay in the selected level.",
+  "User can progress through or revisit levels as desired.",
+)
+
+#thing(
+  "Solve Level",
+  "User configures nodes and game logic to meet the level's win condition.",
+  "System detects when the win condition is satisfied.",
+  "A completion dialog or notification appears, offering next steps.",
+  "User acknowledges completion and may proceed to the next level.",
+  "User receives feedback and can advance in the game.",
+)
+
+#thing(
+  "Use Hint Menu",
+  "User clicks the hint/help button within a level.",
+  "System displays a menu or popup with hints relevant to the current level.",
+  "User reads the hint and closes the menu.",
+  "Game resumes with the user better informed.",
+  "User receives guidance to overcome challenges.",
+)
+
+#thing(
+  "View Level Guide",
+  "User selects the guide option from the game or documentation UI.",
+  "System displays the level guide with explanations and visuals.",
+  "User reads through the guide for strategies or solutions.",
+  "User returns to gameplay with improved understanding.",
+  "User can access contextual help for each level.",
+)
+
+#thing(
+  "Load Markdown/MDX",
+  "System needs to display documentation or guide content.",
+  "Markdown or MDX files are dynamically loaded and rendered.",
+  "Content appears in the documentation or guide section.",
+  "User reads the formatted content.",
+  "Documentation is easily updated and presented in a readable format.",
+)
+
+#thing(
+  "Add a New Level",
+  "User (admin or developer) initiates the process to create a new level.",
+  "System provides a form or editor to define level properties, logic, and assets.",
+  "User saves the new level configuration.",
+  "Level becomes available in the level selection screen.",
+  "Game content can be expanded and maintained.",
+)
+
+#thing(
+  "Listen for Keyboard Shortcuts",
+  "User presses keyboard shortcuts while focused on the application.",
+  "System detects and interprets the shortcut commands.",
+  "Corresponding actions (e.g., undo, redo, add node) are executed.",
+  "UI updates to reflect the action taken.",
+  "User can efficiently interact with the application using the keyboard.",
+)
+
+#thing(
+  "Add/Edit Documentation Content",
+  "User (admin or developer) accesses the documentation editor.",
+  "System provides an interface to add or modify markdown/MDX files.",
+  "User saves changes to the documentation.",
+  "Updated content is immediately available to all users.",
+  "Documentation remains current and comprehensive.",
+)
+
+#thing(
+  "Track Keyboard State",
+  "User presses or releases keys during gameplay or node editing.",
+  "System tracks the current state of all relevant keys.",
+  "Game logic or node editor responds to key state changes (e.g., movement, actions).",
+  "UI and game state update in real time based on input.",
+  "Multiple simultaneous key presses are handled correctly.",
+)

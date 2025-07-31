@@ -265,9 +265,24 @@
 
   The substantial increase in MSE from v1.4's $0.0973$ to $1.0948$ represents more than a 10-fold deterioration in prediction accuracy. The negative R² score indicates performance worse than a simple mean predictor, suggesting that frozen features were insufficient for capturing visual-acoustic relationships required for RT60 estimation.
   These findings highlight the importance of end-to-end fine-tuning for cross-modal tasks, reinforcing that acoustic prediction necessitates comprehensive feature adaptation throughout the network architecture rather than just final layer modification.
-  
 
-  #todo("v1.13 to v1.15 and v1.4.1 are missing")
+  === Spatial Attention Experiment (v1.14 and v1.15)
+  Building upon the baseline architecture, experiments v1.14 and v1.15 investigated the integration of spatial attention mechanisms to enhance the model's ability to focus on acoustically relevant spatial features within room imagery. This approach was motivated by the hypothesis that explicit attention to spatial relationships could improve RT60 prediction accuracy by emphasizing regions that most significantly influence reverberation characteristics.
+  Version v1.14, developed on October 6, 2025, implemented spatial attention components throughout the architecture based on architectural modifications suggested for improved spatial feature extraction. The initial results showed:
+
+  - MSE = $0.0993$
+  - RMSE = $0.3151$
+  - MAE = $0.2161$
+  - R² = $-0.2714$
+
+  Building on v1.14's foundation, version v1.15 was developed on June 11, 2025, with a more comprehensive spatial attention integration. This iteration yielded marginally improved performance:
+
+  - MSE = $0.0975$
+  - RMSE = $0.3123$
+  - MAE = $0.2226$
+  - R² = $-0.0375$
+
+  While both versions demonstrated slight reductions in MSE compared to v1.14, the persistently negative R² values indicate that spatial attention mechanisms failed to achieve meaningful predictive improvements over a simple mean predictor. The modest MSE improvements of approximately 1.8% suggest that the spatial attention approach, as implemented, provided limited benefits for visual-acoustic RT60 estimation. These findings indicate that either more sophisticated attention mechanisms are necessary to realize the theoretical advantages of spatially-aware feature processing, or these theoretical advantages may be purely conceptual.
 
   == Performance Summary and Key Findings
 

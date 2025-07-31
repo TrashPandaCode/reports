@@ -9,9 +9,9 @@
   == Overview / Introduction
   As part of the project in the WEB3 and IA (interactive systems) module, we are developing a web-based game that teaches students basic concepts of computer animation in a playful way. The aim is to create an intuitive and motivating learning environment that makes theoretical knowledge tangible through interactive experiments and visual feedback.
 
-  The game is based on the concept of visual scripting, in which users can create animation logic with the help of node-based building blocks - without traditional programming. We use Kaplay and modern web technologies such as React and TypeScript as the technical basis. This combination allows us to design a flexible and high-performance front end that enables the direct manipulation and display of animated content in the browser.
+  The game is based on the concept of visual scripting, in which users can create animation logic with the help of node-based building blocks - without traditional programming. We use Kaplay and modern web technologies such as React and TypeScript as the technical basis. This combination allows us to design a flexible and high-performance front end that enables the direct manipulation and display of animated content in the browser (see DDFR5, DDFR6, DDFR8).
 
-  The project focuses not only on technical aspects such as a modular architecture and a reactive user interface, but also on didactic requirements: The game should be designed in such a way that it helps learners to understand central principles such as keyframes, interpolation, motion sequences and transformation matrices - through their own experimentation and feedback.
+  The project focuses not only on technical aspects such as a modular architecture and a reactive user interface, but also on didactic requirements: The game should be designed in such a way that it helps learners to understand central principles such as keyframes, interpolation, motion sequences and transformation matrices - through their own experimentation and feedback (see DDFR13).
 
   == The Purpose of the Project
   === The User Business and Background of the Project Effort
@@ -48,7 +48,7 @@
   ==== Core Application Framework
 
   - *React (v19)*
-    React serves as the foundational library for building the user interface. All views and UI components are structured as composable React components using modern patterns such as hooks and functional components. React enables the SPA (Single Page Application) behavior and forms the basis for all rendering and user interactions.
+    React serves as the foundational library for building the user interface. All views and UI components are structured as composable React components using modern patterns such as hooks and functional components. React enables the SPA (Single Page Application) behavior and forms the basis for all rendering and user interactions (see DDFR1, DDFR3).
 
   - *React Router (v7.5)*
     React Router manages the client-side routing and navigation. It supports declarative routing patterns, server-side rendering, and route-based code-splitting.
@@ -56,10 +56,10 @@
   ==== Node-Based Editor & Visual Components
 
   - *\@xyflow/react (formerly React Flow)*
-    Provides the node-based graph editor used within the application. It enables the creation of interactive, user-editable diagrams and visually represented data flows.
+    Provides the node-based graph editor used within the application. It enables the creation of interactive, user-editable diagrams and visually represented data flows (see DDFR11, DDFR12).
 
   - *Kaplay (Custom Game Engine)*
-    A browser-based game engine. It handles animation within the application.
+    A browser-based game engine. It handles animation within the application (see DDFR8, DDFR13).
 
   ==== State Management
 
@@ -67,18 +67,18 @@
     A global state management library. Used to manage shared state across React components, supporting predictable state updates in complex UIs.
 
   - *Zundo*
-    Adds undo/redo history management to the state layer, crucial for providing a responsive and user-friendly editor experience.
+    Adds undo/redo history management to the state layer, crucial for providing a responsive and user-friendly editor experience (see DDFR10).
 
   ==== User Interaction & Accessibility Libraries
 
   - *Radix UI (React Primitives)*
-    A collection of unstyled, accessible UI primitives like dialogs, dropdowns, tooltips, and other interaction patterns required for accessible interfaces.
+    A collection of unstyled, accessible UI primitives like dialogs, dropdowns, tooltips, and other interaction patterns required for accessible interfaces (see DDFR14).
 
   - *Downshift*
     Used for multiselection comboboxes and similar input controls with accessibility best practices.
 
   - *React Joyride*
-    Provides interactive onboarding and tutorial tours to guide users through complex features and workflows.
+    Provides interactive onboarding and tutorial tours to guide users through complex features and workflows (see DDFR14).
 
   - *React Hotkeys Hook*
     Enables keyboard shortcut support throughout the application to improve usability and efficiency.
@@ -86,7 +86,7 @@
   ==== Documentation & Markdown Handling
 
   - *Remark / Rehype Ecosystem (remark-gfm, remark-math, rehype-katex)*
-    These tools enable parsing and rendering of Markdown with support for GitHub Flavored Markdown, mathematical notation (via KaTeX), and frontmatter metadata.
+    These tools enable parsing and rendering of Markdown with support for GitHub Flavored Markdown, mathematical notation (via KaTeX), and frontmatter metadata (see DDFR15).
 
   - *Gray-Matter*
     Parses Markdown files and extracts frontmatter, which is used for metadata management within the application.
@@ -97,7 +97,7 @@
   ==== Search & Data Utilities
 
   - *FlexSearch*
-    Provides fast, client-side full-text search functionality for querying content within the application.
+    Provides fast, client-side full-text search functionality for querying content within the application (see DDFR17).
 
   - *Deep Object Diff*
     Utility for comparing deeply nested objects for detecting and managing complex state changes.
@@ -111,7 +111,7 @@
   ==== Styling & Design System
 
   - *TailwindCSS (v4.1)*
-    A utility-first CSS framework used for consistent and scalable styling of all components.
+    A utility-first CSS framework used for consistent and scalable styling of all components (see DDFR1).
 
   ==== Build & Tooling Infrastructure
 
@@ -135,7 +135,7 @@
   ==== Testing Environment
 
   - *Happy-DOM*
-    A DOM environment for unit-testing React components without requiring a real browser.
+    A DOM environment for unit-testing React components without requiring a real browser (see DDFR10).
 
   - *Bun (Type Definitions)*
     Although primarily used for type definitions here, Bun provides a fast JavaScript runtime for development tools.
@@ -152,7 +152,7 @@
 
   ==== Summary of Architectural Context
 
-  The application is built upon a modern, modular React-based front-end ecosystem. It integrates visual programming interfaces, simulation frameworks, and state management tailored for interactive, node-based workflows. Development is supported by comprehensive tooling for code quality, consistency, and performance. All systems together provide the foundation for a highly interactive and educational web-based platform. Understanding these adjacent systems helps clarify how our game will be used, how it complements existing resources, and what interfaces or data exchanges are necessary. Defining this context ensures the product aligns with user workflows, educational goals, and technical ecosystems, preventing isolated development and enhancing overall usability and adoption.
+  The application is built upon a modern, modular React-based front-end ecosystem. It integrates visual programming interfaces, simulation frameworks, and state management tailored for interactive, node-based workflows. Development is supported by comprehensive tooling for code quality, consistency, and performance. All systems together provide the foundation for a highly interactive and educational web-based platform. Understanding these adjacent systems helps clarify how our game will be used, how it complements existing resources, and what interfaces or data exchanges are necessary. Defining this context ensures the product aligns with user workflows, educational goals, and technical ecosystems, preventing isolated development and enhancing overall usability and adoption (see DDFR1, DDFR5, DDFR11).
 ]
 #figure(caption: "Context-Diagram", image("../images/context.svg"))
 
@@ -173,13 +173,13 @@
   - Initial iterations of parenting, physics nodes, documentation layout.
 
   *08.05. - 18.05.:* *Core Architecture & Base Features*
-  - Keyboard shortcuts, node connections, add/remove functionality.
-  - First levels implemented, tutorial dialog prototypes.
+  - Keyboard shortcuts, node connections, add/remove functionality.  
+    - First levels implemented, tutorial dialog prototypes (see DDFR11, DDFR14).
   - Animation system setup, camera controls, viewport handling.
 
   *19.05. - 25.05.:* *Feature Expansion & Testing*
-  - Undo/redo, looping nodes, context menus, tooltips.
-  - Error handling, usability polish, hover/focus updates.
+  - Undo/redo, looping nodes, context menus, tooltips.  
+    - Error handling, usability polish, hover/focus updates (see DDFR10, DDFR12).
 
   *26.05. - 31.05.:* *Review, Polish, Next Iteration Planning*
   - New landing page concept, responsive adjustments.
@@ -190,17 +190,17 @@
   ==== Iteration 2 (June 2025)
 
   *01.06. - 07.06.:* *UI/UX Refinement, Documentation*
-  - Improved navigation, animations, guides integration.
-  - Reworked tutorials, FAQs, visual polish, cleanup.
+  - Improved navigation, animations, guides integration.  
+    - Reworked tutorials, FAQs, visual polish, cleanup (see DDFR14, DDFR15).
 
   *08.06. - 18.06.:* *Level Design & Gameplay Logic*
-  - Level difficulties, gravity nodes, solution systems.
-  - Tests for loops, parenting, data stores.
+  - Level difficulties, gravity nodes, solution systems.  
+    - Tests for loops, parenting, data stores (see DDFR6, DDFR7, DDFR13).
   - Level transitions, victory conditions, hints.
 
   *19.06. - 26.06.:* *Systems Integration & Testing*
-  - Test coverage, ESLint cleanup, refactors.
-  - Additional level guides, tooltips, FAQs.
+  - Test coverage, ESLint cleanup, refactors.  
+    - Additional level guides, tooltips, FAQs (see DDFR15, DDFR17).
 
   *27.06. - 30.06.:* *Review, Feedback Integration*
   - Initial solution disclaimers, guide revisions.
@@ -211,11 +211,11 @@
 
   *01.07. - 07.07.:* *Final Features, Refinement*
   - FAQ extensions, UI polish, minor bug fixes.
-  - Documentation updates, accessibility tweaks.
+  - Documentation updates, accessibility tweaks (see DDFR14, DDFR15).
 
   *08.07. - 15.07.:* *Final Testing & Bug Fixing*
   - Prettier, tutorials finalized, last-minute adjustments.
-  - Final review of tests, code hygiene.
+  - Final review of tests, code hygiene (see DDFR10).
 
   *16.07. - 25.07.:* *Presentation & Delivery*
   - Final fixes, demo preparation, documentation finalization.
@@ -242,31 +242,31 @@ Following is a list of Business Events that the system will handle, along with a
 
   [3. User creates or modifies nodes],
   [Node Data (in/out)],
-  [Update the node graph with user inputs; validate connections and provide real-time feedback.],
+  [Update the node graph with user inputs; validate connections and provide real-time feedback], // (see DDFR11, DDFR12, DDFR13)
 
   [4. User requests help or hints],
   [Help Request (in)],
-  [Provide contextual help or tooltips based on the current node or task.],
+  [Provide contextual help or tooltips based on the current node or task], // (see DDFR14)
 
   [5. Game evaluates node setup],
   [Node Graph Evaluation (internal)],
-  [Process the node configuration to determine animation results and progress game state.],
+  [Process the node configuration to determine animation results and progress game state], // (see DDFR13)
 
   [6. User completes a task],
   [Task Completion (out)],
-  [Save progress, update user progress, and display success or error messages.],
+  [Save progress, update user progress, and display success or error messages], // (see DDFR10)
 
   [7. System logs telemetry data],
   [Telemetry Data (out)],
-  [Collect data on node usage, errors, and time spent for analysis and future improvements.],
+  [Collect data on node usage, errors, and time spent for analysis and future improvements], // (see DDFR10)
 
   [8. User completes post-test surveys],
   [Survey Data (in)],
-  [Store responses to usability and engagement questionnaires for analysis.],
+  [Store responses to usability and engagement questionnaires for analysis], // (see DDFR17)
 
   [9. Game provides feedback],
   [Feedback Data (out)],
-  [Deliver feedback based on performance, usability, and learning outcomes.],
+  [Deliver feedback based on performance, usability, and learning outcomes], // (see DDFR13)
 ))
 
 // === Competing Products

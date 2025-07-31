@@ -11,10 +11,7 @@ During the course of this project I ended up spending most of my time on the gam
 Because of this I did not end up spending any time on the `Unit Testing` and the `Help Tool` work packages, even though I was assigned to them. 
 
 === Planning Phase
-// Project planning
-// participated in meetings and tried contributing ideas and brainstorming
-// helped define workpackages
-// did not have any contributions outside of the meetings own during this time
+During the planning phase of our project, we spent a significant amount of time collaborating as a group through Discord calls. I made an effort to be consistently present and to contribute actively to idea generation and group brainstorming sessions. Additionally, I contributed to the creation of work packages, helping to structure the tasks and break down responsibilities.
 
 === Concept and Design Phase
 At this point we were still unsure about using Kaplay, three.js or Babylon.js, so I looked a bit more into them, so I would be able to contribute to the discussion about them. We had a team meeting on April, 9th where we talked about different concepts for the game and discussed the prospect of 2D vs 3D. I brought up some isometric and top down view games, but the concensus was that they would complicate the coordinate system too much. We took multiple votes and ended up going with a 2D side scroller in Kaplay.

@@ -40,18 +40,21 @@
 #include "chapters/dataset.typ"
 // Experiments
 #include "chapters/experiments.typ"
-// Discussion
-#include "chapters/discussion.typ"
-// Conclusion
-#include "chapters/conclusion.typ"
+// Discussion & Conclusion
+#include "chapters/discussion-conclusion.typ"
 #include "chapters/contributions.typ"
 
 #pagebreak()
+#import "@preview/muchpdf:0.1.0": muchpdf
+#set page(flipped: true)
+
 = Appendix
 
 == Experiments<appendix_experiments>
 
-#todo("add experiments")
+
+#place(center + horizon, dy: 3cm, muchpdf(read("docs/experiments.pdf", encoding: none), width: 110%))
+#pagebreak()
 
 == Time Tracking<time_tracking>
 

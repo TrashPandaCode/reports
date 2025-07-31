@@ -4,7 +4,6 @@
 
 = Test Plans
 #col[
-  #todo("check for correctness and maybe adjust formatting")
   == System Usability Scale Evaluation
   === Methodology
 / Participants: Nine participants (N=9) were recruited for this evaluation, representing a convenience sample with the following composition:
@@ -65,15 +64,15 @@ This evaluation represents a preliminary assessment using industry-standard meth
 // Sauro, J. (2011). A practical guide to the system usability scale: Background, benchmarks & best practices. Measuring Usability LLC.
   == Acceptance Report
   === Project Outcome
-  The project *Dumpster-Diving* consists of a playable application with a node-based editor that allows users to design in-game mechanics through visual scripting elements.
+  The project *Dumpster-Diving* consists of a playable application with a node-based editor that allows users to design in-game mechanics through visual scripting elements (see DDFR5, DDFR11).
 
   The demonstrator outcome includes:
-  - *Playable application* with core game mechanics
-  - *Node editor* for modifying and expanding the game
-  - *User interface (UI/UX)* for intuitive interaction
-    - including menu system, options and landing page
-  - *Documentation and help system* to support users
-  - *Testing system* to ensure functionality
+  - *Playable application* with core game mechanics (see DDFR5, DDFR6, DDFR7, DDFR8)
+  - *Node editor* for modifying and expanding the game (see DDFR11, DDFR12, DDFR13)
+  - *User interface (UI/UX)* for intuitive interaction (see DDFR1, DDFR3, DDFR14)
+    - including menu system, options and landing page (see DDFR1, DDFR3)
+  - *Documentation and help system* to support users (see DDFR14, DDFR15, DDFR17)
+  - *Testing system* to ensure functionality (see DDFR10)
 
   === Successful Acceptance
   The project is considered successfully accepted if the following criteria are met:
@@ -84,21 +83,21 @@ This evaluation represents a preliminary assessment using industry-standard meth
   - The player can navigate through the game and interact with the environment.
   #colbreak()
   ==== Node Editor
-  - Users can modify game mechanics through the node environment.
-  - The node structure is correctly validated (no cycles, faulty connections are detected).
-  - Changes to the node structure affect the game accordingly.
+  - Users can modify game mechanics through the node environment (see DDFR11, DDFR13)
+  - The node structure is correctly validated (no cycles, faulty connections are detected) (see DDFR12)
+  - Changes to the node structure affect the game accordingly (see DDFR13)
 
   ==== User Interface (UI/UX)
-  - The interface is intuitively usable.
-  - All UI elements function correctly and respond to user input.
+  - The interface is intuitively usable (see DDFR1, DDFR3, DDFR14)
+  - All UI elements function correctly and respond to user input (see DDFR1, DDFR3)
 
   ==== Documentation & Help System
-  - Documentation for key features is available.
-  - An integrated help function assists users in working with the node editor.
+  - Documentation for key features is available (see DDFR15)
+  - An integrated help function assists users in working with the node editor (see DDFR14)
 
   ==== Testing System
-  - Unit tests exist for core functionalities.
-  - At least 80% of the defined tests pass successfully.
+  - Unit tests exist for core functionalities (see DDFR10)
+  - At least 80% of the defined tests pass successfully (see DDFR10)
 
   === Test Cases
   The acceptance process is based on the following tests:
@@ -122,14 +121,14 @@ This evaluation represents a preliminary assessment using industry-standard meth
   [*Pass*: Yes / *Fail*: No],
   [3],
   [Can nodes be used for game control?],
-  [All required nodes to solve the puzzles are implemented. Changes in nodes affect the game in the intended way.],
+  [All required nodes to solve the puzzles are implemented. Changes in nodes affect the game in the intended way (see DDFR11, DDFR13).],
 
   [*Pass*: Yes / *Fail*: No],
   [4],
   [Is there documentation available?],
-  [Documentation for all node types is available and understandable. At least 50% of the covered topics is documented.],
+  [Documentation for all node types is available and understandable. At least 50% of the covered topics is documented (see DDFR15, DDFR17).],
 
-  [*Pass*: Yes / *Fail*: No], [5], [Do the automated tests pass?], [At least 80% of unit tests pass.],
+  [*Pass*: Yes / *Fail*: No], [5], [Do the automated tests pass?], [At least 80% of unit tests pass (see DDFR10).],
   [*Pass*: Yes / *Fail*: No],
 )
 

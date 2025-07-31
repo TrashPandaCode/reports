@@ -24,6 +24,8 @@
 
   === Project Planning<leo_plan_phase>
 
+  During the project planning phase, I was actively involved in all stages of the process. I consistently attended planning meetings, contributed meaningful ideas to brainstorming sessions, and helped define the project's scope and direction. I participated in creating essential planning documents, as well as contributed to the corresponding presentations. I collaborated with team members to develop the work breakdown structure, define work packages, and establish project timelines as visualized in our Gantt charts.
+
   === Concept and Design<leo_des_phase>
 
   During the concept and design phase, I became involved in areas beyond my original assignment. Although I was initially not responsible for prototyping or wireframing, I contributed extensively to the shared Figma document, which we used as a central platform for design collaboration. The wireframing process was approached rather loosely and without a clear structure early on, so I stepped in to help bring more coherence and direction.
