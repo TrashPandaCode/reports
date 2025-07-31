@@ -884,7 +884,7 @@
 #col[
 
 
-  == Participant 1
+  === Participant 1
   - Starting dialogue doesnt play when not selecting "dont show again"
   - "Node editor looks cramped" (didnt know you could zoom via scrollwheel, also might be the zooming in on creating first node)
   - "Where do i get the coordinates for the trashcan" level 2
@@ -892,7 +892,7 @@
   - i want to snap the trashcan to the raccoon. idk how level 4
   - i thought it had to overlap first for the raccoon to hold the trashcan level 4
 
-  == Participant 2
+  === Participant 2
 
   - level 1
     - I geuss i need math nodes to solve this
@@ -904,7 +904,7 @@
   - level 3
     - didnt know outputs could be used multiple times
 
-  == Participant 3
+  === Participant 3
   - had no experience with nodes, but adapted pretty quickly
   - level 1
     - used all math nodes to solve the equation, didn't end up using any value nodes
@@ -914,7 +914,7 @@
     - also switch node had to be explained, because the inputs weren't clear enough
   - Maybe intro dialog shouldn't play again on second level when you already went through it once
 
-  == Participant 4
+  === Participant 4
 
   - tutorial dialog
     - "so viel text"
@@ -926,7 +926,7 @@
     - hat 50 sekunden addiert nachdem er die uhr schneller laufen lässt, da sonst auch die 50 sekunden skaliert werden
       - eventuell zu ungenaues ziel?
 
-  == Participant 5
+  === Participant 5
   - raccoon hat keinen namen
   - man kann nicht mit scroll die value node ändern
   - level 4
@@ -934,7 +934,7 @@
     - in den goals runter zählen wieviele mülltonnen noch gebraucht werden
   - Tabs haben keine Namen, wird verwirrend wenn man mehrere docs seiten auf hat
 
-  == Participant 6
+  === Participant 6
 
   - level 1
     - zooming out of canvas unintuitive
