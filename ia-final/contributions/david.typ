@@ -66,9 +66,6 @@
   // time spent in july was tracked seperately as to focus on myself
   // tracked time was transfered into the shared google sheet for accountability
 
-  === Time
-
-
   // Originally assigned to UI/UX Overall, Game Design, Game Creation
 
   // Development
